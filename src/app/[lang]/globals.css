@@ -117,3 +117,17 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none; /* IE and Edge */
 }
+
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-150%);
+  }
+}
+
+.animate-scroll {
+  animation-name: scroll;
+}
+

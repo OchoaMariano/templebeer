@@ -2,7 +2,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { getDictionary } from '../../dictionaries'
 import { Knockout54UltraBold } from './layout'
-import ScrollHorizontal from '../../../components/ScrollHorizontal';
+import ScrollHorizontal from '../../../components/ScrollHorizontal'
+import PlaylistSpotify from '../../../components/home/PlaylistSpotify'
 
 
 const data = {
@@ -251,18 +252,7 @@ export default async function Page({ params: { lang } }) {
                       </div>
                       {/* BLOQUE SPOTIFY */}
                       <div className="col-[4/12] row-[6/8] relative z-20 flex items-center justify-center">
-                        <div className="flex items-center justify-center h-[68px] relative w-[96%]">
-                          <Image 
-                            src="/playlists.png"
-                            alt="Temple Beer"
-                            fill
-                            style={{
-                              objectFit: 'cover',
-                              objectPosition: 'center'
-                            }}
-                            
-                          />
-                        </div>  
+                        <PlaylistSpotify /> 
                         <Image 
                           src="/parlante.png"
                           alt="Temple Beer"
