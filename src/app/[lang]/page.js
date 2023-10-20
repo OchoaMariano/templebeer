@@ -7,25 +7,25 @@ import ScrollHorizontal from '../../../components/ScrollHorizontal';
 
 const data = {
   birras: [
-    "WOLF IPA",
-    "ROYAL SCOTTISH",
-    "CÓSMICA HOPPY LAGER",
-    "HONEY",
-    "INDIE GOLDEN",
-    "BLACK SOUL STOUT",
-    "FLOW APA",
-    "REVOLUTION NEIPA",
-    "LEMON HAZE IPA",
-    "CRITICAL APA",
-    "KAN",
-    "JAMMIN IMPERIAL STOUT",
-    "IPANEMA HAZY IPA",
-    "KUNG FU SOUR",
-    "DEMON HONEY",
-    "MILKSHAKE NEIPA",
-    "WOLF IPA 0%",
-    "ALPHA",
-    "ALPHA II"
+    { title: "WOLF IPA", id: 1, slug: "wolf-ipa" },
+    { title: "ROYAL SCOTTISH", id: 2, slug: "royal-scottish" },
+    { title: "CÓSMICA HOPPY LAGER", id: 3, slug: "csmica-hoppy-lager" },
+    { title: "HONEY", id: 4, slug: "honey" },
+    { title: "INDIE GOLDEN", id: 5, slug: "indie-golden" },
+    { title: "BLACK SOUL STOUT", id: 6, slug: "black-soul-stout" },
+    { title: "FLOW APA", id: 7, slug: "flow-apa" },
+    { title: "REVOLUTION NEIPA", id: 8, slug: "revolution-neipa" },
+    { title: "LEMON HAZE IPA", id: 9, slug: "lemon-haze-ipa" },
+    { title: "CRITICAL APA", id: 10, slug: "critical-apa" },
+    { title: "KAN", id: 11, slug: "kan" },
+    { title: "JAMMIN IMPERIAL STOUT", id: 12, slug: "jammin-imperial-stout" },
+    { title: "IPANEMA HAZY IPA", id: 13, slug: "ipanema-hazy-ipa" },
+    { title: "KUNG FU SOUR", id: 14, slug: "kung-fu-sour" },
+    { title: "DEMON HONEY", id: 15, slug: "demon-honey" },
+    { title: "MILKSHAKE NEIPA", id: 16, slug: "milkshake-neipa" },
+    { title: "WOLF IPA 0%", id: 17, slug: "wolf-ipa-0" },
+    { title: "ALPHA", id: 18, slug: "alpha" },
+    { title: "ALPHA II", id: 19, slug: "alpha-ii" }
   ]
 };
 
@@ -40,12 +40,12 @@ export default async function Page({ params: { lang } }) {
         <section className="home__view"> {/* Añadir el overflow aquí */}
           <div className="view-section__wrapper pt-[100px] pb-[70px]">
           <ScrollHorizontal>
-            <div className="flex flex-row h-[561px] 3xl:h-[738px] pl-[10px] w-[2552px] 3xl:w-[3301px]">
-              <div className="grid grid-cols-24 grid-rows-5 gap-2 h-full w-full">
+            <div className="flex flex-row h-[561px] 3xl:h-[738px] pl-[10px] w-[2552px] 3xl:w-[3301px] ">
+              <div className="grid grid-cols-24 grid-rows-5 gap-2 h-full w-full mr-40">
 
                 {/* GRID ELEMENT MAIN IMAGE */}
                 <div className="col-[1/4] row-[1/5] relative">
-                  <div className="main-image__wrapper">
+                  <div className="main-image__wrapper flex items-center justify-center h-full">
                     {/* Imagen de fondo */}
                     <div className="absolute inset-0">
                       <Image 
@@ -57,7 +57,7 @@ export default async function Page({ params: { lang } }) {
                     
                     
                     {/* Lata de cerveza centrada */}
-                    <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <div className="flex items-center justify-center z-10 h-full cursor-pointer transform transition-transform duration-300 hover:scale-110">
                         <Image 
                             src="/birra-wolf-ipa.png"
                             alt="Lata de Cerveza"
@@ -68,6 +68,7 @@ export default async function Page({ params: { lang } }) {
                             }}
                         />
                     </div>
+
                     
                     {/* Sticker en la esquina inferior derecha */}
                     <div className="absolute -bottom-5 -right-12 mb-4 mr-4">
@@ -85,11 +86,17 @@ export default async function Page({ params: { lang } }) {
                 <div className="col-[1/7] 3xl:col-[1/6] row-[5/6] z-10">
                   <div className="birras__wrapper flex items-end justify-end h-full">
                     <div className="nav__wrapper">
-                      <h1 className="text-4xl font-bold text-white text-[50px]">NUESTRAS BIRRAS</h1>
+                      <h1 className="text-4xl font-bold text-white text-[50px]">
+                        <Link className="text-white hover:text-[#D51668] transition duration-300 ease-in-out" href="/birras">
+                          NUESTRAS BIRRAS
+                        </Link>
+                      </h1>
                       <nav className="flex flex-wrap self-stretch gap-y-[2px] pt-2">
-                        {data.birras.map((birra, index) => (
-                          <span key={index} className="py-[2px] px-[5px] text-[10px] text-white border-r-[1px] border-white">
-                            {birra}
+                        {data.birras.map((birraObj, index) => (
+                          <span key={index} className="py-[2px] px-[5px] text-[10px] text-white border-r-[1px] border-dotted border-white">
+                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`/birras/${birraObj.slug}`}>
+                              {birraObj.title}
+                            </Link>
                           </span>
                         ))}
                       </nav>
@@ -169,8 +176,116 @@ export default async function Page({ params: { lang } }) {
                   />
                 </div>
                 {/* FRAME 4 - HOME */}
-                <div className="col-[15/24] row-[1/6] border-white border-2 relative">
-                  
+                <div className="grid col-[15/25] row-[1/6] relative">
+                    <div className="grid grid-cols-12 grid-rows-8">
+                      {/* QR */}
+                      <div className="col-[1/4] row-[1/3] relative grid content-start justify-items-end">
+                        <Image 
+                          src="/qr.png"
+                          alt="Temple Beer"
+                          width={65}
+                          height={65}
+                          
+                        />
+                      </div>
+                      {/* TRAMA ARRIBA */}
+                      <div className="col-[4/6] row-[1/4] relative ">
+                        <Image 
+                          src="/templexpeke-33.png"
+                          alt="Temple Beer"
+                          fill
+                          style={{
+                            objectFit: 'cover',
+                          }}
+                          
+                        />
+                      </div>
+                      {/* CALLE CORTADA ARRIBA */}
+                      <div className="col-[6/10] row-[1/4] relative ml-2">
+                        <Image 
+                          src="/templexpeke-41.png"
+                          alt="Temple Beer"
+                          fill
+                          style={{
+                            objectFit: 'cover',
+                          }}
+                          
+                        />
+                      </div>
+                      {/* ULTIMA ARRIBA */}
+                      <div className="col-[10/13] row-[1/3] relative ml-2">
+                        <Image 
+                          src="/templexpeke-42.png"
+                          alt="Temple Beer"
+                          fill
+                          style={{
+                            objectFit: 'cover',
+                          }}
+                          
+                        />
+                      </div>
+                      {/* FRASE */}
+                      <div className="col-[5/11] row-[4/6] relative">
+                        <Image 
+                          src="/frase.png"
+                          alt="Temple Beer"
+                          fill
+                          style={{
+                            objectFit: 'contain',
+                          }}
+                          
+                        />
+                      </div>
+                      {/* VASO BIRRA */}
+                      <div className="col-[11/13] row-[3/9] relative z-30">
+                        <Image 
+                          src="/vaso-birra.png"
+                          alt="Temple Beer"
+                          fill
+                          style={{
+                            objectFit: 'contain',
+                            objectPosition: 'bottom-right'
+                          }}
+                          
+                        />
+                      </div>
+                      {/* BLOQUE SPOTIFY */}
+                      <div className="col-[4/12] row-[6/8] relative z-20 flex items-center justify-center">
+                        <div className="flex items-center justify-center h-[68px] relative w-[96%]">
+                          <Image 
+                            src="/playlists.png"
+                            alt="Temple Beer"
+                            fill
+                            style={{
+                              objectFit: 'cover',
+                              objectPosition: 'center'
+                            }}
+                            
+                          />
+                        </div>  
+                        <Image 
+                          src="/parlante.png"
+                          alt="Temple Beer"
+                          fill
+                          style={{
+                            objectFit: 'contain',
+                            objectPosition: 'left'
+                          }}
+                        />
+                      </div>
+                      {/* ENCUENTROS */}
+                      <div className="col-[1/5] row-[3/9] relative encuentros_wrapper z-10">
+                        <Image 
+                          src="/encuentrosencuentros.png"
+                          alt="Temple Beer"
+                          fill
+                          style={{
+                            objectFit: 'cover',
+                          }}
+                          
+                        />
+                      </div>
+                    </div>  
                 </div>
 
               </div>

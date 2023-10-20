@@ -17,19 +17,19 @@ function Header () {
             </div>
             <div className="wrapper__content-nav">
                 <div className="main__nav">
-                    <Link href="/birras" className="nav__item text-white"> 
+                    <Link href="/birras" className="nav__item hover:text-[#D51668] transition duration-300 ease-in-out"> 
                         Birras
                     </Link>
-                    <Link href="/bares" className="nav__item text-white"> 
+                    <Link href="/bares" className="nav__item hover:text-[#1F9996] transition duration-300 ease-in-out"> 
                         Bares
                     </Link>
-                    <Link href="/encuentro" className="nav__item text-white"> 
+                    <Link href="/encuentro" className="nav__item text-white hover:text-[#FCDB00] transition duration-300 ease-in-out"> 
                         Encuentro
                     </Link>
-                    <Link href="/musica" className="nav__item text-white"> 
+                    <Link href="/musica" className="nav__item hover:text-[#1F9996] transition duration-300 ease-in-out"> 
                         Música
                     </Link>
-                    <Link href="/legales" className="nav__item text-white"> 
+                    <Link href="/legales" className="nav__item text-white hover:text-[#FCDB00] transition duration-300 ease-in-out"> 
                         Legales
                     </Link>
                 </div>
