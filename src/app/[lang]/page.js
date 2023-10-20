@@ -36,6 +36,7 @@ export default async function Page({ params: { lang } }) {
    
   
   return (
+    
     <main className="h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
 
         <section className="home__view"> {/* Añadir el overflow aquí */}

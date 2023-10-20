@@ -123,7 +123,7 @@ body {
       transform: translateX(0);
   }
   100% {
-      transform: translateX(-150%);
+      transform: translateX(-100%);
   }
 }
 
@@ -131,3 +131,7 @@ body {
   animation-name: scroll;
 }
 
+.img__spotify {
+  max-height: 40px;
+  display: inline-block;
+}
