@@ -1,7 +1,7 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
-import Header from '../../../components/common/header'
+import Popup from '../../../components/common/Popup'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -27,6 +27,17 @@ export const Knockout54UltraBold = localFont({
   ],
 })
 
+export const GothamBook = localFont({
+  src: [
+    {
+      path: '../../fonts/Gotham-Book.woff',
+      weight: '400',
+      style: 'normal',
+      variable: '--font-gothambook'
+    },
+  ],
+})
+
 export const metadata = {
   title: 'Temple Beer',
   description: 'Temple Beer - Encuentro, Birra y Música',
@@ -37,7 +48,8 @@ export default function RootLayout({ children }) {
     <html lang="en" className="scroll-smooth">
       
       <body className={Knockout54.className}>
-        <Header  />
+        <Popup />
+        
         {children}
       </body>
     </html>

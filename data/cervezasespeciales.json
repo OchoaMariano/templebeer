@@ -1,0 +1,51 @@
+{
+    "titulo": "Birras Especiales",
+    "colorBordeTitulo": "#1F9996",
+    "cervezas": [
+      {
+        "src": "/nuestrasbirras/especiales/jammin-imperial-stout.png",
+        "alt": "Jammin' Imperial Stout",
+        "slug": "jammin-imperial-stout"
+      },
+      {
+        "src": "/nuestrasbirras/especiales/kounge-sour.png",
+        "alt": "Kounge Sour",
+        "slug": "kounge-sour"
+      },
+      {
+        "src": "/nuestrasbirras/especiales/deamon-honey.png",
+        "alt": "Deamon Honey",
+        "slug": "deamon-honey"
+      },
+      {
+        "src": "/nuestrasbirras/especiales/neipa.png",
+        "alt": "Temple Neipa",
+        "slug": "temple-neipa"
+      },
+      {
+        "src": "/nuestrasbirras/especiales/wolf-ipa-s-a.png",
+        "alt": "Wolf IPA sin Alcohol",
+        "slug": "wolf-ipa-s-a"
+      },
+      {
+        "src": "/nuestrasbirras/especiales/proyecto-alpha-bassel-wi-serie-i.png",
+        "alt": "Proyecto Alpha Bassel Serie I",
+        "slug": "proyecto-alpha-bassel-wi-serie-i"
+      },
+      {
+        "src": "/nuestrasbirras/especiales/proyecto-alpha-wi-serie-ii.png",
+        "alt": "Proyecto Alpha Bassel Serie II",
+        "slug": "flow-apa"
+      },
+      {
+        "src": "/nuestrasbirras/especiales/proyecto-alpha-wi-serie-i.png",
+        "alt": "Proyecto Alpha Bassel Aged Serie I",
+        "slug": "proyecto-alpha-wi-serie-i"
+      },
+      {
+        "src": "/nuestrasbirras/especiales/imperial-stout-bottle.png",
+        "alt": "Imperial Stout",
+        "slug": "imperial-stout-bottle"
+      }
+    ]
+  }

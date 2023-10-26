@@ -127,6 +127,18 @@ body {
   }
 }
 
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.65); /* Aumentado para ser más exagerado */
+  }
+  60% {
+    transform: scale(1.1); /* Aumentado para ser más exagerado */
+  }
+}
+
 .animate-scroll {
   animation-name: scroll;
 }
@@ -135,3 +147,39 @@ body {
   max-height: 40px;
   display: inline-block;
 }
+
+.hidden {
+  display: none;
+}
+
+.inline {
+  display: inline;
+}
+
+
+.view-section__wrapper__desktop {
+  display: none;
+}
+
+
+/* sm */
+@media (min-width: 768px) { }
+
+/* md */
+@media (min-width: 640px) { }
+
+/* lg */
+@media (min-width: 1024px) { 
+  .view-section__wrapper__desktop {
+    display: block;
+  }
+} 
+
+/* xl */
+@media (min-width: 1280px) { }
+
+/* 2xl */
+@media (min-width: 1440px) { }
+
+/* 3xl */
+@media (min-width: 1680px) { }

@@ -20,7 +20,7 @@ export default function SelectCountry() {
 
   return (
     <CountryLayout>
-      <div className="min-h-screen flex flex-col items-center justify-between text-white bg-cover bg-center py-40" style={{ backgroundImage: 'url(/background.jpg)' }}>
+      <div className="min-h-screen flex flex-col items-center justify-center lg:justify-between text-white bg-cover bg-center lg:py-40" style={{ backgroundImage: 'url(/background.jpg)' }}>
         <Head>
           <title>Temple Beer</title>
         </Head>
@@ -33,10 +33,10 @@ export default function SelectCountry() {
         </div>
         
         <div className="flags_wrapper z-20">
-          <div className="flex items-center relative">
+          <div className="flex flex-col lg:flex-row items-center relative">
             <FlagButton img="/bandera-arg.svg" alt="Argentina Flag" onClick={() => handleCountrySelect('AR')} />
             <FlagButton img="/bandera-us.svg" alt="USA Flag" onClick={() => handleCountrySelect('US')} />
-            <FlagButton img="/bandera-es.svg" alt="Spain Flag" disabled>
+            <FlagButton img="/bandera-es.svg" alt="Spain Flag" isLast disabled>
               PRÓXIMAMENTE
             </FlagButton>
           </div>
@@ -46,9 +46,22 @@ export default function SelectCountry() {
   );
 }
 
-const FlagButton = ({ img, alt, onClick, disabled = false, children }) => (
-  <div onClick={!disabled ? onClick : null} className={`flex items-center justify-center h-full w-[274px] p-2 ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'}`}>
-    <img src={img} alt={alt} className="w-12 h-12" />
+const FlagButton = ({ img, alt, onClick, disabled = false, children, isLast = false }) => (
+  <div 
+    onClick={!disabled ? onClick : null} 
+    className={`flex items-center justify-center h-full px-10 lg:px-0 py-12 lg:w-[274px] p-2 ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'} ${!isLast && 'border-b lg:border-b-0 lg:border-r border-white'}`}
+  >
+    <div
+      style={{
+        transition: 'transform 0.6s', /* Hacer la transición más suave */
+        transformOrigin: 'center',
+      }}
+      onMouseOver={(e) => !disabled && (e.currentTarget.style.animation = 'bounce 1s')} /* Hacer la animación más suave */
+      onMouseOut={(e) => e.currentTarget.style.animation = ''}
+    >
+      <img src={img} alt={alt} className="w-12 h-12" />
+    </div>
     {children && <p className="absolute bottom-0 pt-0">{children}</p>}
   </div>
 );
+

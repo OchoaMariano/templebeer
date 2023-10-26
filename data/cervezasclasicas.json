@@ -1,0 +1,46 @@
+{
+    "titulo": "Birras Clásicas",
+    "colorBordeTitulo": "#D41768",
+    "cervezas": [
+      {
+        "src": "/nuestrasbirras/clasicas/wolf-ipa.png",
+        "alt": "Temple Beer",
+        "slug": "wolf-ipa"
+      },
+      {
+        "src": "/nuestrasbirras/clasicas/scotish.png",
+        "alt": "Scotish Beer",
+        "slug": "scotish"
+      },
+      {
+        "src": "/nuestrasbirras/clasicas/cosmica.png",
+        "alt": "Wolf IPA",
+        "slug": "cosmica"
+      },
+      {
+        "src": "/nuestrasbirras/clasicas/honey.png",
+        "alt": "Temple Beer",
+        "slug": "honey"
+      },
+      {
+        "src": "/nuestrasbirras/clasicas/indie-golden.png",
+        "alt": "Scotish Beer",
+        "slug": "indie-golden"
+      },
+      {
+        "src": "/nuestrasbirras/clasicas/black-soul-stout.png",
+        "alt": "Wolf IPA",
+        "slug": "black-soul-stout"
+      },
+      {
+        "src": "/nuestrasbirras/clasicas/flow-apa.png",
+        "alt": "Scotish Beer",
+        "slug": "flow-apa"
+      },
+      {
+        "src": "/nuestrasbirras/clasicas/evolution.png",
+        "alt": "Wolf IPA",
+        "slug": "evolution"
+      }
+    ]
+  }
