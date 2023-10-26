@@ -26,7 +26,11 @@ function ScrollHorizontal({ children }) {
         };
     }, []);
 
-    return <div ref={wrapperRef} className="no-scrollbar" style={{ overflowX: 'auto', overflowY: 'hidden' }}>{children}</div>;
+    return (
+          <div ref={wrapperRef} className="no-scrollbar h-full" style={{ overflowX: 'auto', overflowY: 'hidden' }}>
+            {children}
+          </div>
+        );
 }
 
 export default ScrollHorizontal;

@@ -161,9 +161,26 @@ body {
   display: none;
 }
 
+.home__view {
+  width: 100vw;
+  height: 100vh;
+  overflow: scroll;
+}
+
+.min {
+  min-width: 218px;
+}
+
+.min-height-custom {
+  min-height: 180px;
+}
 
 /* sm */
-@media (min-width: 768px) { }
+@media (min-width: 768px) { 
+  .min-height-custom {
+    min-height: 0; /* Anula la altura mínima */
+  }
+}
 
 /* md */
 @media (min-width: 640px) { }

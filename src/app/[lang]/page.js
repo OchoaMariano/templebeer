@@ -4,6 +4,7 @@ import { getDictionary } from '../../dictionaries'
 import { Knockout54UltraBold } from './layout'
 import ScrollHorizontal from '../../../components/ScrollHorizontal'
 import PlaylistSpotify from '../../../components/home/PlaylistSpotify'
+import Draggable from '../../../components/common/Dragabble'
 import Header from '../../../components/common/header'
 
 
@@ -41,14 +42,15 @@ export default async function Page({ params: { lang } }) {
     <Header  />
       <main className="h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
 
-          <section className="home__view"> {/* Añadir el overflow aquí */}
-            <div className="view-section__wrapper__desktop pt-[100px] pb-[70px]">
+          <section className="home__view no-scrollbar">
+            <div className="view-section__wrapper__desktop h-full">
+              
               <ScrollHorizontal>
-                <div className="flex flex-row pl-[10px] h-[561px] w-[2552px] 3xl:h-[738px] 3xl:w-[3301px]">
-                  <div className="grid grid-cols-24 grid-rows-5 gap-2 h-full w-full mr-40">
+                <div className="flex flex-row pl-[10px] w-[2752px] 3xl:w-[3301px] pt-[100px] pb-[100px] h-full">
+                  <div className="grid grid-cols-24 grid-rows-5 gap-2 h-full w-full">
 
                     {/* GRID ELEMENT MAIN IMAGE */}
-                    <div className="col-[1/4] row-[1/5] relative">
+                    <div className="col-[1/5] 3xl:col-[1/4] row-[1/5] relative">
                       <div className="main-image__wrapper flex items-center justify-center h-full">
                         {/* Imagen de fondo */}
                         <div className="absolute inset-0">
@@ -109,7 +111,7 @@ export default async function Page({ params: { lang } }) {
                     </div>
 
                     {/* MAIN TITLE AND NAV */}
-                    <div className="col-[4/14] row-[1/2] relative">
+                    <div className="col-[5/14]  3xl:col-[4/14]   row-[1/2] relative">
                       <div className="title__wrapper flex justify-start items-center h-full">
                         <h1 className={`text-white text-[50px] 3xl:text-[62px] Knockout54UltraBold ${Knockout54UltraBold.className}`}>
                           <Link href='/encuentro' className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out">ENCUENTRO</Link>, 
@@ -119,27 +121,64 @@ export default async function Page({ params: { lang } }) {
                         </h1>
                       </div>
                       {/* Sticker en la esquina inferior derecha */}
-                      <div className="absolute -bottom-16 right-20 mb-4 mr-4 z-10">
-                          <Image
-                              src="/beer-sticker.png"
-                              alt="Sticker"
-                              width={119}
-                              height={112}
-                          />
-                        </div>
+                      <div className="absolute bottom-40 right-20 mb-4 mr-4 z-10">
+                        <Draggable initialPosition={{ x: 0, y: 0 }}>
+                          <div className="rotate-[17deg] w-[74px] h-[180px] 3xl:w-[96px] 3xl:h-[236px] relative">
+                              <Image 
+                                  src="/nuestrasbirras/sticker-cerveza.svg"
+                                  alt="Temple Beer"
+                                  fill 
+                              />
+                          </div>
+                        </Draggable>
+                      </div>
                     </div>
 
                     {/* FRAME 1 - HOME */}
-                    <div className="col-[4/6] row-[2/5] relative flex justify-start">
-                      <Image 
-                        src="/frame-home-1.png"
-                        alt="Temple Beer"
-                        style={{
-                          objectFit: 'contain',
-                          objectPosition: 'top'
-                        }}
-                        fill
-                      />
+                    <div className="col-[5/7] 3xl:col-[4/6] row-[2/5] relative">
+                      <div className="flex flex-col justify-start relative">
+                        <div className="absolute top-10 z-10">
+                          <div className="relative w-[177px] h-[35px]">
+                            <Draggable initialPosition={{ x: 0, y: 0 }}>
+                              <div className="relative w-[244px] h-[59px]">
+                                <Image 
+                                  src="/temple-sticker.png"
+                                  alt="Temple Beer"
+                                  style={{
+                                    objectFit: 'contain',
+                                    objectPosition: 'top'
+                                  }}
+                                  fill
+                                />
+                              </div>
+                            </Draggable>
+                            
+                          </div>
+                        </div>
+                        <div className="relative w-[231px] h-[126px]">
+                          <Image 
+                            src="/header-collage.png"
+                            alt="Temple Beer"
+                            style={{
+                              objectFit: 'contain',
+                              objectPosition: 'top'
+                            }}
+                            fill
+                          />
+                        </div>
+                        <div className="relative w-[231px] h-[209px]">
+                          <Image 
+                            src="/art-beer.png"
+                            alt="Temple Beer"
+                            style={{
+                              objectFit: 'contain',
+                              objectPosition: 'top'
+                            }}
+                            fill
+                          />
+                        </div>
+                      </div>
+                      
                     </div>
                     {/* FRAME 2 - HOME */}
                     <div className="col-[7/9] 3xl:col-[6/9] row-[2/6] relative">
@@ -286,7 +325,12 @@ export default async function Page({ params: { lang } }) {
 
                   </div>
                 </div>
+                
               </ScrollHorizontal>
+              
+            </div>
+            <div className="view-section__wrapper__mobile hidden">
+
             </div>
           </section>
         

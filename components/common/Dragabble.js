@@ -1,58 +1,68 @@
 'use client'
 
-import { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 
 export default function Draggable({ children, initialPosition }) {
   const [position, setPosition] = useState(initialPosition);
   const [isDragging, setIsDragging] = useState(false);
+  const [offset, setOffset] = useState({ x: 0, y: 0 });
   const ref = useRef(null);
+
+  useEffect(() => {
+    if (ref.current) {
+      ref.current.style.transform = `translate(${position.x}px, ${position.y}px)`;
+    }
+  }, [position]);
 
   const handleMouseDown = (e) => {
     setIsDragging(true);
-    e.preventDefault(); // Esto evita cualquier comportamiento por defecto del navegador
-    ref.current.style.transition = 'none'; // Desactiva la transición mientras arrastras
+    setOffset({
+      x: e.clientX - position.x,
+      y: e.clientY - position.y,
+    });
+    e.preventDefault();
+    ref.current.style.transition = 'none';
   };
 
   const handleMouseMove = (e) => {
     if (isDragging) {
-      const rect = ref.current.getBoundingClientRect();
-      setPosition({
-        x: position.x + e.movementX,
-        y: position.y + e.movementY,
-      });
+      const x = e.clientX - offset.x;
+      const y = e.clientY - offset.y;
+      setPosition({ x, y });
     }
   };
 
   const handleMouseUp = () => {
     setIsDragging(false);
-    ref.current.style.transition = 'transform 0.2s ease'; // Reactiva la transición cuando dejas de arrastrar
+    ref.current.style.transition = 'transform 0.2s ease';
   };
 
-  const handleTouchMove = (e) => {
+  useEffect(() => {
     if (isDragging) {
-      const touch = e.targetTouches[0];
-      setPosition({
-        x: position.x + touch.clientX,
-        y: position.y + touch.clientY,
-      });
+      document.addEventListener('mousemove', handleMouseMove);
+      document.addEventListener('mouseup', handleMouseUp);
+    } else {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
     }
-  };
+
+    return () => {
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseup', handleMouseUp);
+    };
+  }, [isDragging, offset]);
 
   return (
     <div
       ref={ref}
       style={{
-        position: 'fixed',
-        transform: `translate(${position.x}px, ${position.y}px)`, // Usar transform en lugar de left y top
+        position: 'absolute',
         cursor: isDragging ? 'grabbing' : 'grab',
         zIndex: 1000,
-        transition: 'transform 0.2s ease', // Suaviza la animación
+        userSelect: 'none',
+        transition: 'transform 0.2s ease',
       }}
       onMouseDown={handleMouseDown}
-      onMouseMove={handleMouseMove}
-      onMouseUp={handleMouseUp}
-      onMouseLeave={handleMouseUp}
-      onTouchMove={handleTouchMove}
     >
       {children}
     </div>
