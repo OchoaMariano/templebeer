@@ -3,12 +3,12 @@ import Link from 'next/link'
 
 function CarouselBirras({ cervezas, titulo, colorBordeTitulo }) {
     return (
-        <div className="overflow-auto flex flex-col lg:pl-[34px]">   
+        <div className="overflow-auto flex flex-col flex-nowrap pl-[5.12vw] lg:pl-[4.81vh]">   
           <div className="flex flex-row pb-[15px] items-end">
             {cervezas.map((cerveza, index) => (
                 <Link key={index} href={`/birras/${cerveza.slug}`}>
                     <div key={index} className="slide__birra  transform transition-transform duration-300 hover:-translate-y-3">
-                    <div className="h-[286px] w-[186px] 2xl:h-[393px] 2xl:w-[250px] relative">
+                    <div className="w-[70.25vw] h-[109.74vw] lg:h-[40.5vh] lg:w-[26.34vh] relative">
                         <Image 
                           src={cerveza.src}
                           alt={cerveza.alt}

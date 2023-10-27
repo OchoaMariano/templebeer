@@ -263,6 +263,15 @@ body {
   position: relative;
 } 
 
+/* PRODUCTS V2 */
+.product-viewport {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 0;
+  padding-bottom: 0;
+  position: fixed;
+}
+
 
 /* sm */
 @media (min-width: 768px) { 
