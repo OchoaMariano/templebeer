@@ -3,16 +3,18 @@ import Link from 'next/link'
 
 function Header () {
   return (
-    <header className="header__temple bg-transparent fixed w-full">
+    <header className="header__temple bg-transparent fixed w-full z-100">
         <div className="header__temple-wrapper">
             <div className="wrapper__logo">
                 <Link href="/">
-                    <Image
-                        src="/logo-templebeer.png"
-                        alt="Temple Beer"
-                        width={136}
-                        height={37}
-                    />
+                    <div className="relative w-[18.13vh] h-[4.1vh]">
+                        <Image
+                            src="/logo-templebeer.png"
+                            alt="Temple Beer"
+                            fill
+                        />
+                    </div>
+                   
                 </Link>
             </div>
             <div className="wrapper__content-nav hidden lg:flex">

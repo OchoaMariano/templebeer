@@ -5,7 +5,18 @@ import Popup from '../../../components/common/Popup'
 
 const inter = Inter({ subsets: ['latin'] })
 
-const Knockout54 = localFont({
+export const Knockout34 = localFont({
+  src: [
+    {
+      path: '../../fonts/Knockout-HTF34-JuniorSumo.woff2',
+      weight: '400',
+      style: 'normal',
+      variable: '--font-knockoutjunior'
+    },
+  ],
+})
+
+export const Knockout54 = localFont({
   src: [
     {
       path: '../../fonts/Knockout-HTF54-Sumo.woff2',
