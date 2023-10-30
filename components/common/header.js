@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 function Header () {
   return (
-    <header className="header__temple bg-transparent fixed w-full z-100">
+    <header className="header__temple bg-transparent fixed w-full z-50">
         <div className="header__temple-wrapper">
             <div className="wrapper__logo">
                 <Link href="/">
