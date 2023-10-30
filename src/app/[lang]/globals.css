@@ -351,6 +351,10 @@ body {
   position: fixed;
 }
 
+.row-special-gap {
+  grid-column-gap: 0.99vh !important;
+}
+
 
 /* sm */
 @media (min-width: 768px) { 

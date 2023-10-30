@@ -110,7 +110,7 @@ export default function Home2() {
                                             </div>
                                         </div>
                                     </div>
-                                    <div className="row">
+                                    <div className="row row-special-gap">
                                         <div className="column">
                                             <div className="box-2">
                                                 <div className="flex flex-col items-end justify-start relative">
@@ -137,7 +137,7 @@ export default function Home2() {
                                                             fill
                                                         />
                                                     </div>
-                                                    <div className="relative w-[32.71vh] h-[29.60vh]">
+                                                    <div className="relative w-[32.71vh] h-[29.60vh] -top-2">
                                                     <Image 
                                                         src="/art-beer.png"
                                                         alt="Temple Beer"
