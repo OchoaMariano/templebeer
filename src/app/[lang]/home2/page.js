@@ -178,7 +178,7 @@ export default function Home2() {
                                         <div className="box-4">
                                             <div className="picture-box-1">
                                                 <Image 
-                                                    src="https://s3-alpha-sig.figma.com/img/c1d4/f01c/e3a089ad5dfb1117c39f04ca8f8d509b?Expires=1698624000&Signature=LdmMRsVaO4-J2-jHv1TM8FkRqlpu~3FWtKs7D47xLJ5W9NgGmL4QueBWcebYbNHiIBsl1bDUp7cMh3FwluJ0GT9bguFNveh0CEXx6xP8GFtiu24rasn7KEXRRTybPIs4r5TJS~dplLy~O3DFYY91Hz6Wgvxq69O~CvekYOyvxpQQUJ7anAo2KPAHih98xTLv87FgisBojnFdk6cKq5bDyyY~kO6AyJ0UIo~~nwADkI9lQkl7Fd7hZ8q44FDW24xEjrlHK6HYpH01rPsy2pDBmo9KEnMwVaFnsrWR4ggAzY4epnvkZ4EpAtsJPgRgt0C3NH01zGvm4gbzbw4EQjDTJA__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4"
+                                                    src="/frame-2.jpg"
                                                     alt="Temple Beer"
                                                     style={{
                                                     objectFit: 'cover',
@@ -214,7 +214,164 @@ export default function Home2() {
                                 </div>
                             </div>
                             
-                            <div className="column"></div>
+                            <div className="column">
+                                <div className="row-alt">
+                                    <div className="box-5">
+                                        <a href="#" className="w-inline-block group pt-[3.96vh]">
+                                            <div className="relative w-[8.07vh] h-[8.21vh]">
+                                                <Image  
+                                                    src="/qrcode.png"
+                                                    fill
+                                                />
+                                            </div>
+                                            <div className="div-block-5">
+                                                <div className="div-block-6 w-[3.68vh] h-[3.82vh] mr-[1vh] relative group-hover:rotate-90 transition-transform duration-500">
+                                                    <Image 
+                                                        src="/arrow-qr.svg"
+                                                        style={{
+                                                            objectFit: 'cover',
+                                                            objectPosition: 'center'
+                                                        }}
+                                                        fill
+                                                    />
+                                                </div>
+                                                <div className="div-block-7 w-[3.68vh] h-[3.82vh] relative p-2 group-hover:rotate-360 transition-transform duration-500">
+                                                    <Image 
+                                                        src="/instagram-qr.svg"
+                                                        style={{
+                                                            objectFit: 'cover',
+                                                            objectPosition: 'center'
+                                                        }}
+                                                        fill
+                                                    />
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <div className="box-6">
+                                        <Image 
+                                            src="/box-6.png"
+                                            fill
+                                        />
+                                    </div>
+                                    <div className="box-7">
+                                        <Image 
+                                            src="/box-7.png"
+                                            fill
+                                        />
+                                    </div>
+                                    <div className="box-8">
+                                        <div className="div-block-8 w-[32.86vh] h-[25.49vh] relative">
+                                            <Image 
+                                                src="/box-8.png"
+                                                style={{
+                                                    objectFit: 'cover',
+                                                    objectPosition: 'center'
+                                                }}
+                                                fill
+                                            />
+                                        </div>
+                                        <div className="absolute right-1 top-5 mb-4 mr-4 z-10">
+                                            <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                                <div className="rotate-[17deg] w-[9.69vh] h-[9.69vh] relative">
+                                                    <Image 
+                                                        src="/sticker-rosa-tempple.png"
+                                                        alt="Temple Beer"
+                                                        fill 
+                                                    />
+                                                </div>
+                                            </Draggable>
+                                        </div>
+                                        <div className="absolute right-52 top-[25vh] mb-4 mr-4 z-10">
+                                            <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                                <div className="rotate-[9deg] w-[25.07vh] h-[5.09vh] relative">
+                                                    <Image 
+                                                        src="/sticker-temple-verde.png"
+                                                        alt="Temple Beer"
+                                                        fill 
+                                                    />
+                                                </div>
+                                            </Draggable>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div className="row">
+                                    <div className="box-9">
+                                        <div className="w-[74vh] h-[17.98vh] relative">
+                                            <Image  
+                                                src="/frase.png"
+                                                fill
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="box-10 relative z-20">
+                                        <div className="encuentros w-[44.61vh] h-[61.89vh] -top-[34.5vh] absolute">
+                                            <Image 
+                                                src="/encuentrosencuentros.png"
+                                                style={{
+                                                    objectFit: 'contain',
+                                                    objectPosition: 'center'
+                                                }}
+                                                fill
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="box-11 pt-[5.06vh] pl-[4vh] relative">
+                                        <div className="banner-wrapper relative overflow-hidden">
+                                            <div className="banner-content " style={{ animation: 'moveBanner 10s linear infinite', willChange: 'transform' }}>
+                                                <div className="banner" style={{ transformStyle: 'preserve-3d' }}>
+                                                    <Image 
+                                                        src="/playlists.jpg"
+                                                        style={{
+                                                            objectFit: 'cover',
+                                                            objectPosition: 'center'
+                                                        }}
+                                                        fill
+                                                    />
+                                                </div>
+                                                <div className="banner" style={{ transformStyle: 'preserve-3d' }}>
+                                                    <Image 
+                                                        src="/playlists.jpg"
+                                                        style={{
+                                                            objectFit: 'cover',
+                                                            objectPosition: 'center'
+                                                        }}
+                                                        fill
+                                                    />
+                                                </div>
+                                                
+                                            </div>  
+                                            
+                                        </div>
+                                        <div className="absolute left-[34vh] -top-8 mb-4 mr-4 z-20">
+                                            <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                                <div className="w-[19.56vh] h-[27.46vh] relative">
+                                                    <Image 
+                                                        src="/parlante-sticker.png"
+                                                        alt="Temple Beer"
+                                                        fill 
+                                                    />
+                                                </div>
+                                            </Draggable>
+                                        </div>
+                                    </div>
+                                    <div className="box-12 relative">
+                                        <div className="beer-png w-[18.55vh] h-[60.62vh] -top-[30.82vh] right-[0vh] absolute">
+                                            <Image 
+                                                src="/vaso-birra.png"
+                                                style={{
+                                                    objectFit: 'contain',
+                                                    
+                                                }}
+                                                fill
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </ScrollHorizontal>
                 </SmoothScroll>

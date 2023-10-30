@@ -142,6 +142,15 @@ body {
   }
 }
 
+@keyframes moveBanner {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 .animate-scroll {
   animation-name: scroll;
 }
@@ -261,7 +270,77 @@ body {
   width: 39.94vh;
   height: 64.30vh;
   position: relative;
-} 
+}
+
+.row-alt {
+  grid-column-gap: 0.99vh;
+  grid-row-gap: 0vh;
+  justify-content: flex-start;
+  display: flex;
+}
+
+.box-5 {
+  width: 27.33vh;
+  height: 31.30vh;
+  text-align: right;
+  align-self: flex-end;
+  position: relative;
+}
+
+.w-inline-block {
+  max-width: 100%;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.div-block-5 {
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0.86vh;
+  display: flex;
+}
+
+.box-6 {
+  width: 21.10vh;
+  height: 31.30vh;
+  align-self: flex-end;
+  position: relative;
+}
+
+.box-7 {
+  width: 32.86vh;
+  height: 31.30vh;
+  align-self: flex-end;
+  position: relative;
+}
+
+.box-8 {
+  width: 32.86vh;
+  height: 31.30vh;
+  align-self: flex-end;
+  position: relative;
+}
+
+.box-9 {
+  margin-left: 50vh;
+  position: relative;
+  margin-right: 18.55vh;
+}
+
+.banner-wrapper {
+  width: 140vh;
+  height: 7.64vh;
+}
+
+.banner-content {
+  display: flex;
+  width: 262.88vh;
+}
+
+.banner {
+  width: 131.44vh;
+  height: 7.64vh;
+}
 
 /* PRODUCTS V2 */
 .product-viewport {

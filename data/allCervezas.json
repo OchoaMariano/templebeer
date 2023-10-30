@@ -1,0 +1,32 @@
+{
+    "Cervezas": 
+    [ 
+        {
+            "id": 1,
+            "nombnre": "Wolf Ipa",
+            "slug": "wolf-ipa",
+            "url-buy": "url",
+            "categoria": "clasicas",
+            "descripcion":"Cerveza india pale ale, de color dorada ambarina. inspirada en ipas americanas con un carácter cítrico y herbal característico en aroma y sabor. De amargor muy pronunciado pero equilibrado. El lúpulo en su máxima expresión.",
+            "propiedades": {
+                "alcohol": "5,8%",
+                "ibu": "50",
+                "size":"473"
+            },
+            "mainImage": "url",
+            "info": {
+                "imageInfo": "url",
+                "bajada": "Con un perfil muy americano, es una IPA que no vas a poder parar de tomar. Cítrica y frutal consecuencia del dry hopping con lúpulo Mosaic, tiene un tremendo balance entre aroma, sabor, amargor y tomabilidad.",
+                "destacado": "QUIEN NO CONOCE A WOLF IPA, A CUALQUIER IPA LE REZA",
+                "secondaryImage": null,
+                "altSecondaryImage": "BOMBA DE LÚPULO"
+
+            },
+            "style": {
+                "background": "url",
+                "esquinaIzquierda": "url",
+                "esquinaDerecha": ""               
+            }
+        }
+    ]
+}
