@@ -5,6 +5,7 @@ import ScrollHorizontal from '../../../components/home/ScrollHorizontal';
 import ScrollHorizontalMobile from '../../../components/home/ScrollHorizontalMobile';
 import Draggable from '../../../components/common/Dragabble'
 import Header from '../../../components/common/header'
+import Footer from '../../../components/common/Footer';
 import { Knockout54UltraBold, Knockout34, Knockout54 } from './layout'
 import SmoothScroll from '../../../components/common/SmoothScroll';
 
@@ -654,7 +655,9 @@ export default function Home2() {
                         />
                     </div>
                 </div>
+                <Footer />
             </div>
+            
         </>
       );
 }

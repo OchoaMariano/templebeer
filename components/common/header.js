@@ -20,7 +20,7 @@ function Header () {
     }, [isMenuOpen]);
 
   return (
-    <header className="header__temple bg-transparent lg:fixed w-full z-50 top-0">
+    <header className="header__temple bg-transparent absolute lg:fixed w-full z-50 top-0">
         <div className="header__temple-wrapper">
             <div className="wrapper__logo">
                 <Link href="/">
@@ -136,12 +136,34 @@ function Header () {
                         <a className="text-[2.56vw] uppercase" href="" target="_blank">Temple Academy</a>
                     </div>
                 </div>
-                <div className="flex flex-row items-end justify-end py-[7.12vw]">
-                    
+                <div className="bg-white h-[1px]"></div>
+                <div className="flex flex-row items-center justify-between py-[7.12vw]">
+                    <a href='https://encasa.temple.com.ar/' target='_blank' className='uppercase hover:bg-[#FCDB00] hover:text-black hover:border-[#ffffff] transition duration-300 ease-in-out'>
+                        Shop
+                    </a>
+                    <div className="lang__nav">
+                        <Image
+                            src="/bandera-arg.svg"
+                            alt="Tik-Tok"
+                            width={24}
+                            height={17}
+                        />
+                        <Image
+                            src="/bandera-us.svg"
+                            alt="Tik-Tok"
+                            width={24}
+                            height={17}
+                        />
+                        <Image
+                            src="/bandera-es.svg"
+                            alt="Tik-Tok"
+                            width={24}
+                            height={17}
+                        />
+                    </div>
+                    <div className=""></div>
                 </div>
-            </div>  
-
-            
+            </div>   
         </div>
         )}
     </header>

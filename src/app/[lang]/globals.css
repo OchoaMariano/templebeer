@@ -346,6 +346,7 @@ body {
 
 /* HOME MOBILE */
 .mobile-box-1 {
+  margin-top: 16.15vw;
   padding-left: 5.12vw;
   padding-right: 5.12vw;
   display: flex;
@@ -452,6 +453,13 @@ body {
 .banner {
   width: 220.25vh;
   height: 13.84vw;
+}
+
+.footer-wrapper {
+  padding-top: 10.24vw;
+  padding-bottom: 10.24vw;
+  padding-left: 5.12vw;
+  padding-right: 5.12vw;
 }
 
 /* sm */
