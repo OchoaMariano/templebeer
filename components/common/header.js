@@ -1,20 +1,36 @@
+'use client'
+
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image'
 import Link from 'next/link'
 
 function Header () {
+    const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen);
+    };
+
+    useEffect(() => {
+        if (isMenuOpen) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+    }, [isMenuOpen]);
+
   return (
     <header className="header__temple bg-transparent lg:fixed w-full z-50 top-0">
         <div className="header__temple-wrapper">
             <div className="wrapper__logo">
                 <Link href="/">
-                    <div className="relative w-[18.13vh] h-[4.1vh]">
+                    <div className="relative w-[31.53vw] h-[5.89vw] lg:w-[18.13vh] lg:h-[4.1vh]">
                         <Image
                             src="/logo-templebeer.png"
                             alt="Temple Beer"
                             fill
                         />
                     </div>
-                   
                 </Link>
             </div>
             <div className="wrapper__content-nav hidden lg:flex">
@@ -84,11 +100,50 @@ function Header () {
                 
             </div>
             <div className="wrapper__nav-mobile flex lg:hidden">
-                <div className="menu__icon relative">
+                <div className="menu__icon relative menu-button" onClick={toggleMenu}>
                     <Image src='/nav-mobile.png' width={44} height={44} />
                 </div>
             </div>
         </div>
+        {isMenuOpen && (
+        <div className={`menu ${isMenuOpen ? 'menuOpen' : ''}`}>
+            <div className="flex flex-col pr-[5.12vw] pl-[5.12vw] py-[2.43vw]">
+                <div className="flex flex-row items-end justify-end">
+                    <div className="w-[11.28vw] h-[11.28vw] relative" onClick={toggleMenu}>
+                        <Image src='/botones-mobile.png' fill />
+                    </div>
+                </div>
+                <div className="flex flex-col ">
+                    <Link href="/" className="text-[11.28vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
+                        Home
+                    </Link>
+                    <Link href="/birras" className="text-[11.28vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
+                        Birras
+                    </Link>
+                    <Link href="/bares" className="text-[11.28vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
+                        Bares
+                    </Link>
+                    <Link href="/encuentro" className="text-[11.28vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
+                        Encuentro
+                    </Link>
+                    <Link href="/musica" className="text-[11.28vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
+                        Música
+                    </Link>
+                </div>
+                <div className="flex flex-col py-[5.12vw]">
+                    <div className="flex flex-start items-start justify-start gap-x-[1.26vw]">
+                        <Link href="/legales" className="text-[2.56vw] uppercase"> Legales </Link>
+                        <a className="text-[2.56vw] uppercase" href="" target="_blank">Temple Academy</a>
+                    </div>
+                </div>
+                <div className="flex flex-row items-end justify-end py-[7.12vw]">
+                    
+                </div>
+            </div>  
+
+            
+        </div>
+        )}
     </header>
   )
 }
