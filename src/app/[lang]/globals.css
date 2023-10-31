@@ -19,6 +19,36 @@
   }
 }
 
+@keyframes scroll {
+  0% {
+      transform: translateX(0);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.65); /* Aumentado para ser más exagerado */
+  }
+  60% {
+    transform: scale(1.1); /* Aumentado para ser más exagerado */
+  }
+}
+
+@keyframes moveBanner {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -136,36 +166,6 @@ body {
 .no-scrollbar {
   scrollbar-width: none;
   -ms-overflow-style: none; /* IE and Edge */
-}
-
-@keyframes scroll {
-  0% {
-      transform: translateX(0);
-  }
-  100% {
-      transform: translateX(-100%);
-  }
-}
-
-@keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
-    transform: scale(1);
-  }
-  40% {
-    transform: scale(1.65); /* Aumentado para ser más exagerado */
-  }
-  60% {
-    transform: scale(1.1); /* Aumentado para ser más exagerado */
-  }
-}
-
-@keyframes moveBanner {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-  100% {
-    transform: translate3d(-50%, 0, 0);
-  }
 }
 
 .animate-scroll {
@@ -362,15 +362,6 @@ body {
   position: relative;
 }
 
-/* PRODUCTS V2 */
-.product-viewport {
-  width: 100vw;
-  height: 100vh;
-  padding-top: 0;
-  padding-bottom: 0;
-  position: fixed;
-}
-
 .row-special-gap {
   grid-column-gap: 0.99vh !important;
 }
@@ -460,6 +451,45 @@ body {
   padding-bottom: 10.24vw;
   padding-left: 5.12vw;
   padding-right: 5.12vw;
+}
+
+/* PRODUCTS V2 */
+.product-viewport {
+  width: 100vw;
+  height: 100vh;
+  padding-top: 9.20vh;
+  padding-bottom: 0;
+  position: fixed;
+}
+
+.product-box-1 {
+  width: 123.51vh;
+  height: 90.79vh;
+  grid-column-gap: 1.72vh;
+  grid-row-gap: 1.72vh;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-left: 4.81vh;
+  display: flex;
+  position: relative;
+}
+
+.product-box-2 {
+  position: relative;
+  width: 52.69vh;
+  height: 90.79vh;
+}
+
+.product-box-3 {
+  position: relative;
+  width: 34.98vh;
+  height: 90.79vh;
+}
+
+.product-box-4 {
+  position: relative;
+  width: 74.22vh;
+  height: 90.79vh;
 }
 
 /* sm */
