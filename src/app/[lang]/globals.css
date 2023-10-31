@@ -344,7 +344,6 @@ body {
 
 /* HOME MOBILE */
 .mobile-box-1 {
-  margin-top: 14.61vw;
   padding-left: 5.12vw;
   padding-right: 5.12vw;
   display: flex;
@@ -423,6 +422,8 @@ body {
   flex-direction: column;
   justify-content: flex-start;
 }
+
+
 
 
 /* sm */

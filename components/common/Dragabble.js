@@ -92,6 +92,7 @@ export default function Draggable({ children, initialPosition }) {
         zIndex: 1000,
         userSelect: 'none',
         transition: 'transform 0.2s ease',
+        touchAction: 'none',
       }}
       onMouseDown={handleMouseDown}
       onTouchStart={handleTouchStart}
