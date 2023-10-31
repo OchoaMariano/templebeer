@@ -484,8 +484,42 @@ export default function Home2() {
                         </div>
                     </div>
                 </div>
-                <div className="mobile-box-3 ">
-
+                <div className="mobile-box-3 mt-[7.69vw] mb-[7.69vw]">
+                   <div className="row-especial">
+                        <div className="column-especial relative w-[62.82vw] h-[94.87vw]">
+                            <Image 
+                                src="/frame-2.jpg"
+                                alt="Temple Beer"
+                                style={{
+                                objectFit: 'cover',
+                                }}
+                                fill
+                                unoptimized={true}
+                            />
+                        </div>
+                        <div className="column-especial relative w-[62.82vw] h-[94.87vw]">
+                            <Image 
+                                src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjRveTUxeDk5cHZmeWFtNWJreTNzM2t0NTgxbDEzOHJjZ3h2YzVhYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KBw4MkRoLLLzmK5NTp/giphy-downsized-large.gif"
+                                alt="Temple Beer"
+                                fill
+                                style={{
+                                objectFit: 'cover',
+                                }}
+                                unoptimized={true}
+                            />
+                        </div>
+                        <div className="column-especial relative w-[62.82vw] h-[94.87vw]">
+                            <Image 
+                                src="/frame-4.png"
+                                alt="Temple Beer"
+                                fill
+                                style={{
+                                objectFit: 'cover',
+                                }}
+                                unoptimized={true}
+                            />
+                        </div>
+                    </div>                     
                 </div>
             </div>
         </>

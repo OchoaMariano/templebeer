@@ -409,6 +409,19 @@ body {
   padding-right: 5.12vw;
 }
 
+.row-especial {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  width: 300%; /* 100% por cada columna */
+}
+
+.column-especial {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 
 /* sm */
 @media (min-width: 768px) { 
