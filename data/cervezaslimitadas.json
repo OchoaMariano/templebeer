@@ -5,17 +5,17 @@
       {
         "src": "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa.png",
         "alt": "Santa Planta Lemon Haze Ipa",
-        "slug": "sp-lemon-haze-ipa"
+        "slug": "lemon-haze-ipa"
       },
       {
         "src": "/nuestrasbirras/limitadas/santa-planta-critical-apa.png",
         "alt": "Santa Planta Critical Apa",
-        "slug": "sp-critical-apa"
+        "slug": "critical-apa"
       },
       {
         "src": "/nuestrasbirras/limitadas/santa-planta-kandy-kush-honey.png",
         "alt": "Santa Planta Kandy Kush Honey",
-        "slug": "sp-kandy-kush-honey"
+        "slug": "kandy-kush-honey"
       },
       {
         "src": "/nuestrasbirras/limitadas/infrared-ipa.png",
@@ -25,7 +25,7 @@
       {
         "src": "/nuestrasbirras/limitadas/ipanema.png",
         "alt": "Ipanema Haze Ipa",
-        "slug": "ipanema-haze-ipa"
+        "slug": "ipanema"
       }
     ]
   }

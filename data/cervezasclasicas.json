@@ -10,12 +10,12 @@
       {
         "src": "/nuestrasbirras/clasicas/scotish.png",
         "alt": "Scotish Beer",
-        "slug": "scotish"
+        "slug": "royal-scotish"
       },
       {
         "src": "/nuestrasbirras/clasicas/cosmica.png",
         "alt": "Wolf IPA",
-        "slug": "cosmica"
+        "slug": "cosmica-lager"
       },
       {
         "src": "/nuestrasbirras/clasicas/honey.png",
@@ -40,7 +40,7 @@
       {
         "src": "/nuestrasbirras/clasicas/evolution.png",
         "alt": "Wolf IPA",
-        "slug": "evolution"
+        "slug": "revolution-neipa"
       }
     ]
   }

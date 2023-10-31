@@ -10,42 +10,42 @@
       {
         "src": "/nuestrasbirras/especiales/kounge-sour.png",
         "alt": "Kounge Sour",
-        "slug": "kounge-sour"
+        "slug": "kung-fu-sour"
       },
       {
         "src": "/nuestrasbirras/especiales/deamon-honey.png",
         "alt": "Deamon Honey",
-        "slug": "deamon-honey"
+        "slug": "demon-honey"
       },
       {
         "src": "/nuestrasbirras/especiales/neipa.png",
         "alt": "Temple Neipa",
-        "slug": "temple-neipa"
+        "slug": "milkshake-neipa"
       },
       {
         "src": "/nuestrasbirras/especiales/wolf-ipa-s-a.png",
         "alt": "Wolf IPA sin Alcohol",
-        "slug": "wolf-ipa-s-a"
+        "slug": "wolf-ipa-sin-alcohol"
       },
       {
         "src": "/nuestrasbirras/especiales/proyecto-alpha-bassel-wi-serie-i.png",
         "alt": "Proyecto Alpha Bassel Serie I",
-        "slug": "proyecto-alpha-bassel-wi-serie-i"
+        "slug": "proyecto-alpha-1"
       },
       {
         "src": "/nuestrasbirras/especiales/proyecto-alpha-wi-serie-ii.png",
         "alt": "Proyecto Alpha Bassel Serie II",
-        "slug": "flow-apa"
+        "slug": "proyecto-alpha-2"
       },
       {
         "src": "/nuestrasbirras/especiales/proyecto-alpha-wi-serie-i.png",
         "alt": "Proyecto Alpha Bassel Aged Serie I",
-        "slug": "proyecto-alpha-wi-serie-i"
+        "slug": "alpha-barrica-1"
       },
       {
         "src": "/nuestrasbirras/especiales/imperial-stout-bottle.png",
         "alt": "Imperial Stout",
-        "slug": "imperial-stout-bottle"
+        "slug": "alpha-imperial-stout"
       }
     ]
   }

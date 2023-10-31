@@ -1,0 +1,602 @@
+{
+  "Cervezas": [
+    {
+      "id": 1,
+      "nombre": "Wolf Ipa",
+      "slug": "wolf-ipa",
+      "url-buy": "url",
+      "categoria": "clasicas",
+      "descripcion": "Cerveza india pale ale, de color dorada ambarina. Inspirada en ipas americanas con un carácter cítrico y herbal característico en aroma y sabor. De amargor muy pronunciado pero equilibrado. El lúpulo en su máxima expresión.",
+      "propiedades": {
+        "alcohol": "5,8%",
+        "ibu": "50",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/clasicas/wolf-ipa/wolf-ipa.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/clasicas/wolf-ipa/wolf-ipa-info.jpg",
+        "bajada": "Con un perfil muy americano, es una IPA que no vas a poder parar de tomar. Cítrica y frutal consecuencia del dry hopping con lúpulo Mosaic, tiene un tremendo balance entre aroma, sabor, amargor y tomabilidad.",
+        "destacado": "Quien no conoce a wolf ipa, a cualquier ipa le reza",
+        "secondaryImage": "/nuestrasbirras/clasicas/wolf-ipa/wolf-ipa-secondary.jpg",
+        "altSecondaryImage": "Bomba de lúpulo"
+      },
+      "style": {
+        "background": null,
+        "esquinaIzquierda": "/nuestrasbirras/clasicas/wolf-ipa/esquina-izquierda-wolf-ipa.png",
+        "esquinaDerecha": "/nuestrasbirras/clasicas/wolf-ipa/esquina-derecha-wolf-ipa.png",
+        "color": "#1F9996"
+      }
+    },
+
+    {
+      "id": 2,
+      "nombre": "Royal Scotish",
+      "slug": "royal-scotish",
+      "url-buy": "url",
+      "categoria": "clasicas",
+      "descripcion": "Cerveza estilo scottish ale, de origen escocés, con un perfil muy balanceado a la malta. De color cobrizo profundo y con un aroma que nos remite al caramelo, al pan tostado y galletas dulces. De un sabor maltoso, pero sin ser dulce. Con un amargor equilibrado y un cuerpo medio. Cada trago te invita a tomar el siguiente.",
+      "propiedades": {
+        "alcohol": "5,5%",
+        "ibu": "18",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/clasicas/scotish/scotish.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/clasicas/scotish/scotish-info.jpg",
+        "bajada": "Con un color cobrizo que refleja su elegancia y complejidad en sus aromas, es una birra para frenarse a mirar, oler y después tomar. Combinación de maltas especiales que le dan un perfil a tostado y caramelo.",
+        "destacado": "cerrá los ojos, viajá a escocia. Abrí los ojos. Una pinta de nuestra scottish esperandote. y ahora sí.",
+        "secondaryImage": "/nuestrasbirras/clasicas/scotish/scotish-secondary.jpg",
+        "altSecondaryImage": "Cada trago te invita a tomar el siguiente"
+      },
+      "style": {
+        "background": null,
+        "esquinaIzquierda": "/nuestrasbirras/clasicas/scotish/esquina-izquierda-scotish.png",
+        "esquinaDerecha": "/nuestrasbirras/clasicas/scotish/esquina-derecha-scotish.png",
+        "color": "#D41768"
+      }
+    },
+
+    {
+      "id": 3,
+      "nombre": "Honey",
+      "slug": "honey",
+      "url-buy": "url",
+      "categoria": "clasicas",
+      "descripcion": "Cerveza dorada con agregado de miel orgánica en frio. Un cuerpo medio, con un dulzor equilibrado y un delicado sabor a miel. Amargor casi imperceptible y un suave sabor a grano dulce. Muy ligero y fácil de tomar.",
+      "propiedades": {
+        "alcohol": "4,5%",
+        "ibu": "13",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/clasicas/honey/honey.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/clasicas/honey/honey-info.jpg",
+        "bajada": "¿Qué decir de esta hermosura? Probablemente el estilo de cerveza más tomado hoy en día, nuestra Honey llegó para ganar corazones. Con nuestra (casi) obsesión por la sustentabilidad, usamos miel orgánica que viene directamente desde el Delta del Río Paraná, y la agregamos en la etapa de maduración, evitando que se transforme en alcohol, resalte el aroma y el sabor. Its organic, Honey.",
+        "destacado": "Animate a mirar con otros ojos.",
+        "secondaryImage": "/nuestrasbirras/clasicas/honey/honey-secondary.jpg",
+        "altSecondaryImage": "¿Qué decirte de esta hermosura?"
+      },
+      "style": {
+        "background": null,
+        "esquinaIzquierda": "/nuestrasbirras/clasicas/honey/esquina-izquierda-honey.png",
+        "esquinaDerecha": "/nuestrasbirras/clasicas/honey/esquina-derecha-honey.png",
+        "color": "#FCDB00"
+      }
+    },
+
+    {
+      "id": 4,
+      "nombre": "Cósmica Lager",
+      "slug": "cosmica-lager",
+      "url-buy": "url",
+      "categoria": "clasicas",
+      "descripcion": "Se van a sorprender. De turbidez media, con un amargor suave, y a la vez muy fresca y sabrosa. esta juicy (jugosa) Es una single Hop de Galaxy, un lúpulo Australiano increíble, que nos permite ir descubriendo sus sabores a frutas y cítricos. Las lagers están encasilladas como refrescantes y limpias, pero pueden ser mucho más que eso.",
+      "propiedades": {
+        "alcohol": "5%",
+        "ibu": "40",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/clasicas/cosmica/cosmica.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/clasicas/cosmica/cosmica-info.jpg",
+        "bajada": "Un frutado cítrico, un ligero y especiado aroma a trigo. Sabor ácido al inicio, y un toque especiado a cilantro y naranja al final. Un birra de otro planeta.",
+        "destacado": "Una birra para toda la humanidad",
+        "secondaryImage": "/nuestrasbirras/clasicas/cosmica/cosmica-secondary.jpg",
+        "altSecondaryImage": "Birra espacial"
+      },
+      "style": {
+        "background": null,
+        "esquinaIzquierda": "/nuestrasbirras/clasicas/cosmica/esquina-izquierda-cosmica.png",
+        "esquinaDerecha": "/nuestrasbirras/clasicas/cosmica/esquina-derecha-cosmica.png",
+        "color": "#1F9996"
+      }
+    },
+
+    {
+      "id": 5,
+      "nombre": "Indie Golden",
+      "slug": "indie-golden",
+      "url-buy": "url",
+      "categoria": "clasicas",
+      "descripcion": "Cerveza de color dorado, predomina la corteza de pan y cereales, sabor refrescante con muy bajo amargor y de muchisima tomabilidad, imposible no tomar una sola!",
+      "propiedades": {
+        "alcohol": "4,5%",
+        "ibu": "13",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/clasicas/indie-golden/indie-golden.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/clasicas/indie-golden/indie-golden-info.jpg",
+        "bajada": "Refrescante como esa nueva banda emergente que descubriste hace poco. Indie Golden, entradora como tarareo de hit.",
+        "destacado": "Ideal para la primera pinta",
+        "secondaryImage": "/nuestrasbirras/clasicas/indie-golden/indie-golden-secondary.jpg",
+        "altSecondaryImage": "Entradora como tarareo de hit"
+      },
+      "style": {
+        "background": null,
+        "esquinaIzquierda": "/nuestrasbirras/clasicas/indie-golden/esquina-izquierda-indie-golden.png",
+        "esquinaDerecha": "/nuestrasbirras/clasicas/indie-golden/esquina-derecha-indie-golden.png",
+        "color": "#F2A900"
+      }
+    },
+
+    {
+      "id": 6,
+      "nombre": "Black Soul Stout",
+      "slug": "black-soul-stout",
+      "url-buy": "url",
+      "categoria": "clasicas",
+      "descripcion": "Corazón de chocolate y perfume a café. Una birra de color oscuro y buen cuerpo. De amargor moderado y balanceado",
+      "propiedades": {
+        "alcohol": "4,8%",
+        "ibu": "17",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/clasicas/black-soul-stout/black-soul-stout.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/clasicas/black-soul-stout/black-soul-stout-info.jpg",
+        "bajada": null,
+        "destacado": "De color oscuro y buen cuerpo. Corazón de chocolate y perfume a café.",
+        "secondaryImage": null,
+        "altSecondaryImage": null
+      },
+      "style": {
+        "background": "/nuestrasbirras/clasicas/black-soul-stout/bg-black-soul-stout.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 7,
+      "nombre": "Flow Apa",
+      "slug": "flow-apa",
+      "url-buy": "url",
+      "categoria": "clasicas",
+      "descripcion": "Cerveza dorada de bajo amargos y agregado de lúpulos americanos en maduración para aportar notas cítricas a limón y pomelo.",
+      "propiedades": {
+        "alcohol": "5%",
+        "ibu": "30",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/clasicas/flow-apa/flow-apa.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/clasicas/flow-apa/flow-apa-info.jpg",
+        "bajada": "Ligera, de bajo amargor y dorada como el sol que ilumina tu after, hecha con una combinación de lúpulos americanos que unimos para que arranques el verano bien frescx",
+        "destacado": "Cuando la vida te sorprende, seguí el flow",
+        "secondaryImage": "/nuestrasbirras/clasicas/flow-apa/flow-apa-secondary.jpg",
+        "altSecondaryImage": null
+      },
+      "style": {
+        "background": "/nuestrasbirras/clasicas/flow-apa/bg-flow-apa.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 8,
+      "nombre": "Revolution Neipa",
+      "slug": "revolution-neipa",
+      "url-buy": "url",
+      "categoria": "clasicas",
+      "descripcion": "Es una birra muy lupulada, con un aroma más intenso y un sabor más amigable al paladar. Con apariencia turbia, afrutada y sedosa.",
+      "propiedades": {
+        "alcohol": "5,2%",
+        "ibu": "35",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/clasicas/revolution/revolution.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/clasicas/revolution/revolution-info.jpg",
+        "bajada": "Si estabas jugando a la play, guardá la partida porque esta birra llegó para cambiar el juego.",
+        "destacado": "Una re - evolución del lúpulo",
+        "secondaryImage": "/nuestrasbirras/clasicas/revolution/revolution-secondary.jpg",
+        "altSecondaryImage": null
+      },
+      "style": {
+        "background": "/nuestrasbirras/clasicas/revolution/bg-revolution.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 9,
+      "nombre": "Lemon Haze Ipa",
+      "slug": "lemon-haze-ipa",
+      "url-buy": "url",
+      "categoria": "limitadas",
+      "descripcion": "En colaboración con santa planta. Los terpenos de lemon haze se unen a los lúpulos mosaic aportando toda la esencia de esta cepa de cannabis sativa. Con aromas cítricos, almidonados y un marcado skunk, nos trae todos los componentes de este hermoso híbrido. La lemon haze es el resultado del cruce de la lemon skunk y la amnesia haze, una combinación increíble. No contiene thc ni cbd.",
+      "propiedades": {
+        "alcohol": "6%",
+        "ibu": "50",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/santa-planta-lemon-haze-ipa.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/santa-planta-lemon-haze-ipa-info.jpg",
+        "bajada": "Los terpenos de lemon haze se unen a los lúpulos mosaic aportando toda la esencia de esta cepa de cannabis sativa. Con aromas cítricos, almidonados y un marcado skunk, nos trae todos los componentes de este hermoso híbrido. La lemon haze es el resultado del cruce de la lemon skunk y la amnesia haze, una combinación increíble.",
+        "destacado": "Su aroma podría confundirse con el de otras flores.",
+        "secondaryImage": "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/santa-planta-lemon-haze-ipa-secondary.jpg",
+        "altSecondaryImage": "Santa planta"
+      },
+      "style": {
+        "background": "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/bg-santa-planta-lemon-haze-ipa.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 10,
+      "nombre": "Critical Apa",
+      "slug": "critical-apa",
+      "url-buy": "url",
+      "categoria": "limitadas",
+      "descripcion": "Cerveza dorada de bajo amargor, con agregado de lúpulos americanos de notas cítricas a limón y pomelo. Con terpenos critical jack, de carácter cítrico y delicado sabor picante y a madera.",
+      "propiedades": {
+        "alcohol": "5%",
+        "ibu": "30",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/limitadas/santa-planta-critical-apa/santa-planta-critical-apa.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/limitadas/santa-planta-critical-apa/santa-planta-critical-apa-info.jpg",
+        "bajada": "La Critical APA es una cerveza dorada de bajo amargor, ideal para inducir charlas largas y colgadas. Con lúpulos americanos que aportan notas cítricas a limón y pomelo y terpenos Critical Jack, también de carácter cítrico y un delicado sabor picante y a madera. Aunque su aroma puede confundirse con el de otras flores. Nuestra Critical APA no contiene THC ni CBD.",
+        "destacado": "Su aroma podría confundirse con el de otras flores.",
+        "secondaryImage": "/nuestrasbirras/limitadas/santa-planta-critical-apa/santa-planta-critical-apa-secondary.jpg",
+        "altSecondaryImage": "Santa planta"
+      },
+      "style": {
+        "background": "/nuestrasbirras/limitadas/santa-planta-critical-apa/bg-santa-planta-critical-apa.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 11,
+      "nombre": "Kandy Kush Honey",
+      "slug": "kandy-kush-honey",
+      "url-buy": "url",
+      "categoria": "limitadas",
+      "descripcion": "Cerveza rubia, con un amargor bajo, casi nulo y  muchísima tomabilidad, donde se une lo dulce de la miel con el agregado de terpeno Girl Scout Cookies. Ambas combinaciones hacen que la cerveza mantenga el perfil del estilo, agregando notas herbales y cítricas tanto en sabor como en aroma. NO CONTIENE THC NI CBD.",
+      "propiedades": {
+        "alcohol": "6%",
+        "ibu": "50",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/limitadas/santa-planta-kandy-kush-honey/santa-planta-kandy-kush-honey.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/limitadas/santa-planta-kandy-kush-honey/santa-planta-kandy-kush-honey-info.jpg",
+        "bajada": null,
+        "destacado": "Su aroma podría confundirse con el de otras flores.",
+        "secondaryImage": null,
+        "altSecondaryImage": null
+      },
+      "style": {
+        "background": "/nuestrasbirras/limitadas/santa-planta-kandy-kush-honey/bg-santa-planta-kandy-kush-honey.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 12,
+      "nombre": "Infrared Ipa",
+      "slug": "infrared-ipa",
+      "url-buy": "url",
+      "categoria": "limitadas",
+      "descripcion": "Una 'red ipa' donde unimos lo mejor de las maltas caramelo, cuando acerques la copa, en ese primer trago, aparecerán dos lúpulos infalibles como el 'citra y centennial' que suman al dulce de la malta unos aromas y sabores a fruta recíen cosechada.",
+      "propiedades": {
+        "alcohol": "6,5%",
+        "ibu": "50",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/limitadas/infrared-ipa/infrared-ipa.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/limitadas/infrared-ipa/infrared-ipa-info.jpg",
+        "bajada": "A de atrapante, atrevida, atractiva. B de birra. C de cerveza, Cautivante, coqueta. D dulce si te toca, amarga si le toca a otrx. E de efusiva, estilo, espectacular, espuma. F fresca, fantasiosa, friiiiiiia",
+        "destacado": "Dulce si te toca, amarga si le toca a otrx",
+        "secondaryImage": "/nuestrasbirras/limitadas/infrared-ipa/infrared-ipa-secondary.jpg",
+        "altSecondaryImage": "Sassy Sassy"
+      },
+      "style": {
+        "background": "/nuestrasbirras/limitadas/infrared-ipa/bg-infrared-ipa.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 13,
+      "nombre": "Ipanema",
+      "slug": "ipanema",
+      "url-buy": "url",
+      "categoria": "limitadas",
+      "descripcion": "Una ipa turbia con cuerpo, mucho aroma y sedosa que explota de sabores en cada sorbo.",
+      "propiedades": {
+        "alcohol": "5,8%",
+        "ibu": "55",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/limitadas/ipanema/ipanema.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/limitadas/ipanema/ipanema-info.jpg",
+        "bajada": "Una american ipa con pulpa de pomelo rosado. fresca, amarga y bastante osada",
+        "destacado": "Sentir los pies tocando el mar, El ruido de las olas mezclado con buena musiquita, Una birra helada.",
+        "secondaryImage": "/nuestrasbirras/limitadas/ipanema/ipanema-secondary.jpg",
+        "altSecondaryImage": "Sucundum"
+      },
+      "style": {
+        "background": "/nuestrasbirras/limitadas/ipanema/bg-ipanema.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 14,
+      "nombre": "Jammin Imperial Stout",
+      "slug": "jammin-imperial-stout",
+      "url-buy": "url",
+      "categoria": "especiales",
+      "descripcion": "Es distinta: una cerveza con una propuesta transformadora para la rutina diaria con un proceso intenso, que mezcla el café con lo dulce y lo frutal. Una carga de notas de sabor en una sola cerveza. Una imperial stout con una personalidad chill y con un groove totalmente único",
+      "propiedades": {
+        "alcohol": "11,5%",
+        "ibu": "40",
+        "size": "354"
+      },
+      "mainImage": "/nuestrasbirras/especiales/jammin-imperial-stout/jammin-imperial-stout.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/especiales/jammin-imperial-stout/jammin-imperial-stout-info.jpg",
+        "bajada": "Es la distinta y, por ende, la ideal para los distintos. Con un proceso intenso, que mezcla el café, con lo dulce y lo frutal. Una carga de notas de sabor en una sola cerveza, como una gran canción de jazz-fusión. Ideal para los que hacen de la improvisación su fortaleza.",
+        "destacado": "La birra que se disfruta a tu ritmo",
+        "secondaryImage": null,
+        "altSecondaryImage": null
+      },
+      "style": {
+        "background": "/nuestrasbirras/especiales/jammin-imperial-stout/bg-jammin-imperial-stout.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 15,
+      "nombre": "Kung Fu Sour",
+      "slug": "kung-fu-sour",
+      "url-buy": "url",
+      "categoria": "especiales",
+      "descripcion": "En este caso presentamos una cerveza distinta a todas, con una acidez marcada y refrescante, un carácter láctico super limpio que deja brillar los frutos rojos acompañados de un alcohol bajo y una alta tomabilidad",
+      "propiedades": {
+        "alcohol": "4,2%",
+        "ibu": "9",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/especiales/kungfu-sour/kungfu-sour.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/especiales/kungfu-sour/kungfu-sour-info.jpg",
+        "bajada": null,
+        "destacado": "un golpe marcial al paladar, no la vas a ver en el prime time",
+        "secondaryImage": "/nuestrasbirras/especiales/kungfu-sour/kungfu-sour-secondary.jpg",
+        "altSecondaryImage": "カンフー"
+      },
+      "style": {
+        "background": "/nuestrasbirras/especiales/kungfu-sour/bg-kungfu-sour.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 16,
+      "nombre": "Demon Honey",
+      "slug": "demon-honey",
+      "url-buy": "url",
+      "categoria": "especiales",
+      "descripcion": "Una red honey con alta graduación alcohólica. Con aroma a chocolate y caramelo. Con apariencia oscura y turbia",
+      "propiedades": {
+        "alcohol": "7,1%",
+        "ibu": "18",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/especiales/demon-honey/demon-honey.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/especiales/demon-honey/demon-honey-info.jpg",
+        "bajada": "La edición limitada que diseñamos junto a @bhaviboi a partir de un sueño que tuvo. Una honey que es un fuego. Advertencia: va a dejarte tirando UUiUUIUUIIIs",
+        "destacado": "Paradoja enlatada: una fresca que es un fuego.",
+        "secondaryImage": "/nuestrasbirras/especiales/demon-honey/demon-honey-secondary.jpg",
+        "altSecondaryImage": "RED IPA ft. @bhaviboi una honey no tan santa"
+      },
+      "style": {
+        "background": "/nuestrasbirras/especiales/demon-honey/bg-demon-honey.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 17,
+      "nombre": "Milkshake Neipa",
+      "slug": "milkshake-neipa",
+      "url-buy": "url",
+      "categoria": "especiales",
+      "descripcion": "Una birra con aroma tropical y un mix de sabores frutales: durazno, mango, guayaba y coco",
+      "propiedades": {
+        "alcohol": "5,5%",
+        "ibu": "30",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/especiales/milkshake-neipa/milkshake-neipa.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/especiales/milkshake-neipa/milkshake-neipa-info.jpg",
+        "bajada": "La Primabirra se arranca con Milkshake NEIPA, una birra con aroma TROPICAL y un mix de sabores frutales.",
+        "destacado": "Que vaya subiendo la temperatura, que nosotros seguiremos enfriando las birritas.",
+        "secondaryImage": null,
+        "altSecondaryImage": null
+      },
+      "style": {
+        "background": "/nuestrasbirras/especiales/milkshake-neipa/bg-milkshake-neipa.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 18,
+      "nombre": "Wolf Ipa Sin Alcohol",
+      "slug": "wolf-ipa-sin-alcohol",
+      "url-buy": "url",
+      "categoria": "especiales",
+      "descripcion": "Cerveza india pale ale sin alcohol, de color dorada ambarina, inspirada en ipas americanas con un carácter cítrico y herbal característico en aroma y sabor. De amargor muy pronunciado pero equilibrado. El lúpulo en su máxima expresión",
+      "propiedades": {
+        "alcohol": "0,45%",
+        "ibu": "50",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/especiales/wolf-ipa-sa/wolf-ipa-sa.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/especiales/wolf-ipa-sa/wolf-ipa-sa-info.jpg",
+        "bajada": null,
+        "destacado": "Beber sin moderación",
+        "secondaryImage": "/nuestrasbirras/especiales/wolf-ipa-sa/wolf-ipa-sa-secondary.jpg",
+        "altSecondaryImage": "Sin alcohol, sin censura"
+      },
+      "style": {
+        "background": "/nuestrasbirras/especiales/wolf-ipa-sa/bg-wolf-ipa-sa.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 19,
+      "nombre": "Proyecto Alpha 1",
+      "slug": "proyecto-alpha-1",
+      "url-buy": "url",
+      "categoria": "especiales",
+      "descripcion": "El resultado de una wolf ipa madurada en frío y añejada en barricas de roble durante un año, dándole notas de madera, vainilla y un leve amargor",
+      "propiedades": {
+        "alcohol": "5,8%",
+        "ibu": "50",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/especiales/proyecto-alpha-1/proyecto-alpha-1.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/especiales/proyecto-alpha-1/proyecto-alpha-1-info.jpg",
+        "bajada": "Proyecto Alpha, serie I: nuestra primer barrel aged. Es el resultado de nuestra Wolf Ipa añejada durante 12 meses en 50 barricas de roble traídas de Mendoza. La barrica transforma nuestra IPA dándole notas a madera, vainilla y banana.",
+        "destacado": "Para quien sabe esperar. Una birra reposada en barrica.",
+        "secondaryImage": "/nuestrasbirras/especiales/proyecto-alpha-1/proyecto-alpha-1-secondary.jpg",
+        "altSecondaryImage": "Barrel Aged Series"
+      },
+      "style": {
+        "background": "/nuestrasbirras/especiales/proyecto-alpha-1/bg-proyecto-alpha-1.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 20,
+      "nombre": "Proyecto Alpha 2",
+      "slug": "proyecto-alpha-2",
+      "url-buy": "url",
+      "categoria": "especiales",
+      "descripcion": "El resultado de una wolf ipa madurada en frío y añejada en barricas de roble durante un año y medio, dándole notas de madera, vainilla y un leve amargor. A diferencia de alpha i posee un perfil más aromático y en sabor es más ácida debido a la incorporación de brett",
+      "propiedades": {
+        "alcohol": "5,8%",
+        "ibu": "50",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/especiales/proyecto-alpha-2/proyecto-alpha-2.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/especiales/proyecto-alpha-2/proyecto-alpha-2-info.jpg",
+        "bajada": "Para quien sabe esperar, hay birra al final del camino. Después de catorce meses de reposo en barrica de roble francés, nuestra wolf ipa inconfundible sale transformada, distinta y madura, con aroma a vainilla, banana y notas de madera.",
+        "destacado": "Para quien sabe esperar. Una birra reposada en barrica.",
+        "secondaryImage": "/nuestrasbirras/especiales/proyecto-alpha-2/proyecto-alpha-2-secondary.jpg",
+        "altSecondaryImage": "Barrel Aged Series"
+      },
+      "style": {
+        "background": "/nuestrasbirras/especiales/proyecto-alpha-2/bg-proyecto-alpha-2.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 21,
+      "nombre": "Alpha Barrica 1",
+      "slug": "alpha-barrica-1",
+      "url-buy": "url",
+      "categoria": "especiales",
+      "descripcion": "Wolf ipa madurada en frío y añejada en barrica de roble, botella de 710cc esta cerveza se embotella en tamaño mas grande, ya que fue la primer barrica que llenamos y también porque el perfil de madera y vainilla era increíble, ideal para compartir con amigos.",
+      "propiedades": {
+        "alcohol": "5,8%",
+        "ibu": "50",
+        "size": "473"
+      },
+      "mainImage": "/nuestrasbirras/especiales/proyecto-barrica-1/proyecto-barrica-1.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/especiales/proyecto-barrica-1/proyecto-barrica-1-info.jpg",
+        "bajada": null,
+        "destacado": "Para quien sabe esperar. Una birra reposada en barrica.",
+        "secondaryImage": null,
+        "altSecondaryImage": null
+      },
+      "style": {
+        "background": null,
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 22,
+      "nombre": "Alpha Imperial Stout",
+      "slug": "alpha-imperial-stout",
+      "url-buy": "url",
+      "categoria": "especiales",
+      "descripcion": "El papel protagónico se lo llevan las maltas en esta imperial stout con seis meses de maduración en barrica. Con aroma a café, frutos secos y chocolate amargo, textura aterciopelada y sensación de suave tibieza de alcohol. ",
+      "propiedades": {
+        "alcohol": "11,5%",
+        "ibu": "50",
+        "size": "354"
+      },
+      "mainImage": "/nuestrasbirras/especiales/alpha-imperial-stout/alpha-imperial-stout.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/especialesalpha-imperial-stout/alpha-imperial-stout-info.jpg/",
+        "bajada": null,
+        "destacado": "Para quien sabe esperar. Una birra reposada en barrica.",
+        "secondaryImage": "/nuestrasbirras/especiales/alpha-imperial-stout/alpha-imperial-stout-secondary.jpg",
+        "altSecondaryImage": "Barrel Aged Series"
+      },
+      "style": {
+        "background": null,
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    }
+  ]
+}

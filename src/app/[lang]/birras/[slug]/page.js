@@ -12,6 +12,7 @@ import { GothamBook } from '../../layout'
 import { Knockout54UltraBold, Knockout34, Knockout54 } from '../../layout'
 import ScrollHorizontal from '../../../../../components/ScrollHorizontal'
 import Header from '../../../../../components/common/header'
+import CervezasData from '../../../../../data/cervezas.json';
 
 const data = {
     birras: [
@@ -35,9 +36,16 @@ const data = {
       { title: "ALPHA", id: 18, slug: "alpha" },
       { title: "ALPHA II", id: 19, slug: "alpha-ii" }
     ]
-  };
+};
 
 export default function Page({ params }) {
+    const { slug } = params; // Asumiendo que "params" contiene un objeto con la propiedad "slug"
+    const cerveza = CervezasData.Cervezas.find(c => c.slug === slug);
+
+    if (!cerveza) {
+        return <div>Cerveza no encontrada</div>;
+    }
+
     return (
         <>
             <div className="desktop">
@@ -52,7 +60,7 @@ export default function Page({ params }) {
                                             <div className="absolute right-0 bottom-0">
                                                 <div className="relative w-[47.30vh] h-[83vh]">
                                                     <Image
-                                                        src='/nuestrasbirras/clasicas/wolf-ipa.png'
+                                                        src={cerveza.mainImage}
                                                         style={{
                                                             objectFit: 'cover',
                                                         }}
@@ -64,7 +72,7 @@ export default function Page({ params }) {
                                             
                                             <div className="main-content-wrapper">
                                                 <div className="product-title-box">
-                                                    <h1 className={`text-[9.49vh] text-white leading-none uppercase ${Knockout54UltraBold.className}`}>{params.slug}</h1>
+                                                    <h1 className={`text-[9.49vh] text-white leading-none uppercase ${Knockout54UltraBold.className}`}>{cerveza.nombre}</h1>
                                                 </div>
                                                 <div className="callToAction__wrapper flex flex-row gap-x-[10px] pt-[2.97vh]">
                                                     <Link className="text-white border-b-2 border-white hover:bg-white hover:text-[#D51668] hover:border-[#D51668] transition duration-300 ease-in-out flex flex-row items-center py-1 px-2 gap-[6px] text-[10px]" href="/birras">
@@ -82,20 +90,19 @@ export default function Page({ params }) {
                                                 </div>
                                                 <div className="description__wrapper flex flex-col pt-[2.26vh]">
                                                     <p className={`text-white uppercase text-[11px] w-[46.88vh] ${GothamBook.className}`}>
-                                                        Cerveza india pale ale, de color dorada ambarina. inspirada en ipas americanas con un carácter cítrico y herbal característico en aroma y sabor.
-                                                        <br></br><br></br>
-                                                        De amargor muy pronunciado pero equilibrado. El lúpulo en su máxima expresión.
+                                                        {cerveza.descripcion}
                                                     </p>
                                                     <div className="propiedades__wrapper flex flex-row text-[11px  pt-[2.97vh]">
-                                                        <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>ALC. 5,8%</span>
-                                                        <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>IBU 50</span>
-                                                        <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>473 CC.</span>
+                                                        <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>ALC. {cerveza.propiedades.alcohol}</span>
+                                                        <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>IBU {cerveza.propiedades.ibu}</span>
+                                                        <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>{cerveza.propiedades.size} CC.</span>
                                                     </div>
                                                 </div>
+                                                {cerveza.style.esquinaIzquierda && (
                                                 <div className="trama__wrapper absolute bottom-0 left-0">
                                                     <div className="relative w-[600px] h-[200px] z-20">
                                                         <Image 
-                                                            src='/detallebirras/trama-wolf-ipa.png'
+                                                            src={cerveza.style.esquinaIzquierda}
                                                             fill
                                                             style={{
                                                                 objectFit: 'cover',
@@ -104,6 +111,7 @@ export default function Page({ params }) {
                                                         />
                                                     </div>
                                                 </div>
+                                                )}
                                             </div>
                                         </div>
                                     </div>
@@ -111,7 +119,7 @@ export default function Page({ params }) {
                                         <div className="product-box-2">
                                             <div className="relative w-[52.69vh] h-[55.52vh]">
                                                 <Image
-                                                    src='/detallebirras/wolf-ipa/templexpeke-41.jpg'
+                                                    src={cerveza.info.imageInfo}
                                                     style={{
                                                         objectFit: 'cover',
                                                     }}
@@ -121,36 +129,39 @@ export default function Page({ params }) {
                                             </div>
                                             <div className="pt-[2.54vh] pb-[2.54vh]">
                                                 <p className={`text-white text-[1.41vh] uppercase ${GothamBook.className}`}>
-                                                    Con un perfil muy americano, es una IPA que no vas a poder parar de tomar. Cítrica y frutal consecuencia del dry hopping con lúpulo Mosaic, tiene un tremendo balance entre aroma, sabor, amargor y tomabilidad.
+                                                    {cerveza.info.bajada}
                                                 </p>
                                             </div>
                                             <div className="">
-                                                <p className={`text-[#1f9996] leading-[3.39vh] text-[3.39vh] uppercase `}>
-                                                QUIEN NO CONOCE A WOLF IPA, A CUALQUIER IPA LE REZA
+                                                <p className={`leading-[3.39vh] text-[3.39vh] uppercase `} style={{ color: cerveza.style?.color || 'white' }}>
+                                                    {cerveza.info.destacado}
                                                 </p>
                                             </div>
                                         </div>
                                     </div>
                                     <div className="column">
+                                        {cerveza.info.secondaryImage && (
                                         <div className="product-box-3">
                                             <div className="relative w-[34.98vh] h-[69.54vh] mt-[9.91vh] mb-[11.33vh]">
                                                 <Image
-                                                    src='/detallebirras/wolf-ipa/video.png'
-                                                    style={{
-                                                        objectFit: 'cover',
-                                                    }}
-                                                    fill
-                                                    unoptimized={true}
+                                                src={cerveza.info.secondaryImage}
+                                                style={{
+                                                    objectFit: 'cover',
+                                                }}
+                                                fill
+                                                unoptimized={true}
                                                 />
                                             </div>
                                         </div>
+                                        )}
                                     </div>
                                     <div className="column">
                                         <div className="product-box-4 relative h-full">
+                                            {cerveza.style.esquinaDerecha && (
                                             <div className="absolute right-0 top-0">
                                                 <div className="relative w-[35.83vh] h-[16.28vh]">
                                                     <Image
-                                                        src='/detallebirras/trama2.png'
+                                                        src={cerveza.style.esquinaDerecha}
                                                         style={{
                                                             objectFit: 'cover',
                                                         }}
@@ -159,9 +170,10 @@ export default function Page({ params }) {
                                                     />
                                                 </div>
                                             </div>
+                                            )}
                                             <div className="beers-content-wrapper flex flex-col justify-between">
                                                 <div className="title pb-[0.21vh]">
-                                                    <h2 className="text-[5.66vh] text-[#1F9996] uppercase px-[2.40vh]">
+                                                    <h2 className="text-[5.66vh] uppercase px-[2.40vh]" style={{ color: cerveza.style?.color || 'white' }}>
                                                         BIRRAS
                                                     </h2>
                                                 </div>
