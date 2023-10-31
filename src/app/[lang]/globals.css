@@ -413,7 +413,9 @@ body {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  width: 300%; /* 100% por cada columna */
+  grid-column-gap: 0.99vw;
+  grid-row-gap: 0.99vw;
+  width: 188.36vw; /* 100% por cada columna */
 }
 
 .column-especial {
