@@ -490,6 +490,8 @@ body {
   position: relative;
   width: 74.22vh;
   height: 90.79vh;
+  margin-left: 4.53vh;
+  margin-right: 4.53vh;
 }
 
 /* sm */

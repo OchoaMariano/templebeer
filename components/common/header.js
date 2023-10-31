@@ -20,7 +20,7 @@ function Header () {
     }, [isMenuOpen]);
 
   return (
-    <header className="header__temple bg-transparent absolute lg:fixed w-full z-100 top-0">
+    <header className="header__temple bg-transparent absolute lg:fixed w-full z-[100] top-0">
         <div className="header__temple-wrapper">
             <div className="wrapper__logo">
                 <Link href="/">
