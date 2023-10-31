@@ -524,6 +524,91 @@ export default function Home2() {
                         </div>   
                     </ScrollHorizontalMobile>                  
                 </div>
+                <div className="mobile-box-4 flex flex-col">
+                    <div className="flex flex-row  gap-x-[2.56vw]">
+                        <div className="flex justify-end w-[43.58vw] h-[17.69vw]">
+                            <div className="w-[17.43vw] h-[17.69vw] relative">
+                                <Image 
+                                    src="/qrcode.png"
+                                    alt="Temple Beer"
+                                    style={{
+                                    objectFit: 'cover',
+                                    objectPosition: 'center'
+                                    }}
+                                    fill
+                                /> 
+                            </div>
+                        </div>
+                        <div className="column">
+                            <div className="w-[43.58vw] h-[17.69vw] relative">
+                                <Image 
+                                    src="/box-6.png"
+                                    alt="Temple Beer"
+                                    style={{
+                                    objectFit: 'cover',
+                                    objectPosition: 'center'
+                                    }}
+                                    fill
+                                />                     
+                            </div>
+                        </div>
+                    </div>
+                    <div className="flex flex-row gap-x-[2.56vw]">
+                        <div className="column">
+                            <div className="w-[43.58vw] h-[50.51vw] relative">
+                                <Image 
+                                    src="/box-7.png"
+                                    alt="Temple Beer"
+                                    style={{
+                                    objectFit: 'cover',
+                                    objectPosition: 'center'
+                                    }}
+                                    fill
+                                />                     
+                            </div>
+                        </div>
+                        <div className="column">
+                            <div className="w-[43.58vw] h-[50.51vw] relative">
+                                <Image 
+                                    src="/box-8.png"
+                                    alt="Temple Beer"
+                                    style={{
+                                    objectFit: 'cover',
+                                    objectPosition: 'center'
+                                    }}
+                                    fill
+                                />                     
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="mobile-box-5 flex flex-col mt-[5.12vw] mb-[5.12vw]">
+                    <div className="row-1 flex flex-row items-end">
+                        <div className="w-[39.74vw] h-[53.07vw] relative">
+                            <Image 
+                                src="/encuentrosencuentros.png"
+                                style={{
+                                    objectFit: 'contain',
+                                    objectPosition: 'center'
+                                }}
+                                fill
+                            />
+                        </div>
+                        <div className="w-[39.74vw] h-[26.07vw] relative flex items-end mb-[7vw]">
+                            <Image 
+                                src="/frase-mobile.png"
+                                style={{
+                                    objectFit: 'contain',
+                                    objectPosition: 'center'
+                                }}
+                                fill
+                            />
+                        </div>
+                    </div>
+                    <div className="row-2">
+
+                    </div>
+                </div>
             </div>
         </>
       );

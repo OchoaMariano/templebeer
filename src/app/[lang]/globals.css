@@ -412,8 +412,8 @@ body {
   display: flex;
   flex-wrap: nowrap;
   overflow-x: auto;
-  grid-column-gap: 0.99vw;
-  grid-row-gap: 0.99vw;
+  grid-column-gap: 2.56vw;
+  grid-row-gap: 2.56vw;
   width: 188.36vw; /* 100% por cada columna */
 }
 
@@ -423,8 +423,19 @@ body {
   justify-content: flex-start;
 }
 
+.mobile-box-4 {
+  padding-left: 5.12vw;
+  padding-right: 5.12vw;
+  grid-row-gap: 2.56vw;
+}
 
+.mobile-box-5 {
+  grid-row-gap: 5.12vw;
+}
 
+.row-1 {}
+
+.row-2 {}
 
 /* sm */
 @media (min-width: 768px) { 
