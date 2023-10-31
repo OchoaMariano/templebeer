@@ -327,21 +327,6 @@ body {
   margin-right: 18.55vh;
 }
 
-.banner-wrapper {
-  width: 140vh;
-  height: 7.64vh;
-}
-
-.banner-content {
-  display: flex;
-  width: 262.88vh;
-}
-
-.banner {
-  width: 131.44vh;
-  height: 7.64vh;
-}
-
 /* HOME MOBILE */
 .mobile-box-1 {
   padding-left: 5.12vw;
@@ -437,6 +422,21 @@ body {
 
 .row-2 {}
 
+.banner-wrapper {
+  width: 140vh;
+  height: 7.64vh;
+}
+
+.banner-content {
+  display: flex;
+  width: 262.88vh;
+}
+
+.banner {
+  width: 220.25vh;
+  height: 13.84vw;
+}
+
 /* sm */
 @media (min-width: 768px) { 
   .min-height-custom {
@@ -451,6 +451,20 @@ body {
 @media (min-width: 1024px) { 
   .view-section__wrapper__desktop {
     display: block;
+  }
+  .banner-wrapper {
+    width: 140vh;
+    height: 7.64vh;
+  }
+  
+  .banner-content {
+    display: flex;
+    width: 262.88vh;
+  }
+  
+  .banner {
+    width: 131.44vh;
+    height: 7.64vh;
   }
 } 
 

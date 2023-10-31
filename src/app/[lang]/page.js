@@ -582,7 +582,7 @@ export default function Home2() {
                         </div>
                     </div>
                 </div>
-                <div className="mobile-box-5 flex flex-col mt-[5.12vw] mb-[5.12vw]">
+                <div className="mobile-box-5 flex flex-col mt-[5.12vw] mb-[5.12vw] relative">
                     <div className="row-1 flex flex-row items-end">
                         <div className="w-[39.74vw] h-[53.07vw] relative">
                             <Image 
@@ -605,8 +605,53 @@ export default function Home2() {
                             />
                         </div>
                     </div>
-                    <div className="row-2">
-
+                    <div className="row-2 h-[40.25vw] relative">
+                        <div className="banner-wrapper relative overflow-hidden">
+                            <div className="banner-content " style={{ animation: 'moveBanner 10s linear infinite', willChange: 'transform' }}>
+                                <div className="banner" style={{ transformStyle: 'preserve-3d' }}>
+                                    <Image 
+                                        src="/playlists.jpg"
+                                        style={{
+                                            objectFit: 'cover',
+                                            objectPosition: 'center'
+                                        }}
+                                        fill
+                                    />
+                                </div>
+                                <div className="banner" style={{ transformStyle: 'preserve-3d' }}>
+                                    <Image 
+                                        src="/playlists.jpg"
+                                        style={{
+                                            objectFit: 'cover',
+                                            objectPosition: 'center'
+                                        }}
+                                        fill
+                                    />
+                                </div>
+                                
+                            </div>    
+                        </div>
+                        <div className="absolute left-0 -top-[10vw] z-20">
+                            <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                <div className="w-[23.76vw] h-[35.12vw] relative">
+                                    <Image 
+                                        src="/parlante-sticker.png"
+                                        alt="Temple Beer"
+                                        fill 
+                                    />
+                                </div>
+                            </Draggable>
+                        </div>
+                    </div>
+                    <div className="beer-png w-[25.38vw] h-[83.33vw] bottom-[8vw] right-[0vw] absolute">
+                        <Image 
+                            src="/vaso-birra.png"
+                            style={{
+                                objectFit: 'contain',
+                                
+                            }}
+                            fill
+                        />
                     </div>
                 </div>
             </div>
