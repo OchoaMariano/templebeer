@@ -527,17 +527,51 @@ export default function Home2() {
                 </div>
                 <div className="mobile-box-4 flex flex-col">
                     <div className="flex flex-row  gap-x-[2.56vw]">
-                        <div className="flex justify-end w-[43.58vw] h-[17.69vw]">
-                            <div className="w-[17.43vw] h-[17.69vw] relative">
-                                <Image 
-                                    src="/qrcode.png"
-                                    alt="Temple Beer"
-                                    style={{
-                                    objectFit: 'cover',
-                                    objectPosition: 'center'
-                                    }}
-                                    fill
-                                /> 
+                        <div className="flex justify-end w-[43.58vw] h-[17.69vw] relative">
+                            <a href="#" className="flex flex-row group items-end gap-x-[3.33vw]">
+                                <div className="div-block-6 w-[6.66vw] h-[8.46vw] relative group-hover:rotate-90 transition-transform duration-500">
+                                    <Image 
+                                        src="/arrow-qr.svg"
+                                        style={{
+                                            objectFit: 'cover',
+                                            objectPosition: 'center'
+                                        }}
+                                        fill
+                                    />
+                                </div>
+                                <div className="w-[17.43vw] h-[17.69vw] relative">
+                                    <Image 
+                                        src="/qrcode.png"
+                                        alt="Temple Beer"
+                                        style={{
+                                        objectFit: 'cover',
+                                        objectPosition: 'center'
+                                        }}
+                                        fill
+                                    /> 
+                                </div>
+                            </a>
+                            <div className="absolute left-0 -top-[10vw] z-10">
+                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                    <div className="rotate-[-10.5deg] w-[41.28vw] h-[8.20vw] relative">
+                                        <Image 
+                                            src="/sticker-temple-amarrillo.png"
+                                            alt="Temple Beer"
+                                            fill 
+                                        />
+                                    </div>
+                                </Draggable>
+                            </div>
+                            <div className="absolute -right-[10vw] -top-[30vw] z-10">
+                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                    <div className="rotate-[-10.5deg] w-[23.58vw] h-[23.84vw] relative">
+                                        <Image 
+                                            src="/sticker-hand.png"
+                                            alt="Temple Beer"
+                                            fill 
+                                        />
+                                    </div>
+                                </Draggable>
                             </div>
                         </div>
                         <div className="column">
@@ -578,7 +612,29 @@ export default function Home2() {
                                     objectPosition: 'center'
                                     }}
                                     fill
-                                />                     
+                                />
+                                <div className="absolute -left-[10vw] bottom-[20vw] z-10">
+                                    <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                        <div className="rotate-[-10.5deg] w-[22.30vw] h-[22.05vw] relative">
+                                            <Image 
+                                                src="/sticker-musica.png"
+                                                alt="Temple Beer"
+                                                fill 
+                                            />
+                                        </div>
+                                    </Draggable>
+                                </div>
+                                <div className="absolute right-[10vw] bottom-[5vw] z-10">
+                                    <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                        <div className="rotate-[17deg] w-[12.24vw] h-[12.24vw] relative">
+                                            <Image 
+                                                src="/sticker-rosa-tempple.png"
+                                                alt="Temple Beer"
+                                                fill 
+                                            />
+                                        </div>
+                                    </Draggable>
+                                </div>                     
                             </div>
                         </div>
                     </div>
@@ -604,6 +660,18 @@ export default function Home2() {
                                 }}
                                 fill
                             />
+                            <div className="absolute right-[40vw] -top-[20vw] z-10">
+                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                    <div className="rotate-[9deg] w-[37.17vw] h-[7.53vw] relative">
+                                        <Image 
+                                            src="/sticker-temple-verde.png"
+                                            alt="Temple Beer"
+                                            fill 
+                                        />
+                                    </div>
+                                </Draggable>
+                            </div>
+                            
                         </div>
                     </div>
                     <div className="row-2 h-[40.25vw] relative">
@@ -632,7 +700,7 @@ export default function Home2() {
                                 
                             </div>    
                         </div>
-                        <div className="absolute left-0 -top-[10vw] z-20">
+                        <div className="absolute left-[0] -top-[10vw] z-20">
                             <Draggable initialPosition={{ x: 0, y: 0 }}>
                                 <div className="w-[23.76vw] h-[35.12vw] relative">
                                     <Image 

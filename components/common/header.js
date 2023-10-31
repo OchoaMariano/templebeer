@@ -20,11 +20,11 @@ function Header () {
     }, [isMenuOpen]);
 
   return (
-    <header className="header__temple bg-transparent absolute lg:fixed w-full z-50 top-0">
+    <header className="header__temple bg-transparent absolute lg:fixed w-full z-100 top-0">
         <div className="header__temple-wrapper">
             <div className="wrapper__logo">
                 <Link href="/">
-                    <div className="relative w-[31.53vw] h-[5.89vw] lg:w-[18.13vh] lg:h-[4.1vh]">
+                    <div className="relative w-[31.53vw] h-[6.89vw] lg:w-[18.13vh] lg:h-[4.1vh]">
                         <Image
                             src="/logo-templebeer.png"
                             alt="Temple Beer"
@@ -107,7 +107,7 @@ function Header () {
         </div>
         {isMenuOpen && (
         <div className={`menu ${isMenuOpen ? 'menuOpen' : ''}`}>
-            <div className="flex flex-col pr-[5.12vw] pl-[5.12vw] py-[2.43vw]">
+            <div className="flex flex-col pr-[5.12vw] pl-[5.12vw] py-[2.43vw] justify-between h-full">
                 <div className="flex flex-row items-end justify-end">
                     <div className="w-[11.28vw] h-[11.28vw] relative" onClick={toggleMenu}>
                         <Image src='/botones-mobile.png' fill />
@@ -131,38 +131,66 @@ function Header () {
                     </Link>
                 </div>
                 <div className="flex flex-col py-[5.12vw]">
-                    <div className="flex flex-start items-start justify-start gap-x-[1.26vw]">
+                    <div className="flex flex-start items-start justify-start gap-x-[2.52vw] text-white pb-[5.12vw]">
                         <Link href="/legales" className="text-[2.56vw] uppercase"> Legales </Link>
                         <a className="text-[2.56vw] uppercase" href="" target="_blank">Temple Academy</a>
                     </div>
-                </div>
-                <div className="bg-white h-[1px]"></div>
-                <div className="flex flex-row items-center justify-between py-[7.12vw]">
-                    <a href='https://encasa.temple.com.ar/' target='_blank' className='uppercase hover:bg-[#FCDB00] hover:text-black hover:border-[#ffffff] transition duration-300 ease-in-out'>
-                        Shop
-                    </a>
-                    <div className="lang__nav">
-                        <Image
-                            src="/bandera-arg.svg"
-                            alt="Tik-Tok"
-                            width={24}
-                            height={17}
-                        />
-                        <Image
-                            src="/bandera-us.svg"
-                            alt="Tik-Tok"
-                            width={24}
-                            height={17}
-                        />
-                        <Image
-                            src="/bandera-es.svg"
-                            alt="Tik-Tok"
-                            width={24}
-                            height={17}
-                        />
+                    <div className="bg-white h-[1px]"></div>
+                    <div className="flex flex-row items-center justify-between py-[7.12vw]">
+                        <a href='https://encasa.temple.com.ar/' target='_blank' className='text-white uppercase hover:bg-[#FCDB00] hover:text-black hover:border-[#ffffff] transition duration-300 ease-in-out'>
+                            Shop
+                        </a>
+                        <div className="lang__nav">
+                            <Image
+                                src="/bandera-arg.svg"
+                                alt="Tik-Tok"
+                                width={24}
+                                height={17}
+                            />
+                            <Image
+                                src="/bandera-us.svg"
+                                alt="Tik-Tok"
+                                width={24}
+                                height={17}
+                            />
+                            <Image
+                                src="/bandera-es.svg"
+                                alt="Tik-Tok"
+                                width={24}
+                                height={17}
+                            />
+                        </div>
+                        <div className="">
+                            <div className="flex flex-row items-center gap-x-[1.28vw] bg-white bg-opacity-50 py-[1.28vw] px-[1.28vw] rounded-[30px]">
+                                    <div className="relative w-[4.12vw] h-[3.84vw] z-10">
+                                        <Image 
+                                            src="/arrow-footer.png"
+                                            
+                                            fill
+                                        />
+                                    </div>
+                                    <div className="relative w-[4.87vw] h-[4.87vw]">
+                                        <Image 
+                                            src="/instagram-footer.png"
+                                            
+                                            fill
+                                        />
+                                    </div>
+                                    <div className="relative w-[4.35vw] h-[4.87vw]">
+                                        <Image 
+                                            src="/tik-tok-footer.png"
+                                            style={{
+                                                objectFit: 'cover',
+                                                objectPosition: 'center'
+                                            }}
+                                            fill
+                                        />
+                                    </div>
+                            </div>
+                        </div>
                     </div>
-                    <div className=""></div>
                 </div>
+                
             </div>   
         </div>
         )}

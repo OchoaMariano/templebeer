@@ -89,7 +89,7 @@ export default function Draggable({ children, initialPosition }) {
       style={{
         position: 'absolute',
         cursor: isDragging ? 'grabbing' : 'grab',
-        zIndex: 1000,
+        zIndex: 99,
         userSelect: 'none',
         transition: 'transform 0.2s ease',
         touchAction: 'none',
