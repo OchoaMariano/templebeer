@@ -187,7 +187,7 @@ body {
   min-height: 180px;
 }
 
-/* HOME V2 */
+/* HOME DESKTOP */
 .viewport {
   width: 100vw;
   height: 100vh;
@@ -342,6 +342,24 @@ body {
   height: 7.64vh;
 }
 
+/* HOME MOBILE */
+.mobile-box-1 {
+  margin-top: 14.61vw;
+  padding-left: 5.12vw;
+  padding-right: 5.12vw;
+  display: flex;
+  flex-direction: column;
+  grid-column-gap: 0;
+  grid-row-gap: 0.99vw;
+}
+
+.title-wrapper {
+  flex-direction: column;
+  justify-content: center;
+  display: flex;
+  position: relative;
+}
+
 /* PRODUCTS V2 */
 .product-viewport {
   width: 100vw;
@@ -353,6 +371,42 @@ body {
 
 .row-special-gap {
   grid-column-gap: 0.99vh !important;
+}
+
+.mobile-box-2 {
+  padding-left: 5.12vw;
+  padding-right: 5.12vw;
+  display: flex;
+  flex-direction: column;
+  grid-column-gap: 0;
+  grid-row-gap: 0.99vw;
+}
+
+.birras-wrapper-mobile {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.53vw;
+  align-self: stretch;
+}
+
+.column-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  align-self: stretch;
+}
+
+.birras-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.28vw;
+}
+
+.line-separador {
+  padding-left: 5.12vw;
+  padding-right: 5.12vw;
 }
 
 

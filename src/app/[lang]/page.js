@@ -36,7 +36,7 @@ export default function Home2() {
     return (
         <>
             <Header  />
-            <div className="desktop h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
+            <div className="desktop h-screen bg-cover bg-center hidden md:block" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
                 <SmoothScroll>
                     <ScrollHorizontal>
                         <div className="row" data-scroll data-scroll-speed="-.1" data-scroll-offset="0,100%" data-scroll-event-progress="progressEvent">  
@@ -369,6 +369,122 @@ export default function Home2() {
                         </div>
                     </ScrollHorizontal>
                 </SmoothScroll>
+            </div>
+            <div className="mobile h-screen bg-cover bg-center block md:hidden overflow-hidden" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
+                <div className="mobile-box-1">
+                    <div className="beer-wrapper-mobile">
+                        <div className="flex justify-center relative w-[90.51vw] h-[55.89vw]">
+                            <div className="flex items-center justify-center z-10 h-full cursor-pointer transform transition-transform duration-300 hover:scale-110">
+                                <div className="relative w-[29.74vw] h-[41.28vw]">
+                                    <Image 
+                                        src="/birra-wolf-ipa.png"
+                                        alt="Lata de Cerveza"
+                                        fill
+                                    />
+                                </div>  
+                            </div>
+                            <div className="absolute -bottom-10 right-2 mb-4 mr-4 z-10">
+                                <div className="relative w-[21.53vw] h-[20.25vw]">
+                                    <Image
+                                        src="/sticker-isologo.png"
+                                        alt="Sticker"
+                                        fill
+                                    />
+                                </div>
+                            </div>
+                            <Image 
+                                src="/back-main-image.png"
+                                alt="Temple Beer"
+                                fill
+                            />
+                        </div>
+                    </div>
+                    <div className="nav-title-mobile">
+                        <div className="title-wrapper flex relative">
+                            <h1 className={`text-white text-[10.25vw] Knockout54UltraBold elementoEfectoVelocidad ${Knockout54UltraBold.className}`}>
+                                <Link href='/encuentro' className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out">ENCUENTRO</Link> 
+                                <Link href='/birras' className="text-white hover:text-[#D51668] transition duration-300 ease-in-out"> BIRRA </Link>
+                                <Link href='/musica' className="text-white hover:text-[#1F9996] transition duration-300 ease-in-out"> MÚSICA</Link>
+                            </h1>
+                            <div className="absolute right-32 bottom-16">
+                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                    <div className="rotate-[17deg] w-[17.31vw] h-[17.83vw] relative">
+                                        <Image 
+                                            src="/nuestrasbirras/sticker-cerveza.svg"
+                                            alt="Temple Beer"
+                                            fill 
+                                        />
+                                    </div>
+                                </Draggable>
+                            </div>
+                           
+                        </div>
+                    </div>
+                </div>
+                <div className="line-separador mt-[5.12vw] mb-[5.12vw]">
+                    <div className="bg-white w-full h-[1px]"></div>
+                </div>
+                <div className="mobile-box-2">
+                    <div className="birras-wrapper-mobile">
+                        <div className="column-mobile w-[32.56vw] h-[60.25vw]">
+                            <div className="flex flex-col items-end justify-start relative">
+                                <div className="absolute left-[6vw] top-[9vw] z-10">
+                                    <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                        <div className="-rotate-[5deg] w-[22.02vw] h-[4.45vw] relative">
+                                            <Image 
+                                                src="/sticker-temple-rosa.png"
+                                                alt="Temple Beer"
+                                                fill 
+                                            />
+                                        </div>
+                                    </Draggable>
+                                </div>
+                                
+                                <div className="relative w-[32.56vw] h-[23.84vw] rounded-tl-[7.69vw] overflow-hidden">
+                                    <Image 
+                                        src="/header-collage.png"
+                                        alt="Temple Beer"
+                                        style={{
+                                        objectFit: 'cover',
+                                        objectPosition: 'center'
+                                        }}
+                                        fill
+                                    />
+                                </div>
+                                <div className="relative w-[32.56vw] h-[36.41vw]">
+                                <Image 
+                                    src="/art-beer.png"
+                                    alt="Temple Beer"
+                                    style={{
+                                    objectFit: 'cover',
+                                    objectPosition: 'center'
+                                    }}
+                                    fill
+                                />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="column-mobile">
+                            <div className="birras-nav w-[55.64vw] h-[60.25vw]">
+                                <h1 className="leading-[7vw]">
+                                    <Link className={`text-white hover:text-[#D51668] transition duration-300 ease-in-out text-[6.9vw] ${Knockout54.className}`} href="/birras">
+                                        NUESTRAS BIRRAS
+                                    </Link>
+                                </h1>
+                                <nav className="flex flex-wrap self-stretch">
+                                    {data.birras.map((birraObj, index) => (
+                                    <span key={index} className={`text-[2.30vw] py-[0.51vw] px-[1.28vw] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
+                                        <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`/birras/${birraObj.slug}`}>
+                                        {birraObj.title}
+                                        </Link>
+                                    </span>
+                                    ))}
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="mobile-box-3"></div>
             </div>
         </>
       );
