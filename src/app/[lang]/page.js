@@ -114,7 +114,7 @@ export default function Home2() {
                                         <div className="column">
                                             <div className="box-2">
                                                 <div className="flex flex-col items-end justify-start relative">
-                                                    <div className="absolute right-[27vh] top-[7vh] mb-4 mr-4 z-10">
+                                                    <div className="absolute right-[27vh] top-[7vh] mb-4 mr-4 z-30">
                                                       <Draggable initialPosition={{ x: 0, y: 0 }}>
                                                           <div className=" -rotate-[5deg] w-[25.07vh] h-[5.09vh] relative">
                                                               <Image 
@@ -370,7 +370,7 @@ export default function Home2() {
                     </ScrollHorizontal>
                 </SmoothScroll>
             </div>
-            <div className="mobile h-screen bg-cover bg-center block md:hidden overflow-hidden" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
+            <div className="mobile bg-cover bg-center block md:hidden overflow-hidden" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
                 <div className="mobile-box-1">
                     <div className="beer-wrapper-mobile">
                         <div className="flex justify-center relative w-[90.51vw] h-[55.89vw]">
@@ -484,7 +484,9 @@ export default function Home2() {
                         </div>
                     </div>
                 </div>
-                <div className="mobile-box-3"></div>
+                <div className="mobile-box-3 ">
+
+                </div>
             </div>
         </>
       );

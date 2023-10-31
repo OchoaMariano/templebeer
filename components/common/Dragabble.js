@@ -14,41 +14,72 @@ export default function Draggable({ children, initialPosition }) {
     }
   }, [position]);
 
-  const handleMouseDown = (e) => {
+  const startDrag = (x, y) => {
     setIsDragging(true);
     setOffset({
-      x: e.clientX - position.x,
-      y: e.clientY - position.y,
+      x: x - position.x,
+      y: y - position.y,
     });
-    e.preventDefault();
     ref.current.style.transition = 'none';
   };
 
-  const handleMouseMove = (e) => {
+  const handleMouseDown = (e) => {
+    startDrag(e.clientX, e.clientY);
+    e.preventDefault();
+  };
+
+  const handleTouchStart = (e) => {
+    const touch = e.touches[0];
+    startDrag(touch.clientX, touch.clientY);
+    e.preventDefault();
+  };
+
+  const doDrag = (x, y) => {
     if (isDragging) {
-      const x = e.clientX - offset.x;
-      const y = e.clientY - offset.y;
-      setPosition({ x, y });
+      setPosition({ x: x - offset.x, y: y - offset.y });
     }
   };
 
-  const handleMouseUp = () => {
+  const handleMouseMove = (e) => {
+    doDrag(e.clientX, e.clientY);
+  };
+
+  const handleTouchMove = (e) => {
+    const touch = e.touches[0];
+    doDrag(touch.clientX, touch.clientY);
+  };
+
+  const stopDrag = () => {
     setIsDragging(false);
     ref.current.style.transition = 'transform 0.2s ease';
+  };
+
+  const handleMouseUp = () => {
+    stopDrag();
+  };
+
+  const handleTouchEnd = () => {
+    stopDrag();
   };
 
   useEffect(() => {
     if (isDragging) {
       document.addEventListener('mousemove', handleMouseMove);
       document.addEventListener('mouseup', handleMouseUp);
+      document.addEventListener('touchmove', handleTouchMove, { passive: false });
+      document.addEventListener('touchend', handleTouchEnd, { passive: false });
     } else {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('touchmove', handleTouchMove, { passive: false });
+      document.removeEventListener('touchend', handleTouchEnd, { passive: false });
     }
 
     return () => {
       document.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('touchmove', handleTouchMove, { passive: false });
+      document.removeEventListener('touchend', handleTouchEnd, { passive: false });
     };
   }, [isDragging, offset]);
 
@@ -63,9 +94,9 @@ export default function Draggable({ children, initialPosition }) {
         transition: 'transform 0.2s ease',
       }}
       onMouseDown={handleMouseDown}
+      onTouchStart={handleTouchStart}
     >
       {children}
     </div>
   );
 }
-
