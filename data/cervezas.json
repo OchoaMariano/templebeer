@@ -161,9 +161,10 @@
         "altSecondaryImage": null
       },
       "style": {
-        "background": "/nuestrasbirras/clasicas/black-soul-stout/bg-black-soul-stout.png",
+        "background": "/nuestrasbirras/clasicas/black-soul-stout/bg-black-soul-stout.jpg",
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#FFFFFF"
       }
     },
 
@@ -188,9 +189,10 @@
         "altSecondaryImage": null
       },
       "style": {
-        "background": "/nuestrasbirras/clasicas/flow-apa/bg-flow-apa.png",
+        "background": "/nuestrasbirras/clasicas/flow-apa/bg-flow-apa.jpg",
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#FCDB00"
       }
     },
 
@@ -215,9 +217,10 @@
         "altSecondaryImage": null
       },
       "style": {
-        "background": "/nuestrasbirras/clasicas/revolution/bg-revolution.png",
+        "background": "/nuestrasbirras/clasicas/revolution/bg-revolution.jpg",
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#FFFFFF"
       }
     },
 
@@ -242,9 +245,10 @@
         "altSecondaryImage": "Santa planta"
       },
       "style": {
-        "background": "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/bg-santa-planta-lemon-haze-ipa.png",
+        "background": "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/bg-santa-planta-lemon-haze-ipa.jpg",
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#D41768"
       }
     },
 
@@ -269,9 +273,10 @@
         "altSecondaryImage": "Santa planta"
       },
       "style": {
-        "background": "/nuestrasbirras/limitadas/santa-planta-critical-apa/bg-santa-planta-critical-apa.png",
+        "background": "/nuestrasbirras/limitadas/santa-planta-critical-apa/bg-santa-planta-critical-apa.jpg",
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#9BE31A"
       }
     },
 
@@ -296,9 +301,10 @@
         "altSecondaryImage": null
       },
       "style": {
-        "background": "/nuestrasbirras/limitadas/santa-planta-kandy-kush-honey/bg-santa-planta-kandy-kush-honey.png",
+        "background": "/nuestrasbirras/limitadas/santa-planta-kandy-kush-honey/bg-santa-planta-kandy-kush-honey.jpg",
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#FCDB00"
       }
     },
 
@@ -323,9 +329,10 @@
         "altSecondaryImage": "Sassy Sassy"
       },
       "style": {
-        "background": "/nuestrasbirras/limitadas/infrared-ipa/bg-infrared-ipa.png",
+        "background": "/nuestrasbirras/limitadas/infrared-ipa/bg-infrared-ipa.jpg",
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#FFFFFF"
       }
     },
 
@@ -350,9 +357,10 @@
         "altSecondaryImage": "Sucundum"
       },
       "style": {
-        "background": "/nuestrasbirras/limitadas/ipanema/bg-ipanema.png",
+        "background": "/nuestrasbirras/limitadas/ipanema/bg-ipanema.jpg",
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#FFFFFF"
       }
     },
 
@@ -377,9 +385,10 @@
         "altSecondaryImage": null
       },
       "style": {
-        "background": "/nuestrasbirras/especiales/jammin-imperial-stout/bg-jammin-imperial-stout.png",
+        "background": "/nuestrasbirras/especiales/jammin-imperial-stout/bg-jammin-imperial-stout.jpg",
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#FFFFFF"
       }
     },
 
@@ -404,9 +413,10 @@
         "altSecondaryImage": "カンフー"
       },
       "style": {
-        "background": "/nuestrasbirras/especiales/kungfu-sour/bg-kungfu-sour.png",
+        "background": "/nuestrasbirras/especiales/kungfu-sour/bg-kungfu-sour.jpg",
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#FFFFFF"
       }
     },
 
@@ -431,9 +441,10 @@
         "altSecondaryImage": "RED IPA ft. @bhaviboi una honey no tan santa"
       },
       "style": {
-        "background": "/nuestrasbirras/especiales/demon-honey/bg-demon-honey.png",
+        "background": "/nuestrasbirras/especiales/demon-honey/bg-demon-honey.jpg",
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#FFFFFF"
       }
     },
 
@@ -458,9 +469,10 @@
         "altSecondaryImage": null
       },
       "style": {
-        "background": "/nuestrasbirras/especiales/milkshake-neipa/bg-milkshake-neipa.png",
+        "background": "/nuestrasbirras/especiales/milkshake-neipa/bg-milkshake-neipa.jpg",
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#FFFFFF"
       }
     },
 
@@ -485,9 +497,10 @@
         "altSecondaryImage": "Sin alcohol, sin censura"
       },
       "style": {
-        "background": "/nuestrasbirras/especiales/wolf-ipa-sa/bg-wolf-ipa-sa.png",
+        "background": "/nuestrasbirras/especiales/wolf-ipa-sa/bg-wolf-ipa-sa.jpg",
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#00837B"
       }
     },
 
@@ -512,9 +525,10 @@
         "altSecondaryImage": "Barrel Aged Series"
       },
       "style": {
-        "background": "/nuestrasbirras/especiales/proyecto-alpha-1/bg-proyecto-alpha-1.png",
+        "background": "/nuestrasbirras/especiales/proyecto-alpha-1/bg-proyecto-alpha-1.jpg",
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#FFFFFF"
       }
     },
 
@@ -539,9 +553,10 @@
         "altSecondaryImage": "Barrel Aged Series"
       },
       "style": {
-        "background": "/nuestrasbirras/especiales/proyecto-alpha-2/bg-proyecto-alpha-2.png",
+        "background": "/nuestrasbirras/especiales/proyecto-alpha-2/bg-proyecto-alpha-2.jpg",
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#FFFFFF"
       }
     },
 
@@ -568,7 +583,8 @@
       "style": {
         "background": null,
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#FFFFFF"
       }
     },
 
@@ -586,7 +602,7 @@
       },
       "mainImage": "/nuestrasbirras/especiales/alpha-imperial-stout/alpha-imperial-stout.png",
       "info": {
-        "imageInfo": "/nuestrasbirras/especialesalpha-imperial-stout/alpha-imperial-stout-info.jpg/",
+        "imageInfo": "/nuestrasbirras/especiales/alpha-imperial-stout/alpha-imperial-stout-info.jpg",
         "bajada": null,
         "destacado": "Para quien sabe esperar. Una birra reposada en barrica.",
         "secondaryImage": "/nuestrasbirras/especiales/alpha-imperial-stout/alpha-imperial-stout-secondary.jpg",
@@ -595,7 +611,8 @@
       "style": {
         "background": null,
         "esquinaIzquierda": null,
-        "esquinaDerecha": null
+        "esquinaDerecha": null,
+        "color": "#FFFFFF"
       }
     }
   ]

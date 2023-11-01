@@ -50,7 +50,7 @@ export default function Page({ params }) {
         <>
             <div className="desktop">
                 <Header  />
-                <section className="h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
+                <section className="h-screen bg-cover bg-center" style={{ backgroundImage: cerveza.style?.background ? `url(${cerveza.style.background})` : 'url(/background-home.jpeg)' }}>
                     <div className="product-viewport">
                         <div className="page_product_wrapper relative h-full">
                             <ScrollHorizontal>
@@ -75,12 +75,20 @@ export default function Page({ params }) {
                                                     <h1 className={`text-[9.49vh] text-white leading-none uppercase ${Knockout54UltraBold.className}`}>{cerveza.nombre}</h1>
                                                 </div>
                                                 <div className="callToAction__wrapper flex flex-row gap-x-[10px] pt-[2.97vh]">
-                                                    <Link className="text-white border-b-2 border-white hover:bg-white hover:text-[#D51668] hover:border-[#D51668] transition duration-300 ease-in-out flex flex-row items-center py-1 px-2 gap-[6px] text-[10px]" href="/birras">
+                                                    <Link className="text-white border-b-2 border-white hover:bg-white hover:text-[#D51668] hover:border-[#D51668] transition duration-300 ease-in-out flex flex-row items-center py-1 px-2 gap-[6px] text-[10px] group" href="/birras">
                                                         <Image 
                                                             src='/detallebirras/btn-arrow.png'
+                                                            
                                                             width={16}
                                                             height={17}
-                                                            className="hover:-rotate-45"
+                                                            className="group-hover:hidden"
+                                                        />
+                                                        <Image 
+                                                            src='/arrow-hover.png'
+                                                            
+                                                            width={16}
+                                                            height={17}
+                                                            className="hidden group-hover:block group-hover:-rotate-30"
                                                         />
                                                         BIRRAS
                                                     </Link>
