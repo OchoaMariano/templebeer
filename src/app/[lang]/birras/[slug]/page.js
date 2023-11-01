@@ -107,18 +107,18 @@ export default function Page({ params }) {
                                                     </div>
                                                 </div>
                                                 {cerveza.style.esquinaIzquierda && (
-                                                <div className="trama__wrapper absolute bottom-0 left-0">
-                                                    <div className="relative w-[600px] h-[200px] z-20">
-                                                        <Image 
-                                                            src={cerveza.style.esquinaIzquierda}
-                                                            fill
-                                                            style={{
-                                                                objectFit: 'cover',
-                                                            }}
-                                                            unoptimized={true}
-                                                        />
+                                                    <div className="trama__wrapper absolute bottom-0 left-0">
+                                                        <div className="relative w-[600px] h-[200px] z-20">
+                                                            <Image 
+                                                                src={cerveza.style.esquinaIzquierda}
+                                                                fill
+                                                                style={{
+                                                                    objectFit: 'cover',
+                                                                }}
+                                                                unoptimized={true}
+                                                            />
+                                                        </div>
                                                     </div>
-                                                </div>
                                                 )}
                                             </div>
                                         </div>

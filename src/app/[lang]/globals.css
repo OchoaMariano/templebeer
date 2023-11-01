@@ -535,7 +535,6 @@ body {
     justify-content: space-between;
     align-items: center;
     flex-shrink: 0;
-    box-shadow: 0px 4px 32px 9px rgba(0, 0, 0, 0.10);
   }
 
   .wrapper__logo {
