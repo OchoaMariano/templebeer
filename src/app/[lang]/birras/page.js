@@ -21,7 +21,7 @@ export default function Page({ children }) {
                                 Nuestras <br></br>Birras
                             </h1>
                             <div className="sticker__wrapper relative">
-                                <div className="absolute right-[20vw] top-[20vw] lg:-right-[10vh] lg:top-0 z-10">
+                                <div className="absolute right-[18vw] top-[15vw] lg:-right-[10vh] lg:top-0 z-10">
                                     <Draggable initialPosition={{ x: 0, y: 0 }}>
                                         <div className="rotate-[17deg] w-[13.84vw] h-[33.84vw] lg:w-[10.48vh] lg:h-[25.49vh] relative">
                                             <Image 

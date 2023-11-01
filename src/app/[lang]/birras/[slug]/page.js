@@ -11,7 +11,8 @@ import Image from 'next/image';
 import { GothamBook } from '../../layout'
 import { Knockout54UltraBold, Knockout34, Knockout54 } from '../../layout'
 import ScrollHorizontal from '../../../../../components/ScrollHorizontal'
-import Header from '../../../../../components/common/header'
+import Header from '../../../../../components/common/header';
+import Footer from '../../../../../components/common/Footer';
 import CervezasData from '../../../../../data/cervezas.json';
 
 const data = {
@@ -48,7 +49,7 @@ export default function Page({ params }) {
 
     return (
         <>
-            <div className="desktop">
+            <div className="desktop hidden lg:block">
                 <Header  />
                 <section className="h-screen bg-cover bg-center" style={{ backgroundImage: cerveza.style?.background ? `url(${cerveza.style.background})` : 'url(/background-home.jpeg)' }}>
                     <div className="product-viewport">
@@ -132,7 +133,6 @@ export default function Page({ params }) {
                                                         objectFit: 'cover',
                                                     }}
                                                     fill
-                                                    unoptimized={true}
                                                 />
                                             </div>
                                             <div className="pt-[2.54vh] pb-[2.54vh]">
@@ -157,7 +157,7 @@ export default function Page({ params }) {
                                                     objectFit: 'cover',
                                                 }}
                                                 fill
-                                                unoptimized={true}
+                                                
                                                 />
                                             </div>
                                         </div>
@@ -302,6 +302,224 @@ export default function Page({ params }) {
                         </div>
                     </div>
                 </section>
+            </div>
+            <div className="mobile lg:hidden">
+                <Header  />
+                <section className="bg-cover bg-center pt-[20vw]" style={{ backgroundImage: cerveza.style?.background ? `url(${cerveza.style.background})` : 'url(/background-home.jpeg)' }}>
+                    <div className="product-box-1-mobile">
+                        <div className="product-title-box-mobile">
+                            <h1 className={`text-[12.05vw] text-white leading-none uppercase ${Knockout54UltraBold.className}`}>
+                                {cerveza.nombre}
+                            </h1>
+                        </div>
+                        <div className="callToAction__wrapper flex flex-row gap-x-[10px] pt-[3.84vw]">
+                            <Link className="text-white border-b-2 border-white hover:bg-white hover:text-[#D51668] hover:border-[#D51668] transition duration-300 ease-in-out flex flex-row items-center py-1 px-2 gap-[6px] text-[10px] group" href="/birras">
+                                <Image 
+                                    src='/detallebirras/btn-arrow.png'
+                                    
+                                    width={16}
+                                    height={17}
+                                    className="group-hover:hidden"
+                                />
+                                <Image 
+                                    src='/arrow-hover.png'
+                                    
+                                    width={16}
+                                    height={17}
+                                    className="hidden group-hover:block group-hover:-rotate-30"
+                                />
+                                BIRRAS
+                            </Link>
+                            <Link className="text-black bg-white hover:text-[#ffffff] hover:bg-[#D51668] transition duration-300 ease-in-out py-1 px-2 text-[10px] flex items-center" href="/birras">
+                                COMPRAR
+                            </Link>
+                        </div>
+                        <div className="description__wrapper flex flex-col">
+                            <p className={`text-white uppercase text-[2.82vw] ${GothamBook.className}`}>
+                                {cerveza.descripcion}
+                            </p>
+                            <div className="propiedades__wrapper flex flex-row text-[2.82vw] pt-[3.84vw]">
+                                <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>ALC. {cerveza.propiedades.alcohol}</span>
+                                <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>IBU {cerveza.propiedades.ibu}</span>
+                                <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>{cerveza.propiedades.size} CC.</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="product-box-2-mobile">
+                        <div className="flex justify-center w-[100vw] h-[122.56vw]">
+                            <div className="relative w-[57.94vw] h-[122.56vw]">
+                                <Image
+                                    src={cerveza.mainImage}
+                                    style={{
+                                        objectFit: 'cover',
+                                    }}
+                                    fill
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <div className="product-box-3-mobile w-[100vw] h-[75.64vw] relative mb-[4.61vw]">
+                        <Image
+                            src={cerveza.info.imageInfo}
+                            style={{
+                                objectFit: 'cover',
+                            }}
+                            fill
+                        />
+                    </div>
+                    <div className="product-box-4-mobile mb-[4.61vw]">
+                        <div className="text-box flex flex-col gap-y-[4.61vw] px-[5.12vw]">
+                            <p className={`text-white text-[3.33vw] uppercase ${GothamBook.className}`}>
+                                {cerveza.info.bajada}
+                            </p>
+                            <p className={`leading-[6.41vw] text-[6.41vw] uppercase `} style={{ color: cerveza.style?.color || 'white' }}>
+                                {cerveza.info.destacado}
+                            </p>
+                        </div>
+                    </div>
+                    <div className="product-box-5-mobile mb-[4.61vw]">
+                        <div className="secondary-image-box flex flex-col gap-y-[4.61vw] px-[5.12vw]">
+                            <p className={`text-[#D41768] text-right text-[3.33vw] uppercase ${Knockout54.className}`}>
+                                {cerveza.info.altSecondaryImage}
+                            </p>
+                            {cerveza.info.secondaryImage && (         
+                                <div className="relative w-[89.74vw] h-[125.89vw]">
+                                    <Image
+                                    src={cerveza.info.secondaryImage}
+                                    style={{
+                                        objectFit: 'cover',
+                                    }}
+                                    fill
+                                    
+                                    />
+                                </div>
+                            )}
+                            
+                        </div>
+                    </div>
+                    <div className="product-box-6-mobile">
+                        <div className="relative h-full">
+                            <div className="beers-content-wrapper flex flex-col justify-between">
+                                <div className="title">
+                                    <h2 className="text-[10.25vw] uppercase" style={{ color: cerveza.style?.color || 'white' }}>
+                                        BIRRAS
+                                    </h2>
+                                </div>
+                                <div className="beer-grid grid grid-cols-4 grid-rows-2">
+                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
+                                        <div className="relative w-[22.30vw] h-[39.74vw]">
+                                            <Image
+                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
+                                                style={{
+                                                    objectFit: 'cover',
+                                                }}
+                                                fill
+                                                
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
+                                        <div className="relative w-[22.30vw] h-[39.74vw]">
+                                            <Image
+                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
+                                                style={{
+                                                    objectFit: 'cover',
+                                                }}
+                                                fill
+                                                
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
+                                        <div className="relative w-[22.30vw] h-[39.74vw]">
+                                            <Image
+                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
+                                                style={{
+                                                    objectFit: 'cover',
+                                                }}
+                                                fill
+                                                
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
+                                        <div className="relative w-[22.30vw] h-[39.74vw]">
+                                            <Image
+                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
+                                                style={{
+                                                    objectFit: 'cover',
+                                                }}
+                                                fill
+                                                
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
+                                        <div className="relative w-[22.30vw] h-[39.74vw]">
+                                            <Image
+                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
+                                                style={{
+                                                    objectFit: 'cover',
+                                                }}
+                                                fill
+                                                
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
+                                        <div className="relative w-[22.30vw] h-[39.74vw]">
+                                            <Image
+                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
+                                                style={{
+                                                    objectFit: 'cover',
+                                                }}
+                                                fill
+                                                
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
+                                        <div className="relative w-[22.30vw] h-[39.74vw]">
+                                            <Image
+                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
+                                                style={{
+                                                    objectFit: 'cover',
+                                                }}
+                                                fill
+                                                
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
+                                        <div className="relative w-[22.30vw] h-[39.74vw]">
+                                            <Image
+                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
+                                                style={{
+                                                    objectFit: 'cover',
+                                                }}
+                                                fill
+                                                
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="beer-nav">
+                                    <nav className="flex flex-wrap self-stretch gap-y-[2px]">
+                                        {data.birras.map((birraObj, index) => (
+                                        <span key={index} className={`py-[2px] px-[5px] text-[2.30vw] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
+                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`/birras/${birraObj.slug}`}>
+                                            {birraObj.title}
+                                            </Link>
+                                        </span>
+                                        ))}
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <Footer />
+                </section>
+                
             </div>
         </>
     );
