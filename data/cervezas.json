@@ -25,9 +25,11 @@
         "esquinaIzquierda": "/nuestrasbirras/clasicas/wolf-ipa/esquina-izquierda-wolf-ipa.png",
         "esquinaDerecha": "/nuestrasbirras/clasicas/wolf-ipa/esquina-derecha-wolf-ipa.png",
         "color": "#1F9996"
-      }
+      },
+      "gridClasicas": true,
+      "gridLimitadas": null,
+      "gridEspeciales": null
     },
-
     {
       "id": 2,
       "nombre": "Royal Scotish",
@@ -53,9 +55,11 @@
         "esquinaIzquierda": "/nuestrasbirras/clasicas/scotish/esquina-izquierda-scotish.png",
         "esquinaDerecha": "/nuestrasbirras/clasicas/scotish/esquina-derecha-scotish.png",
         "color": "#D41768"
-      }
+      },
+      "gridClasicas": true,
+      "gridLimitadas": null,
+      "gridEspeciales": null
     },
-
     {
       "id": 3,
       "nombre": "Honey",
@@ -81,9 +85,11 @@
         "esquinaIzquierda": "/nuestrasbirras/clasicas/honey/esquina-izquierda-honey.png",
         "esquinaDerecha": "/nuestrasbirras/clasicas/honey/esquina-derecha-honey.png",
         "color": "#FCDB00"
-      }
+      },
+      "gridClasicas": true,
+      "gridLimitadas": null,
+      "gridEspeciales": null
     },
-
     {
       "id": 4,
       "nombre": "Cósmica Lager",
@@ -109,9 +115,11 @@
         "esquinaIzquierda": "/nuestrasbirras/clasicas/cosmica/esquina-izquierda-cosmica.png",
         "esquinaDerecha": "/nuestrasbirras/clasicas/cosmica/esquina-derecha-cosmica.png",
         "color": "#1F9996"
-      }
+      },
+      "gridClasicas": true,
+      "gridLimitadas": null,
+      "gridEspeciales": null
     },
-
     {
       "id": 5,
       "nombre": "Indie Golden",
@@ -137,9 +145,11 @@
         "esquinaIzquierda": "/nuestrasbirras/clasicas/indie-golden/esquina-izquierda-indie-golden.png",
         "esquinaDerecha": "/nuestrasbirras/clasicas/indie-golden/esquina-derecha-indie-golden.png",
         "color": "#F2A900"
-      }
+      },
+      "gridClasicas": true,
+      "gridLimitadas": null,
+      "gridEspeciales": null
     },
-
     {
       "id": 6,
       "nombre": "Black Soul Stout",
@@ -165,9 +175,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#FFFFFF"
-      }
+      },
+      "gridClasicas": true,
+      "gridLimitadas": null,
+      "gridEspeciales": null
     },
-
     {
       "id": 7,
       "nombre": "Flow Apa",
@@ -193,9 +205,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#FCDB00"
-      }
+      },
+      "gridClasicas": true,
+      "gridLimitadas": null,
+      "gridEspeciales": null
     },
-
     {
       "id": 8,
       "nombre": "Revolution Neipa",
@@ -221,9 +235,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#FFFFFF"
-      }
+      },
+      "gridClasicas": true,
+      "gridLimitadas": null,
+      "gridEspeciales": null
     },
-
     {
       "id": 9,
       "nombre": "Lemon Haze Ipa",
@@ -249,9 +265,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#D41768"
-      }
+      },
+      "gridClasicas": null,
+      "gridLimitadas": true,
+      "gridEspeciales": null
     },
-
     {
       "id": 10,
       "nombre": "Critical Apa",
@@ -277,9 +295,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#9BE31A"
-      }
+      },
+      "gridClasicas": null,
+      "gridLimitadas": true,
+      "gridEspeciales": null
     },
-
     {
       "id": 11,
       "nombre": "Kandy Kush Honey",
@@ -305,9 +325,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#FCDB00"
-      }
+      },
+      "gridClasicas": null,
+      "gridLimitadas": true,
+      "gridEspeciales": null
     },
-
     {
       "id": 12,
       "nombre": "Infrared Ipa",
@@ -333,9 +355,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#FFFFFF"
-      }
+      },
+      "gridClasicas": null,
+      "gridLimitadas": true,
+      "gridEspeciales": null
     },
-
     {
       "id": 13,
       "nombre": "Ipanema",
@@ -361,9 +385,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#FFFFFF"
-      }
+      },
+      "gridClasicas": null,
+      "gridLimitadas": true,
+      "gridEspeciales": null
     },
-
     {
       "id": 14,
       "nombre": "Jammin Imperial Stout",
@@ -389,9 +415,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#FFFFFF"
-      }
+      },
+      "gridClasicas": null,
+      "gridLimitadas": true,
+      "gridEspeciales": null
     },
-
     {
       "id": 15,
       "nombre": "Kung Fu Sour",
@@ -417,9 +445,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#FFFFFF"
-      }
+      },
+      "gridClasicas": null,
+      "gridLimitadas": null,
+      "gridEspeciales": true
     },
-
     {
       "id": 16,
       "nombre": "Demon Honey",
@@ -445,9 +475,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#FFFFFF"
-      }
+      },
+      "gridClasicas": null,
+      "gridLimitadas": null,
+      "gridEspeciales": true
     },
-
     {
       "id": 17,
       "nombre": "Milkshake Neipa",
@@ -473,9 +505,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#FFFFFF"
-      }
+      },
+      "gridClasicas": null,
+      "gridLimitadas": null,
+      "gridEspeciales": true
     },
-
     {
       "id": 18,
       "nombre": "Wolf Ipa Sin Alcohol",
@@ -501,9 +535,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#00837B"
-      }
+      },
+      "gridClasicas": null,
+      "gridLimitadas": null,
+      "gridEspeciales": true
     },
-
     {
       "id": 19,
       "nombre": "Proyecto Alpha 1",
@@ -529,9 +565,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#FFFFFF"
-      }
+      },
+      "gridClasicas": null,
+      "gridLimitadas": null,
+      "gridEspeciales": true
     },
-
     {
       "id": 20,
       "nombre": "Proyecto Alpha 2",
@@ -557,9 +595,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#FFFFFF"
-      }
+      },
+      "gridClasicas": null,
+      "gridLimitadas": null,
+      "gridEspeciales": true
     },
-
     {
       "id": 21,
       "nombre": "Alpha Barrica 1",
@@ -585,9 +625,11 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#FFFFFF"
-      }
+      },
+      "gridClasicas": null,
+      "gridLimitadas": null,
+      "gridEspeciales": true
     },
-
     {
       "id": 22,
       "nombre": "Alpha Imperial Stout",
@@ -613,7 +655,10 @@
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
         "color": "#FFFFFF"
-      }
+      },
+      "gridClasicas": null,
+      "gridLimitadas": null,
+      "gridEspeciales": true
     }
   ]
 }

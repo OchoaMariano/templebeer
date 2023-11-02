@@ -18,24 +18,57 @@ import CervezasData from '../../../../../data/cervezas.json';
 const data = {
     birras: [
       { title: "WOLF IPA", id: 1, slug: "wolf-ipa" },
-      { title: "ROYAL SCOTTISH", id: 2, slug: "royal-scottish" },
-      { title: "CÓSMICA HOPPY LAGER", id: 3, slug: "csmica-hoppy-lager" },
-      { title: "HONEY", id: 4, slug: "honey" },
+      { title: "ROYAL SCOTTISH", id: 2, slug: "royal-scotish" },
+      { title: "HONEY", id: 3, slug: "honey" },
+      { title: "CÓSMICA HOPPY LAGER", id: 4, slug: "cosmica-lager" },
       { title: "INDIE GOLDEN", id: 5, slug: "indie-golden" },
       { title: "BLACK SOUL STOUT", id: 6, slug: "black-soul-stout" },
       { title: "FLOW APA", id: 7, slug: "flow-apa" },
       { title: "REVOLUTION NEIPA", id: 8, slug: "revolution-neipa" },
       { title: "LEMON HAZE IPA", id: 9, slug: "lemon-haze-ipa" },
       { title: "CRITICAL APA", id: 10, slug: "critical-apa" },
-      { title: "KAN", id: 11, slug: "kan" },
-      { title: "JAMMIN IMPERIAL STOUT", id: 12, slug: "jammin-imperial-stout" },
-      { title: "IPANEMA HAZY IPA", id: 13, slug: "ipanema-hazy-ipa" },
-      { title: "KUNG FU SOUR", id: 14, slug: "kung-fu-sour" },
-      { title: "DEMON HONEY", id: 15, slug: "demon-honey" },
-      { title: "MILKSHAKE NEIPA", id: 16, slug: "milkshake-neipa" },
-      { title: "WOLF IPA 0%", id: 17, slug: "wolf-ipa-0" },
-      { title: "ALPHA", id: 18, slug: "alpha" },
-      { title: "ALPHA II", id: 19, slug: "alpha-ii" }
+      { title: "KANDY KUSH HONEY", id: 11, slug: "kandy-kush-honey" },
+      { title: "INFRARED IPA", id: 12, slug: "infrared-ipa" },
+      { title: "IPANEMA HAZY IPA", id: 13, slug: "ipanema" },
+      { title: "JAMMIN IMPERIAL STOUT", id: 14, slug: "jammin-imperial-stout" },
+      { title: "KUNG FU SOUR", id: 15, slug: "kung-fu-sour" },
+      { title: "DEMON HONEY", id: 16, slug: "demon-honey" },
+      { title: "MILKSHAKE NEIPA", id: 17, slug: "milkshake-neipa" },
+      { title: "WOLF IPA 0%", id: 18, slug: "wolf-ipa-sin-alcohol" },
+      { title: "ALPHA", id: 19, slug: "proyecto-alpha-1" },
+      { title: "ALPHA II", id: 20, slug: "proyecto-alpha-2" },
+      { title: "ALPHA BARRICA", id: 21, slug: "alpha-barrica-1" },
+      { title: "ALPHA STOUT", id: 22, slug: "alpha-imperial-stout" }
+    ],
+    gridClasicas: [
+        { title: "WOLF IPA", id: 1, slug: "wolf-ipa", mainImage: "/nuestrasbirras/clasicas/wolf-ipa/wolf-ipa.png" },
+        { title: "ROYAL SCOTTISH", id: 2, slug: "royal-scotish", mainImage:"/nuestrasbirras/clasicas/scotish/scotish.png" },
+        { title: "HONEY", id: 3, slug: "honey", mainImage:"/nuestrasbirras/clasicas/honey/honey.png" },
+        { title: "CÓSMICA HOPPY LAGER", id: 4, slug: "cosmica-lager", mainImage:"/nuestrasbirras/clasicas/cosmica/cosmica.png" },
+        { title: "INDIE GOLDEN", id: 5, slug: "indie-golden", mainImage:"/nuestrasbirras/clasicas/indie-golden/indie-golden.png" },
+        { title: "BLACK SOUL STOUT", id: 6, slug: "black-soul-stout", mainImage:"/nuestrasbirras/clasicas/black-soul-stout/black-soul-stout.png" },
+        { title: "FLOW APA", id: 7, slug: "flow-apa", mainImage:"/nuestrasbirras/clasicas/flow-apa/flow-apa.png" },
+        { title: "REVOLUTION NEIPA", id: 8, slug: "revolution-neipa", mainImage:"/nuestrasbirras/clasicas/revolution/revolution.png" }
+    ],
+    gridEspeciales: [
+        { title: "KUNG FU SOUR", id: 15, slug: "kung-fu-sour", mainImage: "/nuestrasbirras/especiales/kungfu-sour/kungfu-sour.png" },
+        { title: "DEMON HONEY", id: 16, slug: "demon-honey" , mainImage: "/nuestrasbirras/especiales/demon-honey/demon-honey.png"},
+        { title: "MILKSHAKE NEIPA", id: 17, slug: "milkshake-neipa", mainImage: "/nuestrasbirras/especiales/milkshake-neipa/milkshake-neipa.png" },
+        { title: "WOLF IPA 0%", id: 17, slug: "wolf-ipa-sin-alcohol", mainImage: "/nuestrasbirras/especiales/wolf-ipa-sa/wolf-ipa-sa.png" },
+        { title: "ALPHA", id: 19, slug: "proyecto-alpha-1", mainImage: "/nuestrasbirras/especiales/proyecto-alpha-1/proyecto-alpha-1.png" },
+        { title: "ALPHA II", id: 20, slug: "proyecto-alpha-2", mainImage: "/nuestrasbirras/especiales/proyecto-alpha-2/proyecto-alpha-2.png" },
+        { title: "ALPHA BARRICA", id: 21, slug: "alpha-barrica-1", mainImage: "/nuestrasbirras/especiales/proyecto-barrica-1/proyecto-barrica-1.png" },
+        { title: "ALPHA STOUT", id: 22, slug: "alpha-imperial-stout", mainImage: "/nuestrasbirras/especiales/alpha-imperial-stout/alpha-imperial-stout.png" },
+    ],
+    gridLimitadas: [
+        { title: "LEMON HAZE IPA", id: 9, slug: "lemon-haze-ipa", mainImage: "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/santa-planta-lemon-haze-ipa.png" },
+        { title: "CRITICAL APA", id: 10, slug: "critical-apa", mainImage: "/nuestrasbirras/limitadas/santa-planta-critical-apa/santa-planta-critical-apa.png" },
+        { title: "KANDY KUSH HONEY", id: 11, slug: "kandy-kush-honey", mainImage: "/nuestrasbirras/limitadas/santa-planta-kandy-kush-honey/santa-planta-kandy-kush-honey.png" },
+        { title: "INFRARED IPA", id: 12, slug: "infrared-ipa", mainImage: "/nuestrasbirras/limitadas/infrared-ipa/infrared-ipa.png" },
+        { title: "IPANEMA HAZY IPA", id: 13, slug: "ipanema", mainImage: "/nuestrasbirras/limitadas/ipanema/ipanema.png" },
+        { title: "JAMMIN IMPERIAL STOUT", id: 14, slug: "jammin-imperial-stout", mainImage: "/nuestrasbirras/especiales/jammin-imperial-stout/jammin-imperial-stout.png" },
+        { title: "KUNG FU SOUR", id: 15, slug: "kung-fu-sour", mainImage: "/nuestrasbirras/especiales/kungfu-sour/kungfu-sour.png" },
+        { title: "DEMON HONEY", id: 16, slug: "demon-honey" , mainImage: "/nuestrasbirras/especiales/demon-honey/demon-honey.png"},
     ]
 };
 
@@ -185,104 +218,66 @@ export default function Page({ params }) {
                                                         BIRRAS
                                                     </h2>
                                                 </div>
+                                                {cerveza.gridClasicas && (
                                                 <div className="beer-grid grid grid-cols-4 grid-rows-2">
-                                                    <div className="beer-item py-[2.12vh] px-[0.42vh]">
-                                                        <div className="relative w-[14.02vh] h-[25.07vh]">
-                                                            <Image
-                                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                                style={{
-                                                                    objectFit: 'cover',
-                                                                }}
-                                                                fill
-                                                                
-                                                            />
+                                                    {data.gridClasicas.map((clasicasObj, index) => (
+                                                        <div className="beer-item py-[2.12vh] px-[0.42vh]" key={index}>
+                                                            <Link href={`/birras/${clasicasObj.slug}`}>
+                                                                <div className="relative w-[14.02vh] h-[25.07vh] hover:scale-110 transition duration-100 transform">
+                                                                    <Image
+                                                                        src={clasicasObj.mainImage}
+                                                                        style={{
+                                                                            objectFit: 'cover',
+                                                                        }}
+                                                                        fill
+                                                                        
+                                                                    />
+                                                                </div>
+                                                            </Link>
                                                         </div>
-                                                    </div>
-                                                    <div className="beer-item py-[2.12vh] px-[0.42vh]">
-                                                        <div className="relative w-[14.02vh] h-[25.07vh]">
-                                                            <Image
-                                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                                style={{
-                                                                    objectFit: 'cover',
-                                                                }}
-                                                                fill
-                                                                
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                    <div className="beer-item py-[2.12vh] px-[0.42vh]">
-                                                        <div className="relative w-[14.02vh] h-[25.07vh]">
-                                                            <Image
-                                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                                style={{
-                                                                    objectFit: 'cover',
-                                                                }}
-                                                                fill
-                                                                
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                    <div className="beer-item py-[2.12vh] px-[0.42vh]">
-                                                        <div className="relative w-[14.02vh] h-[25.07vh]">
-                                                            <Image
-                                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                                style={{
-                                                                    objectFit: 'cover',
-                                                                }}
-                                                                fill
-                                                                
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                    <div className="beer-item py-[2.12vh] px-[0.42vh]">
-                                                        <div className="relative w-[14.02vh] h-[25.07vh]">
-                                                            <Image
-                                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                                style={{
-                                                                    objectFit: 'cover',
-                                                                }}
-                                                                fill
-                                                                
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                    <div className="beer-item py-[2.12vh] px-[0.42vh]">
-                                                        <div className="relative w-[14.02vh] h-[25.07vh]">
-                                                            <Image
-                                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                                style={{
-                                                                    objectFit: 'cover',
-                                                                }}
-                                                                fill
-                                                                
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                    <div className="beer-item py-[2.12vh] px-[0.42vh]">
-                                                        <div className="relative w-[14.02vh] h-[25.07vh]">
-                                                            <Image
-                                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                                style={{
-                                                                    objectFit: 'cover',
-                                                                }}
-                                                                fill
-                                                                
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                    <div className="beer-item py-[2.12vh] px-[0.42vh]">
-                                                        <div className="relative w-[14.02vh] h-[25.07vh]">
-                                                            <Image
-                                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                                style={{
-                                                                    objectFit: 'cover',
-                                                                }}
-                                                                fill
-                                                                
-                                                            />
-                                                        </div>
-                                                    </div>
+                                                    ))}
                                                 </div>
+                                                )}
+                                                {cerveza.gridLimitadas && (
+                                                <div className="beer-grid grid grid-cols-4 grid-rows-2">
+                                                    {data.gridLimitadas.map((clasicasObj, index) => (
+                                                        <div className="beer-item py-[2.12vh] px-[0.42vh]" key={index}>
+                                                            <Link href={`/birras/${clasicasObj.slug}`}>
+                                                                <div className="relative w-[14.02vh] h-[25.07vh] hover:scale-110 transition duration-100 transform">
+                                                                    <Image
+                                                                        src={clasicasObj.mainImage}
+                                                                        style={{
+                                                                            objectFit: 'cover',
+                                                                        }}
+                                                                        fill
+                                                                        
+                                                                    />
+                                                                </div>
+                                                            </Link>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                                )}
+                                                {cerveza.gridEspeciales && (
+                                                <div className="beer-grid grid grid-cols-4 grid-rows-2">
+                                                    {data.gridEspeciales.map((clasicasObj, index) => (
+                                                        <div className="beer-item py-[2.12vh] px-[0.42vh]" key={index}>
+                                                            <Link href={`/birras/${clasicasObj.slug}`}>
+                                                                <div className="relative w-[14.02vh] h-[25.07vh] hover:scale-110 transition duration-100 transform">
+                                                                    <Image
+                                                                        src={clasicasObj.mainImage}
+                                                                        style={{
+                                                                            objectFit: 'cover',
+                                                                        }}
+                                                                        fill
+                                                                        
+                                                                    />
+                                                                </div>
+                                                            </Link>
+                                                        </div>
+                                                    ))}
+                                                </div>
+                                                )}
                                                 <div className="beer-nav">
                                                     <nav className="flex flex-wrap self-stretch gap-y-[2px] pt-2 pr-6">
                                                         {data.birras.map((birraObj, index) => (
@@ -405,104 +400,66 @@ export default function Page({ params }) {
                                         BIRRAS
                                     </h2>
                                 </div>
+                                {cerveza.gridClasicas && (
                                 <div className="beer-grid grid grid-cols-4 grid-rows-2">
-                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
-                                        <div className="relative w-[22.30vw] h-[39.74vw]">
-                                            <Image
-                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                style={{
-                                                    objectFit: 'cover',
-                                                }}
-                                                fill
-                                                
-                                            />
+                                    {data.gridClasicas.map((clasicasObj, index) => (
+                                        <div className="beer-item py-[3.84vw] px-[0.76vw]" key={index}>
+                                            <Link href={`/birras/${clasicasObj.slug}`}>
+                                                <div className="relative w-[22.30vw] h-[39.74vw] hover:scale-110 transition duration-100 transform">
+                                                    <Image
+                                                        src={clasicasObj.mainImage}
+                                                        style={{
+                                                            objectFit: 'cover',
+                                                        }}
+                                                        fill
+                                                        
+                                                    />
+                                                </div>
+                                            </Link>
                                         </div>
-                                    </div>
-                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
-                                        <div className="relative w-[22.30vw] h-[39.74vw]">
-                                            <Image
-                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                style={{
-                                                    objectFit: 'cover',
-                                                }}
-                                                fill
-                                                
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
-                                        <div className="relative w-[22.30vw] h-[39.74vw]">
-                                            <Image
-                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                style={{
-                                                    objectFit: 'cover',
-                                                }}
-                                                fill
-                                                
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
-                                        <div className="relative w-[22.30vw] h-[39.74vw]">
-                                            <Image
-                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                style={{
-                                                    objectFit: 'cover',
-                                                }}
-                                                fill
-                                                
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
-                                        <div className="relative w-[22.30vw] h-[39.74vw]">
-                                            <Image
-                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                style={{
-                                                    objectFit: 'cover',
-                                                }}
-                                                fill
-                                                
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
-                                        <div className="relative w-[22.30vw] h-[39.74vw]">
-                                            <Image
-                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                style={{
-                                                    objectFit: 'cover',
-                                                }}
-                                                fill
-                                                
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
-                                        <div className="relative w-[22.30vw] h-[39.74vw]">
-                                            <Image
-                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                style={{
-                                                    objectFit: 'cover',
-                                                }}
-                                                fill
-                                                
-                                            />
-                                        </div>
-                                    </div>
-                                    <div className="beer-item py-[3.84vw] px-[0.76vw]">
-                                        <div className="relative w-[22.30vw] h-[39.74vw]">
-                                            <Image
-                                                src='/nuestrasbirras/clasicas/wolf-ipa.png'
-                                                style={{
-                                                    objectFit: 'cover',
-                                                }}
-                                                fill
-                                                
-                                            />
-                                        </div>
-                                    </div>
+                                    ))}
                                 </div>
+                                )}
+                                {cerveza.gridLimitadas && (
+                                <div className="beer-grid grid grid-cols-4 grid-rows-2">
+                                    {data.gridLimitadas.map((clasicasObj, index) => (
+                                        <div className="beer-item py-[3.84vw] px-[0.76vw]" key={index}>
+                                            <Link href={`/birras/${clasicasObj.slug}`}>
+                                                <div className="relative w-[22.30vw] h-[39.74vw] hover:scale-110 transition duration-100 transform">
+                                                    <Image
+                                                        src={clasicasObj.mainImage}
+                                                        style={{
+                                                            objectFit: 'cover',
+                                                        }}
+                                                        fill
+                                                        
+                                                    />
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    ))}
+                                </div>
+                                )}
+                                {cerveza.gridEspeciales && (
+                                <div className="beer-grid grid grid-cols-4 grid-rows-2">
+                                    {data.gridEspeciales.map((clasicasObj, index) => (
+                                        <div className="beer-item py-[3.84vw] px-[0.76vw]" key={index}>
+                                            <Link href={`/birras/${clasicasObj.slug}`}>
+                                                <div className="relative w-[22.30vw] h-[39.74vw] hover:scale-110 transition duration-100 transform">
+                                                    <Image
+                                                        src={clasicasObj.mainImage}
+                                                        style={{
+                                                            objectFit: 'cover',
+                                                        }}
+                                                        fill
+                                                        
+                                                    />
+                                                </div>
+                                            </Link>
+                                        </div>
+                                    ))}
+                                </div>
+                                )}
                                 <div className="beer-nav">
                                     <nav className="flex flex-wrap self-stretch gap-y-[2px]">
                                         {data.birras.map((birraObj, index) => (
