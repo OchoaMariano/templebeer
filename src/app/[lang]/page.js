@@ -11,25 +11,28 @@ import SmoothScroll from '../../../components/common/SmoothScroll';
 
 const data = {
     birras: [
-      { title: "WOLF IPA", id: 1, slug: "wolf-ipa" },
-      { title: "ROYAL SCOTTISH", id: 2, slug: "royal-scottish" },
-      { title: "CÓSMICA HOPPY LAGER", id: 3, slug: "csmica-hoppy-lager" },
-      { title: "HONEY", id: 4, slug: "honey" },
-      { title: "INDIE GOLDEN", id: 5, slug: "indie-golden" },
-      { title: "BLACK SOUL STOUT", id: 6, slug: "black-soul-stout" },
-      { title: "FLOW APA", id: 7, slug: "flow-apa" },
-      { title: "REVOLUTION NEIPA", id: 8, slug: "revolution-neipa" },
-      { title: "LEMON HAZE IPA", id: 9, slug: "lemon-haze-ipa" },
-      { title: "CRITICAL APA", id: 10, slug: "critical-apa" },
-      { title: "KAN", id: 11, slug: "kan" },
-      { title: "JAMMIN IMPERIAL STOUT", id: 12, slug: "jammin-imperial-stout" },
-      { title: "IPANEMA HAZY IPA", id: 13, slug: "ipanema-hazy-ipa" },
-      { title: "KUNG FU SOUR", id: 14, slug: "kung-fu-sour" },
-      { title: "DEMON HONEY", id: 15, slug: "demon-honey" },
-      { title: "MILKSHAKE NEIPA", id: 16, slug: "milkshake-neipa" },
-      { title: "WOLF IPA 0%", id: 17, slug: "wolf-ipa-0" },
-      { title: "ALPHA", id: 18, slug: "alpha" },
-      { title: "ALPHA II", id: 19, slug: "alpha-ii" }
+        { title: "WOLF IPA", id: 1, slug: "wolf-ipa" },
+        { title: "ROYAL SCOTTISH", id: 2, slug: "royal-scotish" },
+        { title: "HONEY", id: 3, slug: "honey" },
+        { title: "CÓSMICA HOPPY LAGER", id: 4, slug: "cosmica-lager" },
+        { title: "INDIE GOLDEN", id: 5, slug: "indie-golden" },
+        { title: "BLACK SOUL STOUT", id: 6, slug: "black-soul-stout" },
+        { title: "FLOW APA", id: 7, slug: "flow-apa" },
+        { title: "REVOLUTION NEIPA", id: 8, slug: "revolution-neipa" },
+        { title: "LEMON HAZE IPA", id: 9, slug: "lemon-haze-ipa" },
+        { title: "CRITICAL APA", id: 10, slug: "critical-apa" },
+        { title: "KANDY KUSH HONEY", id: 11, slug: "kandy-kush-honey" },
+        { title: "INFRARED IPA", id: 12, slug: "infrared-ipa" },
+        { title: "IPANEMA HAZY IPA", id: 13, slug: "ipanema" },
+        { title: "JAMMIN IMPERIAL STOUT", id: 14, slug: "jammin-imperial-stout" },
+        { title: "KUNG FU SOUR", id: 15, slug: "kung-fu-sour" },
+        { title: "DEMON HONEY", id: 16, slug: "demon-honey" },
+        { title: "MILKSHAKE NEIPA", id: 17, slug: "milkshake-neipa" },
+        { title: "WOLF IPA 0%", id: 18, slug: "wolf-ipa-sin-alcohol" },
+        { title: "ALPHA", id: 19, slug: "proyecto-alpha-1" },
+        { title: "ALPHA II", id: 20, slug: "proyecto-alpha-2" },
+        { title: "ALPHA BARRICA", id: 21, slug: "alpha-barrica-1" },
+        { title: "ALPHA STOUT", id: 22, slug: "alpha-imperial-stout" }
     ]
   };
   

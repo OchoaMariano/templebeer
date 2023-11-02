@@ -20,11 +20,11 @@ function Header () {
     }, [isMenuOpen]);
 
   return (
-    <header className="header__temple bg-transparent absolute lg:fixed w-full z-[100] top-0">
+    <header className="header__temple bg-transparent absolute md:fixed w-full z-[100] top-0">
         <div className="header__temple-wrapper">
             <div className="wrapper__logo">
                 <Link href="/">
-                    <div className="relative w-[31.53vw] h-[6.89vw] lg:w-[18.13vh] lg:h-[4.1vh]">
+                    <div className="relative w-[31.53vw] h-[6.89vw] md:w-[18.13vh] md:h-[4.1vh]">
                         <Image
                             src="/logo-templebeer.png"
                             alt="Temple Beer"
@@ -33,7 +33,7 @@ function Header () {
                     </div>
                 </Link>
             </div>
-            <div className="wrapper__content-nav hidden lg:flex">
+            <div className="wrapper__content-nav hidden md:flex">
                 <div className="main__nav" >
                     <Link href="/birras" className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
                         Birras
@@ -54,8 +54,8 @@ function Header () {
                         Temple Academy
                     </a>
                 </div>
-                <div className="divisor h-[21px] w-[1px] bg-white"></div>
-                <div className="rrss__nav">
+                <div className="hidden xl:block divisor h-[21px] w-[1px] bg-white"></div>
+                <div className="hidden xl:flex rrss__nav">
                     <a href='https://www.instagram.com/templecerveza/' target='_blank'>
                         <Image
                             src="/instagram-icon.svg"
@@ -76,8 +76,8 @@ function Header () {
                         Shop
                     </a>
                 </div>
-                <div className="divisor h-[21px] w-[1px] bg-white"></div>
-                <div className="lang__nav">
+                <div className="hidden xl:block divisor h-[21px] w-[1px] bg-white"></div>
+                <div className="hidden xl:flex lang__nav">
                     <Image
                         src="/bandera-arg.svg"
                         alt="Tik-Tok"
@@ -99,7 +99,7 @@ function Header () {
                 </div>
                 
             </div>
-            <div className="wrapper__nav-mobile flex lg:hidden">
+            <div className="wrapper__nav-mobile flex md:hidden">
                 <div className="menu__icon relative menu-button" onClick={toggleMenu}>
                     <Image src='/nav-mobile.png' width={44} height={44} />
                 </div>
