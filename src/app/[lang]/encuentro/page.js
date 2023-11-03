@@ -5,8 +5,8 @@ export default function Page({ children }) {
     return (
         <div>
             <Header />
-            <section className="h-screen bg-cover bg-center pt-[65px]" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
-                <div className="page__wrapper px-[34px]">
+            <section className="md:h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
+                <div className="page__wrapper mt-[18.15vw] md:pt-[6.37vh] px-[5.12vw] md:px-[4.83vh]">
                     <div className="title__wrapper flex items-center justify-center">
                         <h1 className="text-4xl font-bold text-white text-[37px] 3xl:text-[57px] leading-none uppercase">
                             Encuentro
@@ -140,7 +140,6 @@ export default function Page({ children }) {
                         </div>
                     </div>
                 </div>
-
             </section>
         </div>
     )

@@ -213,6 +213,11 @@ body {
   overflow: scroll;
 }
 
+.page__wrapper__legales {
+  padding-top: 13.46vh;
+  padding-bottom: 7.08vh;
+}
+
 .row {
   grid-column-gap: 1.98vh;
   grid-row-gap: 1.98vh;

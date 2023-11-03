@@ -47,6 +47,7 @@ export default function Home2() {
                         <div className="row" data-scroll data-scroll-speed="-.1" data-scroll-offset="0,100%" data-scroll-event-progress="progressEvent">  
                             <div className="column">
                                 <div className="main-box-1-wrapper">
+                                    
                                     <div className="beer-wrapper">
                                         <div className="flex items-center justify-center z-10 h-full cursor-pointer transform transition-transform duration-300 hover:scale-110">
                                             <div className="relative w-[34.70vh] h-[51.69vh]">
