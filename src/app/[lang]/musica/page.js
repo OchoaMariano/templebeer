@@ -11,7 +11,7 @@ export default function Page({ children }) {
         <div>
             <Header />
             <section className="md:h-screen bg-cover bg-center md:flex md:items-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
-                <div className="page__wrapper mt-[18.15vw] md:mt-[6.37vh] px-[5.12vw] md:px-[4.83vh] overflow-hidden">
+                <div className="page__wrapper pt-[18.15vw] md:pt-[6.37vh] px-[5.12vw] md:px-[4.83vh] overflow-hidden">
                     <div className="title__wrapper pt-[3.84vw] md:pt-[2.83vh] relative flex flex-row items-center">
                         <h1 className={`text-white text-[12.05vw] md:text-[9.49vh] leading-none uppercase ${Knockout54UltraBold.className}`}>Música</h1>
                         <div className="group pl-[3.07vw] md:pl-[6.37vh] flex flex-row cursor-pointer items-center">

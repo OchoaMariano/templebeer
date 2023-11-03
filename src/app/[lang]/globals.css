@@ -40,6 +40,34 @@
   }
 }
 
+.bounce {
+  animation: bounce 1s infinite;
+}
+
+.hover-bounce:hover {
+  animation: bounce 1s;
+}
+
+@keyframes bouncesmooth {
+  0%, 20%, 50%, 80%, 100% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.35); /* Aumentado para ser más exagerado */
+  }
+  60% {
+    transform: scale(1.1); /* Aumentado para ser más exagerado */
+  }
+}
+
+.bouncesmooth {
+  animation: bouncesmooth 1s infinite;
+}
+
+.hover-bouncesmooth:hover {
+  animation: bouncesmooth 1s;
+}
+
 @keyframes moveBanner {
   0% {
     transform: translate3d(0, 0, 0);

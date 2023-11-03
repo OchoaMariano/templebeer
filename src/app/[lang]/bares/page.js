@@ -1,16 +1,17 @@
 import Image from 'next/image'
 import Header from '../../../../components/common/header'
+import Footer from '../../../../components/common/Footer';
 import ScrollHorizontal from '../../../../components/ScrollHorizontal'
 import Draggable from '../../../../components/common/Dragabble'
-import { Knockout54UltraBold, Knockout34, Knockout54 } from '../layout'
+import { Knockout54UltraBold } from '../layout'
 
 export default function Page({ children }) {
     return (
         <div>
             <Header  />
-            <section className="h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
+            <section className="md:h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
                 <div className="page__wrapper flex flex-col">
-                    <div className="flex mt-[18.15vw] px-5 lg:hidden">
+                    <div className="flex pt-[18.15vw] px-5 lg:hidden">
                         <div className="relative w-full">
                             <h3 className={`text-white text-[12.05vw] ${Knockout54UltraBold.className}`}>BARES</h3>
                         </div>
@@ -27,7 +28,7 @@ export default function Page({ children }) {
                         </div>
                     </div>
                     <div className="px-5 lg:px-0 space-y-20 overflow-hidden">
-                        <div className="flex w-full items-end mt-custom mt-[6.37vh]">
+                        <div className="flex w-full items-end mt-custom mt-[4vw] md:mt-[6.37vh]">
                             <div className="hidden lg:block pt-custom pt-[7.08vh] pb-custom pb-[6.23vh]">
                                 <div className="relative h-mapa-custom h-[80vh] w-mapa-custom w-[43.9vh]">
                                     <Image src="/bares/mapa-arg.png" alt="" className="w-full" fill />
@@ -1356,6 +1357,7 @@ export default function Page({ children }) {
                                 </div>
                             </div>
                         </div>
+                        <Footer />
                     </div>
                 </div>
             </section>
