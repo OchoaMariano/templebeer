@@ -20,6 +20,13 @@ function ScrollHorizontal({ children }) {
             }
         };
 
+        {
+            async () => {
+                const LocomotiveScroll = (await import('locomotive-scroll')).default;
+                const locomotiveScroll = new LocomotiveScroll();
+            }
+        }
+
         wrapper.addEventListener('wheel', handleScroll);
         return () => {
             wrapper.removeEventListener('wheel', handleScroll);

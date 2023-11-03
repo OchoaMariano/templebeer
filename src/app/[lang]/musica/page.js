@@ -52,7 +52,7 @@ export default function Page({ children }) {
                                             />
                                         </div>
                                         <div className="absolute top-[13.81vh] -left-[1.67vh] bg-black rounded-full w-[7.08vh] h-[7.08vh] flex items-center justify-center cursor-pointer">
-                                            <a href="https://www.youtube.com/watch?v=z5zQPUxMe4U" target="_blank">
+                                            <a href="https://www.instagram.com/callecortada_ar/?hl=es" target="_blank">
                                                 <div className="relative w-[2.83vh] h-[2.26vh]">
                                                     <Image src="/musica/video.svg" alt="" fill />
                                                 </div>
@@ -225,7 +225,7 @@ export default function Page({ children }) {
                                         />
                                     </div>
                                     <div className="absolute top-[40.94vw] -left-[4vw] bg-black rounded-full w-[12.82vw] h-[12.82vw] flex items-center justify-center cursor-pointer">
-                                        <a href="https://www.youtube.com/watch?v=z5zQPUxMe4U" target="_blank">
+                                        <a href="https://www.instagram.com/callecortada_ar/?hl=es" target="_blank">
                                             <div className="relative w-[5.12vw] h-[4.10vw]">
                                                 <Image src="/musica/video.svg" alt="" fill />
                                             </div>
