@@ -93,6 +93,18 @@ function Header () {
                         width={24}
                         height={17}
                     />
+                    <Image
+                        src="/bandera-es.svg"
+                        alt="Tik-Tok"
+                        width={24}
+                        height={17}
+                    />
+                    <Image
+                        src="/bandera-es.svg"
+                        alt="Tik-Tok"
+                        width={24}
+                        height={17}
+                    />
                 </div>
                 
             </div>

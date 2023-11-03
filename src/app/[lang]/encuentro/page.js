@@ -2,10 +2,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Header from '../../../../components/common/header'
 import Footer from '../../../../components/common/Footer'
-import Modal from '../../../../components/common/Modal'
 import ModalAstronomia from '../../../../components/encuentro/ModalAstronomia'
 import ModalGhosteo from '../../../../components/encuentro/ModalGhosteo'
 import ModalBirra from '../../../../components/encuentro/ModalBirra'
+import ModalArtistas from '../../../../components/encuentro/ModalArtistas'
+import ModalBares from '../../../../components/encuentro/ModalBares'
+import ModalMemes from '../../../../components/encuentro/ModalMemesBirreros'
+import ModalSanPatricio from '../../../../components/encuentro/ModalSanPatricio'
+
 
 import { Knockout54UltraBold } from '../layout'
 
@@ -14,13 +18,18 @@ export default function Page({ children, searchParams }) {
     const showModalGhost = searchParams?.modalGhost;
     const showModalBirra = searchParams?.modalBirra;
 
+    const showModalArtistas = searchParams?.modalArtistas;
+    const showModalBares = searchParams?.modalBares;
+    const showModalMemes = searchParams?.modalMemes;
+    const showModalSanPatricio = searchParams?.modalSanPatricio;
+
     return (
         <div>
             <Header />
             <section className="md:h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
                 <div className="page__wrapper pt-[18.15vw] md:pt-[6.37vh] px-[5.12vw] md:px-[4.83vh]">
                     <div className="title__wrapper flex items-center justify-center pt-[2.83vh]">
-                        <h1 className={`text-[4.24vh] leading-none uppercase ${Knockout54UltraBold.className}`}>
+                        <h1 className={`text-[4.24vh] text-white leading-none uppercase ${Knockout54UltraBold.className}`}>
                             Encuentro
                         </h1>
                     </div>
@@ -30,7 +39,7 @@ export default function Page({ children, searchParams }) {
                                 <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-20 gap-y-10 items-start">
 
                                     <div className="flex transform hover-bouncesmooth cursor-pointer">
-                                        <Link className="flex flex-col justify-center md:items-center gap-y-4" href="encuentro/?modalAstronomia=true">
+                                        <Link className="flex flex-col justify-center md:items-center gap-y-4" href="encuentro/?modalSanPatricio=true">
                                             <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                                                 <Image
                                                     src="/encuentros/san-patricio.png"
@@ -45,7 +54,7 @@ export default function Page({ children, searchParams }) {
                                     </div>
 
                                     <div className="flex transform hover-bouncesmooth cursor-pointer">
-                                        <a className="flex flex-col justify-center items-center gap-y-4" href="https://www.birramigxs.templebeer.com/" target="_blank">
+                                        <Link className="flex flex-col justify-center md:items-center gap-y-4" href="encuentro/?modalBares=true">
                                             <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                                                 <Image
                                                     src="/encuentros/carpeta.png"
@@ -56,7 +65,7 @@ export default function Page({ children, searchParams }) {
                                             <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
                                                 BARES
                                             </span>
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className="flex transform hover-bouncesmooth cursor-pointer">
@@ -123,11 +132,11 @@ export default function Page({ children, searchParams }) {
 
                                 </div>
                             </div>
-                            <div className="w-full lg:w-1/2 flex items-start justify-end text-white">
+                            <div className="w-full lg:w-1/2 flex items-start justify-end md:justify-end text-white">
                                 <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-20 gap-y-10 items-start">
 
-                                    <div className="flex transform hover-bouncesmooth cursor-pointer">
-                                        <Link className="flex flex-col justify-center md:items-center gap-y-4" href="encuentro/?modalBirra=true">
+                                    <div className="flex flex-col transform hover-bouncesmooth cursor-pointer">
+                                        <Link className="flex flex-col justify-center items-center gap-y-4" href="encuentro/?modalBirra=true">
                                             <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                                                 <Image
                                                     src="/encuentros/cultura.png"
@@ -142,8 +151,8 @@ export default function Page({ children, searchParams }) {
                                         </Link>
                                     </div>
 
-                                    <div className="flex transform hover-bouncesmooth cursor-pointer">
-                                        <Link className="flex flex-col justify-center md:items-center gap-y-4" href="encuentro/?modalGhost=true">
+                                    <div className="flex flex-col transform hover-bouncesmooth cursor-pointer">
+                                        <Link className="flex flex-col justify-center items-center gap-y-4" href="encuentro/?modalGhost=true">
                                             <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                                                 <Image
                                                     src="/encuentros/ghost.png"
@@ -159,8 +168,8 @@ export default function Page({ children, searchParams }) {
                                         </Link>
                                     </div>
 
-                                    <div className="flex transform hover-bouncesmooth cursor-pointer">
-                                        <a className="flex flex-col justify-center items-center gap-y-4" href="https://www.birramigxs.templebeer.com/" target="_blank">
+                                    <div className="flex flex-col transform hover-bouncesmooth cursor-pointer">
+                                        <Link className="flex flex-col justify-center items-center gap-y-4" href="encuentro/?modalMemes=true">
                                             <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                                                 <Image
                                                     src="/encuentros/carpeta.png"
@@ -171,11 +180,11 @@ export default function Page({ children, searchParams }) {
                                             <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
                                                 MEMES BIRREROS
                                             </span>
-                                        </a>
+                                        </Link>
                                     </div>
 
-                                    <div className="flex transform hover-bouncesmooth cursor-pointer">
-                                        <Link className="flex flex-col justify-center md:items-center gap-y-4" href="encuentro/?modalAstronomia=true">
+                                    <div className="flex flex-col transform hover-bouncesmooth cursor-pointer">
+                                        <Link className="flex flex-col justify-center items-center gap-y-4" href="encuentro/?modalAstronomia=true">
                                             <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                                                 <Image
                                                     src="/encuentros/astrologia.png"
@@ -190,8 +199,8 @@ export default function Page({ children, searchParams }) {
                                     </div>
                                     
                                     <img src="" alt="" className="hidden md:block" />
-                                    <div className="flex transform hover-bouncesmooth cursor-pointer">
-                                        <a className="flex flex-col justify-center items-center gap-y-4" href="https://www.birramigxs.templebeer.com/" target="_blank">
+                                    <div className="flex flex-col transform hover-bouncesmooth cursor-pointer">
+                                        <Link className="flex flex-col justify-center items-center gap-y-4" href="encuentro/?modalArtistas=true">
                                             <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                                                 <Image
                                                     src="/encuentros/carpeta.png"
@@ -202,7 +211,7 @@ export default function Page({ children, searchParams }) {
                                             <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
                                                 1 LATA X 50 ARTISTAS
                                             </span>
-                                        </a>
+                                        </Link>
                                     </div>
                                 </div>
                             </div>
@@ -215,6 +224,10 @@ export default function Page({ children, searchParams }) {
             {showModal && <ModalAstronomia />}
             {showModalGhost && <ModalGhosteo />}
             {showModalBirra && <ModalBirra />}
+            {showModalArtistas && <ModalArtistas />}
+            {showModalBares && <ModalBares />}
+            {showModalMemes && <ModalMemes />}
+            {showModalSanPatricio && <ModalSanPatricio />}
         </div>
     )
 }

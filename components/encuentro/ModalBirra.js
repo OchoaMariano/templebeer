@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import Link from "next/link";
+import Link from "next/link"
 
 export default function Modal() {
 
@@ -13,12 +13,12 @@ export default function Modal() {
                     &#8203;
                 </span>
                 <div className="inline-block shadow-xl transform transition-all align-middle ">
-                    <div className="relative w-[] h-[] md:w-[84.98vh] md:h-[84.98vh]">
+                    <div className="relative w-[94.87vw] h-[94.87vw] md:w-[84.98vh] md:h-[84.98vh]">
                         <Image src="/encuentros/modal-birra.png" fill alt="encuentros-flyer" />
                     </div>
                     
                 </div>
-        </div>
+            </div>
         </div>
     );
 }

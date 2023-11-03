@@ -13,7 +13,7 @@ export default function Modal() {
                     &#8203;
                 </span>
                 <div className="inline-block shadow-xl transform transition-all align-middle ">
-                    <div className="relative w-[] h-[] md:w-[67.98vh] md:h-[84.98vh]">
+                    <div className="relative w-[94.87vw] h-[118.97vw] md:w-[67.98vh] md:h-[84.98vh]">
                         <Image src="/encuentros/modal-ghost.png" fill alt="encuentros-flyer" />
                     </div>
                     
