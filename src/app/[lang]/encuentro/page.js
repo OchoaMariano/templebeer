@@ -1,9 +1,19 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import Header from '../../../../components/common/header'
 import Footer from '../../../../components/common/Footer'
+import Modal from '../../../../components/common/Modal'
+import ModalAstronomia from '../../../../components/encuentro/ModalAstronomia'
+import ModalGhosteo from '../../../../components/encuentro/ModalGhosteo'
+import ModalBirra from '../../../../components/encuentro/ModalBirra'
+
 import { Knockout54UltraBold } from '../layout'
 
-export default function Page({ children }) {
+export default function Page({ children, searchParams }) {
+    const showModal = searchParams?.modalAstronomia;
+    const showModalGhost = searchParams?.modalGhost;
+    const showModalBirra = searchParams?.modalBirra;
+
     return (
         <div>
             <Header />
@@ -20,7 +30,7 @@ export default function Page({ children }) {
                                 <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-20 gap-y-10 items-start">
 
                                     <div className="flex transform hover-bouncesmooth cursor-pointer">
-                                        <a className="flex flex-col justify-center md:items-center gap-y-4" href="https://www.birramigxs.templebeer.com/" target="_blank">
+                                        <Link className="flex flex-col justify-center md:items-center gap-y-4" href="encuentro/?modalAstronomia=true">
                                             <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                                                 <Image
                                                     src="/encuentros/san-patricio.png"
@@ -31,7 +41,7 @@ export default function Page({ children }) {
                                             <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
                                                 SAN PATRICIO
                                             </span>
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className="flex transform hover-bouncesmooth cursor-pointer">
@@ -117,7 +127,7 @@ export default function Page({ children }) {
                                 <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-20 gap-y-10 items-start">
 
                                     <div className="flex transform hover-bouncesmooth cursor-pointer">
-                                        <a className="flex flex-col justify-center items-center gap-y-4" href="https://www.birramigxs.templebeer.com/" target="_blank">
+                                        <Link className="flex flex-col justify-center md:items-center gap-y-4" href="encuentro/?modalBirra=true">
                                             <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                                                 <Image
                                                     src="/encuentros/cultura.png"
@@ -129,11 +139,11 @@ export default function Page({ children }) {
                                                 BIRRA, ENCUENTRO <br />
                                                 & CULTURA
                                             </span>
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className="flex transform hover-bouncesmooth cursor-pointer">
-                                        <a className="flex flex-col justify-center items-center gap-y-4" href="https://www.birramigxs.templebeer.com/" target="_blank">
+                                        <Link className="flex flex-col justify-center md:items-center gap-y-4" href="encuentro/?modalGhost=true">
                                             <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                                                 <Image
                                                     src="/encuentros/ghost.png"
@@ -146,7 +156,7 @@ export default function Page({ children }) {
                                                 MENOS GHOSTEO, <br />
                                                 MÁS BIRRA
                                             </span>
-                                        </a>
+                                        </Link>
                                     </div>
 
                                     <div className="flex transform hover-bouncesmooth cursor-pointer">
@@ -165,7 +175,7 @@ export default function Page({ children }) {
                                     </div>
 
                                     <div className="flex transform hover-bouncesmooth cursor-pointer">
-                                        <a className="flex flex-col justify-center items-center gap-y-4" href="https://www.birramigxs.templebeer.com/" target="_blank">
+                                        <Link className="flex flex-col justify-center md:items-center gap-y-4" href="encuentro/?modalAstronomia=true">
                                             <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                                                 <Image
                                                     src="/encuentros/astrologia.png"
@@ -176,7 +186,7 @@ export default function Page({ children }) {
                                             <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
                                                 ASTROLOGÍA CÓSMICA
                                             </span>
-                                        </a>
+                                        </Link>
                                     </div>
                                     
                                     <img src="" alt="" className="hidden md:block" />
@@ -199,8 +209,12 @@ export default function Page({ children }) {
                         </div>
                     </div>
                     <Footer />
-                </div>  
+                </div>
+               
             </section>
+            {showModal && <ModalAstronomia />}
+            {showModalGhost && <ModalGhosteo />}
+            {showModalBirra && <ModalBirra />}
         </div>
     )
 }
