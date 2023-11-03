@@ -47,9 +47,6 @@ function Header () {
                     <Link href="/musica" className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
                         Música
                     </Link>
-                    <Link href="/legales" className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
-                        Legales
-                    </Link>
                     <a href="https://diamond-hamburger-c59.notion.site/0f69945dbb6247a1b08f8eae47bb2442?v=bdfe9a6a777c4281adda7ea36cf7d43c" target="_blank" className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
                         Temple Academy
                     </a>

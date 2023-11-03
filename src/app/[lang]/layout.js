@@ -2,6 +2,7 @@ import './globals.css'
 import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import Popup from '../../../components/common/Popup'
+import Legales from '../../../components/common/Legales'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -62,6 +63,7 @@ export default function RootLayout({ children }) {
         <Popup />
         
         {children}
+        <Legales />
       </body>
     </html>
   )
