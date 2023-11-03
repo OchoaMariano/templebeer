@@ -1,50 +1,35 @@
-import Link from "next/link";
+import Link from "next/link"
+import Image from 'next/image'
 
 export default function Modal() {
   return (
-    <div
-      className="fixed z-[100] inset-0 overflow-y-auto"
-      id="error-modal"
-      aria-labelledby="modal-title"
-      role="dialog"
-      aria-modal="true"
-    >
-      <div className="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
-        <div
-          className="fixed inset-0 bg-black bg-opacity-40 transition-opacity"
-          aria-hidden="true"
-        ></div>
-        <span
-          className="hidden sm:inline-block sm:align-middle sm:h-screen"
-          aria-hidden="true"
-        >
-          &#8203;
-        </span>
-        <div className="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
-          <div className="sm:flex sm:items-start">
-            <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-              <h3
-                className="text-lg leading-6 font-medium text-gray-900"
-                id="modal-title"
-              >
-                Basic Modal
-              </h3>
-              <div className="mt-2">
-                <p className="text-sm text-gray-500">Message dito ng kahit anong pwede ilagay na kunyari info ganun </p>
-              </div>
+    <div className="fixed z-[100] inset-0 overflow-y-auto" id="error-modal" aria-labelledby="modal-title" role="dialog" aria-modal="true">
+        <div className="flex items-center justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
+            <div className="fixed inset-0 bg-black bg-opacity-40 transition-opacity" aria-hidden="true">
+                <Link href="/encuentro" className="absolute inset-0 w-[100%] h-[100vh]"></Link>
             </div>
-          </div>
-          <div className="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-            <Link
-              href="/encuentro"
-              type="button"
-              className="w-full inline-flex justify-center rounded-md border border-transparent shadow-sm px-4 py-2 bg-blue-600 text-base font-medium text-white hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:ml-3 sm:w-auto sm:text-sm"
-            >
-              SAN PATRICIO
-            </Link>
-          </div>
+            <span className="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">
+                &#8203;
+            </span>
+            <div className="inline-block bg-[#ECEBEB] shadow-xl rounded-t-xl transform transition-all align-middle w-[] h-[] md:w-[100.56vh] md:h-[65.29vh]">
+                <div className="header__chrome w-full h-[12.82vw] md:h-[7.08vh] bg-[#D9D9D9] overflow-hidden rounded-t-xl flex flex-row px-[2.54vh] gap-x-[6.41vw] md:gap-x-[4.24vh]">
+                    <div className="user_btns flex flex-row items-center justify-start gap-x-[0.5vh]">
+                        <div className="close_red w-[3.33vw] h-[3.33vw] md:w-[2.12vh] md:h-[2.12vh] bg-[#E65E60] rounded-full"></div>
+                        <div className="minimize_yellow w-[3.33vw] h-[3.33vw] md:w-[2.12vh] md:h-[2.12vh] bg-[#f7ba49] rounded-full"></div>
+                        <div className="maximize_green w-[3.33vw] h-[3.33vw] md:w-[2.12vh] md:h-[2.12vh] bg-[#58ae50] rounded-full"></div>
+                    </div>
+                    <div className="url_input flex items-center justify-start w-full">
+                        <div className="close_red w-full h-[6.29vw] md:h-[3vh] bg-[#fff] rounded-full"></div>
+                    </div>
+                </div>
+                <div className="content p-[5.89vw] md:p-[3.8vh]">
+                    <div className="relative w-[66.15vw] h-[117vw] md:w-[92.91vh] md:h-[52.26vh] shadow-xl ">
+                        <Image src="/encuentros/modal-sanpatricio.png" fill alt="encuentros-flyer" className="hidden md:block" />
+                        <Image src="/encuentros/modal-sanpatricio-mobile.png" fill alt="encuentros-flyer" className="block md:hidden" />
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
     </div>
   );
 }
