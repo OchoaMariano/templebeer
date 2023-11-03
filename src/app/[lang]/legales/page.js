@@ -12,7 +12,7 @@ export default function Page({ children }) {
                 <div className="page__wrapper__legales hidden md:flex flex-col justify-start h-full">
                     
                     <ScrollHorizontal>
-                        <div className="flex content__wrapper flex-row gap-x-[10vh] items-start w-[400vh] px-[3vh] h-full relative">
+                        <div className="flex content__wrapper text-white flex-row gap-x-[10vh] items-start w-[400vh] px-[3vh] h-full relative">
                             <div class="w-[70vh] flex flex-col gap-y-[4vh]">
                                 <div className="flex flex-col gap-y-[2vh]">
                                     <h1 className="text-[3vh] leading-none">POLÍTICAS DE PRIVACIDAD</h1>
