@@ -1,0 +1,159 @@
+{
+  "Cervezas": [
+    {
+      "id": 1,
+      "nombre": "Cosmic Hazy Lager",
+      "slug": "cosmic-hazy-lager",
+      "url-buy": "url",
+      "categoria": null,
+      "descripcion": "A fresh, smooth and aromatic lager with low bitterness.",
+      "propiedades": {
+        "alcohol": "5%",
+        "floz": "16"
+      },
+      "mainImage": "/nuestrasbirras/en/cosmic-hazy-lager/cosmic-hazy-lager.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/en/cosmic-hazy-lager/cosmic-hazy-lager-info.jpg",
+        "bajada": "This new beer comes to challenge our senses. Complexity, aroma and high drinkability.",
+        "destacado": "The beer that came all the way down from outer space to conquer humanity.",
+        "secondaryImage": null,
+        "altSecondaryImage": "Special beer"
+      },
+      "style": {
+        "background": "/nuestrasbirras/en/cosmic-hazy-lager/bg-cosmic-hazy-lager.png",
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 2,
+      "nombre": "Honey",
+      "slug": "honey",
+      "url-buy": "url",
+      "categoria": null,
+      "descripcion": "Our honey gives this blond beer just the right sweetness. An easy to take beel golden beer, with smooth, low bitterness and mild sweet grain flavour. ",
+      "propiedades": {
+        "alcohol": "5%",
+        "floz": "16"
+      },
+      "mainImage": "/nuestrasbirras/en/honey/honey.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/en/honey/honey-info.jpg",
+        "bajada": "What to say about this beauty? Probably the most popular style of beer nowadays, our honey came to win hearts. With our (almost) obsession for sustainability, we use organic honey that comes directly from the paraná river delta, and we add it at the maturation stage, preventing it from transforming into alcohol, highlighting the aroma and flavor. Its organic, honey.",
+        "destacado": "Sweet dreams are made of beer. ",
+        "secondaryImage": "/nuestrasbirras/en/honey/honey-secondary.jpg",
+        "altSecondaryImage": "What to say about this beauty?"
+      },
+      "style": {
+        "background": null,
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 3,
+      "nombre": "Indie Lager",
+      "slug": "indie-lager",
+      "url-buy": "url",
+      "categoria": null,
+      "descripcion": "A clean and refreshing golden beer made for rebellious and explorer spirits. ",
+      "propiedades": {
+        "alcohol": "4,8%",
+        "floz": "16"
+      },
+      "mainImage": "/nuestrasbirras/en/indie-lager/indie-lager.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/en/indie-lager/indie-lager-info.jpg",
+        "bajada": "Refreshing like that new emerging band you recently discovered. Indie lager, to sing out loud.",
+        "destacado": "Where the good times start.",
+        "secondaryImage": "/nuestrasbirras/en/indie-lager/indie-lager-secondary.jpg",
+        "altSecondaryImage": "To sing out loud"
+      },
+      "style": {
+        "background": null,
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 4,
+      "nombre": "Ipanema",
+      "slug": "ipanema",
+      "url-buy": "url",
+      "categoria": null,
+      "descripcion": "Freshly squeezed hazy juicy ipa with a ton of tropical aromas thanks to a generous amount of hops added in dry-hop. Mango, papaya, peach and a subtle citrus ending. A hint of wheat and oatmeal gives a distinctive hazy look and adds to very balanced mouthfeel.",
+      "propiedades": {
+        "alcohol": "6,2%",
+        "floz": "16"
+      },
+      "mainImage": "/nuestrasbirras/en/ipanema/ipanema.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/en/ipanema/ipanema-info.jpg",
+        "bajada": "Freshly squeezed hazy juicy ipa with a ton of tropical aromas",
+        "destacado": "More likely to blow your head off.",
+        "secondaryImage": "/nuestrasbirras/en/ipanema/ipanema-video.mp4",
+        "altSecondaryImage": "Sucundum"
+      },
+      "style": {
+        "background": null,
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 5,
+      "nombre": "Royal Amber",
+      "slug": "royal-amber",
+      "url-buy": "url",
+      "categoria": null,
+      "descripcion": "Our combination of special malts gives this amber lager roasted and caramel profile. Deep copper color and balanced bitterness.",
+      "propiedades": {
+        "alcohol": "5%",
+        "floz": "16"
+      },
+      "mainImage": "/nuestrasbirras/en/royal-amber/royal-amber.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/en/royal-amber/royal-amber-info.jpg",
+        "bajada": "With a copper color that reflects its elegance and complexity in its aromas, it is a beer to stop and look, smell and then drink. A combination of special malts that give it a toasted and caramel profile.",
+        "destacado": "Your ultimate red beer.",
+        "secondaryImage": "images/royal-amber/royal-amber-secondary.jpg",
+        "altSecondaryImage": "Each drink invites you to take the next one "
+      },
+      "style": {
+        "background": null,
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    },
+
+    {
+      "id": 6,
+      "nombre": "Wolf Ipa",
+      "slug": "wolf-ipa",
+      "url-buy": "url",
+      "categoria": null,
+      "descripcion": "Hops at it’s best. Bold blond with fresh and intense hop flavor and aroma. Herbal and citric character. Deep and balanced bitterness.",
+      "propiedades": {
+        "alcohol": "5,8%",
+        "floz": "16"
+      },
+      "mainImage": "/nuestrasbirras/en/wolf-ipa/wolf-ipa.png",
+      "info": {
+        "imageInfo": "/nuestrasbirras/en/wolf-ipa/wolf-ipa-info.jpg",
+        "bajada": "Drinking. Citric and fruity as a result of dry hopping with mosaic hops, it has a fantastic balance between aroma, flavor, bitterness and drinkability.",
+        "destacado": "Say no no more. This is your ipa.",
+        "secondaryImage": "/nuestrasbirras/en/wolf-ipa/wolf-ipa-video.mov",
+        "altSecondaryImage": "Hops bomb"
+      },
+      "style": {
+        "background": null,
+        "esquinaIzquierda": null,
+        "esquinaDerecha": null
+      }
+    }
+  ]
+}

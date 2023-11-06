@@ -1,0 +1,36 @@
+{
+    "titulo": "Beers",
+    "colorBordeTitulo": "#D41768",
+    "cervezas": [
+      {
+        "src": "/nuestrasbirras/en/cosmic-hazy-lager/cosmic-hazy-lager.png",
+        "alt": "Cosmic Hazy Lager",
+        "slug": "cosmic-hazy-lager"
+      },
+      {
+        "src": "/nuestrasbirras/en/honey/honey.png",
+        "alt": "Honey",
+        "slug": "honey"
+      },
+      {
+        "src": "/nuestrasbirras/en/indie-lager/indie-lager.png",
+        "alt": "Indie Lager",
+        "slug": "indie-lager"
+      },
+      {
+        "src": "/nuestrasbirras/en/ipanema/ipanema.png",
+        "alt": "Ipanema",
+        "slug": "ipanema"
+      },
+      {
+        "src": "/nuestrasbirras/en/royal-amber/royal-amber.png",
+        "alt": "Royal Amber",
+        "slug": "royal-amber"
+      },
+      {
+        "src": "/nuestrasbirras/en/wolf-ipa/wolf-ipa.png",
+        "alt": "Wolf Ipa",
+        "slug": "wolf-ipa"
+      }
+    ]
+  }

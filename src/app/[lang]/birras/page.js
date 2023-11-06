@@ -5,6 +5,7 @@ import ScrollHorizontal from '../../../../components/ScrollHorizontal'
 import cervezasClasicasData from '../../../../data/cervezasclasicas.json';
 import cervezasLimitadasData from '../../../../data/cervezaslimitadas.json';
 import cervezasEspecialesData from '../../../../data/cervezasespeciales.json';
+import cervezasInglesData from '../../../../data/cervezas-listado-en.json';
 import Draggable from '../../../../components/common/Dragabble'
 import Header from '../../../../components/common/header'
 import Footer from '../../../../components/common/Footer';
@@ -39,18 +40,27 @@ export default async function Page({ children, params }) {
                                         </div>
                                     </Draggable>
                                 </div>
-                                
                             </div>
                         </div>
                     </div>
-
-                    <ScrollHorizontal>
-                        <div className="carousel__wrapper w-[1172vw] h-[122.82vw] lg:w-[567.42vh] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]">
-                            <CarouselBirras cervezas={cervezasClasicasData.cervezas} titulo={cervezasClasicasData.titulo} colorBordeTitulo={cervezasClasicasData.colorBordeTitulo}  />
-                            <CarouselBirras cervezas={cervezasLimitadasData.cervezas} titulo={cervezasLimitadasData.titulo} colorBordeTitulo={cervezasLimitadasData.colorBordeTitulo}  />
-                            <CarouselBirras cervezas={cervezasEspecialesData.cervezas} titulo={cervezasEspecialesData.titulo} colorBordeTitulo={cervezasEspecialesData.colorBordeTitulo}  />
-                        </div>
-                    </ScrollHorizontal>
+                    {lang === 'es' && (
+                        <ScrollHorizontal>
+                            <div className="carousel__wrapper w-[1172vw] h-[122.82vw] lg:w-[567.42vh] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]">
+                                <CarouselBirras cervezas={cervezasClasicasData.cervezas} titulo={cervezasClasicasData.titulo} colorBordeTitulo={cervezasClasicasData.colorBordeTitulo}  />
+                                <CarouselBirras cervezas={cervezasLimitadasData.cervezas} titulo={cervezasLimitadasData.titulo} colorBordeTitulo={cervezasLimitadasData.colorBordeTitulo}  />
+                                <CarouselBirras cervezas={cervezasEspecialesData.cervezas} titulo={cervezasEspecialesData.titulo} colorBordeTitulo={cervezasEspecialesData.colorBordeTitulo}  />
+                            </div>
+                        </ScrollHorizontal>
+                    )}
+                    {lang === 'en' && (
+                        <ScrollHorizontal>
+                            <div className="carousel__wrapper w-[1172vw] h-[122.82vw] lg:w-[100%] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]">
+                                <CarouselBirras cervezas={cervezasInglesData.cervezas} titulo={cervezasInglesData.titulo} colorBordeTitulo={cervezasInglesData.colorBordeTitulo}  />
+                            </div>
+                        </ScrollHorizontal>
+                       
+                    )}
+                    
                 </div>
                 <Footer />
             </section>

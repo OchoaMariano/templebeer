@@ -14,6 +14,7 @@ import ScrollHorizontal from '../../../../../components/ScrollHorizontal'
 import Header from '../../../../../components/common/header';
 import Footer from '../../../../../components/common/Footer';
 import CervezasData from '../../../../../data/cervezas.json';
+import { getDictionary } from '../../../../dictionaries';
 
 const data = {
     birras: [
@@ -72,18 +73,22 @@ const data = {
     ]
 };
 
-export default function Page({ params }) {
-    const { slug, lang } = params; // Asumiendo que "params" contiene un objeto con la propiedad "slug"
+export default async function Page({ params }) {
+    const { slug } = params; // Asumiendo que "params" contiene un objeto con la propiedad "slug"
     const cerveza = CervezasData.Cervezas.find(c => c.slug === slug);
 
     if (!cerveza) {
         return <div>Cerveza no encontrada</div>;
     }
 
+    const lang = params.lang
+    const dict = await getDictionary(lang);
+    const headerDic = dict.header;
+
     return (
         <>
             <div className="desktop hidden lg:block">
-                <Header />
+                <Header dictonary={headerDic} />
                 <section className="h-screen bg-cover bg-center" style={{ backgroundImage: cerveza.style?.background ? `url(${cerveza.style.background})` : 'url(/background-home.jpeg)' }}>
                     <div className="product-viewport">
                         <div className="page_product_wrapper relative h-full">
@@ -299,7 +304,7 @@ export default function Page({ params }) {
                 </section>
             </div>
             <div className="mobile lg:hidden">
-                <Header  />
+                <Header dictonary={headerDic}  />
                 <section className="bg-cover bg-center pt-[20vw]" style={{ backgroundImage: cerveza.style?.background ? `url(${cerveza.style.background})` : 'url(/background-home.jpeg)' }}>
                     <div className="product-box-1-mobile">
                         <div className="product-title-box-mobile">
