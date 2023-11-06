@@ -5,10 +5,12 @@ import ScrollHorizontal from '../../../../components/ScrollHorizontal'
 import Draggable from '../../../../components/common/Dragabble'
 import { Knockout54UltraBold } from '../layout'
 
-export default function Page({ children }) {
+export default function Page({ children, params }) {
+    const lang = params.lang
+
     return (
         <div>
-            <Header  />
+            <Header />
             <section className="md:h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
                 <div className="page__wrapper flex flex-col">
                     <div className="flex pt-[18.15vw] px-5 lg:hidden">

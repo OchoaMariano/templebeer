@@ -1,20 +1,23 @@
 import { NextResponse } from 'next/server';
-import { match } from '@formatjs/intl-localematcher';
+
+import { i18n } from './i18n-config';
+import { match as matchLocale } from '@formatjs/intl-localematcher';
 import Negotiator from 'negotiator';
 
-let locales = ['en', 'es'];
-let defaultLocale = 'es';
-
 function getLocale(request) {
-  const headers = { 'accept-language': request.headers.get('accept-language') || '' };
-  const languages = new Negotiator({ headers }).languages();
-  
-  return match(languages, locales, defaultLocale);
+  const negotiatorHeaders = {};
+  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
+
+  const locales = i18n.locales;
+
+  let languages = new Negotiator({ headers: negotiatorHeaders }).languages(locales);
+
+  const locale = matchLocale(languages, locales, i18n.defaultLocale);
+
+  return locale;
 }
 
 export function middleware(request) {
-  console.log('Middleware ejecutado');
-
   const pathname = request.nextUrl.pathname;
 
   // Si la solicitud parece ser para un recurso estático, no interferimos
@@ -22,24 +25,19 @@ export function middleware(request) {
     return NextResponse.next();
   }
 
-  // Intenta obtener el locale de los headers
-  const locale = getLocale(request);
-
-  // Verificar el locale en la URL
-  const pathnameIsMissingLocale = locales.every(
-    (loc) => !pathname.startsWith(`/${loc}/`) && pathname !== `/${loc}`
+  const pathnameIsMissingLocale = i18n.locales.every(
+    (locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
   );
 
-  // Si el locale falta en la URL
   if (pathnameIsMissingLocale) {
-    return NextResponse.redirect(`${request.nextUrl.origin}/${locale}${pathname}`);
-  }
+    const locale = getLocale(request);
 
-  return NextResponse.next();
+    return NextResponse.redirect(
+      new URL(`/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`, request.url)
+    );
+  }
 }
 
 export const config = {
-  matcher: [
-    '/((?!_next).*)',
-  ],
+  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
 };

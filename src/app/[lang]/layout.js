@@ -1,10 +1,9 @@
 import './globals.css'
-import { Inter } from 'next/font/google'
 import localFont from 'next/font/local'
 import Popup from '../../../components/common/Popup'
 import Legales from '../../../components/common/Legales'
-
-const inter = Inter({ subsets: ['latin'] })
+import LocaleSwitcher from '../../../components/common/LocaleSwitcher'
+import { i18n } from '../../i18n-config'
 
 export const Knockout34 = localFont({
   src: [
@@ -50,14 +49,18 @@ export const GothamBook = localFont({
   ],
 })
 
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }))
+}
+
 export const metadata = {
   title: 'Temple Beer',
   description: 'Temple Beer - Encuentro, Birra y Música',
 }
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, params }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang={params.lang} className="scroll-smooth">
       
       <body className={Knockout54.className}>
         <Popup />

@@ -6,7 +6,8 @@ import Draggable from '../../../../components/common/Dragabble'
 import Footer from '../../../../components/common/Footer';
 
 
-export default function Page({ children }) {
+export default function Page({ children, lang }) {
+
     return (
         <div>
             <Header />

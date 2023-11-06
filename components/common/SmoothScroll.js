@@ -3,7 +3,6 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { gsap, Power4 } from 'gsap';
 import LocomotiveScroll from 'locomotive-scroll';
-import 'locomotive-scroll/dist/locomotive-scroll.css';
 
 export default function SmoothScroll({ children }) {
   const containerRef = useRef(null);

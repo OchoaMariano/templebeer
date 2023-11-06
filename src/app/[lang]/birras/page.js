@@ -9,10 +9,12 @@ import Draggable from '../../../../components/common/Dragabble'
 import Header from '../../../../components/common/header'
 import Footer from '../../../../components/common/Footer';
 
-export default function Page({ children }) {
+export default function Page({ children, params }) {
+    const lang = params.lang
+
     return (
         <div>
-            <Header  />
+            <Header />
             <section className="lg:h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
                 <div className="grid content-center lg:content-end h-full pb-[7.08vh] pt-[16.15vw] lg:pt-[0] gap-y-[7.69vw] lg:gap-y-[0]">
                     <div className="flex flex-col lg:pl-[34px]">

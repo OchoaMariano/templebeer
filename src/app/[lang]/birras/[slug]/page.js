@@ -73,7 +73,7 @@ const data = {
 };
 
 export default function Page({ params }) {
-    const { slug } = params; // Asumiendo que "params" contiene un objeto con la propiedad "slug"
+    const { slug, lang } = params; // Asumiendo que "params" contiene un objeto con la propiedad "slug"
     const cerveza = CervezasData.Cervezas.find(c => c.slug === slug);
 
     if (!cerveza) {
@@ -83,7 +83,7 @@ export default function Page({ params }) {
     return (
         <>
             <div className="desktop hidden lg:block">
-                <Header  />
+                <Header />
                 <section className="h-screen bg-cover bg-center" style={{ backgroundImage: cerveza.style?.background ? `url(${cerveza.style.background})` : 'url(/background-home.jpeg)' }}>
                     <div className="product-viewport">
                         <div className="page_product_wrapper relative h-full">
