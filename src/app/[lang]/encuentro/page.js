@@ -9,11 +9,16 @@ import ModalArtistas from '../../../../components/encuentro/ModalArtistas'
 import ModalBares from '../../../../components/encuentro/ModalBares'
 import ModalMemes from '../../../../components/encuentro/ModalMemesBirreros'
 import ModalSanPatricio from '../../../../components/encuentro/ModalSanPatricio'
+import { getDictionary } from '../../../dictionaries';
 
 
 import { Knockout54UltraBold } from '../layout'
 
-export default function Page({ children, searchParams }) {
+export default async function Page({ children, searchParams, params }) {
+    const lang = params.lang
+    const dict = await getDictionary(lang);
+    const headerDic = dict.header;
+
     const showModal = searchParams?.modalAstronomia;
     const showModalGhost = searchParams?.modalGhost;
     const showModalBirra = searchParams?.modalBirra;
@@ -25,7 +30,7 @@ export default function Page({ children, searchParams }) {
 
     return (
         <div>
-            <Header />
+            <Header dictonary={headerDic}/>
             <section className="md:h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
                 <div className="page__wrapper pt-[18.15vw] md:pt-[6.37vh] px-[5.12vw] md:px-[4.83vh]">
                     <div className="title__wrapper flex items-center justify-center pt-[2.83vh]">

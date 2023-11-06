@@ -1,12 +1,18 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { createLocalePath } from '../../src/utils/pathUtils'
 
 function CarouselBirras({ cervezas, titulo, colorBordeTitulo }) {
+  const pathName = usePathname();
+
     return (
         <div className=" flex flex-col flex-nowrap pl-[5.12vw] lg:pl-[4.81vh]">   
           <div className="flex flex-row pb-[15px] items-end">
             {cervezas.map((cerveza, index) => (
-                <Link key={index} href={`/birras/${cerveza.slug}`}>
+                <Link key={index} href={createLocalePath(`/birras/${cerveza.slug}`, pathName)}>
                     <div key={index} className="slide__birra hover:scale-110 transition duration-100 transform">
                     <div className="w-[70.25vw] h-[109.74vw] lg:h-[40.5vh] lg:w-[26.34vh] relative">
                         <Image 

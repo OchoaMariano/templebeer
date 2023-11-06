@@ -4,13 +4,16 @@ import Footer from '../../../../components/common/Footer';
 import ScrollHorizontal from '../../../../components/ScrollHorizontal'
 import Draggable from '../../../../components/common/Dragabble'
 import { Knockout54UltraBold } from '../layout'
+import { getDictionary } from '../../../dictionaries';
 
-export default function Page({ children, params }) {
+export default async function Page({ children, params }) {
     const lang = params.lang
+    const dict = await getDictionary(lang);
+    const headerDic = dict.header;
 
     return (
         <div>
-            <Header />
+            <Header dictonary={headerDic} />
             <section className="md:h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
                 <div className="page__wrapper flex flex-col">
                     <div className="flex pt-[18.15vw] px-5 lg:hidden">

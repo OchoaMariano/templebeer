@@ -4,13 +4,16 @@ import { Knockout54UltraBold, Knockout34, Knockout54, GothamBook } from '../layo
 import ScrollHorizontal from '../../../../components/ScrollHorizontal'
 import Draggable from '../../../../components/common/Dragabble'
 import Footer from '../../../../components/common/Footer';
+import { getDictionary } from '../../../dictionaries';
 
-
-export default function Page({ children, lang }) {
+export default async function Page({ children, params }) {
+    const lang = params.lang
+    const dict = await getDictionary(lang);
+    const headerDic = dict.header;
 
     return (
         <div>
-            <Header />
+            <Header dictonary={headerDic} />
             <section className="md:h-screen bg-cover bg-center md:flex md:items-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
                 <div className="page__wrapper pt-[18.15vw] md:pt-[6.37vh] px-[5.12vw] md:px-[4.83vh] overflow-hidden">
                     <div className="title__wrapper pt-[3.84vw] md:pt-[2.83vh] relative flex flex-row items-center">

@@ -7,6 +7,7 @@ import Draggable from '../../../components/common/Dragabble'
 import Header from '../../../components/common/header'
 import Footer from '../../../components/common/Footer';
 import { Knockout54UltraBold, Knockout34, Knockout54 } from './layout'
+import { getDictionary } from '../../dictionaries';
 
 const data = {
     birras: [
@@ -36,13 +37,15 @@ const data = {
   };
   
 
-export default function Home({params}) {
+export default async function Home({params}) {
     const lang = params.lang
-    console.log(lang)
+    const dict = await getDictionary(lang);
+    const headerDic = dict.header;
+
 
     return (
         <>
-            <Header />
+            <Header dictonary={headerDic} />
             <div className="desktop h-screen bg-cover bg-center hidden md:block" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
                 <ScrollHorizontal>
                     <div className="row" data-scroll data-scroll-speed="-.1" data-scroll-offset="0,100%" data-scroll-event-progress="progressEvent">  
@@ -381,13 +384,13 @@ export default function Home({params}) {
                     <div className="beer-wrapper-mobile">
                         <div className="flex justify-center relative w-[90.51vw] h-[55.89vw]">
                             <div className="flex items-center justify-center z-10 h-full cursor-pointer transform transition-transform duration-300 hover:scale-110">
-                                <div className="relative w-[29.74vw] h-[41.28vw]">
+                                <Link href={`${lang}/birras/wolf-ipa`} className="relative w-[29.74vw] h-[41.28vw]">
                                     <Image 
                                         src="/birra-wolf-ipa.png"
                                         alt="Lata de Cerveza"
                                         fill
                                     />
-                                </div>  
+                                </Link>  
                             </div>
                             <div className="absolute -bottom-10 right-2 mb-4 mr-4 z-10">
                                 <div className="relative w-[21.53vw] h-[20.25vw]">
@@ -408,9 +411,9 @@ export default function Home({params}) {
                     <div className="nav-title-mobile">
                         <div className="title-wrapper flex relative">
                             <h1 className={`text-white text-[10.25vw] Knockout54UltraBold elementoEfectoVelocidad ${Knockout54UltraBold.className}`}>
-                                <Link href='/encuentro' className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out">ENCUENTRO</Link> 
-                                <Link href='/birras' className="text-white hover:text-[#D51668] transition duration-300 ease-in-out"> BIRRA </Link>
-                                <Link href='/musica' className="text-white hover:text-[#1F9996] transition duration-300 ease-in-out"> MÚSICA</Link>
+                                <Link href={`${lang}/encuentro`} className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out">ENCUENTRO</Link> 
+                                <Link href={`${lang}/birras`} className="text-white hover:text-[#D51668] transition duration-300 ease-in-out"> BIRRA </Link>
+                                <Link href={`${lang}/musica`} className="text-white hover:text-[#1F9996] transition duration-300 ease-in-out"> MÚSICA</Link>
                             </h1>
                             <div className="absolute right-32 bottom-16">
                                 <Draggable initialPosition={{ x: 0, y: 0 }}>
@@ -471,16 +474,16 @@ export default function Home({params}) {
                             </div>
                         </div>
                         <div className="column-mobile">
-                            <div className="birras-nav w-[55.64vw] h-[60.25vw]">
+                            <div className="birras-nav w-[55.64vw] h-[64.25vw]">
                                 <h1 className="leading-[7vw]">
-                                    <Link className={`text-white hover:text-[#D51668] transition duration-300 ease-in-out text-[6.9vw] ${Knockout54.className}`} href="/birras">
+                                    <Link className={`text-white hover:text-[#D51668] transition duration-300 ease-in-out text-[6.9vw] ${Knockout54.className}`} href={`${lang}/birras`}>
                                         NUESTRAS BIRRAS
                                     </Link>
                                 </h1>
                                 <nav className="flex flex-wrap self-stretch">
                                     {data.birras.map((birraObj, index) => (
                                     <span key={index} className={`text-[2.30vw] py-[0.51vw] px-[1.28vw] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
-                                        <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`/birras/${birraObj.slug}`}>
+                                        <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`${lang}/birras/${birraObj.slug}`}>
                                         {birraObj.title}
                                         </Link>
                                     </span>
@@ -645,7 +648,7 @@ export default function Home({params}) {
                 </div>
                 <div className="mobile-box-5 flex flex-col mt-[5.12vw] mb-[5.12vw] relative">
                     <div className="row-1 flex flex-row items-end">
-                        <div className="w-[39.74vw] h-[53.07vw] relative">
+                        <Link href={`${lang}/encuentro`} className="w-[39.74vw] h-[53.07vw] relative">
                             <Image 
                                 src="/encuentrosencuentros.png"
                                 style={{
@@ -654,7 +657,7 @@ export default function Home({params}) {
                                 }}
                                 fill
                             />
-                        </div>
+                        </Link>
                         <div className="w-[39.74vw] h-[26.07vw] relative flex items-end mb-[7vw]">
                             <Image 
                                 src="/frase-mobile.png"

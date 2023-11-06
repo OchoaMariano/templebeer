@@ -1,16 +1,14 @@
 'use client'
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import LocaleSwitcher from './LocaleSwitcher';
+import LocaleSwitcher from './LocaleSwitcher'
 import { usePathname } from 'next/navigation'
 import { i18n } from '../../src/i18n-config'
 import { Tooltip } from 'react-tooltip'
 
-
-
-function Header ({lang}) {
+export default function Header ({ dictonary }) {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -61,16 +59,16 @@ function Header ({lang}) {
             <div className="wrapper__content-nav hidden md:flex">
                 <div className="main__nav" >
                     <Link href={createLocalePath('/birras')} className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
-                        Birras
+                        {dictonary.nav.birras}
                     </Link>
                     <Link href={createLocalePath('/bares')} className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
-                        Bares
+                        {dictonary.nav.bares}
                     </Link>
-                    <Link href={createLocalePath('/encuentro')} className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
-                        Encuentro
+                    <Link href={createLocalePath('/en/encuentro')} className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
+                        {dictonary.nav.encuentro}
                     </Link>
                     <Link href={createLocalePath('/musica')} className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
-                        Música
+                        {dictonary.nav.musica}
                     </Link>
                     <a href="https://diamond-hamburger-c59.notion.site/0f69945dbb6247a1b08f8eae47bb2442?v=bdfe9a6a777c4281adda7ea36cf7d43c" target="_blank" className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
                         Temple Academy
@@ -145,25 +143,25 @@ function Header ({lang}) {
                 </div>
                 <div className="flex flex-col ">
                     <Link href={createLocalePath('/')} className="text-[11.28vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
-                        Home
+                        {dictonary.nav.home}
                     </Link>
                     <Link href={createLocalePath('/birras')} className="text-[11.28vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
-                        Birras
+                        {dictonary.nav.birras}
                     </Link>
                     <Link href={createLocalePath('/bares')} className="text-[11.28vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
-                        Bares
+                        {dictonary.nav.bares}
                     </Link>
                     <Link href={createLocalePath('/encuentro')} className="text-[11.28vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
-                        Encuentro
+                        {dictonary.nav.encuentro}
                     </Link>
                     <Link href={createLocalePath('/musica')} className="text-[11.28vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
-                        Música
+                        {dictonary.nav.musica}
                     </Link>
                 </div>
                 <div className="flex flex-col py-[5.12vw]">
                     <div className="flex flex-start items-start justify-start gap-x-[2.52vw] text-white pb-[5.12vw]">
-                        <Link href={createLocalePath('/legales')} className="text-[2.56vw] uppercase"> Legales </Link>
-                        <a className="text-[2.56vw] uppercase" href="" target="_blank">Temple Academy</a>
+                        <Link href={createLocalePath('/legales')} className="text-[2.56vw] uppercase"> {dictonary.nav.legales} </Link>
+                        <a className="text-[2.56vw] uppercase" href="" target="_blank">{dictonary.nav.templeAcademy}y</a>
                     </div>
                     <div className="bg-white h-[1px]"></div>
                     <div className="flex flex-row items-center justify-between py-[7.12vw]">
@@ -238,6 +236,3 @@ function Header ({lang}) {
     </header>
   )
 }
-
-
-export default Header

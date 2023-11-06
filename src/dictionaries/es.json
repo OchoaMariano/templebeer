@@ -1,5 +1,20 @@
 {
     "home": {
         "title": "Hola, Temple Beer"
+    },
+    "birras": {
+        "title": "Nuestras",
+        "title2": "Birras"
+    },
+    "header": {
+        "nav": {
+            "home": "Inicio",
+            "birras": "Birras",
+            "bares": "Bares",
+            "encuentro": "Encuentro",
+            "musica": "Musica",
+            "templeAcademy": "Temple Academy",
+            "legales": "Legales"
+        }
     }
 }

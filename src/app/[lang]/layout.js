@@ -2,7 +2,6 @@ import './globals.css'
 import localFont from 'next/font/local'
 import Popup from '../../../components/common/Popup'
 import Legales from '../../../components/common/Legales'
-import LocaleSwitcher from '../../../components/common/LocaleSwitcher'
 import { i18n } from '../../i18n-config'
 
 export const Knockout34 = localFont({
@@ -66,7 +65,7 @@ export default function RootLayout({ children, params }) {
         <Popup />
         
         {children}
-        <Legales />
+        <Legales lang={params.lang} />
       </body>
     </html>
   )
