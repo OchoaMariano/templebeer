@@ -1,6 +1,13 @@
 {
     "home": {
-        "title": "Hi, Temple Beer"
+        "mainTitle": {
+            "encuentro": "Culture",
+            "birra": "Beer",
+            "musica": "Music"        
+        },
+        "beerNav": {
+            "title": "Our Beers"
+        }
     },
     "birras": {
         "title": "Our",

@@ -33,6 +33,14 @@ const data = {
         { title: "ALPHA II", id: 20, slug: "proyecto-alpha-2" },
         { title: "ALPHA BARRICA", id: 21, slug: "alpha-barrica-1" },
         { title: "ALPHA STOUT", id: 22, slug: "alpha-imperial-stout" }
+    ],
+    birrasEn: [
+        { title: "WOLF IPA", id: 1, slug: "wolf-ipa" },
+        { title: "ROYAL AMBER", id: 2, slug: "royal-amber" },
+        { title: "HONEY", id: 3, slug: "honey" },
+        { title: "INDIE LAGER", id: 4, slug: "indie-lager" },
+        { title: "IPANEMA HAZY IPA", id: 5, slug: "ipanema" },
+        { title: "COSMIC HAZY LAGER", id: 6, slug: "cosmic-hazy-lager" },
     ]
   };
   
@@ -80,10 +88,10 @@ export default async function Home({params}) {
                                 <div className="row">
                                     <div className="box-1 relative" >
                                         <h1 className={`text-white text-[7.08vh] Knockout54UltraBold elementoEfectoVelocidad ${Knockout54UltraBold.className}`}>
-                                            <Link href={`${lang}/encuentro`} className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out">ENCUENTRO</Link>, 
-                                            <Link href={`${lang}/birras`} className="text-white hover:text-[#D51668] transition duration-300 ease-in-out"> BIRRA </Link> 
+                                            <Link href={`${lang}/encuentro`} className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out uppercase">{dict.home.mainTitle.encuentro}</Link>, 
+                                            <Link href={`${lang}/birras`} className="text-white hover:text-[#D51668] transition duration-300 ease-in-out uppercase"> {dict.home.mainTitle.birra} </Link> 
                                             Y  
-                                            <Link href={`${lang}/musica`} className="text-white hover:text-[#1F9996] transition duration-300 ease-in-out"> MÚSICA</Link>
+                                            <Link href={`${lang}/musica`} className="text-white hover:text-[#1F9996] transition duration-300 ease-in-out uppercase"> {dict.home.mainTitle.musica} </Link>
                                         </h1>
                                         <div className="absolute right-52 top-5 mb-4 mr-4 z-10">
                                             <Draggable initialPosition={{ x: 0, y: 0 }}>
@@ -163,20 +171,35 @@ export default async function Home({params}) {
                                         <div className="box-3">
                                             <div className="nav__wrapper">
                                                 <h1 className="text-4xl font-bold text-white text-[50px]">
-                                                    <Link className={`text-white hover:text-[#D51668] transition duration-300 ease-in-out text-[7.08vh] ${Knockout54.className}`} href={`${lang}/birras`}>
-                                                    NUESTRAS BIRRAS
+                                                    <Link className={`text-white hover:text-[#D51668] transition duration-300 ease-in-out text-[7.08vh] uppercase ${Knockout54.className}`} href={`${lang}/birras`}>
+                                                    {dict.home.beerNav.title}
                                                     </Link>
                                                 </h1>
-                                                <nav className="flex flex-wrap self-stretch gap-y-[2px] pt-2 pr-6">
+                                                {lang === 'es' && (
+                                                    <nav className="flex flex-wrap self-stretch gap-y-[2px] pt-2 pr-6">
                                                     {data.birras.map((birraObj, index) => (
-                                                    <span key={index} className={`py-[2px] px-[5px] text-[1.41vh] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
-                                                        <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" 
-                                                        href={`${lang}/birras/${birraObj.slug}`}>
-                                                        {birraObj.title}
-                                                        </Link>
-                                                    </span>
-                                                    ))}
-                                                </nav>
+                                                        <span key={index} className={`py-[2px] px-[5px] text-[1.41vh] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
+                                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" 
+                                                            href={`${lang}/birras/${birraObj.slug}`}>
+                                                            {birraObj.title}
+                                                            </Link>
+                                                        </span>
+                                                        ))}
+                                                    </nav>
+                                                )}
+                                                {lang === 'en' && (
+                                                    <nav className="flex flex-wrap self-stretch gap-y-[2px] pt-2 pr-6">
+                                                    {data.birrasEn.map((birraObj, index) => (
+                                                        <span key={index} className={`py-[2px] px-[5px] text-[1.41vh] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
+                                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" 
+                                                            href={`${lang}/birras/${birraObj.slug}`}>
+                                                            {birraObj.title}
+                                                            </Link>
+                                                        </span>
+                                                        ))}
+                                                    </nav>
+                                                )}
+                                                
                                             </div>
                                         </div>
                                     </div>

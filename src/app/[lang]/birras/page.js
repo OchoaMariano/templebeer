@@ -54,7 +54,7 @@ export default async function Page({ children, params }) {
                     )}
                     {lang === 'en' && (
                         <ScrollHorizontal>
-                            <div className="carousel__wrapper w-[1172vw] h-[122.82vw] lg:w-[100%] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]">
+                            <div className="carousel__wrapper w-[421vw] h-[122.82vw] lg:w-[100%] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]">
                                 <CarouselBirras cervezas={cervezasInglesData.cervezas} titulo={cervezasInglesData.titulo} colorBordeTitulo={cervezasInglesData.colorBordeTitulo}  />
                             </div>
                         </ScrollHorizontal>

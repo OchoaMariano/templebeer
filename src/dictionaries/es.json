@@ -1,6 +1,13 @@
 {
     "home": {
-        "title": "Hola, Temple Beer"
+        "mainTitle": {
+            "encuentro": "Encuentro",
+            "birra": "Birra",
+            "musica": "Musica"        
+        },
+        "beerNav": {
+            "title": "Nuestras Birras"
+        }
     },
     "birras": {
         "title": "Nuestras",

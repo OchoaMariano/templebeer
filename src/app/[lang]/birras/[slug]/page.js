@@ -14,6 +14,7 @@ import ScrollHorizontal from '../../../../../components/ScrollHorizontal'
 import Header from '../../../../../components/common/header';
 import Footer from '../../../../../components/common/Footer';
 import CervezasData from '../../../../../data/cervezas.json';
+import CervezasDataEn from '../../../../../data/cervezas-en.json';
 import { getDictionary } from '../../../../dictionaries';
 
 const data = {
@@ -74,15 +75,32 @@ const data = {
 };
 
 export default async function Page({ params }) {
-    const { slug } = params; // Asumiendo que "params" contiene un objeto con la propiedad "slug"
-    const cerveza = CervezasData.Cervezas.find(c => c.slug === slug);
+   
+    const { slug, lang } = params; // Asumiendo que "params" contiene un objeto con la propiedad "slug"
+    console.log (slug, lang)
+    
+    let cerveza = null
 
-    if (!cerveza) {
-        return <div>Cerveza no encontrada</div>;
+    if (lang === 'es') {
+        cerveza = CervezasData.Cervezas.find(c => c.slug === slug);
+        console.log(cerveza)
+        if (!cerveza) {
+            return <div>Cerveza no encontrada</div>;
+        }
+    }
+    
+    if (lang === 'en') {
+        cerveza = CervezasDataEn.Cervezas.find(c => c.slug === slug);
+        console.log(cerveza)
+        if (!cerveza) {
+            return <div>Cerveza no encontrada</div>;
+        }
     }
 
-    const lang = params.lang
-    const dict = await getDictionary(lang);
+    
+
+    const langg = params.lang
+    const dict = await getDictionary(langg);
     const headerDic = dict.header;
 
     return (
@@ -114,7 +132,7 @@ export default async function Page({ params }) {
                                                     <h1 className={`text-[9.49vh] text-white leading-none uppercase ${Knockout54UltraBold.className}`}>{cerveza.nombre}</h1>
                                                 </div>
                                                 <div className="callToAction__wrapper flex flex-row gap-x-[10px] pt-[2.97vh]">
-                                                    <Link className="text-white border-b-2 border-white hover:bg-white hover:text-[#D51668] hover:border-[#D51668] transition duration-300 ease-in-out flex flex-row items-center py-1 px-2 gap-[6px] text-[10px] group" href="/birras">
+                                                    <Link className="text-white border-b-2 border-white hover:bg-white hover:text-[#D51668] hover:border-[#D51668] transition duration-300 ease-in-out flex flex-row items-center py-1 px-2 gap-[6px] text-[10px] group" href={`/${lang}/birras`}>
                                                         <Image 
                                                             src='/detallebirras/btn-arrow.png'
                                                             
@@ -131,19 +149,31 @@ export default async function Page({ params }) {
                                                         />
                                                         BIRRAS
                                                     </Link>
-                                                    <Link className="text-black bg-white hover:text-[#ffffff] hover:bg-[#D51668] transition duration-300 ease-in-out py-1 px-2 text-[10px] flex items-center" href="/birras">
-                                                        COMPRAR
-                                                    </Link>
+                                                    {lang === 'es' && (
+                                                        <Link className="text-black bg-white hover:text-[#ffffff] hover:bg-[#D51668] transition duration-300 ease-in-out py-1 px-2 text-[10px] flex items-center" href="/birras">
+                                                            COMPRAR
+                                                        </Link>
+                                                    )}
+                                                    
                                                 </div>
                                                 <div className="description__wrapper flex flex-col pt-[2.26vh]">
                                                     <p className={`text-white uppercase text-[11px] w-[46.88vh] ${GothamBook.className}`}>
                                                         {cerveza.descripcion}
                                                     </p>
+                                                    {lang === 'es' && (
                                                     <div className="propiedades__wrapper flex flex-row text-[11px  pt-[2.97vh]">
                                                         <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>ALC. {cerveza.propiedades.alcohol}</span>
                                                         <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>IBU {cerveza.propiedades.ibu}</span>
                                                         <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>{cerveza.propiedades.size} CC.</span>
                                                     </div>
+                                                    )}
+                                                    {lang === 'en' && (
+                                                    <div className="propiedades__wrapper flex flex-row text-[11px  pt-[2.97vh]">
+                                                        <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>ALC. {cerveza.propiedades.alcohol}</span>
+                                                        <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>FLOZ {cerveza.propiedades.floz}</span>
+                                                    </div>
+                                                    )}
+                                                    
                                                 </div>
                                                 {cerveza.style.esquinaIzquierda && (
                                                     <div className="trama__wrapper absolute bottom-0 left-0">
