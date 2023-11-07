@@ -354,7 +354,7 @@ export default async function Home({params}) {
                                     <BannerWithFloatingLinks />
                                     <div className="absolute left-[34vh] -top-8 mb-4 mr-4 z-20">
                                         <Draggable initialPosition={{ x: 0, y: 0 }}>
-                                            <div className="w-[19.56vh] h-[27.46vh] relative">
+                                            <div className="w-[19.56vh] h-[27.46vh] relative animate-pulsec">
                                                 <Image 
                                                     src="/parlante-sticker.png"
                                                     alt="Temple Beer"
