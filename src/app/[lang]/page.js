@@ -3,6 +3,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ScrollHorizontal from '../../../components/home/ScrollHorizontal';
 import ScrollHorizontalMobile from '../../../components/home/ScrollHorizontalMobile';
+import PictureToVideoBox from '../../../components/home/PictureToVideoBox';
+import BannerWithFloatingLinks from '../../../components/home/BannerWithFloatingLinks';
 import Draggable from '../../../components/common/Dragabble'
 import Header from '../../../components/common/header'
 import Footer from '../../../components/common/Footer';
@@ -30,9 +32,9 @@ const data = {
         { title: "MILKSHAKE NEIPA", id: 17, slug: "milkshake-neipa" },
         { title: "WOLF IPA 0%", id: 18, slug: "wolf-ipa-sin-alcohol" },
         { title: "ALPHA", id: 19, slug: "proyecto-alpha-1" },
-        { title: "ALPHA II", id: 20, slug: "proyecto-alpha-2" },
-        { title: "ALPHA BARRICA", id: 21, slug: "alpha-barrica-1" },
-        { title: "ALPHA STOUT", id: 22, slug: "alpha-imperial-stout" }
+        { title: "ALPHA I", id: 20, slug: "proyecto-alpha-2" },
+        { title: "ALPHA BARRICA I", id: 21, slug: "alpha-barrica-1" },
+        { title: "ALPHA IMPERIAL STOUT", id: 22, slug: "alpha-imperial-stout" }
     ],
     birrasEn: [
         { title: "WOLF IPA", id: 1, slug: "wolf-ipa" },
@@ -93,7 +95,7 @@ export default async function Home({params}) {
                                             Y  
                                             <Link href={`${lang}/musica`} className="text-white hover:text-[#1F9996] transition duration-300 ease-in-out uppercase"> {dict.home.mainTitle.musica} </Link>
                                         </h1>
-                                        <div className="absolute right-52 top-5 mb-4 mr-4 z-10">
+                                        <div className="absolute right-[13vh] top-5 mb-4 mr-4 z-10">
                                             <Draggable initialPosition={{ x: 0, y: 0 }}>
                                                 <div className="rotate-[17deg] w-[10.48vh] h-[17.30vh] relative">
                                                     <Image 
@@ -204,17 +206,8 @@ export default async function Home({params}) {
                                         </div>
                                     </div>
                                     <div className="box-4">
-                                        <div className="picture-box-1">
-                                            <Image 
-                                                src="/frame-2.jpg"
-                                                alt="Temple Beer"
-                                                style={{
-                                                objectFit: 'cover',
-                                                }}
-                                                fill
-                                                unoptimized={true}
-                                            />
-                                        </div>
+                                        <PictureToVideoBox />
+                                        
                                         <div className="picture-box-2">
                                             <Image 
                                                 src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjRveTUxeDk5cHZmeWFtNWJreTNzM2t0NTgxbDEzOHJjZ3h2YzVhYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KBw4MkRoLLLzmK5NTp/giphy-downsized-large.gif"
@@ -320,6 +313,17 @@ export default async function Home({params}) {
                                             </div>
                                         </Draggable>
                                     </div>
+                                    <div className="absolute right-[36vh] top-[22vh] mb-4 mr-4 z-10">
+                                        <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                            <div className=" w-[12.32vh] h-[12.18vh] relative">
+                                                <Image 
+                                                    src="/sticker-musica.png"
+                                                    alt="Temple Beer"
+                                                    fill 
+                                                />
+                                            </div>
+                                        </Draggable>
+                                    </div>
                                 </div>
 
                             </div>
@@ -347,32 +351,7 @@ export default async function Home({params}) {
                                     </Link>
                                 </div>
                                 <div className="box-11 pt-[5.06vh] pl-[4vh] relative">
-                                    <div className="banner-wrapper relative overflow-hidden">
-                                        <div className="banner-content " style={{ animation: 'moveBanner 10s linear infinite', willChange: 'transform' }}>
-                                            <div className="banner" style={{ transformStyle: 'preserve-3d' }}>
-                                                <Image 
-                                                    src="/playlists.jpg"
-                                                    style={{
-                                                        objectFit: 'cover',
-                                                        objectPosition: 'center'
-                                                    }}
-                                                    fill
-                                                />
-                                            </div>
-                                            <div className="banner" style={{ transformStyle: 'preserve-3d' }}>
-                                                <Image 
-                                                    src="/playlists.jpg"
-                                                    style={{
-                                                        objectFit: 'cover',
-                                                        objectPosition: 'center'
-                                                    }}
-                                                    fill
-                                                />
-                                            </div>
-                                            
-                                        </div>  
-                                        
-                                    </div>
+                                    <BannerWithFloatingLinks />
                                     <div className="absolute left-[34vh] -top-8 mb-4 mr-4 z-20">
                                         <Draggable initialPosition={{ x: 0, y: 0 }}>
                                             <div className="w-[19.56vh] h-[27.46vh] relative">
@@ -385,7 +364,7 @@ export default async function Home({params}) {
                                         </Draggable>
                                     </div>
                                 </div>
-                                <div className="box-12 relative">
+                                <div className="box-12 relative z-10">
                                     <div className="beer-png w-[18.55vh] h-[60.62vh] -top-[30.82vh] right-[0vh] absolute">
                                         <Image 
                                             src="/vaso-birra.png"
@@ -705,34 +684,11 @@ export default async function Home({params}) {
                         </div>
                     </div>
                     <div className="row-2 h-[40.25vw] relative">
-                        <div className="banner-wrapper relative overflow-hidden">
-                            <div className="banner-content " style={{ animation: 'moveBanner 10s linear infinite', willChange: 'transform' }}>
-                                <div className="banner" style={{ transformStyle: 'preserve-3d' }}>
-                                    <Image 
-                                        src="/playlists.jpg"
-                                        style={{
-                                            objectFit: 'cover',
-                                            objectPosition: 'center'
-                                        }}
-                                        fill
-                                    />
-                                </div>
-                                <div className="banner" style={{ transformStyle: 'preserve-3d' }}>
-                                    <Image 
-                                        src="/playlists.jpg"
-                                        style={{
-                                            objectFit: 'cover',
-                                            objectPosition: 'center'
-                                        }}
-                                        fill
-                                    />
-                                </div>
-                                
-                            </div>    
-                        </div>
-                        <div className="absolute left-[0] -top-[10vw] z-20">
+                        <BannerWithFloatingLinks />
+                        
+                        <div className="absolute left-[0] -top-[12vw] z-20">
                             <Draggable initialPosition={{ x: 0, y: 0 }}>
-                                <div className="w-[23.76vw] h-[35.12vw] relative">
+                                <div className="w-[29.76vw] h-[41.12vw] relative">
                                     <Image 
                                         src="/parlante-sticker.png"
                                         alt="Temple Beer"
@@ -742,7 +698,7 @@ export default async function Home({params}) {
                             </Draggable>
                         </div>
                     </div>
-                    <div className="beer-png w-[25.38vw] h-[83.33vw] bottom-[8vw] right-[0vw] absolute">
+                    <div className="beer-png w-[25.38vw] h-[83.33vw] bottom-[8vw] right-[0vw] absolute z-10">
                         <Image 
                             src="/vaso-birra.png"
                             style={{

@@ -656,3 +656,51 @@ body {
     transform: scale(0.8) rotate(-7deg);
   }
 }
+
+.picture-box-1 {
+  position: relative;
+  overflow: hidden;
+}
+
+.picture-box-1 video, .picture-box-1 img {
+  transition: opacity 0.5s ease-in-out;
+}
+
+.picture-box-1 video {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+@keyframes moveLinks {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-52%); /* Mueve los enlaces un tercio del ancho total para que se repita continuamente */
+  }
+}
+
+.banner-wrapper {
+  position: relative;
+  width: 140vh;
+  height: 7.64vh;
+}
+
+.banner-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+}
+
+.banner-link {
+  white-space: nowrap; /* Asegúrate de que el texto e icono se mantengan en la misma línea */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 20px; /* Ajusta el relleno según tus necesidades */
+}
