@@ -4,7 +4,7 @@
       "id": 1,
       "nombre": "Wolf Ipa",
       "slug": "wolf-ipa",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/lata-wolf-ipa/",
       "categoria": "clasicas",
       "descripcion": "Cerveza india pale ale, de color dorada ambarina. Inspirada en ipas americanas con un carácter cítrico y herbal característico en aroma y sabor. De amargor muy pronunciado pero equilibrado. El lúpulo en su máxima expresión.",
       "propiedades": {
@@ -35,7 +35,7 @@
       "id": 2,
       "nombre": "Royal Scotish",
       "slug": "royal-scotish",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/lata-scottish/",
       "categoria": "clasicas",
       "descripcion": "Cerveza estilo scottish ale, de origen escocés, con un perfil muy balanceado a la malta. De color cobrizo profundo y con un aroma que nos remite al caramelo, al pan tostado y galletas dulces. De un sabor maltoso, pero sin ser dulce. Con un amargor equilibrado y un cuerpo medio. Cada trago te invita a tomar el siguiente.",
       "propiedades": {
@@ -66,7 +66,7 @@
       "id": 3,
       "nombre": "Honey",
       "slug": "honey",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/lata-honey/",
       "categoria": "clasicas",
       "descripcion": "Cerveza dorada con agregado de miel orgánica en frio. Un cuerpo medio, con un dulzor equilibrado y un delicado sabor a miel. Amargor casi imperceptible y un suave sabor a grano dulce. Muy ligero y fácil de tomar.",
       "propiedades": {
@@ -97,7 +97,7 @@
       "id": 4,
       "nombre": "Cósmica Lager",
       "slug": "cosmica-lager",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/temple-cosmica/",
       "categoria": "clasicas",
       "descripcion": "Se van a sorprender. De turbidez media, con un amargor suave, y a la vez muy fresca y sabrosa. esta juicy (jugosa) Es una single Hop de Galaxy, un lúpulo Australiano increíble, que nos permite ir descubriendo sus sabores a frutas y cítricos. Las lagers están encasilladas como refrescantes y limpias, pero pueden ser mucho más que eso.",
       "propiedades": {
@@ -128,7 +128,7 @@
       "id": 5,
       "nombre": "Indie Golden",
       "slug": "indie-golden",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/lata-golden/",
       "categoria": "clasicas",
       "descripcion": "Cerveza de color dorado, predomina la corteza de pan y cereales, sabor refrescante con muy bajo amargor y de muchisima tomabilidad, imposible no tomar una sola!",
       "propiedades": {
@@ -159,7 +159,7 @@
       "id": 6,
       "nombre": "Black Soul Stout",
       "slug": "black-soul-stout",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/",
       "categoria": "clasicas",
       "descripcion": "Corazón de chocolate y perfume a café. Una birra de color oscuro y buen cuerpo. De amargor moderado y balanceado",
       "propiedades": {
@@ -190,7 +190,7 @@
       "id": 7,
       "nombre": "Flow Apa",
       "slug": "flow-apa",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/flow-apa/",
       "categoria": "clasicas",
       "descripcion": "Cerveza dorada de bajo amargos y agregado de lúpulos americanos en maduración para aportar notas cítricas a limón y pomelo.",
       "propiedades": {
@@ -221,7 +221,7 @@
       "id": 8,
       "nombre": "Revolution Neipa",
       "slug": "revolution-neipa",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/lata-revolution-neipa/",
       "categoria": "clasicas",
       "descripcion": "Es una birra muy lupulada, con un aroma más intenso y un sabor más amigable al paladar. Con apariencia turbia, afrutada y sedosa.",
       "propiedades": {
@@ -252,7 +252,7 @@
       "id": 9,
       "nombre": "Lemon Haze Ipa",
       "slug": "lemon-haze-ipa",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/lata-lemon-haze-ipa/",
       "categoria": "limitadas",
       "descripcion": "En colaboración con santa planta. Los terpenos de lemon haze se unen a los lúpulos mosaic aportando toda la esencia de esta cepa de cannabis sativa. Con aromas cítricos, almidonados y un marcado skunk, nos trae todos los componentes de este hermoso híbrido. La lemon haze es el resultado del cruce de la lemon skunk y la amnesia haze, una combinación increíble. No contiene thc ni cbd.",
       "propiedades": {
@@ -283,7 +283,7 @@
       "id": 10,
       "nombre": "Critical Apa",
       "slug": "critical-apa",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/critical-apa/",
       "categoria": "limitadas",
       "descripcion": "Cerveza dorada de bajo amargor, con agregado de lúpulos americanos de notas cítricas a limón y pomelo. Con terpenos critical jack, de carácter cítrico y delicado sabor picante y a madera.",
       "propiedades": {
@@ -314,7 +314,7 @@
       "id": 11,
       "nombre": "Kandy Kush Honey",
       "slug": "kandy-kush-honey",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/temple-kandy-kush-honey/",
       "categoria": "limitadas",
       "descripcion": "Cerveza rubia, con un amargor bajo, casi nulo y  muchísima tomabilidad, donde se une lo dulce de la miel con el agregado de terpeno Girl Scout Cookies. Ambas combinaciones hacen que la cerveza mantenga el perfil del estilo, agregando notas herbales y cítricas tanto en sabor como en aroma. NO CONTIENE THC NI CBD.",
       "propiedades": {
@@ -345,7 +345,7 @@
       "id": 12,
       "nombre": "Infrared Ipa",
       "slug": "infrared-ipa",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/infrared-ipa/",
       "categoria": "limitadas",
       "descripcion": "Una 'red ipa' donde unimos lo mejor de las maltas caramelo, cuando acerques la copa, en ese primer trago, aparecerán dos lúpulos infalibles como el 'citra y centennial' que suman al dulce de la malta unos aromas y sabores a fruta recíen cosechada.",
       "propiedades": {
@@ -376,7 +376,7 @@
       "id": 13,
       "nombre": "Ipanema",
       "slug": "ipanema",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/",
       "categoria": "limitadas",
       "descripcion": "Una ipa turbia con cuerpo, mucho aroma y sedosa que explota de sabores en cada sorbo.",
       "propiedades": {
@@ -407,7 +407,7 @@
       "id": 14,
       "nombre": "Jammin' Imperial Stout",
       "slug": "jammin-imperial-stout",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/jazmin-imperial-stout/",
       "categoria": "especiales",
       "descripcion": "Es distinta: una cerveza con una propuesta transformadora para la rutina diaria con un proceso intenso, que mezcla el café con lo dulce y lo frutal. Una carga de notas de sabor en una sola cerveza. Una imperial stout con una personalidad chill y con un groove totalmente único",
       "propiedades": {
@@ -438,7 +438,7 @@
       "id": 15,
       "nombre": "Kung Fu Sour",
       "slug": "kung-fu-sour",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/kung-fu-sour/",
       "categoria": "especiales",
       "descripcion": "En este caso presentamos una cerveza distinta a todas, con una acidez marcada y refrescante, un carácter láctico super limpio que deja brillar los frutos rojos acompañados de un alcohol bajo y una alta tomabilidad",
       "propiedades": {
@@ -469,7 +469,7 @@
       "id": 16,
       "nombre": "Demon Honey",
       "slug": "demon-honey",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/",
       "categoria": "especiales",
       "descripcion": "Una red honey con alta graduación alcohólica. Con aroma a chocolate y caramelo. Con apariencia oscura y turbia",
       "propiedades": {
@@ -500,7 +500,7 @@
       "id": 17,
       "nombre": "Milkshake Neipa",
       "slug": "milkshake-neipa",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/",
       "categoria": "especiales",
       "descripcion": "Una birra con aroma tropical y un mix de sabores frutales: durazno, mango, guayaba y coco",
       "propiedades": {
@@ -531,7 +531,7 @@
       "id": 18,
       "nombre": "Wolf Ipa Sin Alcohol",
       "slug": "wolf-ipa-sin-alcohol",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/6-pack-wolf-ipa-0-sin-alcohol/",
       "categoria": "especiales",
       "descripcion": "Cerveza india pale ale sin alcohol, de color dorada ambarina, inspirada en ipas americanas con un carácter cítrico y herbal característico en aroma y sabor. De amargor muy pronunciado pero equilibrado. El lúpulo en su máxima expresión",
       "propiedades": {
@@ -562,7 +562,7 @@
       "id": 19,
       "nombre": "Proyecto Alpha 1",
       "slug": "proyecto-alpha-1",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/proyecto-alpha-barrel-aged-wolf-ipa/",
       "categoria": "especiales",
       "descripcion": "El resultado de una wolf ipa madurada en frío y añejada en barricas de roble durante un año, dándole notas de madera, vainilla y un leve amargor",
       "propiedades": {
@@ -593,7 +593,7 @@
       "id": 20,
       "nombre": "Proyecto Alpha 2",
       "slug": "proyecto-alpha-2",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/proyecto-alpha-ii-barrel-aged-wolf-ipa/",
       "categoria": "especiales",
       "descripcion": "El resultado de una wolf ipa madurada en frío y añejada en barricas de roble durante un año y medio, dándole notas de madera, vainilla y un leve amargor. A diferencia de alpha i posee un perfil más aromático y en sabor es más ácida debido a la incorporación de brett",
       "propiedades": {
@@ -624,7 +624,7 @@
       "id": 21,
       "nombre": "Alpha Barrica 1",
       "slug": "alpha-barrica-1",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/alpha-barrel-aged-750ml/",
       "categoria": "especiales",
       "descripcion": "Wolf ipa madurada en frío y añejada en barrica de roble, botella de 710cc esta cerveza se embotella en tamaño mas grande, ya que fue la primer barrica que llenamos y también porque el perfil de madera y vainilla era increíble, ideal para compartir con amigos.",
       "propiedades": {
@@ -655,7 +655,7 @@
       "id": 22,
       "nombre": "Alpha Imperial Stout",
       "slug": "alpha-imperial-stout",
-      "url-buy": "url",
+      "urlBuy": "https://tienda.temple.com.ar/productos/alpha-imperial-stout/",
       "categoria": "especiales",
       "descripcion": "El papel protagónico se lo llevan las maltas en esta imperial stout con seis meses de maduración en barrica. Con aroma a café, frutos secos y chocolate amargo, textura aterciopelada y sensación de suave tibieza de alcohol. ",
       "propiedades": {

@@ -152,9 +152,9 @@ export default async function Page({ params }) {
                                                         BIRRAS
                                                     </Link>
                                                     {lang === 'es' && (
-                                                        <Link className="text-black bg-white hover:text-[#ffffff] hover:bg-[#D51668] transition duration-300 ease-in-out py-1 px-2 text-[10px] flex items-center" href="/birras">
+                                                        <a className="text-black bg-white hover:text-[#ffffff] hover:bg-[#D51668] transition duration-300 ease-in-out py-1 px-2 text-[10px] flex items-center" target="_blank" href={cerveza.urlBuy}>
                                                             COMPRAR
-                                                        </Link>
+                                                        </a>
                                                     )}
                                                     
                                                 </div>
