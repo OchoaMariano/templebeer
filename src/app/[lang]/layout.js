@@ -48,6 +48,17 @@ export const GothamBook = localFont({
   ],
 })
 
+export const Marker = localFont({
+  src: [
+    {
+      path: '../../fonts/MarkerBoldRegular.woff2',
+      weight: '400',
+      style: 'normal',
+      variable: '--font-marker'
+    },
+  ],
+})
+
 export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }))
 }

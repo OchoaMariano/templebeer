@@ -74,8 +74,8 @@ export default function Header ({ dictonary }) {
                         Temple Academy
                     </a>
                 </div>
-                <div className="hidden xl:block divisor h-[21px] w-[1px] bg-white"></div>
-                <div className="hidden xl:flex rrss__nav">
+                <div className="hidden lg:block divisor h-[21px] w-[1px] bg-white"></div>
+                <div className="hidden lg:flex rrss__nav">
                     <a href='https://www.instagram.com/templecerveza/' target='_blank'>
                         <Image
                             src="/instagram-icon.svg"
@@ -96,13 +96,13 @@ export default function Header ({ dictonary }) {
                         Shop
                     </a>
                 </div>
-                <div className="hidden xl:block divisor h-[21px] w-[1px] bg-white"></div>
-                <div className="hidden xl:flex lang__nav">
+                <div className="hidden lg:block divisor h-[21px] w-[1px] bg-white"></div>
+                <div className="hidden lg:flex lang__nav">
                     <LocaleSwitcher />
                     <Image
                         src="/bandera-es.svg"
-                        alt="Tik-Tok"
-                        className="cursor-pointer"
+                        alt="España"
+                        className="cursor-pointer hidden xl:block"
                         width={24}
                         height={17}
                         data-tooltip-id="tooltip-lang" data-tooltip-content="Próximamente"
@@ -110,7 +110,7 @@ export default function Header ({ dictonary }) {
                      <Image
                         src="/uy.svg"
                         alt="Uruguay"
-                        className="opacity-50 cursor-pointer"
+                        className="opacity-50 cursor-pointer hidden xl:block"
                         width={24}
                         height={17}
                         data-tooltip-id="tooltip-lang" data-tooltip-content="Próximamente"
@@ -118,7 +118,7 @@ export default function Header ({ dictonary }) {
                     <Image
                         src="/mx.svg"
                         alt="Mexico"
-                        className="opacity-50 cursor-pointer"
+                        className="opacity-50 cursor-pointer hidden xl:block"
                         width={24}
                         height={17}
                         data-tooltip-id="tooltip-lang" data-tooltip-content="Próximamente"

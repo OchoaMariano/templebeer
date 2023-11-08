@@ -7,6 +7,10 @@
         },
         "beerNav": {
             "title": "Nuestras Birras"
+        },
+        "encuentros": {
+            "frase": "La cultura es el encuentro",
+            "link": "Encuentros"
         }
     },
     "birras": {

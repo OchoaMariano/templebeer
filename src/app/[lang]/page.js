@@ -8,7 +8,7 @@ import BannerWithFloatingLinks from '../../../components/home/BannerWithFloating
 import Draggable from '../../../components/common/Dragabble'
 import Header from '../../../components/common/header'
 import Footer from '../../../components/common/Footer';
-import { Knockout54UltraBold, Knockout34, Knockout54 } from './layout'
+import { Knockout54UltraBold, Knockout34, Knockout54, Marker } from './layout'
 import { getDictionary } from '../../dictionaries';
 
 const data = {
@@ -302,7 +302,7 @@ export default async function Home({params}) {
                                             </div>
                                         </Draggable>
                                     </div>
-                                    <div className="absolute right-52 top-[25vh] mb-4 mr-4 z-10">
+                                    <div className="absolute right-[18vh] top-[25vh] mb-4 mr-4 z-10">
                                         <Draggable initialPosition={{ x: 0, y: 0 }}>
                                             <div className="rotate-[9deg] w-[25.07vh] h-[5.09vh] relative">
                                                 <Image 
@@ -329,11 +329,19 @@ export default async function Home({params}) {
                             </div>
                             <div className="row">
                                 <div className="box-9">
-                                    <div className="w-[74vh] h-[17.98vh] relative">
-                                        <Image  
-                                            src="/frase.png"
-                                            fill
-                                        />
+                                    <div className="w-[76vh] h-[17.98vh] relative">
+                                        {lang == 'es' && (
+                                            <h3 className={` text-[#D41768] text-[9.09vh] uppercase -tracking-[.42vh] -rotate-[4.41deg] ${Marker.className} leading-[10vh]`}>
+                                                {dict.home.encuentros.frase}
+                                            </h3>
+                                        )}
+                                        {lang == 'en' && (
+                                            <h3 className={` text-[#D41768] text-[8.09vh] uppercase -tracking-[.42vh] -rotate-[4.41deg] ${Marker.className} leading-[7vh]`}>
+                                            {dict.home.encuentros.frase}
+                                            
+                                            </h3>
+                                        )}
+                                       
                                     </div>
                                 </div>
                             </div>
@@ -341,7 +349,7 @@ export default async function Home({params}) {
                                 <div className="box-10 relative z-20">
                                     <Link href={`${lang}/encuentro`} className="encuentros w-[44.61vh] h-[61.89vh] -top-[34.5vh] absolute">
                                         <Image 
-                                            src="/encuentrosencuentros.png"
+                                            src="/encuentros-back.png"
                                             style={{
                                                 objectFit: 'contain',
                                                 objectPosition: 'center'
@@ -349,10 +357,22 @@ export default async function Home({params}) {
                                             fill
                                         />
                                     </Link>
+                                    <Link href={`${lang}/encuentro`} >
+                                        {lang == 'es' && (
+                                            <h3 className={`absolute text-[#192F5D] text-[3.82vh] uppercase top-[14vh] left-[11.5vh] -tracking-[.4vh] -rotate-[4.41deg] z-[100] ${Marker.className} cursor-pointer`}>
+                                                {dict.home.encuentros.link}
+                                            </h3>
+                                        )}
+                                        {lang == 'en' && (
+                                            <h3 className={`absolute text-[#192F5D] text-[3.82vh] uppercase top-[14vh] left-[15.5vh] -tracking-[.4vh] -rotate-[4.41deg] z-[100] ${Marker.className} cursor-pointer`}>
+                                                {dict.home.encuentros.link}
+                                            </h3>
+                                        )}
+                                    </Link>
                                 </div>
-                                <div className="box-11 pt-[5.06vh] pl-[4vh] relative">
+                                <div className="box-11 pt-[6.6vh] pl-[4vh] relative">
                                     <BannerWithFloatingLinks />
-                                    <div className="absolute left-[34vh] -top-8 mb-4 mr-4 z-20">
+                                    <div className="absolute left-[34vh] -top-3 mb-4 mr-4 z-20">
                                         <Draggable initialPosition={{ x: 0, y: 0 }}>
                                             <div className="w-[19.56vh] h-[27.46vh] relative animate-pulsec">
                                                 <Image 
@@ -370,7 +390,6 @@ export default async function Home({params}) {
                                             src="/vaso-birra.png"
                                             style={{
                                                 objectFit: 'contain',
-                                                
                                             }}
                                             fill
                                         />
@@ -652,13 +671,14 @@ export default async function Home({params}) {
                     <div className="row-1 flex flex-row items-end">
                         <Link href={`${lang}/encuentro`} className="w-[39.74vw] h-[53.07vw] relative">
                             <Image 
-                                src="/encuentrosencuentros.png"
+                                src="/encuentros-back.png"
                                 style={{
                                     objectFit: 'contain',
                                     objectPosition: 'center'
                                 }}
                                 fill
                             />
+                            <h3 className={`absolute text-[#192F5D] text-[3vw] uppercase top-[42vw] left-[11.8vw] -tracking-[.2vw] -rotate-[4.41deg] ${Marker.className}`}>Encuentros</h3>
                         </Link>
                         <div className="w-[39.74vw] h-[26.07vw] relative flex items-end mb-[7vw]">
                             <Image 

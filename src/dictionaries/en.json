@@ -7,6 +7,10 @@
         },
         "beerNav": {
             "title": "Our Beers"
+        },
+        "encuentros": {
+            "frase": "Enjoy beer, share music, create culture",
+            "link": "Culture"
         }
     },
     "birras": {
