@@ -38,10 +38,10 @@ const data = {
       { title: "DEMON HONEY", id: 16, slug: "demon-honey" },
       { title: "MILKSHAKE NEIPA", id: 17, slug: "milkshake-neipa" },
       { title: "WOLF IPA 0%", id: 18, slug: "wolf-ipa-sin-alcohol" },
-      { title: "ALPHA", id: 19, slug: "proyecto-alpha-1" },
+      { title: "ALPHA I", id: 19, slug: "proyecto-alpha-1" },
       { title: "ALPHA II", id: 20, slug: "proyecto-alpha-2" },
-      { title: "ALPHA BARRICA", id: 21, slug: "alpha-barrica-1" },
-      { title: "ALPHA STOUT", id: 22, slug: "alpha-imperial-stout" }
+      { title: "ALPHA BARRICA I", id: 21, slug: "alpha-barrica-1" },
+      { title: "ALPHA IMPERIAL STOUT", id: 22, slug: "alpha-imperial-stout" }
     ],
     gridClasicas: [
         { title: "WOLF IPA", id: 1, slug: "wolf-ipa", mainImage: "/nuestrasbirras/clasicas/wolf-ipa/wolf-ipa.png" },
