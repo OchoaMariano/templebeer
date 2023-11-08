@@ -3,13 +3,74 @@ import Header from '../../../../components/common/header'
 import Footer from '../../../../components/common/Footer';
 import ScrollHorizontal from '../../../../components/ScrollHorizontal'
 import Draggable from '../../../../components/common/Dragabble'
-import { Knockout54UltraBold } from '../layout'
+import { Knockout54UltraBold, Knockout34} from '../layout'
 import { getDictionary } from '../../../dictionaries';
 
 export default async function Page({ children, params }) {
     const lang = params.lang
     const dict = await getDictionary(lang);
     const headerDic = dict.header;
+
+    const data = {
+        bares: {
+            buenosAires: [
+                {id: 1, nombre: "CASA TEMPLE", provincia: "Buenos Aires", telefono: "1135832726", email: "palermo@temple.com.ar", direccion: "Costa Rica 4677, CABA", header: true  },
+                {id: 2, nombre: "BARRIO CHINO", provincia: "Buenos Aires", telefono: "1164957812", email: "barriochino@temple.com.ar", direccion: "Echeverria 1664, CABA", header: null  },
+                {id: 3, nombre: "PILAR", provincia: "Buenos Aires", telefono: "1156620698", email: "pilar@temple.com.ar", direccion: "Panamericana km 50, Pilar", header: null  },
+                {id: 4, nombre: "RECOLETA", provincia: "Buenos Aires", telefono: "1144066315", email: "palermo@temple.com.ar", direccion: "Vicente López 2102, CABA", header: null  },
+                {id: 5, nombre: "trastienda", provincia: "Buenos Aires", telefono: "1144493153", email: "taproom@temple.com.ar", direccion: "Colectora Este Ramal Pilar 80-181, Pilar", header: null  },
+                {id: 6, nombre: "taproom", provincia: "Buenos Aires", telefono: "1144066315", email: "palermo@temple.com.ar", direccion: "Vicente López 2102, CABA", header: null  },
+                {id: 7, nombre: "recoleta junín", provincia: "Buenos Aires", telefono: "1155249857", email: "recoleta.junin@temple.com.ar", direccion: "Junín 1725, CABA", header: null  },
+                {id: 8, nombre: "puerto madero", provincia: "Buenos Aires", telefono: "1159089020", email: "madero@temple.com.ar", direccion: "Juan Manuela Gorriti 867, CABA", header: null  },
+                {id: 9, nombre: "leloir", provincia: "Buenos Aires", telefono: "1136532867", email: "leloir@temple.com.ar", direccion: "Martín Fierro 3361, Parque Leloir", header: null  },
+                {id: 10, nombre: "hollywood", provincia: "Buenos Aires", telefono: "1132291754", email: "hollywood@temple.com.ar", direccion: "Honduras 5602, CABA", header: null  },
+                {id: 11, nombre: "paseo la plaza", provincia: "Buenos Aires", telefono: "1567390110", email: "paseolaplaza@temple.com.ar", direccion: "Av. Corrientes 1660, CABA", header: null  },
+                {id: 12, nombre: "lanus", provincia: "Buenos Aires", telefono: "1131289871", email: "lanus@temple.com.ar", direccion: "Carlos Tejedor 176, Lanús", header: null  },
+                {id: 13, nombre: "soho", provincia: "Buenos Aires", telefono: "1135832726", email: "soho@temple.com.ar", direccion: "Costa Rica 4699, CABA", header: null  },
+                {id: 14, nombre: "caballito", provincia: "Buenos Aires", telefono: "1159424099", email: "caballito@temple.com.ar", direccion: "Av. Pedro Goyena 200, CABA", header: null  },
+                {id: 15, nombre: "lomas de zamora", provincia: "Buenos Aires", telefono: "1567390110", email: "lomas@temple.com.ar", direccion: "Sixto Fernández 254, Lomas De Zamora", header: null  },
+                {id: 16, nombre: "botánico", provincia: "Buenos Aires", telefono: "1567390110", email: "botanico@temple.com.ar", direccion: "Av. Cerviño 3901, CABA", header: null  },
+                {id: 17, nombre: "caminito", provincia: "Buenos Aires", telefono: "1157989819", email: "templecaminito@gmail.com", direccion: "Magallanes 855, La Boca", header: null  },
+                {id: 18, nombre: "la plata", provincia: "Buenos Aires", telefono: "2216775656", email: "laplata@temple.com.ar", direccion: "Diagonal 74 1494, La Plata", header: null  },
+                {id: 19, nombre: "devoto", provincia: "Buenos Aires", telefono: "1123513952", email: "devoto@temple.com.ar", direccion: "Fernandez de Enciso 4370, CABA", header: null  },
+                {id: 20, nombre: "barrio norte", provincia: "Buenos Aires", telefono: "1127310057", email: "barrionorte@temple.com.ar", direccion: "Arenales 2896, CABA", header: null  },
+                {id: 21, nombre: "city bell", provincia: "Buenos Aires", telefono: "2213143095", email: "citybell@temple.com.ar", direccion: "Calle Cantilo 202 Nro 1896, City Bell", header: null  },
+                {id: 22, nombre: "mercado belgrano", provincia: "Buenos Aires", telefono: "1567390110", email: "mercado.belgrano@temple.com.ar", direccion: "Av. Juramento 2527, Local 82, CABA", header: null  },
+                {id: 23, nombre: "san isidro", provincia: "Buenos Aires", telefono: "1135752555", email: "sanisidro@temple.com.ar", direccion: "Av Juan Segundo Fernandez 20, San Isidro", header: null  }
+            ],
+            costaAtlantica: [
+                {id: 1, nombre: "pinamar", provincia: "costa argentina", telefono: "2267442736", email: "pinamar@temple.com.ar", direccion: "Av. de las Artes 31, Pinamar", header: true  }
+            ],
+            santaFe: [
+                {id: 1, nombre: "rosario fisherton", provincia: "santa fe", telefono: "3416953442", email: "rosario@temple.com.ar", direccion: "Alberto J. Paz 1065 Bis-Local 5, Rosario, Santa Fe", header: true  }
+            ],
+            neuquen: [
+                {id: 1, nombre: "BARILOCHE catedral", provincia: "neuquén", telefono: "1567390110", email: "catedral@temple.com.ar", direccion: "Cerro Catedral - Bariloche", header: true  }
+            ],
+            cordoba: [
+                {id: 1, nombre: "cordoba Güemes", provincia: "cordoba", telefono: "3516844638", email: "cordoba@temple.com.ar", direccion: "Achaval Rodríguez 241, Córdoba", header: true  },
+                {id: 2, nombre: "nueva cordoba", provincia: "cordoba", telefono: "3517665275", email: "cordoba@temple.com.ar", direccion: "Ambrosio Olmos 594, Córdoba", header: null  }
+            ],
+            salta: [
+                {id: 1, nombre: "salta", provincia: "salta", telefono: "1567390110", email: "salta@temple.com.ar", direccion: "Belgrano 213, Salta", header: true  },
+            ],
+            tucuman: [
+                {id: 1, nombre: "tucumán", provincia: "tucumán", telefono: "3812157158", email: "estacion@temple.com.ar", direccion: "Av Roca 500, Complejo Provincial", header: true  },
+            ],
+            chubut: [
+                {id: 1, nombre: "comodoro", provincia: "chubut", telefono: "1567390110", email: "comodoro@temple.com.ar", direccion: "Rawson 666, Comodoro Rivadavia, Chubut", header: true  },
+            ],
+            santaCruz: [
+                {id: 1, nombre: "río gallegos", provincia: "santa cruz", telefono: "1567390110", email: "rio.gallegos@temple.com.ar", direccion: "9 de julio 102, Río Gallegos, Santa Cruz", header: true  },
+            ]
+        },
+        baresEn: {
+            miami: [
+                {id: 1, nombre: "Temple Craft Wynwood", provincia: "Miami", telefono: "1567390110", email: "miami@temple.com.ar", direccion: "151 NW 24th St #102, Miami, FL 33127, USA", header: true }
+            ]
+        }
+
+    }
 
     return (
         <div>
@@ -18,7 +79,7 @@ export default async function Page({ children, params }) {
                 <div className="page__wrapper flex flex-col">
                     <div className="flex pt-[18.15vw] px-5 lg:hidden">
                         <div className="relative w-full">
-                            <h3 className={`text-white text-[12.05vw] ${Knockout54UltraBold.className}`}>BARES</h3>
+                            <h3 className={`text-white text-[12.05vw] uppercase ${Knockout54UltraBold.className}`}>{dict.bares.title}</h3>
                         </div>
                         <div className="absolute left-[62.30vw] z-10">
                             <Draggable initialPosition={{ x: 0, y: 0 }}>
@@ -32,1338 +93,1154 @@ export default async function Page({ children, params }) {
                             </Draggable>
                         </div>
                     </div>
-                    <div className="px-5 lg:px-0 space-y-20 overflow-hidden">
-                        <div className="flex w-full items-end mt-custom mt-[4vw] md:mt-[6.37vh]">
-                            <div className="hidden lg:block pt-custom pt-[7.08vh] pb-custom pb-[6.23vh]">
-                                <div className="relative h-mapa-custom h-[80vh] w-mapa-custom w-[43.9vh]">
-                                    <Image src="/bares/mapa-arg.png" alt="" className="w-full" fill />
-                                    <div className="h-[3.68vh] w-[3.68vh] point-map hover:scale-110 transform ease-in-out duration-300 salta top-[4.37vh] right-[25vh] absolute cursor-pointer">
-                                        <Image
-                                            src="/bares/point-mapa.png"
-                                            alt=""
-                                            fill
-                                        />
+                    {lang == 'es' && (
+                        <div className="px-[5.12vw] lg:px-0 space-y-20 relative overflow-hidden">
+                            <div className="flex w-full items-end mt-custom mt-[4vw] md:mt-[6.37vh]">
+                                <div className="hidden lg:block pt-custom pt-[7.08vh] pb-custom pb-[6.23vh]">
+                                    <div className="relative h-mapa-custom h-[80vh] w-mapa-custom w-[43.9vh]">
+                                        <Image src="/bares/mapa-arg.png" alt="" className="w-full" fill />
+                                        <div className="h-[3.68vh] w-[3.68vh] point-map hover:scale-110 transform ease-in-out duration-300 salta top-[4.37vh] right-[25vh] absolute cursor-pointer">
+                                            <Image
+                                                src="/bares/point-mapa.png"
+                                                alt=""
+                                                fill
+                                            />
+                                        </div>
+                                        <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute tucuman top-[11vh] right-[27vh] cursor-pointer">
+                                            <Image
+                                                src="/bares/point-mapa.png"
+                                                alt=""
+                                                fill
+                                            />
+                                        </div>
+                                        <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute cordoba top-[23vh] right-[23.23vh] cursor-pointer">
+                                            <Image
+                                                src="/bares/point-mapa.png"
+                                                alt=""
+                                                fill
+                                            />
+                                        </div>
+                                        <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute santa-fe top-[24vh] right-[18.27vh] cursor-pointer">
+                                            <Image
+                                                src="/bares/point-mapa.png"
+                                                alt=""
+                                                fill
+                                            />
+                                        </div>
+                                        <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute bsas-norte top-[30vh] right-[13.45vh] cursor-pointer">
+                                            <Image
+                                                src="/bares/point-mapa.png"
+                                                alt=""
+                                                fill
+                                            />
+                                        </div>
+                                        <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute bsas-sur top-[36.5vh] right-[13.45vh] cursor-pointer">
+                                            <Image
+                                                src="/bares/point-mapa.png"
+                                                alt=""
+                                                fill
+                                            />
+                                        </div>
+                                        <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute neuquen top-[42vh] right-[35vh] cursor-pointer">
+                                            <Image
+                                                src="/bares/point-mapa.png"
+                                                alt=""
+                                                fill
+                                            />
+                                        </div>
+                                        <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute chubut-norte top-[57vh] right-[30vh] cursor-pointer">
+                                            <Image
+                                                src="/bares/point-mapa.png"
+                                                alt=""
+                                                fill
+                                            />
+                                        </div>
+                                        <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute chubut-sur top-[68vh] right-[32vh] cursor-pointer">
+                                            <Image
+                                                src="/bares/point-mapa.png"
+                                                alt=""
+                                                fill
+                                            />
+                                        </div>
                                     </div>
-                                    <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute tucuman top-[11vh] right-[27vh] cursor-pointer">
-                                        <Image
-                                            src="/bares/point-mapa.png"
-                                            alt=""
-                                            fill
-                                        />
+                                </div>
+                                <div className="hidden lg:block absolute pl-[43.9vh] top-[24.07vh]">
+                                    <h3 className={`text-white text-[9.49vh] ${Knockout54UltraBold.className}`}>BARES</h3>
+                                </div>
+                                <div className="hidden lg:block absolute pl-[85vh] top-[22vh] z-10">
+                                    <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                        <div className="relative w-[19.26vh] h-[19.26vh]">
+                                            <Image
+                                                src="/bares/sticker-bares.png"
+                                                alt="Sticker"
+                                                fill
+                                            />
+                                        </div>
+                                    </Draggable>
+                                </div>
+                                <ScrollHorizontal>
+                                    <div className="lg:h-[65.72vh] lg:w-[454.87vh] pt-[5.94vh] flex flex-row justify-start items-start ">
+                                        <div className="buenos-aires grid grid-rows-3 grid-flow-col gap-4 gap-x-[1.84vh] text-white relative">
+                                            {data.bares.buenosAires.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[84.61vw] h-[24.87vw] md:w-[43.20vh] md:h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[0vw] md:pl-[2.40vh] -top-[8vw] md:top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[1.79vw] md:gap-y-[0.99vh] pl-[3.58vw] md:pl-[2.40vh] pt-[1.79vw] md:pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[3.84vw] md:text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[3vw] md:text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            <div className="sticker-iso-rosa absolute left-[255vh] top-[35vh] hidden md:block">
+                                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                                    <div className="rotate-[23deg] w-[9.69vh] h-[9.69vh] relative">
+                                                        <Image 
+                                                            src="/sticker-rosa-tempple.png"
+                                                            alt="Temple Beer"
+                                                            fill 
+                                                        />
+                                                    </div>
+                                                </Draggable>
+                                            </div>
+                                            <div className="sticker-temple-verde absolute right-[30vh] top-[17vh] hidden md:block">
+                                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                                    <div className=" -rotate-[5deg] w-[22.52vh] h-[4.76vh] relative">
+                                                        <Image 
+                                                            src="/sticker-temple-verde.png"
+                                                            alt="Temple Beer"
+                                                            fill 
+                                                        />
+                                                    </div>
+                                                </Draggable>
+                                            </div>
+                                            <div className="sticker-temple-amarillo absolute left-[110vh] top-[17vh] hidden md:block">
+                                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                                    <div className="rotate-[7.25deg] w-[22.80vh] h-[4.53vh] relative">
+                                                        <Image 
+                                                            src="/sticker-temple-amarrillo.png"
+                                                            alt="Temple Beer"
+                                                            fill 
+                                                        />
+                                                    </div>
+                                                </Draggable>
+                                            </div>
+                                            <div className="sticker-temple-rosa absolute left-[18vh] top-[34vh] hidden md:block">
+                                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                                    <div className=" -rotate-[13.25deg] w-[22.52vh] h-[4.76vh] relative">
+                                                        <Image 
+                                                            src="/sticker-temple-rosa.png"
+                                                            alt="Temple Beer"
+                                                            fill 
+                                                        />
+                                                    </div>
+                                                </Draggable>
+                                            </div>
+                                        </div>
+                                        
+                                        <div className="costa-atlantica hidden lg:grid grid-rows-3 grid-flow-col gap-4 gap-x-[1.84vh] text-white">
+                                            {data.bares.costaAtlantica.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[43.20vh] h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[2.40vh] top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[0.99vh] pl-[2.40vh] pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="santa-fe hidden lg:grid grid-rows-3 grid-flow-col gap-4 gap-x-[1.84vh] text-white">
+                                            {data.bares.santaFe.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[43.20vh] h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[2.40vh] top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[0.99vh] pl-[2.40vh] pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="neuquen hidden lg:grid grid-rows-3 grid-flow-col gap-4 gap-x-[1.84vh] text-white">
+                                            {data.bares.neuquen.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[43.20vh] h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[2.40vh] top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[0.99vh] pl-[2.40vh] pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="cordoba hidden lg:grid grid-rows-3 grid-flow-col gap-4 gap-x-[1.84vh] text-white">
+                                            {data.bares.cordoba.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[43.20vh] h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[2.40vh] top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[0.99vh] pl-[2.40vh] pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="salta hidden lg:grid grid-rows-3 grid-flow-col gap-4 gap-x-[1.84vh] text-white">
+                                            {data.bares.salta.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[43.20vh] h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[2.40vh] top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[0.99vh] pl-[2.40vh] pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="tucuman hidden lg:grid grid-rows-3 grid-flow-col gap-4 gap-x-[1.84vh] text-white">
+                                            {data.bares.tucuman.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[43.20vh] h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[2.40vh] top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[0.99vh] pl-[2.40vh] pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="chubut hidden lg:grid grid-rows-3 grid-flow-col gap-4 gap-x-[1.84vh] text-white">
+                                            {data.bares.chubut.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[43.20vh] h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[2.40vh] top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[0.99vh] pl-[2.40vh] pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+
+                                        <div className="santaCruz hidden lg:grid grid-rows-3 grid-flow-col gap-4 gap-x-[1.84vh] text-white">
+                                            {data.bares.santaCruz.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[43.20vh] h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[2.40vh] top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[0.99vh] pl-[2.40vh] pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-4" />
+                                                                    <span className="text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                    
                                     </div>
-                                    <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute cordoba top-[23vh] right-[23.23vh] cursor-pointer">
-                                        <Image
-                                            src="/bares/point-mapa.png"
-                                            alt=""
-                                            fill
-                                        />
-                                    </div>
-                                    <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute santa-fe top-[24vh] right-[18.27vh] cursor-pointer">
-                                        <Image
-                                            src="/bares/point-mapa.png"
-                                            alt=""
-                                            fill
-                                        />
-                                    </div>
-                                    <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute bsas-norte top-[30vh] right-[13.45vh] cursor-pointer">
-                                        <Image
-                                            src="/bares/point-mapa.png"
-                                            alt=""
-                                            fill
-                                        />
-                                    </div>
-                                    <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute bsas-sur top-[36.5vh] right-[13.45vh] cursor-pointer">
-                                        <Image
-                                            src="/bares/point-mapa.png"
-                                            alt=""
-                                            fill
-                                        />
-                                    </div>
-                                    <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute neuquen top-[42vh] right-[35vh] cursor-pointer">
-                                        <Image
-                                            src="/bares/point-mapa.png"
-                                            alt=""
-                                            fill
-                                        />
-                                    </div>
-                                    <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute chubut-norte top-[57vh] right-[30vh] cursor-pointer">
-                                        <Image
-                                            src="/bares/point-mapa.png"
-                                            alt=""
-                                            fill
-                                        />
-                                    </div>
-                                    <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute chubut-sur top-[68vh] right-[32vh] cursor-pointer">
-                                        <Image
-                                            src="/bares/point-mapa.png"
-                                            alt=""
-                                            fill
-                                        />
+                                </ScrollHorizontal>
+                            </div>
+
+                            <div className="flex w-full gap-x-10 lg:hidden">
+                                <div className="w-full lg:w-8/12 flex flex-col justify-end">
+                                    <div className="grid grid-cols-1 lg:grid-cols-3 text-white justify-center items-center gap-y-16 lg:gap-x-4">
+                                        <div className="space-y-16">
+                                            {data.bares.costaAtlantica.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[84.61vw] h-[24.87vw] md:w-[43.20vh] md:h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[0vw] md:pl-[2.40vh] -top-[8vw] md:top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[1.79vw] md:gap-y-[0.99vh] pl-[3.58vw] md:pl-[2.40vh] pt-[1.79vw] md:pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[3.84vw] md:text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[3vw] md:text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            {data.bares.santaFe.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[84.61vw] h-[24.87vw] md:w-[43.20vh] md:h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[0vw] md:pl-[2.40vh] -top-[8vw] md:top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[1.79vw] md:gap-y-[0.99vh] pl-[3.58vw] md:pl-[2.40vh] pt-[1.79vw] md:pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[3.84vw] md:text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[3vw] md:text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            {data.bares.neuquen.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[84.61vw] h-[24.87vw] md:w-[43.20vh] md:h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[0vw] md:pl-[2.40vh] -top-[8vw] md:top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[1.79vw] md:gap-y-[0.99vh] pl-[3.58vw] md:pl-[2.40vh] pt-[1.79vw] md:pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[3.84vw] md:text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[3vw] md:text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <div className="space-y-4">
+
+                                            {data.bares.cordoba.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[84.61vw] h-[24.87vw] md:w-[43.20vh] md:h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[0vw] md:pl-[2.40vh] -top-[8vw] md:top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[1.79vw] md:gap-y-[0.99vh] pl-[3.58vw] md:pl-[2.40vh] pt-[1.79vw] md:pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[3.84vw] md:text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[3vw] md:text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                        </div>
+                                        <div className="space-y-16">
+                                            {data.bares.salta.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[84.61vw] h-[24.87vw] md:w-[43.20vh] md:h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[0vw] md:pl-[2.40vh] -top-[8vw] md:top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[1.79vw] md:gap-y-[0.99vh] pl-[3.58vw] md:pl-[2.40vh] pt-[1.79vw] md:pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[3.84vw] md:text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[3vw] md:text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+
+                                            {data.bares.tucuman.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[84.61vw] h-[24.87vw] md:w-[43.20vh] md:h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[0vw] md:pl-[2.40vh] -top-[8vw] md:top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[1.79vw] md:gap-y-[0.99vh] pl-[3.58vw] md:pl-[2.40vh] pt-[1.79vw] md:pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[3.84vw] md:text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[3vw] md:text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+
+                                            {data.bares.chubut.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[84.61vw] h-[24.87vw] md:w-[43.20vh] md:h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[0vw] md:pl-[2.40vh] -top-[8vw] md:top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[1.79vw] md:gap-y-[0.99vh] pl-[3.58vw] md:pl-[2.40vh] pt-[1.79vw] md:pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[3.84vw] md:text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[3vw] md:text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            
+                                            {data.bares.santaCruz.map((bar, index) => (
+                                                <div key={index} className="border-l-2 border-white border-dashed relative w-[84.61vw] h-[24.87vw] md:w-[43.20vh] md:h-[16.57vh]">
+                                                    {bar.header && (
+                                                        <div className="text-black absolute pl-[0vw] md:pl-[2.40vh] -top-[8vw] md:top-[1vh]">
+                                                            <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                                {bar.provincia}
+                                                            </span>
+                                                        </div>
+                                                    )}                                                
+                                                    <div className="flex flex-col gap-y-[1.79vw] md:gap-y-[0.99vh] pl-[3.58vw] md:pl-[2.40vh] pt-[1.79vw] md:pt-[4.95vh] mx-auto">
+                                                        <h1 className="text-[3.84vw] md:text-[2.12vh] leading-normal uppercase">
+                                                            {bar.nombre}
+                                                        </h1>
+                                                        <div className="flex gap-x-2 items-center">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img
+                                                                        src="/bares/wa.png"
+                                                                        alt=""
+                                                                        className="w-[1.84vh] h-[1.84vh]"
+                                                                    />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.telefono}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                            
+                                                            <div>
+                                                                <img src="/bares/line.png" alt="" className="h-3" />
+                                                            </div>
+                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                                <div className="flex items-center justify-center gap-x-1">
+                                                                    <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                    <span className="text-[3vw] md:text-[1.33vh]">
+                                                                        {bar.email}
+                                                                    </span>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <span className="text-[3vw] md:text-[1.41vh]">
+                                                            {bar.direccion}
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            ))}
+                                            
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            <div className="hidden lg:block absolute pl-[43.9vh] top-[24.07vh]">
-                                <h3 className={`text-white text-[9.49vh] ${Knockout54UltraBold.className}`}>BARES</h3>
-                            </div>
-                            <div className="hidden lg:block absolute pl-[85vh] top-[22vh] z-10">
+                            
+                            <div className="sticker-iso-rosa absolute right-[30vw] top-[120vw] md:left-[0vh] md:top-[65vh] md:right-0 md:hidden">
                                 <Draggable initialPosition={{ x: 0, y: 0 }}>
-                                    <div className="relative w-[19.26vh] h-[19.26vh]">
-                                        <Image
-                                            src="/bares/sticker-bares.png"
-                                            alt="Sticker"
-                                            fill
+                                    <div className="rotate-[23deg] w-[14.61vw] h-[14.61vw] md:w-[9.69vh] md:h-[9.69vh] relative">
+                                        <Image 
+                                            src="/sticker-rosa-tempple.png"
+                                            alt="Temple Beer"
+                                            fill 
+                                        />
+                                    </div>
+                                </Draggable>
+                            </div>  
+                            <div className="sticker-temple-rosa absolute right-[40vw] top-[165vw] md:hidden">
+                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                    <div className=" -rotate-[5deg] w-[30.76vw] h-[6.34vw] relative">
+                                        <Image 
+                                            src="/sticker-temple-rosa.png"
+                                            alt="Temple Beer"
+                                            fill 
                                         />
                                     </div>
                                 </Draggable>
                             </div>
-                            <ScrollHorizontal>
-                                <div className="lg:h-[65.72vh] lg:w-[454.87vh] pt-[5.94vh] flex flex-row justify-start items-start ">
-                                    <div className="buenos-aires flex lg:grid grid-cols-4 text-white lg:justify-center lg:items-center gap-x-[1.84vh]">
-                                        <div className="space-y-4 min-w-[300px] lg:min-w-0">
-                                        
-                                            <div
-                                            className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative"
-                                            >
-                                            <div
-                                                className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0"
-                                            >
-                                                <span
-                                                className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 lg:py-0.5"
-                                                >BUENOS AIRES</span
-                                                >
-                                            </div>
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                CASA TEMPLE
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img
-                                                    src="/bares/wa.png"
-                                                    alt=""
-                                                    className="w-4 h-4"
-                                                    /><span className="text-xs leading-normal font-normal"
-                                                    >1135832726</span
-                                                    >
-                                                </div>
-                                                <div>
-                                                    <img src="/bares/line.png" alt="" className="h-3" />
-                                                </div>
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                    className="text-xs leading-normal font-normal"
-                                                    >palermo@temple.com.ar</span
-                                                    >
-                                                </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Costa Rica 4677, CABA</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                            </div>
-                                        
-                                            <div
-                                            className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2"
-                                            >
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                BARRIO CHINO
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img
-                                                    src="/bares/wa.png"
-                                                    alt=""
-                                                    className="w-4 h-4"
-                                                    /><span className="text-xs leading-normal font-normal"
-                                                    >1164957812</span
-                                                    >
-                                                </div>
-                                                <div>
-                                                    <img src="/bares/line.png" alt="" className="h-3" />
-                                                </div>
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                    className="text-xs leading-normal font-normal"
-                                                    >barriochino@temple.com.ar</span
-                                                    >
-                                                </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Echeverría 1664, CABA</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                            </div>
-                                        
-                                            <div
-                                            className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2"
-                                            >
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">PILAR</h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img
-                                                    src="/bares/wa.png"
-                                                    alt=""
-                                                    className="w-4 h-4"
-                                                    /><span className="text-xs leading-normal font-normal"
-                                                    >1156620698</span
-                                                    >
-                                                </div>
-                                                <div>
-                                                    <img src="/bares/line.png" alt="" className="h-3" />
-                                                </div>
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                    className="text-xs leading-normal font-normal"
-                                                    >pilar@temple.com.ar</span
-                                                    >
-                                                </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Panamericana km 50, Pilar</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                            </div>
-                                        </div>
-                                        <div className="space-y-4 min-w-[300px] lg:min-w-0">
-                                        
-                                            <div
-                                            className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2"
-                                            >
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-[2.12vh] font-medium leading-normal">
-                                                RECOLETA
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img
-                                                    src="/bares/wa.png"
-                                                    alt=""
-                                                    className="w-4 h-4"
-                                                    /><span className="text-xs leading-normal font-normal"
-                                                    >1144066315</span
-                                                    >
-                                                </div>
-                                                <div>
-                                                    <img src="/bares/line.png" alt="" className="h-3" />
-                                                </div>
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                    className="text-xs leading-normal font-normal"
-                                                    >palermo@temple.com.ar</span
-                                                    >
-                                                </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Vicente López 2102, CABA</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                            </div>
-                                
-                                            <div
-                                            className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2"
-                                            >
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                TRASTIENDA
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img
-                                                    src="/bares/wa.png"
-                                                    alt=""
-                                                    className="w-4 h-4"
-                                                    /><span className="text-xs leading-normal font-normal"
-                                                    >1159604556</span
-                                                    >
-                                                </div>
-                                                <div>
-                                                    <img src="/bares/line.png" alt="" className="h-3" />
-                                                </div>
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                    className="text-xs leading-normal font-normal"
-                                                    >trastienda@temple.com.ar</span
-                                                    >
-                                                </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Balcarce 460, CABA</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                            </div>
-                                    
-                                            <div
-                                            className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2"
-                                            >
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                TAPROOM
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img
-                                                    src="/bares/wa.png"
-                                                    alt=""
-                                                    className="w-4 h-4"
-                                                    /><span className="text-xs leading-normal font-normal"
-                                                    >1144493153</span
-                                                    >
-                                                </div>
-                                                <div>
-                                                    <img src="/bares/line.png" alt="" className="h-3" />
-                                                </div>
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                    className="text-xs leading-normal font-normal"
-                                                    >taproom@temple.com.ar</span
-                                                    >
-                                                </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Colectora Este Ramal Pilar 80-181, Pilar</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                            </div>
-                                        </div>
-                                        <div className="space-y-4 min-w-[300px] lg:min-w-0">
-                                
-                                            <div
-                                            className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2"
-                                            >
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                RECOLETA JUNÍN
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img
-                                                    src="/bares/wa.png"
-                                                    alt=""
-                                                    className="w-4 h-4"
-                                                    /><span className="text-xs leading-normal font-normal"
-                                                    >1155249857</span
-                                                    >
-                                                </div>
-                                                <div>
-                                                    <img src="/bares/line.png" alt="" className="h-3" />
-                                                </div>
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                    className="text-xs leading-normal font-normal"
-                                                    >recoleta.junin@temple.com.ar</span
-                                                    >
-                                                </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Junín 1725, CABA</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                            </div>
-                                        
-                                            <div
-                                            className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2"
-                                            >
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                PUERTO MADERO
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img
-                                                    src="/bares/wa.png"
-                                                    alt=""
-                                                    className="w-4 h-4"
-                                                    /><span className="text-xs leading-normal font-normal"
-                                                    >1159089020</span
-                                                    >
-                                                </div>
-                                                <div>
-                                                    <img src="/bares/line.png" alt="" className="h-3" />
-                                                </div>
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                    className="text-xs leading-normal font-normal"
-                                                    >madero@temple.com.ar</span
-                                                    >
-                                                </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Juan Manuela Gorriti 867, CABA</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                            </div>
-                                    
-                                            <div
-                                            className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2"
-                                            >
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">LELOIR</h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img
-                                                    src="/bares/wa.png"
-                                                    alt=""
-                                                    className="w-4 h-4"
-                                                    /><span className="text-xs leading-normal font-normal"
-                                                    >1136532867</span
-                                                    >
-                                                </div>
-                                                <div>
-                                                    <img src="/bares/line.png" alt="" className="h-3" />
-                                                </div>
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                    className="text-xs leading-normal font-normal"
-                                                    >leloir@temple.com.ar</span
-                                                    >
-                                                </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Martín Fierro 3361, Parque Leloir</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                            </div>
-                                        </div>
-                                        <div className="space-y-4 min-w-[300px] lg:min-w-0">
-                                        
-                                            <div
-                                            className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2"
-                                            >
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                HOLLYWOOD
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img
-                                                    src="/bares/wa.png"
-                                                    alt=""
-                                                    className="w-4 h-4"
-                                                    /><span className="text-xs leading-normal font-normal"
-                                                    >1132291754</span
-                                                    >
-                                                </div>
-                                                <div>
-                                                    <img src="/bares/line.png" alt="" className="h-3" />
-                                                </div>
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                    className="text-xs leading-normal font-normal"
-                                                    >hollywood@temple.com.ar</span
-                                                    >
-                                                </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Honduras 5602, CABA</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                            </div>
-                                        
-                                            <div
-                                            className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2"
-                                            >
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                PASEO LA PLAZA
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img
-                                                    src="/bares/wa.png"
-                                                    alt=""
-                                                    className="w-4 h-4"
-                                                    /><span className="text-xs leading-normal font-normal"
-                                                    >1567390110</span
-                                                    >
-                                                </div>
-                                                <div>
-                                                    <img src="/bares/line.png" alt="" className="h-3" />
-                                                </div>
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                    className="text-xs leading-normal font-normal"
-                                                    >paseolaplaza@temple.com.ar</span
-                                                    >
-                                                </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Av. Corrientes 1660, CABA</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                            </div>
-                                    
-                                            <div
-                                            className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2"
-                                            >
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">LANÚS</h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img
-                                                    src="/bares/wa.png"
-                                                    alt=""
-                                                    className="w-4 h-4"
-                                                    /><span className="text-xs leading-normal font-normal"
-                                                    >1131289871</span
-                                                    >
-                                                </div>
-                                                <div>
-                                                    <img src="/bares/line.png" alt="" className="h-3" />
-                                                </div>
-                                                <div className="flex items-center justify-center gap-x-1">
-                                                    <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                    className="text-xs leading-normal font-normal"
-                                                    >lanus@temple.com.ar</span
-                                                    >
-                                                </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Carlos Tejedor 176, Lanús</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="costa-atlantica hidden lg:grid grid-cols-1 text-white lg:justify-start lg:items-start gap-x-[1.84vh] pr-[1.84vh]">
-                                        <div className="space-y-4 min-w-0">
-                                            <div className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative">
-                                                <div className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0">
-                                                    <span
-                                                        className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                    >COSTA ARGENTINA</span
-                                                    >
-                                                </div>
-                                                <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                    <h1 className="text-base font-medium leading-normal">
-                                                        PINAMAR
-                                                    </h1>
-                                                    <div className="flex gap-x-2 items-center">
-                                                        <div className="flex items-center justify-center gap-x-1">
-                                                            <img
-                                                                src="/bares/wa.png"
-                                                                alt=""
-                                                                className="w-4 h-4"
-                                                            /><span className="text-xs leading-normal font-normal"
-                                                            >2267 44-2736</span
-                                                            >
-                                                        </div>
-                                                        <div>
-                                                            <img src="/bares/line.png" alt="" className="h-3" />
-                                                        </div>
-                                                        <div className="flex items-center justify-center gap-x-1">
-                                                            <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                                className="text-xs leading-normal font-normal"
-                                                            >pinamar@temple.com.ar</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                    <span className="text-[10px] text-10 leading-normal font-normal"
-                                                    >Av. de las Artes 31, Pinamar</span
-                                                    >
-                                                    <span className="text-[10px] text-10 leading-normal font-bold"
-                                                    >HORARIOS</span
-                                                    >
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="santa-fe hidden lg:grid grid-cols-1 text-white lg:justify-start lg:items-start gap-x-[1.84vh] pr-[1.84vh]">
-                                        <div className="space-y-4 min-w-0">
-                                            <div className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative">
-                                                <div
-                                                    className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0"
-                                                >
-                                                    <span
-                                                        className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                    >SANTA FE</span
-                                                    >
-                                                </div>
-                                                <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                    <h1 className="text-base font-medium leading-normal">
-                                                        ROSARIO FISHERTON
-                                                    </h1>
-                                                    <div className="flex gap-x-2 items-center">
-                                                        <div className="flex items-center justify-center gap-x-1">
-                                                            <img
-                                                                src="/bares/wa.png"
-                                                                alt=""
-                                                                className="w-4 h-4"
-                                                            /><span className="text-xs leading-normal font-normal"
-                                                            >3416953442</span
-                                                            >
-                                                        </div>
-                                                        <div>
-                                                            <img src="/bares/line.png" alt="" className="h-3" />
-                                                        </div>
-                                                        <div className="flex items-center justify-center gap-x-1">
-                                                            <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                                className="text-xs leading-normal font-normal"
-                                                            >rosario@temple.com.ar</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                    <span className="text-[10px] text-10 leading-normal font-normal"
-                                                    >Alberto J. Paz 1065 Bis-Local 5, Rosario, Santa Fe</span
-                                                    >
-                                                    <span className="text-[10px] text-10 leading-normal font-bold"
-                                                    >HORARIOS</span
-                                                    >
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="neuquen hidden lg:grid grid-cols-1 text-white lg:justify-start lg:items-start gap-x-[1.84vh] pr-[1.84vh]">
-                                        <div className="space-y-4 min-w-0">
-                                            <div className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative">
-                                                <div
-                                                    className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0"
-                                                >
-                                                    <span
-                                                        className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                    >NEUQUÉN</span
-                                                    >
-                                                </div>
-                                                <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                    <h1 className="text-base font-medium leading-normal">
-                                                        BARILOCHE CATEDRAL
-                                                    </h1>
-                                                    <div className="flex gap-x-2 items-center">
-                                                        <div
-                                                            className="flex items-center justify-center gap-x-1 hidden"
-                                                        >
-                                                            <img
-                                                                src="/bares/wa.png"
-                                                                alt=""
-                                                                className="w-4 h-4"
-                                                            /><span className="text-xs leading-normal font-normal"
-                                                            >1156620698</span
-                                                            >
-                                                        </div>
-                                                        <div className="hidden">
-                                                            <img src="/bares/line.png" alt="" className="h-3" />
-                                                        </div>
-                                                        <div className="flex items-center justify-center gap-x-1">
-                                                            <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                                className="text-xs leading-normal font-normal"
-                                                            >catedral@temple.com.ar</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                    <span className="text-[10px] text-10 leading-normal font-normal"
-                                                    >Cerro Catedral - Bariloche</span
-                                                    >
-                                                    <span className="text-[10px] text-10 leading-normal font-bold"
-                                                    >HORARIOS</span
-                                                    >
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="cordoba hidden lg:grid grid-cols-1 text-white lg:justify-start lg:items-start gap-x-[1.84vh] pr-[1.84vh]">
-                                        <div className="space-y-4 min-w-0">
-                                            <div className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative">
-                                                <div
-                                                    className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0"
-                                                >
-                                                    <span
-                                                        className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                    >CÓRDOBA</span
-                                                    >
-                                                </div>
-                                                <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                    <h1 className="text-base font-medium leading-normal">
-                                                        CÓRDOBA GÜEMES
-                                                    </h1>
-                                                    <div className="flex gap-x-2 items-center">
-                                                        <div className="flex items-center justify-center gap-x-1">
-                                                            <img
-                                                                src="/bares/wa.png"
-                                                                alt=""
-                                                                className="w-4 h-4"
-                                                            /><span className="text-xs leading-normal font-normal"
-                                                            >3516844638</span
-                                                            >
-                                                        </div>
-                                                        <div>
-                                                            <img src="/bares/line.png" alt="" className="h-3" />
-                                                        </div>
-                                                        <div className="flex items-center justify-center gap-x-1">
-                                                            <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                                className="text-xs leading-normal font-normal"
-                                                            >cordoba@temple.com.ar</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                    <span className="text-[10px] text-10 leading-normal font-normal"
-                                                    >Achaval Rodríguez 241, Córdoba</span
-                                                    >
-                                                    <span className="text-[10px] text-10 leading-normal font-bold"
-                                                    >HORARIOS</span
-                                                    >
-                                                </div>
-                                            </div>
-                                            <div className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2">
-                                                <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                    <h1 className="text-base font-medium leading-normal">
-                                                        NUEVA CÓRDOBA
-                                                    </h1>
-                                                    <div className="flex gap-x-2 items-center">
-                                                        <div className="flex items-center justify-center gap-x-1">
-                                                            <img
-                                                                src="/bares/wa.png"
-                                                                alt=""
-                                                                className="w-4 h-4"
-                                                            /><span className="text-xs leading-normal font-normal"
-                                                            >3517665275</span
-                                                            >
-                                                        </div>
-                                                        <div className="hidden">
-                                                            <img src="/bares/line.png" alt="" className="h-3" />
-                                                        </div>
-                                                        <div
-                                                            className="flex items-center justify-center gap-x-1 hidden"
-                                                        >
-                                                            <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                                className="text-xs leading-normal font-normal"
-                                                            >trastienda@temple.com.ar</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                    <span className="text-[10px] text-10 leading-normal font-normal"
-                                                    >Ambrosio Olmos 594, Córdoba</span
-                                                    >
-                                                    <span className="text-[10px] text-10 leading-normal font-bold"
-                                                    >HORARIOS</span
-                                                    >
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="salta hidden lg:grid grid-cols-1 text-white lg:justify-start lg:items-start gap-x-[1.84vh] pr-[1.84vh]">
-                                        <div className="space-y-4 min-w-[300px]">
-                                            <div className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative">
-                                                <div
-                                                    className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0"
-                                                >
-                                                    <span
-                                                        className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                    >SALTA</span
-                                                    >
-                                                </div>
-                                                <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                    <h1 className="text-base font-medium leading-normal">SALTA</h1>
-                                                    <div className="flex gap-x-2 items-center">
-                                                        <div
-                                                            className="flex items-center justify-center gap-x-1 hidden"
-                                                        >
-                                                            <img
-                                                                src="/bares/wa.png"
-                                                                alt=""
-                                                                className="w-4 h-4"
-                                                            /><span className="text-xs leading-normal font-normal"
-                                                            >1144493153</span
-                                                            >
-                                                        </div>
-                                                        <div className="hidden">
-                                                            <img src="/bares/line.png" alt="" className="h-3" />
-                                                        </div>
-                                                        <div className="flex items-center justify-center gap-x-1">
-                                                            <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                                className="text-xs leading-normal font-normal"
-                                                            >salta@temple.com.ar</span
-                                                            >
-                                                        </div>
-                                                    </div>
-                                                    <span className="text-[10px] text-10 leading-normal font-normal"
-                                                    >Belgrano 213, Salta</span
-                                                    >
-                                                    <span className="text-[10px] text-10 leading-normal font-bold"
-                                                    >HORARIOS</span
-                                                    >
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="tucuman hidden lg:grid grid-cols-1 text-white lg:justify-start lg:items-start gap-x-[1.84vh] pr-[1.84vh]">
-                                        <div className="space-y-4 min-w-0">
-                                            <div className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative">
-                                            <div
-                                                className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0"
-                                            >
-                                                <span
-                                                    className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                >TUCUMÁN</span
-                                                >
-                                            </div>
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                    TUCUMÁN
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img
-                                                            src="/bares/wa.png"
-                                                            alt=""
-                                                            className="w-4 h-4"
-                                                        /><span className="text-xs leading-normal font-normal"
-                                                        >3812157158</span
-                                                        >
-                                                    </div>
-                                                    <div>
-                                                        <img src="/bares/line.png" alt="" className="h-3" />
-                                                    </div>
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                            className="text-xs leading-normal font-normal"
-                                                        >estacion@temple.com.ar</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Av Roca 500, Complejo Provincial</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="chubut hidden lg:grid grid-cols-1 text-white lg:justify-start lg:items-start gap-x-[1.84vh] pr-[1.84vh]">
-                                        <div className="space-y-4 min-w-0">
-                                            <div className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative">
-                                            <div
-                                                className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0"
-                                            >
-                                                <span
-                                                    className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                >
-                                                    CHUBUT</span
-                                                >
-                                            </div>
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                    COMODORO
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                    <div
-                                                        className="flex items-center justify-center gap-x-1 hidden"
-                                                    >
-                                                        <img
-                                                            src="/bares/wa.png"
-                                                            alt=""
-                                                            className="w-4 h-4"
-                                                        /><span className="text-xs leading-normal font-normal"
-                                                        >1159089020</span
-                                                        >
-                                                    </div>
-                                                    <div className="hidden">
-                                                        <img src="/bares/line.png" alt="" className="h-3" />
-                                                    </div>
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                            className="text-xs leading-normal font-normal"
-                                                        >comodoro@temple.com.ar</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Rawson 666, Comodoro Rivadavia, Chubut</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="santa cruz hidden lg:grid grid-cols-1 text-white lg:justify-start lg:items-start gap-x-[1.84vh]">
-                                        <div className="space-y-4 min-w-0">
-                                           <div className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative">
-                                            <div
-                                                className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0"
-                                            >
-                                                <span
-                                                    className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                >
-                                                    SANTA CRUZ</span
-                                                >
-                                            </div>
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                    RÍO GALLEGOS
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                    <div
-                                                        className="flex items-center justify-center gap-x-1 hidden"
-                                                    >
-                                                        <img
-                                                            src="/bares/wa.png"
-                                                            alt=""
-                                                            className="w-4 h-4"
-                                                        /><span className="text-xs leading-normal font-normal"
-                                                        >1136532867</span
-                                                        >
-                                                    </div>
-                                                    <div className="hidden">
-                                                        <img src="/bares/line.png" alt="" className="h-3" />
-                                                    </div>
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                            className="text-xs leading-normal font-normal"
-                                                        >rio.gallegos@temple.com.ar</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >9 de julio 102, Río Gallegos, Santa Cruz</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </ScrollHorizontal>
-                        </div>
 
-                        <div className="flex w-full gap-x-10 lg:hidden">
-                            <div className="w-full lg:w-8/12 flex flex-col justify-end">
-                                <div className="grid grid-cols-1 lg:grid-cols-3 text-white justify-center items-center gap-y-16 lg:gap-x-4">
-                                    <div className="space-y-16">
-                                        <div className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative">
-                                            <div className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0">
-                                                <span
-                                                    className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                >COSTA ARGENTINA</span
-                                                >
-                                            </div>
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                    PINAMAR
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img
-                                                            src="/bares/wa.png"
-                                                            alt=""
-                                                            className="w-4 h-4"
-                                                        /><span className="text-xs leading-normal font-normal"
-                                                        >2267 44-2736</span
-                                                        >
-                                                    </div>
-                                                    <div>
-                                                        <img src="/bares/line.png" alt="" className="h-3" />
-                                                    </div>
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                            className="text-xs leading-normal font-normal"
-                                                        >pinamar@temple.com.ar</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Av. de las Artes 31, Pinamar</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                        </div>
-
-                                        <div className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative">
-                                            <div
-                                                className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0"
-                                            >
-                                                <span
-                                                    className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                >SANTA FE</span
-                                                >
-                                            </div>
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                    ROSARIO FISHERTON
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img
-                                                            src="/bares/wa.png"
-                                                            alt=""
-                                                            className="w-4 h-4"
-                                                        /><span className="text-xs leading-normal font-normal"
-                                                        >3416953442</span
-                                                        >
-                                                    </div>
-                                                    <div>
-                                                        <img src="/bares/line.png" alt="" className="h-3" />
-                                                    </div>
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                            className="text-xs leading-normal font-normal"
-                                                        >rosario@temple.com.ar</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Alberto J. Paz 1065 Bis-Local 5, Rosario, Santa Fe</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                        </div>
-
-                                        <div className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative">
-                                            <div
-                                                className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0"
-                                            >
-                                                <span
-                                                    className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                >NEUQUÉN</span
-                                                >
-                                            </div>
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                    BARILOCHE CATEDRAL
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                    <div
-                                                        className="flex items-center justify-center gap-x-1 hidden"
-                                                    >
-                                                        <img
-                                                            src="/bares/wa.png"
-                                                            alt=""
-                                                            className="w-4 h-4"
-                                                        /><span className="text-xs leading-normal font-normal"
-                                                        >1156620698</span
-                                                        >
-                                                    </div>
-                                                    <div className="hidden">
-                                                        <img src="/bares/line.png" alt="" className="h-3" />
-                                                    </div>
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                            className="text-xs leading-normal font-normal"
-                                                        >catedral@temple.com.ar</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Cerro Catedral - Bariloche</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                        </div>
+                            <div className="sticker-temple-amarillo absolute right-[40vw] top-[315vw] md:hidden">
+                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                    <div className="rotate-[-5deg] w-[30.76vw] h-[6.34vw] relative">
+                                        <Image 
+                                            src="/sticker-temple-amarrillo.png"
+                                            alt="Temple Beer"
+                                            fill 
+                                        />
                                     </div>
-                                    <div className="space-y-16">
-
-                                        <div
-                                            className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative"
-                                        >
-                                            <div
-                                                className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0"
-                                            >
-                                                <span
-                                                    className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                >CÓRDOBA</span
-                                                >
-                                            </div>
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                    CÓRDOBA GÜEMES
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img
-                                                            src="/bares/wa.png"
-                                                            alt=""
-                                                            className="w-4 h-4"
-                                                        /><span className="text-xs leading-normal font-normal"
-                                                        >3516844638</span
-                                                        >
-                                                    </div>
-                                                    <div>
-                                                        <img src="/bares/line.png" alt="" className="h-3" />
-                                                    </div>
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                            className="text-xs leading-normal font-normal"
-                                                        >cordoba@temple.com.ar</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Achaval Rodríguez 241, Córdoba</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                        </div>
-
-                                        <div
-                                            className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2"
-                                        >
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                    NUEVA CÓRDOBA
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img
-                                                            src="/bares/wa.png"
-                                                            alt=""
-                                                            className="w-4 h-4"
-                                                        /><span className="text-xs leading-normal font-normal"
-                                                        >3517665275</span
-                                                        >
-                                                    </div>
-                                                    <div className="hidden">
-                                                        <img src="/bares/line.png" alt="" className="h-3" />
-                                                    </div>
-                                                    <div
-                                                        className="flex items-center justify-center gap-x-1 hidden"
-                                                    >
-                                                        <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                            className="text-xs leading-normal font-normal"
-                                                        >trastienda@temple.com.ar</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Ambrosio Olmos 594, Córdoba</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                        </div>
-
-                                        <div
-                                            className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative"
-                                        >
-                                            <div
-                                                className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0"
-                                            >
-                                                <span
-                                                    className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                >SALTA</span
-                                                >
-                                            </div>
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">SALTA</h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                    <div
-                                                        className="flex items-center justify-center gap-x-1 hidden"
-                                                    >
-                                                        <img
-                                                            src="/bares/wa.png"
-                                                            alt=""
-                                                            className="w-4 h-4"
-                                                        /><span className="text-xs leading-normal font-normal"
-                                                        >1144493153</span
-                                                        >
-                                                    </div>
-                                                    <div className="hidden">
-                                                        <img src="/bares/line.png" alt="" className="h-3" />
-                                                    </div>
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                            className="text-xs leading-normal font-normal"
-                                                        >salta@temple.com.ar</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Belgrano 213, Salta</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className="space-y-16">
-
-                                        <div className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative">
-                                            <div
-                                                className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0"
-                                            >
-                                                <span
-                                                    className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                >TUCUMÁN</span
-                                                >
-                                            </div>
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                    TUCUMÁN
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img
-                                                            src="/bares/wa.png"
-                                                            alt=""
-                                                            className="w-4 h-4"
-                                                        /><span className="text-xs leading-normal font-normal"
-                                                        >3812157158</span
-                                                        >
-                                                    </div>
-                                                    <div>
-                                                        <img src="/bares/line.png" alt="" className="h-3" />
-                                                    </div>
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                            className="text-xs leading-normal font-normal"
-                                                        >estacion@temple.com.ar</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Av Roca 500, Complejo Provincial</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                        </div>
-
-                                        <div className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative">
-                                            <div
-                                                className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0"
-                                            >
-                                                <span
-                                                    className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                >
-                                                    CHUBUT</span
-                                                >
-                                            </div>
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                    COMODORO
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                    <div
-                                                        className="flex items-center justify-center gap-x-1 hidden"
-                                                    >
-                                                        <img
-                                                            src="/bares/wa.png"
-                                                            alt=""
-                                                            className="w-4 h-4"
-                                                        /><span className="text-xs leading-normal font-normal"
-                                                        >1159089020</span
-                                                        >
-                                                    </div>
-                                                    <div className="hidden">
-                                                        <img src="/bares/line.png" alt="" className="h-3" />
-                                                    </div>
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                            className="text-xs leading-normal font-normal"
-                                                        >comodoro@temple.com.ar</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >Rawson 666, Comodoro Rivadavia, Chubut</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                        </div>
-
-                                        <div className="border-l-2 border-white border-dashed pt-2 lg:pt-6 pb-2 relative">
-                                            <div
-                                                className="text-black absolute -left-1 lg:pl-7 -top-8 lg:top-0"
-                                            >
-                                                <span
-                                                    className="bg-white text-base lg:text-[10px] font-medium leading-normal px-2 py-0.5"
-                                                >
-                                                    SANTA CRUZ</span
-                                                >
-                                            </div>
-                                            <div className="flex flex-col gap-y-2 pl-7 mx-auto">
-                                                <h1 className="text-base font-medium leading-normal">
-                                                    RÍO GALLEGOS
-                                                </h1>
-                                                <div className="flex gap-x-2 items-center">
-                                                    <div
-                                                        className="flex items-center justify-center gap-x-1 hidden"
-                                                    >
-                                                        <img
-                                                            src="/bares/wa.png"
-                                                            alt=""
-                                                            className="w-4 h-4"
-                                                        /><span className="text-xs leading-normal font-normal"
-                                                        >1136532867</span
-                                                        >
-                                                    </div>
-                                                    <div className="hidden">
-                                                        <img src="/bares/line.png" alt="" className="h-3" />
-                                                    </div>
-                                                    <div className="flex items-center justify-center gap-x-1">
-                                                        <img src="/bares/mail.png" alt="" className="w-4" /><span
-                                                            className="text-xs leading-normal font-normal"
-                                                        >rio.gallegos@temple.com.ar</span
-                                                        >
-                                                    </div>
-                                                </div>
-                                                <span className="text-[10px] text-10 leading-normal font-normal"
-                                                >9 de julio 102, Río Gallegos, Santa Cruz</span
-                                                >
-                                                <span className="text-[10px] text-10 leading-normal font-bold"
-                                                >HORARIOS</span
-                                                >
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                </Draggable>
                             </div>
+                            <div className="sticker-temple-verde absolute right-[50vw] top-[405vw] md:hidden">
+                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                    <div className="rotate-[9deg] w-[30.76vw] h-[6.34vw] relative">
+                                        <Image 
+                                            src="/sticker-temple-verde.png"
+                                            alt="Temple Beer"
+                                            fill 
+                                        />
+                                    </div>
+                                </Draggable>
+                            </div>
+
+                            <Footer />
                         </div>
-                        <Footer />
-                    </div>
+                    )}
+                    {lang == 'en' && (
+                        <div className="px-[5.12vw] lg:px-0 space-y-20 relative overflow-hidden">
+                            <div className="flex flex-col md:flex-row w-full items-end mt-[4vw] md:mt-[6.37vh]">
+                                
+                                <div class="block">
+                                    <div class="relative w-[80vw] h-[80vw] md:w-[98.86vh] md:h-[93.62vh]">
+                                        <Image src="/bares/mapa-usa.png" alt="mapa-miami" fill />
+                                        <img
+                                        src="/bares/point-mapa.png"
+                                        alt=""
+                                        class="absolute miami top-[50vw] right-[2vw] md:top-[59vh] md:right-[3vh] w-[4vw] h-[4vw] md:w-[5vh] md:h-[5vh] hover:scale-110 transform ease-in-out duration-300 cursor-pointer"
+                                        />
+                                    </div>
+                                </div>
+                                
+                                <div className="hidden lg:block absolute md:pl-[125vh] md:top-[36vh] z-10">
+                                    <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                        <div className="relative w-[19.26vh] h-[19.26vh]">
+                                            <Image
+                                                src="/bares/sticker-bares.png"
+                                                alt="Sticker"
+                                                fill
+                                            />
+                                        </div>
+                                    </Draggable>
+                                </div>
+                                
+                                <div className="lg:h-[65.72vh] lg:w-[454.87vh] pt-[5.94vh] flex flex-col justify-start items-start ">
+                                    <h3 className={`text-white text-[9.49vh] uppercase md:pb-[2.56vh] hidden md:block ${Knockout54UltraBold.className}`}>{dict.bares.title}</h3>
+                                    <div className="buenos-aires grid grid-rows-3 grid-flow-col gap-4 gap-x-[1.84vh] text-white relative">
+                                        {data.baresEn.miami.map((bar, index) => (
+                                            <div key={index} className="border-l-2 border-white border-dashed relative w-[84.61vw] h-[24.87vw] md:w-[43.20vh] md:h-[16.57vh]">
+                                                {bar.header && (
+                                                    <div className="text-black absolute pl-[0vw] md:pl-[2.40vh] -top-[8vw] md:top-[1vh]">
+                                                        <span  className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                                            {bar.provincia}
+                                                        </span>
+                                                    </div>
+                                                )}                                                
+                                                <div className="flex flex-col gap-y-[1.79vw] md:gap-y-[0.99vh] pl-[3.58vw] md:pl-[2.40vh] pt-[1.79vw] md:pt-[4.95vh] mx-auto">
+                                                    <h1 className="text-[3.84vw] md:text-[2.12vh] leading-normal uppercase">
+                                                        {bar.nombre}
+                                                    </h1>
+                                                    <div className="flex gap-x-2 items-center">
+                                                        <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <div className="flex items-center justify-center gap-x-1">
+                                                                <img
+                                                                    src="/bares/wa.png"
+                                                                    alt=""
+                                                                    className="w-[1.84vh] h-[1.84vh]"
+                                                                />
+                                                                <span className="text-[3vw] md:text-[1.33vh]">
+                                                                    {bar.telefono}
+                                                                </span>
+                                                            </div>
+                                                        </a>
+                                                        
+                                                        <div>
+                                                            <img src="/bares/line.png" alt="" className="h-3" />
+                                                        </div>
+                                                        <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <div className="flex items-center justify-center gap-x-1">
+                                                                <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                                <span className="text-[3vw] md:text-[1.33vh]">
+                                                                    {bar.email}
+                                                                </span>
+                                                            </div>
+                                                        </a>
+                                                    </div>
+                                                    <span className="text-[3vw] md:text-[1.41vh]">
+                                                        {bar.direccion}
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        ))}
+                                        
+                                        <div className="sticker-temple-amarillo absolute left-[45vh] top-[23vh] hidden md:block">
+                                            <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                                <div className="rotate-[7.25deg] w-[22.80vh] h-[4.53vh] relative">
+                                                    <Image 
+                                                        src="/sticker-temple-amarrillo.png"
+                                                        alt="Temple Beer"
+                                                        fill 
+                                                    />
+                                                </div>
+                                            </Draggable>
+                                        </div>
+                                        <div className="sticker-temple-rosa absolute left-[5vh] top-[-30vh] hidden md:block">
+                                            <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                                <div className=" -rotate-[13.25deg] w-[22.52vh] h-[4.76vh] relative">
+                                                    <Image 
+                                                        src="/sticker-temple-rosa.png"
+                                                        alt="Temple Beer"
+                                                        fill 
+                                                    />
+                                                </div>
+                                            </Draggable>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                
+                                </div>
+                                
+                            </div>
+                            
+                            <div className="sticker-iso-rosa absolute right-[30vw] top-[120vw] md:left-[0vh] md:top-[65vh] md:right-0 md:hidden">
+                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                    <div className="rotate-[23deg] w-[14.61vw] h-[14.61vw] md:w-[9.69vh] md:h-[9.69vh] relative">
+                                        <Image 
+                                            src="/sticker-rosa-tempple.png"
+                                            alt="Temple Beer"
+                                            fill 
+                                        />
+                                    </div>
+                                </Draggable>
+                            </div>  
+                            <div className="sticker-temple-rosa absolute right-[40vw] top-[165vw] md:hidden">
+                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                    <div className=" -rotate-[5deg] w-[30.76vw] h-[6.34vw] relative">
+                                        <Image 
+                                            src="/sticker-temple-rosa.png"
+                                            alt="Temple Beer"
+                                            fill 
+                                        />
+                                    </div>
+                                </Draggable>
+                            </div>
+                            <div className="sticker-temple-amarillo absolute right-[40vw] top-[315vw] md:hidden">
+                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                    <div className="rotate-[-5deg] w-[30.76vw] h-[6.34vw] relative">
+                                        <Image 
+                                            src="/sticker-temple-amarrillo.png"
+                                            alt="Temple Beer"
+                                            fill 
+                                        />
+                                    </div>
+                                </Draggable>
+                            </div>
+                            <div className="sticker-temple-verde absolute right-[50vw] top-[405vw] md:hidden">
+                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                    <div className="rotate-[9deg] w-[30.76vw] h-[6.34vw] relative">
+                                        <Image 
+                                            src="/sticker-temple-verde.png"
+                                            alt="Temple Beer"
+                                            fill 
+                                        />
+                                    </div>
+                                </Draggable>
+                            </div>
+
+                            <Footer />
+                        </div>
+                    )}
                 </div>
             </section>
         </div>

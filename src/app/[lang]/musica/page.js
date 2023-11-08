@@ -67,7 +67,7 @@ export default async function Page({ children, params }) {
                                         <h1 className={`text-[2.54vh] leading-none ${Knockout54UltraBold.className}`}>
                                             CUANDO LA CULTURA EMERGENTE TOMA LA CALLE.
                                         </h1>
-                                        <p className={`text-[1.4vh] font-normal ${GothamBook.className}`}>
+                                        <p className={`text-[1.4vh] font-normal`}>
                                             CALLECORTADA es la máxima expresión
                                             del propósito potenciador de la cultura urbana de TEMPLE. Un
                                             festival en el que músicxs, graffiterxs, bailarines, poetas,
@@ -103,7 +103,7 @@ export default async function Page({ children, params }) {
                                         <h1 className={`text-[2.54vh] leading-none ${Knockout54UltraBold.className}`}>
                                             GIRA DE VERANO
                                         </h1>
-                                        <p className={`text-[1.4vh] font-normal ${GothamBook.className}`}>
+                                        <p className={`text-[1.4vh] font-normal`}>
                                             En enero del 2022, nos llevamos a cuatro artistas emergentes a
                                             recorrer todo el país en su primera gira musical. Ellxs son Marki,
                                             Ana Espil, Kastiello y Acus, cuatro #ArtistasTEMPLE que nos
@@ -138,7 +138,7 @@ export default async function Page({ children, params }) {
                                         <h1 className={`text-[2.54vh] leading-none ${Knockout54UltraBold.className}`}>
                                             DOCUS TEMPLE
                                         </h1>
-                                        <p className={`text-[1.4vh] font-normal ${GothamBook.className}`}>
+                                        <p className={`text-[1.4vh] font-normal`}>
                                             Hicimos una serie de documentales sobre lxs artistas emergentes
                                             que nos inspiran a diario. ¿Ya enfriaste las birras? ¡Dale que con
                                             el documental las pintas son más ricas!
@@ -171,7 +171,7 @@ export default async function Page({ children, params }) {
                                         <h1 className={`text-[2.54vh] leading-none ${Knockout54UltraBold.className}`}>
                                             RITUAL
                                         </h1>
-                                        <p className={`text-[1.4vh] font-normal ${GothamBook.className}`}>
+                                        <p className={`text-[1.4vh] font-normal`}>
                                             Un espacio de cultura emergente, donde el arte y la expresión se
                                             encuentran, siempre con una birrita en mano y entre amigxs. En
                                             vivo desde el Polo Cultural Saldías en la Ciudad de Buenos Aires y
@@ -205,7 +205,7 @@ export default async function Page({ children, params }) {
                                         <h1 className={`text-[2.54vh] leading-none ${Knockout54UltraBold.className}`}>
                                             RANCHAR
                                         </h1>
-                                        <p className={`text-[1.4vh] font-normal ${GothamBook.className}`}>
+                                        <p className={`text-[1.4vh] font-normal`}>
                                             Un espacio improvisado. Un plano continuo con el ambiente
                                             vibrando. Un TEMPLE en cada canción de artistas emergentes que
                                             están sonando.
@@ -240,7 +240,7 @@ export default async function Page({ children, params }) {
                                     <h1 className={`text-[5.12vw] leading-none ${Knockout54UltraBold.className}`}>
                                         CUANDO LA CULTURA EMERGENTE TOMA LA CALLE.
                                     </h1>
-                                    <p className={`text-[3.33vw] font-normal ${GothamBook.className}`}>
+                                    <p className={`text-[3.33vw] font-normal`}>
                                         CALLECORTADA es la máxima expresión
                                         del propósito potenciador de la cultura urbana de TEMPLE. Un
                                         festival en el que músicxs, graffiterxs, bailarines, poetas,
@@ -274,7 +274,7 @@ export default async function Page({ children, params }) {
                                     <h1 className={`text-[5.12vw] leading-none ${Knockout54UltraBold.className}`}>
                                         GIRA DE VERANO
                                     </h1>
-                                    <p className={`text-[3.33vw] font-normal ${GothamBook.className}`}>
+                                    <p className={`text-[3.33vw] font-normal`}>
                                         En enero del 2022, nos llevamos a cuatro artistas emergentes a
                                         recorrer todo el país en su primera gira musical. Ellxs son Marki,
                                         Ana Espil, Kastiello y Acus, cuatro #ArtistasTEMPLE que nos
@@ -307,7 +307,7 @@ export default async function Page({ children, params }) {
                                     <h1 className={`text-[5.12vw] leading-none ${Knockout54UltraBold.className}`}>
                                         DOCUS TEMPLE
                                     </h1>
-                                    <p className={`text-[3.33vw] font-normal ${GothamBook.className}`}>
+                                    <p className={`text-[3.33vw] font-normal`}>
                                         Hicimos una serie de documentales sobre lxs artistas emergentes
                                         que nos inspiran a diario. ¿Ya enfriaste las birras? ¡Dale que con
                                         el documental las pintas son más ricas!
@@ -338,7 +338,7 @@ export default async function Page({ children, params }) {
                                     <h1 className={`text-[5.12vw] leading-none ${Knockout54UltraBold.className}`}>
                                         RITUAL
                                     </h1>
-                                    <p className={`text-[3.33vw] font-normal ${GothamBook.className}`}>
+                                    <p className={`text-[3.33vw] font-normal`}>
                                         Un espacio de cultura emergente, donde el arte y la expresión se
                                         encuentran, siempre con una birrita en mano y entre amigxs. En
                                         vivo desde el Polo Cultural Saldías en la Ciudad de Buenos Aires y
@@ -370,7 +370,7 @@ export default async function Page({ children, params }) {
                                     <h1 className={`text-[5.12vw] leading-none ${Knockout54UltraBold.className}`}>
                                         RANCHAR
                                     </h1>
-                                    <p className={`text-[3.33vw] font-normal ${GothamBook.className}`}>
+                                    <p className={`text-[3.33vw] font-normal`}>
                                         Un espacio improvisado. Un plano continuo con el ambiente
                                         vibrando. Un TEMPLE en cada canción de artistas emergentes que
                                         están sonando.

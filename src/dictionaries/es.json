@@ -17,6 +17,9 @@
         "title": "Nuestras",
         "title2": "Birras"
     },
+    "bares": {
+        "title": "Bares"
+    },
     "header": {
         "nav": {
             "home": "Inicio",
