@@ -11,6 +11,7 @@ import Image from 'next/image';
 import { GothamBook } from '../../layout'
 import { Knockout54UltraBold, Knockout34, Knockout54 } from '../../layout'
 import ScrollHorizontal from '../../../../../components/ScrollHorizontal'
+import VideoHover from '../../../../../components/birras/VideoHover'
 import Header from '../../../../../components/common/header';
 import Footer from '../../../../../components/common/Footer';
 import CervezasData from '../../../../../data/cervezas.json';
@@ -122,14 +123,15 @@ export default async function Page({ params }) {
                                                             objectFit: 'cover',
                                                         }}
                                                         fill
-                                                        unoptimized={true}
                                                     />
                                                 </div>
                                             </div>
                                             
                                             <div className="main-content-wrapper">
                                                 <div className="product-title-box">
-                                                    <h1 className={`text-[9.49vh] text-white leading-none uppercase ${Knockout54UltraBold.className}`}>{cerveza.nombre}</h1>
+                                                    <h1 className={`text-[9.49vh] text-white leading-none uppercase ${Knockout54UltraBold.className}`}>
+                                                        {cerveza.nombre}
+                                                    </h1>
                                                 </div>
                                                 <div className="callToAction__wrapper flex flex-row gap-x-[10px] pt-[2.97vh]">
                                                     <Link className="text-white border-b-2 border-white hover:bg-white hover:text-[#D51668] hover:border-[#D51668] transition duration-300 ease-in-out flex flex-row items-center py-1 px-2 gap-[6px] text-[10px] group" href={`/${lang}/birras`}>
@@ -184,7 +186,7 @@ export default async function Page({ params }) {
                                                                 style={{
                                                                     objectFit: 'cover',
                                                                 }}
-                                                                unoptimized={true}
+                                                                
                                                             />
                                                         </div>
                                                     </div>
@@ -216,20 +218,8 @@ export default async function Page({ params }) {
                                         </div>
                                     </div>
                                     <div className="column">
-                                        {cerveza.info.secondaryImage && (
-                                        <div className="product-box-3">
-                                            <div className="relative w-[34.98vh] h-[69.54vh] mt-[9.91vh] mb-[11.33vh]">
-                                                <Image
-                                                src={cerveza.info.secondaryImage}
-                                                style={{
-                                                    objectFit: 'cover',
-                                                }}
-                                                fill
-                                                
-                                                />
-                                            </div>
-                                        </div>
-                                        )}
+                                        <VideoHover cerveza={cerveza} />
+                                        
                                     </div>
                                     <div className="column">
                                         <div className="product-box-4 relative h-full">

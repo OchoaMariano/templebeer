@@ -18,6 +18,7 @@
         "bajada": "Con un perfil muy americano, es una IPA que no vas a poder parar de tomar. Cítrica y frutal consecuencia del dry hopping con lúpulo Mosaic, tiene un tremendo balance entre aroma, sabor, amargor y tomabilidad.",
         "destacado": "Quien no conoce a wolf ipa, a cualquier ipa le reza",
         "secondaryImage": "/nuestrasbirras/clasicas/wolf-ipa/wolf-ipa-secondary.jpg",
+        "video": "https://storage.googleapis.com/tb-temporal/wolf-ipa-video-detail.mp4",
         "altSecondaryImage": "Bomba de lúpulo"
       },
       "style": {
@@ -48,6 +49,7 @@
         "bajada": "Con un color cobrizo que refleja su elegancia y complejidad en sus aromas, es una birra para frenarse a mirar, oler y después tomar. Combinación de maltas especiales que le dan un perfil a tostado y caramelo.",
         "destacado": "cerrá los ojos, viajá a escocia. Abrí los ojos. Una pinta de nuestra scottish esperandote. y ahora sí.",
         "secondaryImage": "/nuestrasbirras/clasicas/scotish/scotish-secondary.jpg",
+        "video": null,
         "altSecondaryImage": "Cada trago te invita a tomar el siguiente"
       },
       "style": {
@@ -78,6 +80,7 @@
         "bajada": "¿Qué decir de esta hermosura? Probablemente el estilo de cerveza más tomado hoy en día, nuestra Honey llegó para ganar corazones. Con nuestra (casi) obsesión por la sustentabilidad, usamos miel orgánica que viene directamente desde el Delta del Río Paraná, y la agregamos en la etapa de maduración, evitando que se transforme en alcohol, resalte el aroma y el sabor. Its organic, Honey.",
         "destacado": "Animate a mirar con otros ojos.",
         "secondaryImage": "/nuestrasbirras/clasicas/honey/honey-secondary.jpg",
+        "video": "https://storage.googleapis.com/tb-temporal/honey-video-detail.mp4",
         "altSecondaryImage": "¿Qué decirte de esta hermosura?"
       },
       "style": {
@@ -108,6 +111,7 @@
         "bajada": "Un frutado cítrico, un ligero y especiado aroma a trigo. Sabor ácido al inicio, y un toque especiado a cilantro y naranja al final. Un birra de otro planeta.",
         "destacado": "Una birra para toda la humanidad",
         "secondaryImage": "/nuestrasbirras/clasicas/cosmica/cosmica-secondary.jpg",
+        "video": null,
         "altSecondaryImage": "Birra espacial"
       },
       "style": {
@@ -134,10 +138,11 @@
       },
       "mainImage": "/nuestrasbirras/clasicas/indie-golden/indie-golden.png",
       "info": {
-        "imageInfo": "/nuestrasbirras/clasicas/indie-golden/indie-golden-info.jpg",
+        "imageInfo": "/nuestrasbirras/clasicas/indie-golden/indie-golden-secondary.jpg",
         "bajada": "Refrescante como esa nueva banda emergente que descubriste hace poco. Indie Golden, entradora como tarareo de hit.",
         "destacado": "Ideal para la primera pinta",
-        "secondaryImage": "/nuestrasbirras/clasicas/indie-golden/indie-golden-secondary.jpg",
+        "secondaryImage": "/nuestrasbirras/clasicas/indie-golden/indie-golden-info.jpg",
+        "video": "https://storage.googleapis.com/tb-temporal/indie-golden-video-detail.mp4",
         "altSecondaryImage": "Entradora como tarareo de hit"
       },
       "style": {
@@ -168,6 +173,7 @@
         "bajada": null,
         "destacado": "De color oscuro y buen cuerpo. Corazón de chocolate y perfume a café.",
         "secondaryImage": null,
+        "video": null,
         "altSecondaryImage": null
       },
       "style": {
@@ -198,6 +204,7 @@
         "bajada": "Ligera, de bajo amargor y dorada como el sol que ilumina tu after, hecha con una combinación de lúpulos americanos que unimos para que arranques el verano bien frescx",
         "destacado": "Cuando la vida te sorprende, seguí el flow",
         "secondaryImage": "/nuestrasbirras/clasicas/flow-apa/flow-apa-secondary.jpg",
+        "video": "https://storage.googleapis.com/tb-temporal/flow-apa-detail-video.mp4",
         "altSecondaryImage": null
       },
       "style": {
@@ -228,6 +235,7 @@
         "bajada": "Si estabas jugando a la play, guardá la partida porque esta birra llegó para cambiar el juego.",
         "destacado": "Una re - evolución del lúpulo",
         "secondaryImage": "/nuestrasbirras/clasicas/revolution/revolution-secondary.jpg",
+        "video": "https://storage.googleapis.com/tb-temporal/revolution-neipa-detail-video.mp4",
         "altSecondaryImage": null
       },
       "style": {
@@ -254,10 +262,11 @@
       },
       "mainImage": "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/santa-planta-lemon-haze-ipa.png",
       "info": {
-        "imageInfo": "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/santa-planta-lemon-haze-ipa-info.jpg",
+        "imageInfo": "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/santa-planta-lemon-haze-ipa-secondary.jpg",
         "bajada": "Los terpenos de lemon haze se unen a los lúpulos mosaic aportando toda la esencia de esta cepa de cannabis sativa. Con aromas cítricos, almidonados y un marcado skunk, nos trae todos los componentes de este hermoso híbrido. La lemon haze es el resultado del cruce de la lemon skunk y la amnesia haze, una combinación increíble.",
         "destacado": "Su aroma podría confundirse con el de otras flores.",
-        "secondaryImage": "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/santa-planta-lemon-haze-ipa-secondary.jpg",
+        "secondaryImage": "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/santa-planta-lemon-haze-ipa-info.jpg",
+        "video": null,
         "altSecondaryImage": "Santa planta"
       },
       "style": {
@@ -288,6 +297,7 @@
         "bajada": "La Critical APA es una cerveza dorada de bajo amargor, ideal para inducir charlas largas y colgadas. Con lúpulos americanos que aportan notas cítricas a limón y pomelo y terpenos Critical Jack, también de carácter cítrico y un delicado sabor picante y a madera. Aunque su aroma puede confundirse con el de otras flores. Nuestra Critical APA no contiene THC ni CBD.",
         "destacado": "Su aroma podría confundirse con el de otras flores.",
         "secondaryImage": "/nuestrasbirras/limitadas/santa-planta-critical-apa/santa-planta-critical-apa-secondary.jpg",
+        "video": null,
         "altSecondaryImage": "Santa planta"
       },
       "style": {
@@ -318,6 +328,7 @@
         "bajada": null,
         "destacado": "Su aroma podría confundirse con el de otras flores.",
         "secondaryImage": null,
+        "video": null,
         "altSecondaryImage": null
       },
       "style": {
@@ -348,6 +359,7 @@
         "bajada": "A de atrapante, atrevida, atractiva. B de birra. C de cerveza, Cautivante, coqueta. D dulce si te toca, amarga si le toca a otrx. E de efusiva, estilo, espectacular, espuma. F fresca, fantasiosa, friiiiiiia",
         "destacado": "Dulce si te toca, amarga si le toca a otrx",
         "secondaryImage": "/nuestrasbirras/limitadas/infrared-ipa/infrared-ipa-secondary.jpg",
+        "video": "https://storage.googleapis.com/tb-temporal/infrared-detail-video.mov",
         "altSecondaryImage": "Sassy Sassy"
       },
       "style": {
@@ -378,6 +390,7 @@
         "bajada": "Una american ipa con pulpa de pomelo rosado. fresca, amarga y bastante osada",
         "destacado": "Sentir los pies tocando el mar, El ruido de las olas mezclado con buena musiquita, Una birra helada.",
         "secondaryImage": "/nuestrasbirras/limitadas/ipanema/ipanema-secondary.jpg",
+        "video": null,
         "altSecondaryImage": "Sucundum"
       },
       "style": {
@@ -392,7 +405,7 @@
     },
     {
       "id": 14,
-      "nombre": "Jammin Imperial Stout",
+      "nombre": "Jammin' Imperial Stout",
       "slug": "jammin-imperial-stout",
       "url-buy": "url",
       "categoria": "especiales",
@@ -408,6 +421,7 @@
         "bajada": "Es la distinta y, por ende, la ideal para los distintos. Con un proceso intenso, que mezcla el café, con lo dulce y lo frutal. Una carga de notas de sabor en una sola cerveza, como una gran canción de jazz-fusión. Ideal para los que hacen de la improvisación su fortaleza.",
         "destacado": "La birra que se disfruta a tu ritmo",
         "secondaryImage": null,
+        "video": null,
         "altSecondaryImage": null
       },
       "style": {
@@ -438,6 +452,7 @@
         "bajada": null,
         "destacado": "un golpe marcial al paladar, no la vas a ver en el prime time",
         "secondaryImage": "/nuestrasbirras/especiales/kungfu-sour/kungfu-sour-secondary.jpg",
+        "video": null,
         "altSecondaryImage": "カンフー"
       },
       "style": {
@@ -468,6 +483,7 @@
         "bajada": "La edición limitada que diseñamos junto a @bhaviboi a partir de un sueño que tuvo. Una honey que es un fuego. Advertencia: va a dejarte tirando UUiUUIUUIIIs",
         "destacado": "Paradoja enlatada: una fresca que es un fuego.",
         "secondaryImage": "/nuestrasbirras/especiales/demon-honey/demon-honey-secondary.jpg",
+        "video": "https://storage.googleapis.com/tb-temporal/demon-honey-detail-video.mp4",
         "altSecondaryImage": "RED IPA ft. @bhaviboi una honey no tan santa"
       },
       "style": {
@@ -498,6 +514,7 @@
         "bajada": "La Primabirra se arranca con Milkshake NEIPA, una birra con aroma TROPICAL y un mix de sabores frutales.",
         "destacado": "Que vaya subiendo la temperatura, que nosotros seguiremos enfriando las birritas.",
         "secondaryImage": null,
+        "video": null,
         "altSecondaryImage": null
       },
       "style": {
@@ -528,6 +545,7 @@
         "bajada": null,
         "destacado": "Beber sin moderación",
         "secondaryImage": "/nuestrasbirras/especiales/wolf-ipa-sa/wolf-ipa-sa-secondary.jpg",
+        "video": "https://storage.googleapis.com/tb-temporal/wolf-ipa-sa-detail-video.mp4",
         "altSecondaryImage": "Sin alcohol, sin censura"
       },
       "style": {
@@ -558,6 +576,7 @@
         "bajada": "Proyecto Alpha, serie I: nuestra primer barrel aged. Es el resultado de nuestra Wolf Ipa añejada durante 12 meses en 50 barricas de roble traídas de Mendoza. La barrica transforma nuestra IPA dándole notas a madera, vainilla y banana.",
         "destacado": "Para quien sabe esperar. Una birra reposada en barrica.",
         "secondaryImage": "/nuestrasbirras/especiales/proyecto-alpha-1/proyecto-alpha-1-secondary.jpg",
+        "video": null,
         "altSecondaryImage": "Barrel Aged Series"
       },
       "style": {
@@ -588,6 +607,7 @@
         "bajada": "Para quien sabe esperar, hay birra al final del camino. Después de catorce meses de reposo en barrica de roble francés, nuestra wolf ipa inconfundible sale transformada, distinta y madura, con aroma a vainilla, banana y notas de madera.",
         "destacado": "Para quien sabe esperar. Una birra reposada en barrica.",
         "secondaryImage": "/nuestrasbirras/especiales/proyecto-alpha-2/proyecto-alpha-2-secondary.jpg",
+        "video": null,
         "altSecondaryImage": "Barrel Aged Series"
       },
       "style": {
@@ -618,6 +638,7 @@
         "bajada": null,
         "destacado": "Para quien sabe esperar. Una birra reposada en barrica.",
         "secondaryImage": null,
+        "video": null,
         "altSecondaryImage": null
       },
       "style": {
@@ -648,6 +669,7 @@
         "bajada": null,
         "destacado": "Para quien sabe esperar. Una birra reposada en barrica.",
         "secondaryImage": "/nuestrasbirras/especiales/alpha-imperial-stout/alpha-imperial-stout-secondary.jpg",
+        "video": null,
         "altSecondaryImage": "Barrel Aged Series"
       },
       "style": {
