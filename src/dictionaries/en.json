@@ -20,6 +20,12 @@
     "bares": {
         "title": "Bar"
     },
+    "encuentro": {
+        "title": "Culture"
+    },
+    "musica": {
+        "title": "Music"
+    },
     "header": {
         "nav": {
             "home": "Home",
