@@ -10,7 +10,6 @@ function ScrollHorizontal({ children }) {
         const wrapper = wrapperRef.current;
 
         const handleScroll = (event) => {
-            console.log("scroll")
             if (event.deltaY) {
                 // Ajustar esta constante para aumentar o disminuir la "resistencia" al desplazamiento
                 const scrollResistance = 0.7;

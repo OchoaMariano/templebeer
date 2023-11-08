@@ -42,7 +42,7 @@ export default async function Page({ children, searchParams, params }) {
     return (
         <div>
             <Header dictonary={headerDic}/>
-            <section className="md:h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
+            <section className="min-h-screen md:h-screen bg-cover bg-center" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
                 <div className="page__wrapper pt-[18.15vw] md:pt-[6.37vh] px-[5.12vw] md:px-[4.83vh]">
                     <div className="title__wrapper flex items-center justify-center pt-[2.83vh]">
                         <h1 className={`text-[4.24vh] text-white leading-none uppercase ${Knockout54UltraBold.className}`}>
@@ -153,7 +153,7 @@ export default async function Page({ children, searchParams, params }) {
                                     <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-20 gap-y-10 items-start">
 
                                         <div className="flex transform hover-bouncesmooth cursor-pointer">
-                                            <Link className="flex flex-col justify-center md:items-center gap-y-4" href="encuentro/?modalTacoTuesday=true">
+                                            <Link className="flex flex-col justify-center items-center gap-y-4" href="encuentro/?modalTacoTuesday=true">
                                                 <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                                                     <Image
                                                         src="/encuentros/culture/taco-tuesday-icono.png"
@@ -168,7 +168,7 @@ export default async function Page({ children, searchParams, params }) {
                                         </div>
 
                                         <div className="flex transform hover-bouncesmooth cursor-pointer">
-                                            <Link className="flex flex-col justify-center md:items-center gap-y-4" href="encuentro/?modalWynwood=true">
+                                            <Link className="flex flex-col justify-center items-center gap-y-4" href="encuentro/?modalWynwood=true">
                                                 <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                                                     <Image
                                                         src="/encuentros/culture/wynwood-icono.png"
