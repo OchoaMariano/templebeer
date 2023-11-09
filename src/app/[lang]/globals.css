@@ -724,3 +724,11 @@ body {
 .animate-pulsec:hover {
   animation: pulsec 2s infinite;
 }
+
+.product-box-4-en {
+  position: relative;
+  width: 54.22vh;
+  height: 90.79vh;
+  margin-left: 4.53vh;
+  margin-right: 4.53vh;
+}

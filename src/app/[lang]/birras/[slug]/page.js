@@ -72,6 +72,14 @@ const data = {
         { title: "JAMMIN IMPERIAL STOUT", id: 14, slug: "jammin-imperial-stout", mainImage: "/nuestrasbirras/especiales/jammin-imperial-stout/jammin-imperial-stout.png" },
         { title: "KUNG FU SOUR", id: 15, slug: "kung-fu-sour", mainImage: "/nuestrasbirras/especiales/kungfu-sour/kungfu-sour.png" },
         { title: "DEMON HONEY", id: 16, slug: "demon-honey" , mainImage: "/nuestrasbirras/especiales/demon-honey/demon-honey.png"},
+    ],
+    gridEn: [
+        { title: "Cosmic Hazy Lager", id: 1, slug: "cosmic-hazy-lager", mainImage: "/nuestrasbirras/en/cosmic-hazy-lager/cosmic-hazy-lager.png" },
+        { title: "HONEY", id: 2, slug: "honey", mainImage: "/nuestrasbirras/en/honey/honey.png" },
+        { title: "Indie Lager", id: 3, slug: "indie-lager", mainImage: "/nuestrasbirras/en/indie-lager/indie-lager.png" },
+        { title: "Ipanema", id: 4, slug: "ipanema", mainImage: "/nuestrasbirras/en/ipanema/ipanema.png" },
+        { title: "Royal Amber", id: 5, slug: "royal-amber", mainImage: "/nuestrasbirras/en/royal-amber/royal-amber.png" },
+        { title: "Wolf Ipa", id: 6, slug: "wolf-ipa", mainImage: "/nuestrasbirras/en/wolf-ipa/wolf-ipa.png" }
     ]
 };
 
@@ -222,6 +230,7 @@ export default async function Page({ params }) {
                                         
                                     </div>
                                     <div className="column">
+                                        {lang == 'es' && (
                                         <div className="product-box-4 relative h-full">
                                             {cerveza.style.esquinaDerecha && (
                                             <div className="absolute right-0 top-0">
@@ -242,12 +251,12 @@ export default async function Page({ params }) {
                                                     <h2 className="text-[5.66vh] uppercase px-[2.40vh]" style={{ color: cerveza.style?.color || 'white' }}>
                                                         BIRRAS
                                                     </h2>
-                                                </div>
+                                                </div>                                         
                                                 {cerveza.gridClasicas && (
                                                 <div className="beer-grid grid grid-cols-4 grid-rows-2">
                                                     {data.gridClasicas.map((clasicasObj, index) => (
                                                         <div className="beer-item py-[2.12vh] px-[0.42vh]" key={index}>
-                                                            <Link href={`/birras/${clasicasObj.slug}`}>
+                                                            <Link href={`/${lang}/birras/${clasicasObj.slug}`}>
                                                                 <div className="relative w-[14.02vh] h-[25.07vh] hover:scale-110 transition duration-100 transform">
                                                                     <Image
                                                                         src={clasicasObj.mainImage}
@@ -267,7 +276,7 @@ export default async function Page({ params }) {
                                                 <div className="beer-grid grid grid-cols-4 grid-rows-2">
                                                     {data.gridLimitadas.map((clasicasObj, index) => (
                                                         <div className="beer-item py-[2.12vh] px-[0.42vh]" key={index}>
-                                                            <Link href={`/birras/${clasicasObj.slug}`}>
+                                                            <Link href={`/${lang}/birras/${clasicasObj.slug}`}>
                                                                 <div className="relative w-[14.02vh] h-[25.07vh] hover:scale-110 transition duration-100 transform">
                                                                     <Image
                                                                         src={clasicasObj.mainImage}
@@ -287,7 +296,7 @@ export default async function Page({ params }) {
                                                 <div className="beer-grid grid grid-cols-4 grid-rows-2">
                                                     {data.gridEspeciales.map((clasicasObj, index) => (
                                                         <div className="beer-item py-[2.12vh] px-[0.42vh]" key={index}>
-                                                            <Link href={`/birras/${clasicasObj.slug}`}>
+                                                            <Link href={`/${lang}/birras/${clasicasObj.slug}`}>
                                                                 <div className="relative w-[14.02vh] h-[25.07vh] hover:scale-110 transition duration-100 transform">
                                                                     <Image
                                                                         src={clasicasObj.mainImage}
@@ -307,7 +316,7 @@ export default async function Page({ params }) {
                                                     <nav className="flex flex-wrap self-stretch gap-y-[2px] pt-2 pr-6">
                                                         {data.birras.map((birraObj, index) => (
                                                         <span key={index} className={`py-[2px] px-[5px] text-[1.41vh] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
-                                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`/birras/${birraObj.slug}`}>
+                                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`/${lang}/birras/${birraObj.slug}`}>
                                                             {birraObj.title}
                                                             </Link>
                                                         </span>
@@ -316,6 +325,47 @@ export default async function Page({ params }) {
                                                 </div>
                                             </div>
                                         </div>
+                                        )}
+                                        {lang == 'en' && (
+                                        <div className="product-box-4-en relative h-full">
+                                            <div className="beers-content-wrapper flex flex-col justify-between">
+                                                <div className="title pb-[0.21vh]">
+                                                    <h2 className="text-[5.66vh] uppercase px-[2.40vh]" style={{ color: cerveza.style?.color || 'white' }}>
+                                                        BEERS
+                                                    </h2>
+                                                </div>
+                                            </div>
+                                            <div className="beer-grid grid grid-cols-3 grid-rows-2">
+                                                {data.gridEn.map((enObj, index) => (
+                                                    <div className="beer-item py-[2.12vh] px-[0.42vh]" key={index}>
+                                                        <Link href={`/${lang}/birras/${enObj.slug}`}>
+                                                            <div className="relative w-[14.02vh] h-[25.07vh] hover:scale-110 transition duration-100 transform">
+                                                                <Image
+                                                                    src={enObj.mainImage}
+                                                                    style={{
+                                                                        objectFit: 'cover',
+                                                                    }}
+                                                                    fill
+                                                                    
+                                                                />
+                                                            </div>
+                                                        </Link>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                            <div className="beer-nav">
+                                                <nav className="flex flex-wrap self-stretch gap-y-[2px] pt-2 pr-6">
+                                                    {data.gridEn.map((birraObj, index) => (
+                                                    <span key={index} className={`py-[2px] px-[5px] text-[1.41vh] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
+                                                        <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out uppercase" href={`/${lang}/birras/${birraObj.slug}`}>
+                                                        {birraObj.title}
+                                                        </Link>
+                                                    </span>
+                                                    ))}
+                                                </nav>
+                                            </div>
+                                        </div>
+                                        )}
                                     </div>
                                 </div>
                             </ScrollHorizontal>

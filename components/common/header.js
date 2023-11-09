@@ -70,7 +70,7 @@ export default function Header ({ dictonary }) {
                     <Link href={createLocalePath('/musica')} className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
                         {dictonary.nav.musica}
                     </Link>
-                    <a href="https://diamond-hamburger-c59.notion.site/0f69945dbb6247a1b08f8eae47bb2442?v=bdfe9a6a777c4281adda7ea36cf7d43c" target="_blank" className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
+                    <a href="https://templeacademy.notion.site/templeacademy/0f69945dbb6247a1b08f8eae47bb2442?v=bdfe9a6a777c4281adda7ea36cf7d43c" target="_blank" className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
                         Temple Academy
                     </a>
                 </div>
@@ -161,7 +161,7 @@ export default function Header ({ dictonary }) {
                 <div className="flex flex-col py-[5.12vw]">
                     <div className="flex flex-start items-start justify-start gap-x-[2.52vw] text-white pb-[5.12vw]">
                         <Link href={createLocalePath('/legales')} className="text-[2.56vw] uppercase"> {dictonary.nav.legales} </Link>
-                        <a className="text-[2.56vw] uppercase" href="" target="_blank">{dictonary.nav.templeAcademy}y</a>
+                        <a className="text-[2.56vw] uppercase" href="https://templeacademy.notion.site/templeacademy/0f69945dbb6247a1b08f8eae47bb2442?v=bdfe9a6a777c4281adda7ea36cf7d43c" target="_blank">{dictonary.nav.templeAcademy}y</a>
                     </div>
                     <div className="bg-white h-[1px]"></div>
                     <div className="flex flex-row items-center justify-between py-[7.12vw]">

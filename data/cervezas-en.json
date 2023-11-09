@@ -17,15 +17,15 @@
         "bajada": "This new beer comes to challenge our senses. Complexity, aroma and high drinkability.",
         "destacado": "The beer that came all the way down from outer space to conquer humanity.",
         "secondaryImage": null,
+        "video": null,
         "altSecondaryImage": "Special beer"
       },
       "style": {
-        "background": "/nuestrasbirras/en/cosmic-hazy-lager/bg-cosmic-hazy-lager.png",
+        "background": "/nuestrasbirras/en/cosmic-hazy-lager/bg-cosmic-hazy-lager.jpg",
         "esquinaIzquierda": null,
         "esquinaDerecha": null
       }
     },
-
     {
       "id": 2,
       "nombre": "Honey",
@@ -43,6 +43,7 @@
         "bajada": "What to say about this beauty? Probably the most popular style of beer nowadays, our honey came to win hearts. With our (almost) obsession for sustainability, we use organic honey that comes directly from the paraná river delta, and we add it at the maturation stage, preventing it from transforming into alcohol, highlighting the aroma and flavor. Its organic, honey.",
         "destacado": "Sweet dreams are made of beer. ",
         "secondaryImage": "/nuestrasbirras/en/honey/honey-secondary.jpg",
+        "video": null,
         "altSecondaryImage": "What to say about this beauty?"
       },
       "style": {
@@ -51,7 +52,6 @@
         "esquinaDerecha": null
       }
     },
-
     {
       "id": 3,
       "nombre": "Indie Lager",
@@ -69,6 +69,7 @@
         "bajada": "Refreshing like that new emerging band you recently discovered. Indie lager, to sing out loud.",
         "destacado": "Where the good times start.",
         "secondaryImage": "/nuestrasbirras/en/indie-lager/indie-lager-secondary.jpg",
+        "video": null,
         "altSecondaryImage": "To sing out loud"
       },
       "style": {
@@ -77,7 +78,6 @@
         "esquinaDerecha": null
       }
     },
-
     {
       "id": 4,
       "nombre": "Ipanema",
@@ -94,7 +94,8 @@
         "imageInfo": "/nuestrasbirras/en/ipanema/ipanema-info.jpg",
         "bajada": "Freshly squeezed hazy juicy ipa with a ton of tropical aromas",
         "destacado": "More likely to blow your head off.",
-        "secondaryImage": "/nuestrasbirras/en/ipanema/ipanema-video.mp4",
+        "secondaryImage": null,
+        "video": "https://storage.googleapis.com/tb-temporal/ipanema-video.mp4",
         "altSecondaryImage": "Sucundum"
       },
       "style": {
@@ -103,7 +104,6 @@
         "esquinaDerecha": null
       }
     },
-
     {
       "id": 5,
       "nombre": "Royal Amber",
@@ -121,6 +121,7 @@
         "bajada": "With a copper color that reflects its elegance and complexity in its aromas, it is a beer to stop and look, smell and then drink. A combination of special malts that give it a toasted and caramel profile.",
         "destacado": "Your ultimate red beer.",
         "secondaryImage": "/nuestrasbirras/en/royal-amber/royal-amber-secondary.jpg",
+        "video": null,
         "altSecondaryImage": "Each drink invites you to take the next one "
       },
       "style": {
@@ -129,7 +130,6 @@
         "esquinaDerecha": null
       }
     },
-
     {
       "id": 6,
       "nombre": "Wolf Ipa",
@@ -146,7 +146,8 @@
         "imageInfo": "/nuestrasbirras/en/wolf-ipa/wolf-ipa-info.jpg",
         "bajada": "Drinking. Citric and fruity as a result of dry hopping with mosaic hops, it has a fantastic balance between aroma, flavor, bitterness and drinkability.",
         "destacado": "Say no no more. This is your ipa.",
-        "secondaryImage": "/nuestrasbirras/en/wolf-ipa/wolf-ipa-video.mov",
+        "secondaryImage": null,
+        "video": "https://storage.googleapis.com/tb-temporal/wolf-ipa-video.mov",
         "altSecondaryImage": "Hops bomb"
       },
       "style": {
