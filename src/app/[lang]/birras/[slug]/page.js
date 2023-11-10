@@ -12,6 +12,7 @@ import { GothamBook } from '../../layout'
 import { Knockout54UltraBold, Knockout34, Knockout54 } from '../../layout'
 import ScrollHorizontal from '../../../../../components/ScrollHorizontal'
 import VideoHover from '../../../../../components/birras/VideoHover'
+import VideoMobile from '../../../../../components/birras/VideoMobile'
 import Header from '../../../../../components/common/header';
 import Footer from '../../../../../components/common/Footer';
 import CervezasData from '../../../../../data/cervezas.json';
@@ -142,7 +143,7 @@ export default async function Page({ params }) {
                                                     </h1>
                                                 </div>
                                                 <div className="callToAction__wrapper flex flex-row gap-x-[10px] pt-[2.97vh]">
-                                                    <Link className="text-white border-b-2 border-white hover:bg-white hover:text-[#D51668] hover:border-[#D51668] transition duration-300 ease-in-out flex flex-row items-center py-1 px-2 gap-[6px] text-[10px] group" href={`/${lang}/birras`}>
+                                                    <Link className="text-white border-b-2 border-white hover:bg-white hover:text-[#D51668] hover:border-[#D51668] transition duration-300 ease-in-out flex flex-row items-center py-1 px-2 gap-[6px] text-[10px] group" href={`/${lang}/birras`} >
                                                         <Image 
                                                             src='/detallebirras/btn-arrow.png'
                                                             
@@ -167,13 +168,13 @@ export default async function Page({ params }) {
                                                     
                                                 </div>
                                                 <div className="description__wrapper flex flex-col pt-[2.26vh]">
-                                                    <p className={`text-white uppercase text-[11px] w-[46.88vh] ${GothamBook.className}`} dangerouslySetInnerHTML={{ __html: cerveza.descripcion }} />
+                                                    <p className={`text-white uppercase text-[11px] w-[46.88vh] ${GothamBook.className}`} style={{ color: cerveza.style?.textColor || 'white' }} dangerouslySetInnerHTML={{ __html: cerveza.descripcion }} />
                                                     
                                                     {lang === 'es' && (
                                                     <div className="propiedades__wrapper flex flex-row text-[11px  pt-[2.97vh]">
-                                                        <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>ALC. {cerveza.propiedades.alcohol}</span>
-                                                        <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>IBU {cerveza.propiedades.ibu}</span>
-                                                        <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>{cerveza.propiedades.size} CC.</span>
+                                                        <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`} style={{ color: cerveza.style?.textColor || 'white', borderColor: cerveza.style?.textColor || 'white' }}>ALC. {cerveza.propiedades.alcohol}</span>
+                                                        <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`} style={{ color: cerveza.style?.textColor || 'white', borderColor: cerveza.style?.textColor || 'white' }}>IBU {cerveza.propiedades.ibu}</span>
+                                                        <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`} style={{ color: cerveza.style?.textColor || 'white', borderColor: cerveza.style?.textColor || 'white' }}>{cerveza.propiedades.size} CC.</span>
                                                     </div>
                                                     )}
                                                     {lang === 'en' && (
@@ -443,27 +444,8 @@ export default async function Page({ params }) {
                             </p>
                         </div>
                     </div>
+                    <VideoMobile cerveza={cerveza} />
                     
-                    <div className="product-box-5-mobile mb-[4.61vw]">
-                        <div className="secondary-image-box flex flex-col gap-y-[4.61vw] px-[5.12vw]">
-                            <p className={`text-[#D41768] text-right text-[3.33vw] uppercase ${Knockout54.className}`}>
-                                {cerveza.info.altSecondaryImage}
-                            </p>
-                            {cerveza.info.secondaryImage && (         
-                                <div className="relative w-[89.74vw] h-[125.89vw]">
-                                    <Image
-                                    src={cerveza.info.secondaryImage}
-                                    style={{
-                                        objectFit: 'cover',
-                                    }}
-                                    fill
-                                    
-                                    />
-                                </div>
-                            )}
-                            
-                        </div>
-                    </div>
                     {lang == 'es' && (
                     <div className="product-box-6-mobile">
                         <div className="relative h-full">

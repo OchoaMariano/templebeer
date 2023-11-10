@@ -17,7 +17,7 @@
         "imageInfo": "/nuestrasbirras/clasicas/wolf-ipa/wolf-ipa-info.jpg",
         "bajada": "Con un perfil muy americano, es una IPA que no vas a poder parar de tomar. Cítrica y frutal consecuencia del dry hopping con lúpulo Mosaic, tiene un tremendo balance entre aroma, sabor, amargor y tomabilidad.",
         "destacado": "Quien no conoce a wolf ipa, a cualquier ipa le reza",
-        "secondaryImage": "/nuestrasbirras/clasicas/wolf-ipa/wolf-ipa-secondary.jpg",
+        "secondaryImage": null,
         "video": "https://storage.googleapis.com/tb-temporal/wolf-ipa-video-detail.mp4",
         "altSecondaryImage": "Bomba de lúpulo"
       },
@@ -482,7 +482,7 @@
         "imageInfo": "/nuestrasbirras/especiales/demon-honey/demon-honey-info.jpg",
         "bajada": "La edición limitada que diseñamos junto a @bhaviboi a partir de un sueño que tuvo. Una honey que es un fuego. Advertencia: va a dejarte tirando UUiUUIUUIIIs",
         "destacado": "Paradoja enlatada: una fresca que es un fuego.",
-        "secondaryImage": "/nuestrasbirras/especiales/demon-honey/demon-honey-secondary.jpg",
+        "secondaryImage": null,
         "video": "https://storage.googleapis.com/tb-temporal/demon-honey-detail-video.mp4",
         "altSecondaryImage": "RED IPA ft. @bhaviboi una honey no tan santa"
       },
@@ -552,7 +552,8 @@
         "background": "/nuestrasbirras/especiales/wolf-ipa-sa/bg-wolf-ipa-sa.jpg",
         "esquinaIzquierda": null,
         "esquinaDerecha": null,
-        "color": "#00837B"
+        "color": "#00837B",
+        "textColor": "#000000"
       },
       "gridClasicas": null,
       "gridLimitadas": null,
