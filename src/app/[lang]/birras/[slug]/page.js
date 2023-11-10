@@ -217,7 +217,7 @@ export default async function Page({ params }) {
                                             </div>
                                             <div className="">
                                                 
-                                                <p className={`leading-[3.39vh] text-[3vh] uppercase ${Knockout54UltraBold.className}`} dangerouslySetInnerHTML={{ __html: cerveza.info.destacado }} />
+                                                <p className={`leading-[3.39vh] text-[3vh] uppercase ${Knockout54UltraBold.className}`} style={{ color: cerveza.style?.color || 'white' }} dangerouslySetInnerHTML={{ __html: cerveza.info.destacado }} />
                                             </div>
                                         </div>
                                     </div>
