@@ -1,7 +1,7 @@
 import './globals.css'
 import localFont from 'next/font/local'
 import Popup from '../../../components/common/Popup'
-import SelectCountry from './select-country/page'
+import SelectCountry from '../../../components/common/SelectCountry'
 import Legales from '../../../components/common/Legales'
 import { i18n } from '../../i18n-config'
 
@@ -74,7 +74,7 @@ export default function RootLayout({ children, params }) {
     <html lang={params.lang} className="scroll-smooth">
       
       <body className={Knockout54.className}>
-        
+        <SelectCountry />
         <Popup />
         
         {children}

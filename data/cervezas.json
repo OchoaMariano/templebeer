@@ -110,14 +110,14 @@
         "imageInfo": "/nuestrasbirras/clasicas/cosmica/cosmica-info.jpg",
         "bajada": "Un frutado cítrico, un ligero y especiado aroma a trigo. Sabor ácido al inicio, y un toque especiado a cilantro y naranja al final. Un birra de otro planeta.",
         "destacado": "Una birra para toda la humanidad",
-        "secondaryImage": "/nuestrasbirras/clasicas/cosmica/cosmica-secondary.jpg",
-        "video": null,
+        "secondaryImage": null,
+        "video": "https://storage.googleapis.com/tb-temporal/Version%20Story%20OK.mp4",
         "altSecondaryImage": "Birra espacial"
       },
       "style": {
         "background": null,
         "esquinaIzquierda": "/nuestrasbirras/clasicas/cosmica/esquina-izquierda-cosmica.png",
-        "esquinaDerecha": "/nuestrasbirras/clasicas/cosmica/esquina-derecha-cosmica.png",
+        "esquinaDerecha": null,
         "color": "#1F9996"
       },
       "gridClasicas": true,

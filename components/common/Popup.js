@@ -8,7 +8,7 @@ const Popup = () => {
   const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    const response = localStorage.getItem('isOldEnough');
+    const response = sessionStorage.getItem('isOldEnough');
     if (response !== null) {
       setIsOldEnough(response === 'true');
       setShowPopup(false);
@@ -16,9 +16,9 @@ const Popup = () => {
       setShowPopup(true);
     }
   }, []);
-
+  
   const handleYes = () => {
-    localStorage.setItem('isOldEnough', 'true');
+    sessionStorage.setItem('isOldEnough', 'true');
     setIsOldEnough(true);
     setShowPopup(false);
   };
@@ -30,7 +30,7 @@ const Popup = () => {
   if (!showPopup) return null;
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center z-50">
+    <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-80 flex justify-center items-center z-50">
       <div className="py-12 px-36 shadow-lg bg-cover bg-center border border-white" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
         <div className="flex flex-col items-center justify-center gap-y-[30px]">
             <div className="logo__wrapper relative w-[95px] h-[91px]">

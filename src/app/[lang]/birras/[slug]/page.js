@@ -219,7 +219,7 @@ export default async function Page({ params }) {
                                                 </p>
                                             </div>
                                             <div className="">
-                                                <p className={`leading-[3.39vh] text-[3.39vh] uppercase `} style={{ color: cerveza.style?.color || 'white' }}>
+                                                <p className={`leading-[3.39vh] text-[3.39vh] uppercase ${Knockout54UltraBold.className}`} style={{ color: cerveza.style?.color || 'white' }}>
                                                     {cerveza.info.destacado}
                                                 </p>
                                             </div>
@@ -447,6 +447,7 @@ export default async function Page({ params }) {
                             </p>
                         </div>
                     </div>
+                    
                     <div className="product-box-5-mobile mb-[4.61vw]">
                         <div className="secondary-image-box flex flex-col gap-y-[4.61vw] px-[5.12vw]">
                             <p className={`text-[#D41768] text-right text-[3.33vw] uppercase ${Knockout54.className}`}>
@@ -467,6 +468,7 @@ export default async function Page({ params }) {
                             
                         </div>
                     </div>
+                    {lang == 'es' && (
                     <div className="product-box-6-mobile">
                         <div className="relative h-full">
                             <div className="beers-content-wrapper flex flex-col justify-between">
@@ -549,6 +551,47 @@ export default async function Page({ params }) {
                             </div>
                         </div>
                     </div>
+                    )}
+                    {lang == 'en' && (
+                        <div className="product-box-6-mobile relative h-full">
+                            <div className="beers-content-wrapper flex flex-col justify-between">
+                                <div className="title">
+                                    <h2 className="text-[10.25vw] uppercase" style={{ color: cerveza.style?.color || 'white' }}>
+                                        BEERS
+                                    </h2>
+                                </div>
+                            </div>
+                            <div className="beer-grid grid grid-cols-3 grid-rows-2">
+                                {data.gridEn.map((enObj, index) => (
+                                    <div className="beer-item py-[3.84vw] px-[0.76vw]" key={index}>
+                                        <Link href={`/birras/${enObj.slug}`}>
+                                            <div className="relative w-[22.30vw] h-[39.74vw] hover:scale-110 transition duration-100 transform">
+                                                <Image
+                                                    src={enObj.mainImage}
+                                                    style={{
+                                                        objectFit: 'cover',
+                                                    }}
+                                                    fill
+                                                    
+                                                />
+                                            </div>
+                                        </Link>
+                                    </div>
+                                ))}
+                            </div>
+                            <div className="beer-nav">
+                                <nav className="flex flex-wrap self-stretch gap-y-[2px]">
+                                    {data.gridEn.map((birraObj, index) => (
+                                    <span key={index} className={`py-[2px] px-[5px] text-[2.30vw] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
+                                        <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`/birras/${birraObj.slug}`}>
+                                        {birraObj.title}
+                                        </Link>
+                                    </span>
+                                    ))}
+                                </nav>
+                            </div>
+                        </div>
+                    )}
                     <Footer />
                 </section>
                 

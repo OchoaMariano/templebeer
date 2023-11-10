@@ -11,11 +11,11 @@ export default function ProductBox({ cerveza }) {
     <>
     {cerveza.info.secondaryImage && (
       <div className="product-box-3" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
-        <p className="mt-[9.91vh] text-right text-[1.41vh] uppercase pb-[1vh]"
+        <p className="mt-[9.91vh] text-right text-[1.41vh] uppercase pb-[1vh] ml-[10vh]"
            style={{ color: cerveza.style?.color || 'white' }}>
           {cerveza.info.altSecondaryImage}
         </p>
-        <div className="relative w-[34.98vh] h-[69.54vh] mb-[11.33vh]">
+        <div className="relative w-[89.74vw] h-[125.89vw] md:w-[34.98vh] md:h-[69.54vh] mb-[11.33vh]">
           {hover && cerveza.info.video ? (
             <video
               src={cerveza.info.video}

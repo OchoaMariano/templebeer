@@ -65,11 +65,20 @@ export default async function Home({params}) {
                                 <div className="beer-wrapper">
                                     <div className="flex items-center justify-center z-10 h-full cursor-pointer transform transition-transform duration-300 hover:scale-110">
                                         <Link href={`${lang}/birras/wolf-ipa`} className="relative w-[34.70vh] h-[51.69vh]">
-                                            <Image 
-                                                src="/birra-wolf-ipa.png"
-                                                alt="Lata de Cerveza"
-                                                fill
-                                            />
+                                            {lang == 'es' && (
+                                                <Image 
+                                                    src="/nuestrasbirras/clasicas/wolf-ipa/wolf-ipa.png"
+                                                    alt="Lata de Cerveza"
+                                                    fill
+                                                />
+                                            )}
+                                            {lang == 'en' && (
+                                                <Image 
+                                                    src="/nuestrasbirras/en/wolf-ipa/wolf-ipa.png"
+                                                    alt="Lata de Cerveza"
+                                                    fill
+                                                />
+                                            )}
                                         </Link>  
                                     </div>
                                     <div className="absolute -bottom-5 -right-12 mb-4 mr-4 z-10">

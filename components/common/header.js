@@ -19,11 +19,15 @@ export default function Header ({ dictonary }) {
     const createLocalePath = (path) => {
         // Extraemos el primer segmento de la ruta actual para verificar si es un locale
         const pathName = usePathname()
+        
         const currentPathSegments = pathName.split('/');
+        
         const firstSegment = currentPathSegments[1];
-
+       
         // Chequeamos si el primer segmento es un locale válido
         const isLocale = i18n.locales.includes(firstSegment);
+        console.log(firstSegment)
+        
 
         // Si es un locale, y el path no comienza con ese locale, lo agregamos
         if (isLocale && !path.startsWith(`/${firstSegment}`)) {
@@ -43,7 +47,7 @@ export default function Header ({ dictonary }) {
     }, [isMenuOpen]);
 
   return (
-    <header className="header__temple bg-transparent absolute md:fixed w-full z-[100] top-0">
+    <header className="header__temple bg-transparent absolute md:fixed w-full z-[99] top-0">
         <div className="header__temple-wrapper">
             <div className="wrapper__logo">
                 <Link href={createLocalePath('/')}>
