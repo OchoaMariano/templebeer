@@ -2,10 +2,17 @@
 // components/Popup.js
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { usePathname } from 'next/navigation'
 
-const Popup = () => {
+export default function Popup () {
   const [isOldEnough, setIsOldEnough] = useState(null);
   const [showPopup, setShowPopup] = useState(false);
+
+  const pathName = usePathname();
+  const currentPathSegments = pathName.split('/');
+  const lang = currentPathSegments[1];
+
+  console.log(lang)
 
   useEffect(() => {
     const response = sessionStorage.getItem('isOldEnough');
@@ -40,15 +47,33 @@ const Popup = () => {
                     fill
                 />
             </div>
-            <h2 className="text-lg text-[33px] mb-4 text-white">¿SOS MAYOR DE 18 AÑOS?</h2>
+            {lang == 'es' && (
+              <h2 className="text-lg text-[33px] mb-4 text-white">
+                ¿SOS MAYOR DE 18 AÑOS?
+              </h2>
+            )}
+            {lang == 'en' && (
+              <h2 className="text-lg text-[33px] mb-4 text-white">
+                ARE YOU OVER 18 YEARS OLD?
+              </h2>
+            )}
+            {lang == 'es' && (
             <div className="flex space-x-4">
+                
                 <button onClick={handleYes} className="px-6 py-2 border-[#1F9996] border text-white hover:bg-[#1F9996] hover:text-white text-[12px]">SI</button>
                 <button onClick={handleNo} className="px-6 py-2 border-[#D41768] border text-white hover:bg-[#D41768] hover:text-white text-[12px]">N0</button>
             </div>
+            )}
+            {lang == 'en' && (
+            <div className="flex space-x-4">
+                
+                <button onClick={handleYes} className="px-6 py-2 border-[#1F9996] border text-white hover:bg-[#1F9996] hover:text-white text-[12px]">YES</button>
+                <button onClick={handleNo} className="px-6 py-2 border-[#D41768] border text-white hover:bg-[#D41768] hover:text-white text-[12px]">N0</button>
+            </div>
+            )}
         </div>
       </div>
     </div>
   );
 };
 
-export default Popup;

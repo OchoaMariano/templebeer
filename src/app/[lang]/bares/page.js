@@ -17,10 +17,10 @@ export default async function Page({ children, params }) {
                 {id: 1, nombre: "CASA TEMPLE", provincia: "Buenos Aires", telefono: "1135832726", email: "palermo@temple.com.ar", direccion: "Costa Rica 4677, CABA", header: true  },
                 {id: 2, nombre: "BARRIO CHINO", provincia: "Buenos Aires", telefono: "1164957812", email: "barriochino@temple.com.ar", direccion: "Echeverria 1664, CABA", header: null  },
                 {id: 3, nombre: "PILAR", provincia: "Buenos Aires", telefono: "1156620698", email: "pilar@temple.com.ar", direccion: "Panamericana km 50, Pilar", header: null  },
-                {id: 4, nombre: "RECOLETA", provincia: "Buenos Aires", telefono: "1144066315", email: "palermo@temple.com.ar", direccion: "Vicente Lopez 2102, CABA", header: null  },
+                {id: 4, nombre: "RECOLETA", provincia: "Buenos Aires", telefono: "1144066315", email: "recoleta@temple.com.ar", direccion: "Vicente Lopez 2102, CABA", header: null  },
                 {id: 5, nombre: "trastienda", provincia: "Buenos Aires", telefono: "1144493153", email: "taproom@temple.com.ar", direccion: "Colectora Este Ramal Pilar 80-181, Pilar", header: null  },
-                {id: 6, nombre: "taproom", provincia: "Buenos Aires", telefono: "1144066315", email: "palermo@temple.com.ar", direccion: "Vicente Lopez 2102, CABA", header: null  },
-                {id: 7, nombre: "recoleta junin", provincia: "Buenos Aires", telefono: "1155249857", email: "recoleta.junin@temple.com.ar", direccion: "Junín 1725, CABA", header: null  },
+                {id: 6, nombre: "taproom", provincia: "Buenos Aires", telefono: "1144066315", email: "taproom@temple.com.ar", direccion: "Vicente Lopez 2102, CABA", header: null  },
+                {id: 7, nombre: "recoleta junin", provincia: "Buenos Aires", telefono: "1155249857", email: "recoleta.junin@temple.com.ar", direccion: "JunÍn 1725, CABA", header: null  },
                 {id: 8, nombre: "puerto madero", provincia: "Buenos Aires", telefono: "1159089020", email: "madero@temple.com.ar", direccion: "Juan Manuela Gorriti 867, CABA", header: null  },
                 {id: 9, nombre: "leloir", provincia: "Buenos Aires", telefono: "1136532867", email: "leloir@temple.com.ar", direccion: "Martín Fierro 3361, Parque Leloir", header: null  },
                 {id: 10, nombre: "hollywood", provincia: "Buenos Aires", telefono: "1132291754", email: "hollywood@temple.com.ar", direccion: "Honduras 5602, CABA", header: null  },
@@ -48,8 +48,7 @@ export default async function Page({ children, params }) {
                 {id: 1, nombre: "BARILOCHE catedral", provincia: "neuquén", telefono: "1567390110", email: "catedral@temple.com.ar", direccion: "Cerro Catedral - Bariloche", header: true  }
             ],
             cordoba: [
-                {id: 1, nombre: "cordoba Güemes", provincia: "cordoba", telefono: "3516844638", email: "cordoba@temple.com.ar", direccion: "Achaval Rodríguez 241, Córdoba", header: true  },
-                {id: 2, nombre: "nueva cordoba", provincia: "cordoba", telefono: "3517665275", email: "cordoba@temple.com.ar", direccion: "Ambrosio Olmos 594, Córdoba", header: null  }
+                {id: 1, nombre: "cordoba Güemes", provincia: "cordoba", telefono: "3516844638", email: "cordoba@temple.com.ar", direccion: "Achaval RodrÍguez 241, Córdoba", header: true  }
             ],
             salta: [
                 {id: 1, nombre: "salta", provincia: "salta", telefono: "1567390110", email: "salta@temple.com.ar", direccion: "Belgrano 213, Salta", header: true  },
@@ -61,12 +60,12 @@ export default async function Page({ children, params }) {
                 {id: 1, nombre: "comodoro", provincia: "chubut", telefono: "1567390110", email: "comodoro@temple.com.ar", direccion: "Rawson 666, Comodoro Rivadavia, Chubut", header: true  },
             ],
             santaCruz: [
-                {id: 1, nombre: "río gallegos", provincia: "santa cruz", telefono: "1567390110", email: "rio.gallegos@temple.com.ar", direccion: "9 de julio 102, Río Gallegos, Santa Cruz", header: true  },
+                {id: 1, nombre: "río gallegos", provincia: "santa cruz", telefono: "1567390110", email: "rio.gallegos@temple.com.ar", direccion: "9 de julio 102, RÍo Gallegos, Santa Cruz", header: true  },
             ]
         },
         baresEn: {
             miami: [
-                {id: 1, nombre: "Temple Craft Wynwood", provincia: "Miami", telefono: "1567390110", email: "miami@temple.com.ar", direccion: "151 NW 24th St #102, Miami, FL 33127, USA", header: true }
+                {id: 1, nombre: "Temple Craft Wynwood", provincia: "Miami", telefono: "17868541874", email: "miami@temple.com.ar", direccion: "151 NW 24th St #102, Miami, FL 33127, USA", header: true }
             ]
         }
 
@@ -195,7 +194,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -211,7 +210,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`}>
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[3vw] md:text-[1.33vh]">
@@ -287,7 +286,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -303,7 +302,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`}>
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[1.33vh]">
@@ -335,7 +334,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -351,7 +350,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`}>
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[1.33vh]">
@@ -383,7 +382,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -399,7 +398,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`}>
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[1.33vh]">
@@ -431,7 +430,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -447,7 +446,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`}>
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[1.33vh]">
@@ -479,7 +478,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -495,7 +494,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`}>
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[1.33vh]">
@@ -527,7 +526,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -543,7 +542,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`}>
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[1.33vh]">
@@ -575,7 +574,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -591,7 +590,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`}>
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[1.33vh]">
@@ -623,7 +622,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -639,7 +638,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`}>
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-4" />
                                                                     <span className="text-[1.33vh]">
@@ -678,7 +677,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -694,7 +693,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`}>
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[3vw] md:text-[1.33vh]">
@@ -723,7 +722,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -739,7 +738,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`} >
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[3vw] md:text-[1.33vh]">
@@ -768,7 +767,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -784,7 +783,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`}>
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[3vw] md:text-[1.33vh]">
@@ -816,7 +815,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -832,7 +831,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`}>
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[3vw] md:text-[1.33vh]">
@@ -863,7 +862,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -879,7 +878,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`}>
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[3vw] md:text-[1.33vh]">
@@ -909,7 +908,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -925,7 +924,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`}>
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[3vw] md:text-[1.33vh]">
@@ -955,7 +954,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -971,7 +970,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`}>
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[3vw] md:text-[1.33vh]">
@@ -1001,7 +1000,7 @@ export default async function Page({ children, params }) {
                                                             {bar.nombre}
                                                         </h1>
                                                         <div className="flex gap-x-2 items-center">
-                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer">
+                                                            <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img
                                                                         src="/bares/wa.png"
@@ -1017,7 +1016,7 @@ export default async function Page({ children, params }) {
                                                             <div>
                                                                 <img src="/bares/line.png" alt="" className="h-3" />
                                                             </div>
-                                                            <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                            <a href={`mailto:${bar.email}}`} >
                                                                 <div className="flex items-center justify-center gap-x-1">
                                                                     <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                     <span className="text-[3vw] md:text-[1.33vh]">

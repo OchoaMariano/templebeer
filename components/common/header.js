@@ -15,25 +15,26 @@ export default function Header ({ dictonary }) {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    const pathName = usePathname();
+    const currentPathSegments = pathName.split('/');
+    const firstSegment = currentPathSegments[1];
+
     // Función para construir el path correcto considerando el locale
     const createLocalePath = (path) => {
-        // Extraemos el primer segmento de la ruta actual para verificar si es un locale
-        const pathName = usePathname()
-        
+        const pathName = usePathname();
         const currentPathSegments = pathName.split('/');
-        
         const firstSegment = currentPathSegments[1];
-       
+
+
         // Chequeamos si el primer segmento es un locale válido
-        const isLocale = i18n.locales.includes(firstSegment);
-        console.log(firstSegment)
-        
+        // Asegurándonos de que la longitud del segmento sea igual a la de los códigos de idioma.
+        const isLocale = i18n.locales.includes(firstSegment) && firstSegment.length === 2; // Asumiendo que todos los locales tienen 2 caracteres
 
         // Si es un locale, y el path no comienza con ese locale, lo agregamos
-        if (isLocale && !path.startsWith(`/${firstSegment}`)) {
+        if (isLocale) {
             return `/${firstSegment}${path}`;
         }
-        
+
         // Si no es un locale o el path ya contiene el locale, lo devolvemos tal cual
         return path;
     };
@@ -74,9 +75,11 @@ export default function Header ({ dictonary }) {
                     <Link href={createLocalePath('/musica')} className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
                         {dictonary.nav.musica}
                     </Link>
-                    <a href="https://templeacademy.notion.site/templeacademy/0f69945dbb6247a1b08f8eae47bb2442?v=bdfe9a6a777c4281adda7ea36cf7d43c" target="_blank" className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
-                        Temple Academy
-                    </a>
+                    {firstSegment == 'es' && (
+                        <a href="https://templeacademy.notion.site/templeacademy/0f69945dbb6247a1b08f8eae47bb2442?v=bdfe9a6a777c4281adda7ea36cf7d43c" target="_blank" className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"> 
+                            Temple Academy
+                        </a>
+                    )}
                 </div>
                 <div className="hidden lg:block divisor h-[21px] w-[1px] bg-white"></div>
                 <div className="hidden lg:flex rrss__nav">
@@ -96,9 +99,12 @@ export default function Header ({ dictonary }) {
                             height={14}
                         />
                     </a>
-                    <a href='https://encasa.temple.com.ar/' target='_blank' className='button_nav hover:bg-[#FCDB00] hover:text-black hover:border-[#ffffff] transition duration-300 ease-in-out'>
-                        Shop
-                    </a>
+                    {firstSegment == 'es' && (
+                        <a href='https://encasa.temple.com.ar/' target='_blank' className='button_nav hover:bg-[#FCDB00] hover:text-black hover:border-[#ffffff] transition duration-300 ease-in-out'>
+                            Shop
+                        </a>
+                    )}
+                    
                 </div>
                 <div className="hidden lg:block divisor h-[21px] w-[1px] bg-white"></div>
                 <div className="hidden lg:flex lang__nav">
@@ -169,9 +175,11 @@ export default function Header ({ dictonary }) {
                     </div>
                     <div className="bg-white h-[1px]"></div>
                     <div className="flex flex-row items-center justify-between py-[7.12vw]">
-                        <a href='https://encasa.temple.com.ar/' target='_blank' className='text-white uppercase hover:bg-[#FCDB00] hover:text-black hover:border-[#ffffff] transition duration-300 ease-in-out'>
-                            Shop
-                        </a>
+                        {firstSegment == 'es' && (
+                            <a href='https://encasa.temple.com.ar/' target='_blank' className='text-white uppercase hover:bg-[#FCDB00] hover:text-black hover:border-[#ffffff] transition duration-300 ease-in-out'>
+                                Shop
+                            </a>
+                        )}
                         <div className="lang__nav">
                             <LocaleSwitcher />
                             <Image

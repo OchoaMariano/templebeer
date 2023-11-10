@@ -3,7 +3,8 @@
         "mainTitle": {
             "encuentro": "Culture",
             "birra": "Beer",
-            "musica": "Music"        
+            "musica": "Music",
+            "y": "&"        
         },
         "beerNav": {
             "title": "Our Beers"
@@ -56,5 +57,10 @@
             "templeAcademy": "Temple Academy",
             "legales": "Legal"
         }
+    },
+    "popUp": {
+        "pregunta": "¿SOS MAYOR DE 18 AÑOS?",
+        "si": "yes",
+        "no": "no"
     }
 }

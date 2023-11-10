@@ -6,7 +6,7 @@
       "slug": "wolf-ipa",
       "urlBuy": "https://tienda.temple.com.ar/productos/lata-wolf-ipa/",
       "categoria": "clasicas",
-      "descripcion": "Cerveza india pale ale, de color dorada ambarina. Inspirada en ipas americanas con un carácter cítrico y herbal característico en aroma y sabor. De amargor muy pronunciado pero equilibrado. El lúpulo en su máxima expresión.",
+      "descripcion": "Cerveza india pale ale, de color dorada ambarina. Inspirada en ipas americanas con un carácter cítrico y herbal característico en aroma y sabor.<br></br> De amargor muy pronunciado pero equilibrado. El lúpulo en su máxima expresión.",
       "propiedades": {
         "alcohol": "5,8%",
         "ibu": "50",
@@ -37,7 +37,7 @@
       "slug": "royal-scotish",
       "urlBuy": "https://tienda.temple.com.ar/productos/lata-scottish/",
       "categoria": "clasicas",
-      "descripcion": "Cerveza estilo scottish ale, de origen escocés, con un perfil muy balanceado a la malta. De color cobrizo profundo y con un aroma que nos remite al caramelo, al pan tostado y galletas dulces. De un sabor maltoso, pero sin ser dulce. Con un amargor equilibrado y un cuerpo medio. Cada trago te invita a tomar el siguiente.",
+      "descripcion": "Cerveza estilo scottish ale, de origen escocés, con un perfil muy balanceado a la malta. De color cobrizo profundo y con un aroma que nos remite al caramelo, al pan tostado y galletas dulces.<br></br> De un sabor maltoso, pero sin ser dulce. Con un amargor equilibrado y un cuerpo medio. Cada trago te invita a tomar el siguiente.",
       "propiedades": {
         "alcohol": "5,5%",
         "ibu": "18",
@@ -68,7 +68,7 @@
       "slug": "honey",
       "urlBuy": "https://tienda.temple.com.ar/productos/lata-honey/",
       "categoria": "clasicas",
-      "descripcion": "Cerveza dorada con agregado de miel orgánica en frio. Un cuerpo medio, con un dulzor equilibrado y un delicado sabor a miel. Amargor casi imperceptible y un suave sabor a grano dulce. Muy ligero y fácil de tomar.",
+      "descripcion": "Cerveza dorada con agregado de miel orgánica en frio. Un cuerpo medio, con un dulzor equilibrado y un delicado sabor a miel.<br></br> Amargor casi imperceptible y un suave sabor a grano dulce. Muy ligero y fácil de tomar.",
       "propiedades": {
         "alcohol": "4,5%",
         "ibu": "13",
@@ -99,7 +99,7 @@
       "slug": "cosmica-lager",
       "urlBuy": "https://tienda.temple.com.ar/productos/temple-cosmica/",
       "categoria": "clasicas",
-      "descripcion": "Se van a sorprender. De turbidez media, con un amargor suave, y a la vez muy fresca y sabrosa. esta juicy (jugosa) Es una single Hop de Galaxy, un lúpulo Australiano increíble, que nos permite ir descubriendo sus sabores a frutas y cítricos. Las lagers están encasilladas como refrescantes y limpias, pero pueden ser mucho más que eso.",
+      "descripcion": "Se van a sorprender. De turbidez media, con un amargor suave, y a la vez muy fresca y sabrosa. esta juicy (jugosa) Es una single Hop de Galaxy, un lúpulo Australiano increíble, que nos permite ir descubriendo sus sabores a frutas y cítricos.<br></br> Las lagers están encasilladas como refrescantes y limpias, pero pueden ser mucho más que eso.",
       "propiedades": {
         "alcohol": "5%",
         "ibu": "40",
@@ -356,8 +356,8 @@
       "mainImage": "/nuestrasbirras/limitadas/infrared-ipa/infrared-ipa.png",
       "info": {
         "imageInfo": "/nuestrasbirras/limitadas/infrared-ipa/infrared-ipa-info.jpg",
-        "bajada": "A de atrapante, atrevida, atractiva. B de birra. C de cerveza, Cautivante, coqueta. D dulce si te toca, amarga si le toca a otrx. E de efusiva, estilo, espectacular, espuma. F fresca, fantasiosa, friiiiiiia",
-        "destacado": "Dulce si te toca, amarga si le toca a otrx",
+        "bajada": "A de atrapante, atrevida, atractiva. <br>B de birra. <br>C de cerveza, Cautivante, coqueta. <br>D dulce si te toca, amarga si le toca a otrx. <br>E de efusiva, estilo, espectacular, espuma. <br>F fresca, fantasiosa, friiiiiiia",
+        "destacado": "Dulce si te toca,<br> amarga si le toca a <br>otrx",
         "secondaryImage": "/nuestrasbirras/limitadas/infrared-ipa/infrared-ipa-secondary.jpg",
         "video": "https://storage.googleapis.com/tb-temporal/infrared-detail-video.mov",
         "altSecondaryImage": "Sassy Sassy"
@@ -378,7 +378,7 @@
       "slug": "ipanema",
       "urlBuy": "https://tienda.temple.com.ar/productos/",
       "categoria": "limitadas",
-      "descripcion": "Una ipa turbia con cuerpo, mucho aroma y sedosa que explota de sabores en cada sorbo.",
+      "descripcion": "Una mezcla jugosa y equilibrada de lúpulos cítricos y frutales que resaltan las características aromáticas del mango, la papaya, el durazno y termina con un toque de limón y pomelos maduros. Su color es anaranjado con una turbidez media proveniente del agregado de trigo y avena. Nuestra Hazy IPA es una bomba de lúpulo y sabor. ",
       "propiedades": {
         "alcohol": "5,8%",
         "ibu": "55",
@@ -387,7 +387,7 @@
       "mainImage": "/nuestrasbirras/limitadas/ipanema/ipanema.png",
       "info": {
         "imageInfo": "/nuestrasbirras/limitadas/ipanema/ipanema-info.jpg",
-        "bajada": "Una american ipa con pulpa de pomelo rosado. fresca, amarga y bastante osada",
+        "bajada": "UNA IPA TURBIA CON CUERPO, MUCHO AROMA Y SEDOSA QUE EXPLOTA DE SABORES EN CADA SORBO.",
         "destacado": "Sentir los pies tocando el mar, El ruido de las olas mezclado con buena musiquita, Una birra helada.",
         "secondaryImage": "/nuestrasbirras/limitadas/ipanema/ipanema-secondary.jpg",
         "video": null,
@@ -444,7 +444,7 @@
       "propiedades": {
         "alcohol": "4,2%",
         "ibu": "9",
-        "size": "473"
+        "size": "354"
       },
       "mainImage": "/nuestrasbirras/especiales/kungfu-sour/kungfu-sour.png",
       "info": {
@@ -512,7 +512,7 @@
       "info": {
         "imageInfo": "/nuestrasbirras/especiales/milkshake-neipa/milkshake-neipa-info.jpg",
         "bajada": "La Primabirra se arranca con Milkshake NEIPA, una birra con aroma TROPICAL y un mix de sabores frutales.",
-        "destacado": "Que vaya subiendo la temperatura, que nosotros seguiremos enfriando las birritas.",
+        "destacado": "Que vaya subiendo la<br> temperatura, que<br>nosotros seguiremos<br>enfriando las birritas.",
         "secondaryImage": null,
         "video": null,
         "altSecondaryImage": null
@@ -630,7 +630,7 @@
       "propiedades": {
         "alcohol": "5,8%",
         "ibu": "50",
-        "size": "473"
+        "size": "750"
       },
       "mainImage": "/nuestrasbirras/especiales/proyecto-barrica-1/proyecto-barrica-1.png",
       "info": {

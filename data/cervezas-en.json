@@ -18,7 +18,7 @@
         "destacado": "The beer that came all the way down from outer space to conquer humanity.",
         "secondaryImage": null,
         "video": null,
-        "altSecondaryImage": "Special beer"
+        "altSecondaryImage": "SPECIAL BEER"
       },
       "style": {
         "background": "/nuestrasbirras/en/cosmic-hazy-lager/bg-cosmic-hazy-lager.jpg",
@@ -120,8 +120,8 @@
         "imageInfo": "/nuestrasbirras/en/royal-amber/royal-amber-info.jpg",
         "bajada": "With a copper color that reflects its elegance and complexity in its aromas, it is a beer to stop and look, smell and then drink. A combination of special malts that give it a toasted and caramel profile.",
         "destacado": "Your ultimate red beer.",
-        "secondaryImage": "/nuestrasbirras/en/royal-amber/royal-amber-secondary.jpg",
-        "video": null,
+        "secondaryImage": null,
+        "video": "https://storage.googleapis.com/tb-temporal/videos-temple-beer.MP4",
         "altSecondaryImage": "Each drink invites you to take the next one "
       },
       "style": {

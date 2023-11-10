@@ -98,10 +98,10 @@ export default async function Home({params}) {
                                 </div>
                                 <div className="row">
                                     <div className="box-1 relative" >
-                                        <h1 className={`text-white text-[7.08vh] Knockout54UltraBold elementoEfectoVelocidad ${Knockout54UltraBold.className}`}>
+                                        <h1 className={`text-white pl-[2vh] text-[7.08vh] Knockout54UltraBold elementoEfectoVelocidad ${Knockout54UltraBold.className}`}>
                                             <Link href={`${lang}/encuentro`} className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out uppercase">{dict.home.mainTitle.encuentro}</Link>, 
                                             <Link href={`${lang}/birras`} className="text-white hover:text-[#D51668] transition duration-300 ease-in-out uppercase"> {dict.home.mainTitle.birra} </Link> 
-                                            Y  
+                                            {dict.home.mainTitle.y}
                                             <Link href={`${lang}/musica`} className="text-white hover:text-[#1F9996] transition duration-300 ease-in-out uppercase"> {dict.home.mainTitle.musica} </Link>
                                         </h1>
                                         <div className="absolute right-[13vh] top-5 mb-4 mr-4 z-10">
@@ -246,7 +246,7 @@ export default async function Home({params}) {
                         <div className="column">
                             <div className="row-alt">
                                 <div className="box-5">
-                                    <a href="#" className="w-inline-block group pt-[3.96vh]">
+                                    <a href="https://www.instagram.com/templecerveza/?hl=es" className="w-inline-block group pt-[3.96vh]">
                                         <div className="relative w-[8.07vh] h-[8.21vh]">
                                             <Image  
                                                 src="/qrcode.png"
@@ -565,7 +565,7 @@ export default async function Home({params}) {
                 <div className="mobile-box-4 flex flex-col">
                     <div className="flex flex-row  gap-x-[2.56vw]">
                         <div className="flex justify-end w-[43.58vw] h-[17.69vw] relative">
-                            <a href="#" className="flex flex-row group items-end gap-x-[3.33vw]">
+                            <a href="https://www.instagram.com/templecerveza/?hl=es" className="flex flex-row group items-end gap-x-[3.33vw]">
                                 <div className="div-block-6 w-[6.66vw] h-[8.46vw] relative group-hover:rotate-90 transition-transform duration-500">
                                     <Image 
                                         src="/arrow-qr.svg"

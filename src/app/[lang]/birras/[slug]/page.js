@@ -167,9 +167,8 @@ export default async function Page({ params }) {
                                                     
                                                 </div>
                                                 <div className="description__wrapper flex flex-col pt-[2.26vh]">
-                                                    <p className={`text-white uppercase text-[11px] w-[46.88vh] ${GothamBook.className}`}>
-                                                        {cerveza.descripcion}
-                                                    </p>
+                                                    <p className={`text-white uppercase text-[11px] w-[46.88vh] ${GothamBook.className}`} dangerouslySetInnerHTML={{ __html: cerveza.descripcion }} />
+                                                    
                                                     {lang === 'es' && (
                                                     <div className="propiedades__wrapper flex flex-row text-[11px  pt-[2.97vh]">
                                                         <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}>ALC. {cerveza.propiedades.alcohol}</span>
@@ -214,14 +213,11 @@ export default async function Page({ params }) {
                                                 />
                                             </div>
                                             <div className="pt-[2.54vh] pb-[2.54vh]">
-                                                <p className={`text-white text-[1.41vh] uppercase ${GothamBook.className}`}>
-                                                    {cerveza.info.bajada}
-                                                </p>
+                                                <p className={`text-white text-[1.41vh] uppercase ${GothamBook.className}`} dangerouslySetInnerHTML={{ __html: cerveza.info.bajada }} />
                                             </div>
                                             <div className="">
-                                                <p className={`leading-[3.39vh] text-[3.39vh] uppercase ${Knockout54UltraBold.className}`} style={{ color: cerveza.style?.color || 'white' }}>
-                                                    {cerveza.info.destacado}
-                                                </p>
+                                                
+                                                <p className={`leading-[3.39vh] text-[3vh] uppercase ${Knockout54UltraBold.className}`} dangerouslySetInnerHTML={{ __html: cerveza.info.destacado }} />
                                             </div>
                                         </div>
                                     </div>
