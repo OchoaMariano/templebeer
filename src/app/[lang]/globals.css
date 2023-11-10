@@ -732,3 +732,26 @@ body {
   margin-left: 4.53vh;
   margin-right: 4.53vh;
 }
+
+.logo-container {
+  position: relative;
+}
+
+.logo-normal, .logo-hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease; /* Ajusta la duración según prefieras */
+}
+
+.logo-hover {
+  opacity: 0;
+}
+
+.wrapper__logo:hover .logo-hover {
+  opacity: 1;
+}
+
+.wrapper__logo:hover .logo-normal {
+  opacity: 0;
+}

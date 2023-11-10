@@ -54,8 +54,15 @@ export default function Header ({ dictonary }) {
                 <Link href={createLocalePath('/')}>
                     <div className="relative w-[31.53vw] h-[6.89vw] md:w-[18.13vh] md:h-[4.1vh]">
                         <Image
-                            src="/logo-templebeer.png"
+                            src="/logo-temple-normal.png"
                             alt="Temple Beer"
+                            className="logo-normal"
+                            fill
+                        />
+                        <Image
+                            src="/logo-hover-temple.png" // Cambia esto por la ruta de tu otro logo
+                            alt="Otro Logo"
+                            className="logo-hover"
                             fill
                         />
                     </div>
