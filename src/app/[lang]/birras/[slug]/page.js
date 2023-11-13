@@ -18,6 +18,7 @@ import Footer from '../../../../../components/common/Footer';
 import CervezasData from '../../../../../data/cervezas.json';
 import CervezasDataEn from '../../../../../data/cervezas-en.json';
 import { getDictionary } from '../../../../dictionaries';
+import Draggable from '../../../../../components/common/Dragabble';
 
 const data = {
     birras: [
@@ -443,6 +444,17 @@ export default async function Page({ params }) {
                             }}
                             fill
                         />
+                        <div className="sticker-temple-amarillo absolute left-[55vw] bottom-[9vw] md:right-[10vh] md:top-[30vh]">
+                            <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                <div className="-rotate-[11.25deg] w-[39.23vw] h-[8.20vw] md:w-[16.28vh] md:h-[3.42vh] relative">
+                                    <Image 
+                                        src="/sticker-temple-amarrillo.png"
+                                        alt="Temple Beer"
+                                        fill 
+                                    />
+                                </div>
+                            </Draggable>
+                        </div>
                     </div>
                     <div className="product-box-4-mobile mb-[4.61vw]">
                         <div className="text-box flex flex-col gap-y-[4.61vw] px-[5.12vw]">

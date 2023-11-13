@@ -29,17 +29,33 @@ export default async function Page({ children, params }) {
                                 
                             </h1>
                             <div className="sticker__wrapper relative">
-                                <div className="absolute right-[18vw] top-[15vw] lg:-right-[10vh] lg:top-0 z-10">
-                                    <Draggable initialPosition={{ x: 0, y: 0 }}>
-                                        <div className="rotate-[17deg] w-[13.84vw] h-[33.84vw] lg:w-[10.48vh] lg:h-[25.49vh] relative">
-                                            <Image 
-                                                src="/nuestrasbirras/sticker-cerveza.svg"
-                                                alt="Temple Beer"
-                                                fill 
-                                            />
-                                        </div>
-                                    </Draggable>
-                                </div>
+                                {lang === 'es' && (
+                                    <div className="absolute right-[18vw] top-[15vw] lg:-right-[10vh] lg:top-0 z-10">
+                                        <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                            <div className="rotate-[17deg] w-[13.84vw] h-[33.84vw] lg:w-[10.48vh] lg:h-[25.49vh] relative">
+                                                <Image 
+                                                    src="/nuestrasbirras/sticker-cerveza.svg"
+                                                    alt="Temple Beer"
+                                                    fill 
+                                                />
+                                            </div>
+                                        </Draggable>
+                                    </div>
+                                )}
+                                {lang === 'en' && (
+                                    <div className="absolute -right-[10vw] top-[5vw] lg:-right-[10vh] lg:top-0 z-10">
+                                        <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                            <div className="rotate-[17deg] w-[13.84vw] h-[33.84vw] lg:w-[10.48vh] lg:h-[25.49vh] relative">
+                                                <Image 
+                                                    src="/nuestrasbirras/sticker-cerveza.svg"
+                                                    alt="Temple Beer"
+                                                    fill 
+                                                />
+                                            </div>
+                                        </Draggable>
+                                    </div>
+                                )}
+                                
                             </div>
                         </div>
                     </div>
