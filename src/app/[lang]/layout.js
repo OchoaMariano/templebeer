@@ -79,7 +79,6 @@ export default function RootLayout({ children, params }) {
       <body className={Knockout54.className}>
         <SelectCountry />
         <Popup />
-        
         {children}
         <Legales lang={params.lang} />
       </body>

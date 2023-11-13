@@ -246,36 +246,71 @@ export default async function Home({params}) {
                         <div className="column">
                             <div className="row-alt">
                                 <div className="box-5">
-                                    <a href="https://www.instagram.com/templecerveza/?hl=es" className="w-inline-block group pt-[3.96vh]">
-                                        <div className="relative w-[8.07vh] h-[8.21vh]">
-                                            <Image  
-                                                src="/qrcode.png"
-                                                fill
-                                            />
-                                        </div>
-                                        <div className="div-block-5">
-                                            <div className="div-block-6 w-[3.68vh] h-[3.82vh] mr-[1vh] relative group-hover:rotate-90 transition-transform duration-500">
-                                                <Image 
-                                                    src="/arrow-qr.svg"
-                                                    style={{
-                                                        objectFit: 'cover',
-                                                        objectPosition: 'center'
-                                                    }}
+                                    {lang == 'en' && (
+                                        <a href="https://www.instagram.com/templemiami/" className="w-inline-block group pt-[3.96vh]" target="_blank">
+                                            <div className="relative w-[8.07vh] h-[8.21vh]">
+                                                <Image  
+                                                    src="/qrcode.png"
                                                     fill
                                                 />
                                             </div>
-                                            <div className="div-block-7 w-[3.68vh] h-[3.82vh] relative p-2 group-hover:rotate-360 transition-transform duration-500">
-                                                <Image 
-                                                    src="/instagram-qr.svg"
-                                                    style={{
-                                                        objectFit: 'cover',
-                                                        objectPosition: 'center'
-                                                    }}
+                                            <div className="div-block-5">
+                                                <div className="div-block-6 w-[3.68vh] h-[3.82vh] mr-[1vh] relative group-hover:rotate-90 transition-transform duration-500">
+                                                    <Image 
+                                                        src="/arrow-qr.svg"
+                                                        style={{
+                                                            objectFit: 'cover',
+                                                            objectPosition: 'center'
+                                                        }}
+                                                        fill
+                                                    />
+                                                </div>
+                                                <div className="div-block-7 w-[3.68vh] h-[3.82vh] relative p-2 group-hover:rotate-360 transition-transform duration-500">
+                                                    <Image 
+                                                        src="/instagram-qr.svg"
+                                                        style={{
+                                                            objectFit: 'cover',
+                                                            objectPosition: 'center'
+                                                        }}
+                                                        fill
+                                                    />
+                                                </div>
+                                            </div>
+                                        </a>
+                                    )}
+                                    {lang == 'es' && (
+                                        <a href="https://www.instagram.com/templecerveza/" className="w-inline-block group pt-[3.96vh]" target="_blank">
+                                            <div className="relative w-[8.07vh] h-[8.21vh]">
+                                                <Image  
+                                                    src="/qrcode.png"
                                                     fill
                                                 />
                                             </div>
-                                        </div>
-                                    </a>
+                                            <div className="div-block-5">
+                                                <div className="div-block-6 w-[3.68vh] h-[3.82vh] mr-[1vh] relative group-hover:rotate-90 transition-transform duration-500">
+                                                    <Image 
+                                                        src="/arrow-qr.svg"
+                                                        style={{
+                                                            objectFit: 'cover',
+                                                            objectPosition: 'center'
+                                                        }}
+                                                        fill
+                                                    />
+                                                </div>
+                                                <div className="div-block-7 w-[3.68vh] h-[3.82vh] relative p-2 group-hover:rotate-360 transition-transform duration-500">
+                                                    <Image 
+                                                        src="/instagram-qr.svg"
+                                                        style={{
+                                                            objectFit: 'cover',
+                                                            objectPosition: 'center'
+                                                        }}
+                                                        fill
+                                                    />
+                                                </div>
+                                            </div>
+                                        </a>
+                                    )}
+                                    
                                 </div>
                                 <div className="box-6">
                                     <Image 
@@ -415,11 +450,20 @@ export default async function Home({params}) {
                         <div className="flex justify-center relative w-[90.51vw] h-[55.89vw]">
                             <div className="flex items-center justify-center z-10 h-full cursor-pointer transform transition-transform duration-300 hover:scale-110">
                                 <Link href={`${lang}/birras/wolf-ipa`} className="relative w-[29.74vw] h-[41.28vw]">
-                                    <Image 
-                                        src="/birra-wolf-ipa.png"
-                                        alt="Lata de Cerveza"
-                                        fill
-                                    />
+                                    {lang == 'es' && (
+                                        <Image 
+                                            src="/nuestrasbirras/clasicas/wolf-ipa/wolf-ipa.png"
+                                            alt="Lata de Cerveza"
+                                            fill
+                                        />
+                                    )}
+                                    {lang == 'en' && (
+                                        <Image 
+                                            src="/nuestrasbirras/en/wolf-ipa/wolf-ipa.png"
+                                            alt="Lata de Cerveza"
+                                            fill
+                                        />
+                                    )}
                                 </Link>  
                             </div>
                             <div className="absolute -bottom-10 right-2 mb-4 mr-4 z-10">
@@ -441,9 +485,10 @@ export default async function Home({params}) {
                     <div className="nav-title-mobile">
                         <div className="title-wrapper flex relative">
                             <h1 className={`text-white text-[10.25vw] Knockout54UltraBold elementoEfectoVelocidad ${Knockout54UltraBold.className}`}>
-                                <Link href={`${lang}/encuentro`} className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out">ENCUENTRO</Link> 
-                                <Link href={`${lang}/birras`} className="text-white hover:text-[#D51668] transition duration-300 ease-in-out"> BIRRA </Link>
-                                <Link href={`${lang}/musica`} className="text-white hover:text-[#1F9996] transition duration-300 ease-in-out"> MÚSICA</Link>
+                                <Link href={`${lang}/encuentro`} className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out uppercase">{dict.home.mainTitle.encuentro}</Link> 
+                                <Link href={`${lang}/birras`} className="text-white hover:text-[#D51668] transition duration-300 ease-in-out uppercase"> {dict.home.mainTitle.birra} </Link>
+                                <br></br>
+                                <Link href={`${lang}/musica`} className="text-white hover:text-[#1F9996] transition duration-300 ease-in-out uppercase"> {dict.home.mainTitle.musica}</Link>
                             </h1>
                             <div className="absolute right-32 bottom-16">
                                 <Draggable initialPosition={{ x: 0, y: 0 }}>
@@ -506,19 +551,33 @@ export default async function Home({params}) {
                         <div className="column-mobile">
                             <div className="birras-nav w-[55.64vw] h-[64.25vw]">
                                 <h1 className="leading-[7vw]">
-                                    <Link className={`text-white hover:text-[#D51668] transition duration-300 ease-in-out text-[6.9vw] ${Knockout54.className}`} href={`${lang}/birras`}>
-                                        NUESTRAS BIRRAS
+                                    <Link className={`text-white uppercase hover:text-[#D51668] transition duration-300 ease-in-out text-[6.9vw] ${Knockout54.className}`} href={`${lang}/birras`}>
+                                        {dict.home.beerNav.title}
                                     </Link>
                                 </h1>
-                                <nav className="flex flex-wrap self-stretch">
+                                {lang == 'es' && (
+                                    <nav className="flex flex-wrap self-stretch">
                                     {data.birras.map((birraObj, index) => (
-                                    <span key={index} className={`text-[2.30vw] py-[0.51vw] px-[1.28vw] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
-                                        <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`${lang}/birras/${birraObj.slug}`}>
-                                        {birraObj.title}
-                                        </Link>
-                                    </span>
+                                        <span key={index} className={`text-[2.30vw] py-[0.51vw] px-[1.28vw] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
+                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`${lang}/birras/${birraObj.slug}`}>
+                                            {birraObj.title}
+                                            </Link>
+                                        </span>
                                     ))}
-                                </nav>
+                                    </nav>
+                                )}
+                                {lang == 'en' && (
+                                    <nav className="flex flex-wrap self-stretch">
+                                    {data.birrasEn.map((birraObj, index) => (
+                                        <span key={index} className={`text-[2.30vw] py-[0.51vw] px-[1.28vw] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
+                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`${lang}/birras/${birraObj.slug}`}>
+                                            {birraObj.title}
+                                            </Link>
+                                        </span>
+                                        ))}
+                                    </nav>
+                                )}
+                                
                             </div>
                         </div>
                     </div>
@@ -565,29 +624,56 @@ export default async function Home({params}) {
                 <div className="mobile-box-4 flex flex-col">
                     <div className="flex flex-row  gap-x-[2.56vw]">
                         <div className="flex justify-end w-[43.58vw] h-[17.69vw] relative">
-                            <a href="https://www.instagram.com/templecerveza/?hl=es" className="flex flex-row group items-end gap-x-[3.33vw]">
-                                <div className="div-block-6 w-[6.66vw] h-[8.46vw] relative group-hover:rotate-90 transition-transform duration-500">
-                                    <Image 
-                                        src="/arrow-qr.svg"
-                                        style={{
+                            {lang == 'en' && (
+                                <a href="https://www.instagram.com/templemiami/" className="flex flex-row group items-end gap-x-[3.33vw]" target="_blank">
+                                    <div className="div-block-6 w-[6.66vw] h-[8.46vw] relative group-hover:rotate-90 transition-transform duration-500">
+                                        <Image 
+                                            src="/arrow-qr.svg"
+                                            style={{
+                                                objectFit: 'cover',
+                                                objectPosition: 'center'
+                                            }}
+                                            fill
+                                        />
+                                    </div>
+                                    <div className="w-[17.43vw] h-[17.69vw] relative">
+                                        <Image 
+                                            src="/qrcode.png"
+                                            alt="Temple Beer"
+                                            style={{
                                             objectFit: 'cover',
                                             objectPosition: 'center'
-                                        }}
-                                        fill
-                                    />
-                                </div>
-                                <div className="w-[17.43vw] h-[17.69vw] relative">
-                                    <Image 
-                                        src="/qrcode.png"
-                                        alt="Temple Beer"
-                                        style={{
-                                        objectFit: 'cover',
-                                        objectPosition: 'center'
-                                        }}
-                                        fill
-                                    /> 
-                                </div>
-                            </a>
+                                            }}
+                                            fill
+                                        /> 
+                                    </div>
+                                </a>
+                            )}
+                            {lang == 'es' && (
+                                <a href="https://www.instagram.com/templecerveza/" className="flex flex-row group items-end gap-x-[3.33vw]" target="_blank">
+                                    <div className="div-block-6 w-[6.66vw] h-[8.46vw] relative group-hover:rotate-90 transition-transform duration-500">
+                                        <Image 
+                                            src="/arrow-qr.svg"
+                                            style={{
+                                                objectFit: 'cover',
+                                                objectPosition: 'center'
+                                            }}
+                                            fill
+                                        />
+                                    </div>
+                                    <div className="w-[17.43vw] h-[17.69vw] relative">
+                                        <Image 
+                                            src="/qrcode.png"
+                                            alt="Temple Beer"
+                                            style={{
+                                            objectFit: 'cover',
+                                            objectPosition: 'center'
+                                            }}
+                                            fill
+                                        /> 
+                                    </div>
+                                </a>
+                            )}
                             <div className="absolute left-0 -top-[10vw] z-10">
                                 <Draggable initialPosition={{ x: 0, y: 0 }}>
                                     <div className="rotate-[-10.5deg] w-[41.28vw] h-[8.20vw] relative">
@@ -687,17 +773,13 @@ export default async function Home({params}) {
                                 }}
                                 fill
                             />
-                            <h3 className={`absolute text-[#192F5D] text-[3vw] uppercase top-[42vw] left-[11.8vw] -tracking-[.2vw] -rotate-[4.41deg] ${Marker.className}`}>Encuentros</h3>
+                            <h3 className={`absolute text-[#192F5D] text-[3vw] uppercase top-[42vw] left-[11.8vw] -tracking-[.2vw] -rotate-[4.41deg] ${Marker.className}`}>{dict.home.encuentros.link}</h3>
                         </Link>
                         <div className="w-[39.74vw] h-[26.07vw] relative flex items-end mb-[7vw]">
-                            <Image 
-                                src="/frase-mobile.png"
-                                style={{
-                                    objectFit: 'contain',
-                                    objectPosition: 'center'
-                                }}
-                                fill
-                            />
+                            <h3 className={` text-[#D41768] text-[6.92vw] uppercase -tracking-[.42vw] -rotate-[4.41deg] ${Marker.className} leading-[6vw]`}>
+                                {dict.home.encuentros.frase}
+                            </h3>
+                            
                             <div className="absolute right-[40vw] -top-[20vw] z-10">
                                 <Draggable initialPosition={{ x: 0, y: 0 }}>
                                     <div className="rotate-[9deg] w-[37.17vw] h-[7.53vw] relative">

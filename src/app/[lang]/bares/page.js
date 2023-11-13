@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Header from '../../../../components/common/header'
-import Footer from '../../../../components/common/Footer';
-import ScrollHorizontal from '../../../../components/ScrollHorizontal'
+import Footer from '../../../../components/common/Footer'
 import Draggable from '../../../../components/common/Dragabble'
 import Map from '../../../../components/bares/map'
 import { Knockout54UltraBold, Knockout34} from '../layout'
@@ -50,7 +49,7 @@ export default async function Page({ children, params }) {
                 {id: 1, nombre: "pinamar", provincia: "costa argentina", telefono: "2267442736", email: "pinamar@temple.com.ar", direccion: "Av. de las Artes 31, Pinamar", header: true  }
             ],
             santaFe: [
-                {id: 1, nombre: "rosario fisherton", provincia: "santa fe", telefono: "3416953442", email: "rosario@temple.com.ar", direccion: "Alberto J. Paz 1065 Bis-Local 5, Rosario, Santa Fe", header: true  }
+                {id: 1, nombre: "rosario fisherton", provincia: "santa fe", telefono: "3416953442", email: "rosario@temple.com.ar", direccion: "Alberto J. Paz 1065 Bis-Local 5, Rosario", header: true  }
             ],
             neuquen: [
                 {id: 1, nombre: "BARILOCHE catedral", provincia: "neuquén", telefono: "1567390110", email: "catedral@temple.com.ar", direccion: "Cerro Catedral - Bariloche", header: true  }
@@ -60,6 +59,9 @@ export default async function Page({ children, params }) {
             ],
             salta: [
                 {id: 1, nombre: "salta", provincia: "salta", telefono: "1567390110", email: "salta@temple.com.ar", direccion: "Belgrano 213, Salta", header: true  },
+            ],
+            corrientes: [
+                {id: 1, nombre: "corrientes", provincia: "corrientes", telefono: "3794009384", email: "templectes@gmail.com", direccion: "Rivadavia 1690", header: true  },
             ],
             tucuman: [
                 {id: 1, nombre: "tucumán", provincia: "tucumán", telefono: "3812157158", email: "estacion@temple.com.ar", direccion: "Av Roca 500, Complejo Provincial", header: true  },
@@ -73,7 +75,7 @@ export default async function Page({ children, params }) {
         },
         baresEn: {
             miami: [
-                {id: 1, nombre: "Temple Craft Wynwood", provincia: "Miami", telefono: "17868541874", email: "miami@temple.com.ar", direccion: "151 NW 24th St #102, Miami, FL 33127, USA", header: true }
+                {id: 1, nombre: "Temple Craft Wynwood", provincia: "Miami", telefono: "+17868541874", email: "miami@temple.com.ar", direccion: "151 NW 24th St #102, Miami, FL 33127, USA", header: true }
             ]
         }
 
@@ -164,7 +166,7 @@ export default async function Page({ children, params }) {
                                                         <div>
                                                             <img src="/bares/line.png" alt="" className="h-3" />
                                                         </div>
-                                                        <a href={`mailto:${bar.email}}`} target='_blank'>
+                                                        <a href={`mailto:${bar.email}`} target='_blank'>
                                                             <div className="flex items-center justify-center gap-x-1">
                                                                 <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                                 <span className="text-[3vw] md:text-[1.33vh]">

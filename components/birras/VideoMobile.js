@@ -11,7 +11,7 @@ export default function ProductBox({ cerveza }) {
     <>
         <div className="product-box-5-mobile mb-[4.61vw]">
             <div className="secondary-image-box flex flex-col gap-y-[4.61vw] px-[5.12vw]">
-                <p className={`text-[#D41768] text-right text-[3.33vw] uppercase`}>
+                <p className={`text-[#D41768] text-right text-[3.33vw] uppercase ml-[10vh]`}>
                     {cerveza.info.altSecondaryImage}
                 </p>
                 {cerveza.info.secondaryImage && (         

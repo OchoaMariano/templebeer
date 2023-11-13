@@ -159,26 +159,26 @@ export default function Header ({ dictonary }) {
                     </div>
                 </div>
                 <div className="flex flex-col ">
-                    <Link href={createLocalePath('/')} className="text-[11.28vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
+                    <Link href={createLocalePath('/')} className="text-[9vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
                         {dictonary.nav.home}
                     </Link>
-                    <Link href={createLocalePath('/birras')} className="text-[11.28vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
+                    <Link href={createLocalePath('/birras')} className="text-[9vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
                         {dictonary.nav.birras}
                     </Link>
-                    <Link href={createLocalePath('/bares')} className="text-[11.28vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
+                    <Link href={createLocalePath('/bares')} className="text-[9vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
                         {dictonary.nav.bares}
                     </Link>
-                    <Link href={createLocalePath('/encuentro')} className="text-[11.28vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
+                    <Link href={createLocalePath('/encuentro')} className="text-[9vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
                         {dictonary.nav.encuentro}
                     </Link>
-                    <Link href={createLocalePath('/musica')} className="text-[11.28vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
+                    <Link href={createLocalePath('/musica')} className="text-[9vw] uppercase nav__item text-white transition duration-300 ease-in-out"> 
                         {dictonary.nav.musica}
                     </Link>
                 </div>
-                <div className="flex flex-col py-[5.12vw]">
+                <div className="flex flex-col py-[5.12vw] mb-[10vw]">
                     <div className="flex flex-start items-start justify-start gap-x-[2.52vw] text-white pb-[5.12vw]">
                         <Link href={createLocalePath('/legales')} className="text-[2.56vw] uppercase"> {dictonary.nav.legales} </Link>
-                        <a className="text-[2.56vw] uppercase" href="https://templeacademy.notion.site/templeacademy/0f69945dbb6247a1b08f8eae47bb2442?v=bdfe9a6a777c4281adda7ea36cf7d43c" target="_blank">{dictonary.nav.templeAcademy}y</a>
+                        
                     </div>
                     <div className="bg-white h-[1px]"></div>
                     <div className="flex flex-row items-center justify-between py-[7.12vw]">

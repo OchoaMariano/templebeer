@@ -100,7 +100,7 @@ export default async function Page({ children, params }) {
                                 <Draggable initialPosition={{ x: 0, y: 0 }}>
                                     <div className="rotate-[-10.5deg] w-[22.80vh] h-[4.53vh] relative">
                                         <Image 
-                                            src="/sticker-temple-amarrillo.png"
+                                            src="/sticker-temple-rosa.png"
                                             alt="Temple Beer"
                                             fill 
                                         />
@@ -147,7 +147,7 @@ export default async function Page({ children, params }) {
                                 <Draggable initialPosition={{ x: 0, y: 0 }}>
                                     <div className="rotate-[9deg] w-[25.07vh] h-[5.09vh] relative">
                                         <Image 
-                                            src="/sticker-temple-verde.png"
+                                            src="/sticker-temple-amarrillo.png"
                                             alt="Temple Beer"
                                             fill 
                                         />

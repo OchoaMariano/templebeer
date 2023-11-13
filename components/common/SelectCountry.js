@@ -5,29 +5,30 @@ import { useRouter } from 'next/navigation'
 import Head from 'next/head'
 
 export default function SelectCountry() {
-  const [shouldShow, setShouldShow] = useState(false); // Inicializar como false
+  const [shouldShow, setShouldShow] = useState(false);
   const router = useRouter();
 
   useEffect(() => {
-    // Solo se ejecuta en el cliente.
     const selectedCountry = sessionStorage.getItem('selectedCountry');
     if (selectedCountry) {
-      setShouldShow(false); // No mostrar el selector
+      setShouldShow(false);
       const locale = selectedCountry === 'es' ? 'es' : 'en';
-      router.replace(`/${locale}`); // Redirige al usuario a la página localizada
+      // Solo redirige si está en la ruta raíz
+      if (router.pathname === '/') {
+        router.replace(`/${locale}`);
+      }
     } else {
-      setShouldShow(true); // Mostrar el selector
+      setShouldShow(true);
     }
   }, [router]);
 
   const handleCountrySelect = (countryCode) => {
-    sessionStorage.setItem('selectedCountry', countryCode); // Guardar en sessionStorage
-    setShouldShow(false); // No mostrar el selector después de seleccionar
+    sessionStorage.setItem('selectedCountry', countryCode);
+    setShouldShow(false);
     const locale = countryCode === 'es' ? 'es' : 'en';
-    router.push(`/${locale}`); // Redirigir al usuario a la página localizada
+    router.push(`/${locale}`);
   };
 
-  // Si no debemos mostrar el selector, retornar null para no renderizar nada
   if (!shouldShow) {
     return null;
   }
@@ -49,9 +50,9 @@ export default function SelectCountry() {
               
               <div className="flags_wrapper z-20">
               <div className="flex flex-col lg:flex-row items-center relative">
-                  <FlagButton img="/bandera-arg.svg" alt="Argentina Flag" onClick={() => handleCountrySelect('es')} />
-                  <FlagButton img="/bandera-us.svg" alt="USA Flag" onClick={() => handleCountrySelect('en')} />
-                  <FlagButton img="/bandera-es.svg" alt="Spain Flag" isLast disabled>
+                  <FlagButton img="/bandera-arg.svg" alt="Argentina Flag" className="w-12 h-[6.79vh]" onClick={() => handleCountrySelect('es')} />
+                  <FlagButton img="/bandera-us.svg" alt="USA Flag" className="w-12 h-[6.79vh]" onClick={() => handleCountrySelect('en')} />
+                  <FlagButton img="/flags-cooming.png" alt="Spain Flag" className="w-[19.07vh] h-[3.79vh]" isLast disabled>
                   PRÓXIMAMENTE
                   </FlagButton>
               </div>
@@ -62,7 +63,7 @@ export default function SelectCountry() {
   );
 }
 
-const FlagButton = ({ img, alt, onClick, disabled = false, children, isLast = false }) => (
+const FlagButton = ({ img, alt, onClick, className, disabled = false, children, isLast = false }) => (
   <div 
     onClick={!disabled ? onClick : null} 
     className={`flex items-center justify-center h-full px-10 lg:px-0 py-12 lg:w-[274px] p-2 ${disabled ? 'cursor-not-allowed' : 'cursor-pointer'} ${!isLast && 'border-b lg:border-b-0 lg:border-r border-white'}`}
@@ -75,7 +76,7 @@ const FlagButton = ({ img, alt, onClick, disabled = false, children, isLast = fa
       onMouseOver={(e) => !disabled && (e.currentTarget.style.animation = 'bounce 1s')} /* Hacer la animación más suave */
       onMouseOut={(e) => e.currentTarget.style.animation = ''}
     >
-      <img src={img} alt={alt} className="w-12 h-12" />
+      <img src={img} alt={alt} className={className} />
     </div>
     {children && <p className="absolute bottom-0 pt-0">{children}</p>}
   </div>

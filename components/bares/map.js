@@ -47,7 +47,7 @@ const MapComponent = () => {
                 {id: 1, nombre: "pinamar", provincia: "costa argentina", telefono: "2267442736", email: "pinamar@temple.com.ar", direccion: "Av. de las Artes 31, Pinamar", header: true  }
             ],
             santaFe: [
-                {id: 1, nombre: "rosario fisherton", provincia: "santa fe", telefono: "3416953442", email: "rosario@temple.com.ar", direccion: "Alberto J. Paz 1065 Bis-Local 5, Rosario, Santa Fe", header: true  }
+                {id: 1, nombre: "rosario fisherton", provincia: "santa fe", telefono: "3416953442", email: "rosario@temple.com.ar", direccion: "Alberto J. Paz 1065 Bis-Local 5, Rosario", header: true  }
             ],
             neuquen: [
                 {id: 1, nombre: "BARILOCHE catedral", provincia: "neuquén", telefono: "1567390110", email: "catedral@temple.com.ar", direccion: "Cerro Catedral - Bariloche", header: true  }
@@ -57,6 +57,9 @@ const MapComponent = () => {
             ],
             salta: [
                 {id: 1, nombre: "salta", provincia: "salta", telefono: "1567390110", email: "salta@temple.com.ar", direccion: "Belgrano 213, Salta", header: true  },
+            ],
+            corrientes: [
+                {id: 1, nombre: "corrientes", provincia: "corrientes", telefono: "3794009384", email: "templectes@gmail.com", direccion: "Rivadavia 1690", header: true  },
             ],
             tucuman: [
                 {id: 1, nombre: "tucumán", provincia: "tucumán", telefono: "3812157158", email: "estacion@temple.com.ar", direccion: "Av Roca 500, Complejo Provincial", header: true  },
@@ -89,6 +92,13 @@ const MapComponent = () => {
                         />
                     </div>
                     <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute tucuman top-[11vh] right-[27vh] cursor-pointer" onClick={() => handleMapPointClick('tucuman-section')}>
+                        <Image
+                            src="/bares/point-mapa.png"
+                            alt=""
+                            fill
+                        />
+                    </div>
+                    <div className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute corrientes top-[14vh] right-[9vh] cursor-pointer" onClick={() => handleMapPointClick('corrientes-section')}>
                         <Image
                             src="/bares/point-mapa.png"
                             alt=""
@@ -193,7 +203,7 @@ const MapComponent = () => {
                                         <div>
                                             <img src="/bares/line.png" alt="" className="h-3" />
                                         </div>
-                                        <a href={`mailto:${bar.email}}`}>
+                                        <a href={`mailto:${bar.email}`}>
                                             <div className="flex items-center justify-center gap-x-1">
                                                 <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                 <span className="text-[3vw] md:text-[1.33vh]">
@@ -286,7 +296,7 @@ const MapComponent = () => {
                                         <div>
                                             <img src="/bares/line.png" alt="" className="h-3" />
                                         </div>
-                                        <a href={`mailto:${bar.email}}`}>
+                                        <a href={`mailto:${bar.email}`}>
                                             <div className="flex items-center justify-center gap-x-1">
                                                 <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                 <span className="text-[1.33vh]">
@@ -384,7 +394,7 @@ const MapComponent = () => {
                                         <div>
                                             <img src="/bares/line.png" alt="" className="h-3" />
                                         </div>
-                                        <a href={`mailto:${bar.email}}`}>
+                                        <a href={`mailto:${bar.email}`}>
                                             <div className="flex items-center justify-center gap-x-1">
                                                 <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                 <span className="text-[1.33vh]">
@@ -432,7 +442,7 @@ const MapComponent = () => {
                                         <div>
                                             <img src="/bares/line.png" alt="" className="h-3" />
                                         </div>
-                                        <a href={`mailto:${bar.email}}`}>
+                                        <a href={`mailto:${bar.email}`}>
                                             <div className="flex items-center justify-center gap-x-1">
                                                 <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                 <span className="text-[1.33vh]">
@@ -497,6 +507,54 @@ const MapComponent = () => {
                         ))}
                     </div>
 
+                    <div className="salta hidden lg:grid grid-rows-3 grid-flow-col gap-4 gap-x-[1.84vh] text-white" id="corrientes-section">
+                        {data.bares.corrientes.map((bar, index) => (
+                            <div key={index} className="border-l-2 border-white border-dashed relative w-[43.20vh] h-[16.57vh]">
+                                {bar.header && (
+                                    <div className="text-black absolute pl-[2.40vh] top-[1vh]">
+                                        <span  className={` bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                            {bar.provincia}
+                                        </span>
+                                    </div>
+                                )}                                                
+                                <div className="flex flex-col gap-y-[0.99vh] pl-[2.40vh] pt-[4.95vh] mx-auto">
+                                    <h1 className="text-[2.12vh] leading-normal uppercase">
+                                        {bar.nombre}
+                                    </h1>
+                                    <div className="flex gap-x-2 items-center">
+                                        <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
+                                            <div className="flex items-center justify-center gap-x-1">
+                                                <img
+                                                    src="/bares/wa.png"
+                                                    alt=""
+                                                    className="w-[1.84vh] h-[1.84vh]"
+                                                />
+                                                <span className="text-[1.33vh]">
+                                                    {bar.telefono}
+                                                </span>
+                                            </div>
+                                        </a>
+                                        
+                                        <div>
+                                            <img src="/bares/line.png" alt="" className="h-3" />
+                                        </div>
+                                        <a href={`mailto:${bar.email}`}>
+                                            <div className="flex items-center justify-center gap-x-1">
+                                                <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                <span className="text-[1.33vh]">
+                                                    {bar.email}
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <span className="text-[1.41vh]">
+                                        {bar.direccion}
+                                    </span>
+                                </div>
+                            </div>
+                        ))}
+                    </div>
+
                     <div className="tucuman hidden lg:grid grid-rows-3 grid-flow-col gap-4 gap-x-[1.84vh] text-white" id="tucuman-section">
                         {data.bares.tucuman.map((bar, index) => (
                             <div key={index} className="border-l-2 border-white border-dashed relative w-[43.20vh] h-[16.57vh]">
@@ -528,7 +586,7 @@ const MapComponent = () => {
                                         <div>
                                             <img src="/bares/line.png" alt="" className="h-3" />
                                         </div>
-                                        <a href={`mailto:${bar.email}}`}>
+                                        <a href={`mailto:${bar.email}`}>
                                             <div className="flex items-center justify-center gap-x-1">
                                                 <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                 <span className="text-[1.33vh]">
@@ -576,7 +634,7 @@ const MapComponent = () => {
                                         <div>
                                             <img src="/bares/line.png" alt="" className="h-3" />
                                         </div>
-                                        <a href={`mailto:${bar.email}}`}>
+                                        <a href={`mailto:${bar.email}`}>
                                             <div className="flex items-center justify-center gap-x-1">
                                                 <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                 <span className="text-[1.33vh]">
@@ -625,7 +683,7 @@ const MapComponent = () => {
                                         <div>
                                             <img src="/bares/line.png" alt="" className="h-3" />
                                         </div>
-                                        <a href={`mailto:${bar.email}}`}>
+                                        <a href={`mailto:${bar.email}`}>
                                             <div className="flex items-center justify-center gap-x-1">
                                                 <img src="/bares/mail.png" alt="" className="w-4" />
                                                 <span className="text-[1.33vh]">
@@ -680,7 +738,7 @@ const MapComponent = () => {
                                         <div>
                                             <img src="/bares/line.png" alt="" className="h-3" />
                                         </div>
-                                        <a href={`mailto:${bar.email}}`}>
+                                        <a href={`mailto:${bar.email}`}>
                                             <div className="flex items-center justify-center gap-x-1">
                                                 <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                 <span className="text-[3vw] md:text-[1.33vh]">
@@ -725,7 +783,7 @@ const MapComponent = () => {
                                         <div>
                                             <img src="/bares/line.png" alt="" className="h-3" />
                                         </div>
-                                        <a href={`mailto:${bar.email}}`} >
+                                        <a href={`mailto:${bar.email}`} >
                                             <div className="flex items-center justify-center gap-x-1">
                                                 <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                 <span className="text-[3vw] md:text-[1.33vh]">
@@ -770,7 +828,7 @@ const MapComponent = () => {
                                         <div>
                                             <img src="/bares/line.png" alt="" className="h-3" />
                                         </div>
-                                        <a href={`mailto:${bar.email}}`}>
+                                        <a href={`mailto:${bar.email}`}>
                                             <div className="flex items-center justify-center gap-x-1">
                                                 <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                 <span className="text-[3vw] md:text-[1.33vh]">
@@ -818,7 +876,7 @@ const MapComponent = () => {
                                         <div>
                                             <img src="/bares/line.png" alt="" className="h-3" />
                                         </div>
-                                        <a href={`mailto:${bar.email}}`}>
+                                        <a href={`mailto:${bar.email}`}>
                                             <div className="flex items-center justify-center gap-x-1">
                                                 <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                 <span className="text-[3vw] md:text-[1.33vh]">
@@ -865,7 +923,53 @@ const MapComponent = () => {
                                         <div>
                                             <img src="/bares/line.png" alt="" className="h-3" />
                                         </div>
-                                        <a href={`mailto:${bar.email}}`}>
+                                        <a href={`mailto:${bar.email}`}>
+                                            <div className="flex items-center justify-center gap-x-1">
+                                                <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
+                                                <span className="text-[3vw] md:text-[1.33vh]">
+                                                    {bar.email}
+                                                </span>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <span className="text-[3vw] md:text-[1.41vh]">
+                                        {bar.direccion}
+                                    </span>
+                                </div>
+                            </div>
+                        ))}
+
+                        {data.bares.corrientes.map((bar, index) => (
+                            <div key={index} className="border-l-2 border-white border-dashed relative w-[84.61vw] h-[24.87vw] md:w-[43.20vh] md:h-[16.57vh]">
+                                {bar.header && (
+                                    <div className="text-black absolute pl-[0vw] md:pl-[2.40vh] -top-[8vw] md:top-[1vh]">
+                                        <span  className={` bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                                            {bar.provincia}
+                                        </span>
+                                    </div>
+                                )}                                                
+                                <div className="flex flex-col gap-y-[1.79vw] md:gap-y-[0.99vh] pl-[3.58vw] md:pl-[2.40vh] pt-[1.79vw] md:pt-[4.95vh] mx-auto">
+                                    <h1 className="text-[3.84vw] md:text-[2.12vh] leading-normal uppercase">
+                                        {bar.nombre}
+                                    </h1>
+                                    <div className="flex gap-x-2 items-center">
+                                        <a href={`https://wa.me/${bar.telefono.replace(/[^0-9]/g, '')}?text=Hola, estoy interesado en más información.`} rel="noopener noreferrer" target="_blank">
+                                            <div className="flex items-center justify-center gap-x-1">
+                                                <img
+                                                    src="/bares/wa.png"
+                                                    alt=""
+                                                    className="w-[1.84vh] h-[1.84vh]"
+                                                />
+                                                <span className="text-[3vw] md:text-[1.33vh]">
+                                                    {bar.telefono}
+                                                </span>
+                                            </div>
+                                        </a>
+                                        
+                                        <div>
+                                            <img src="/bares/line.png" alt="" className="h-3" />
+                                        </div>
+                                        <a href={`mailto:${bar.email}`}>
                                             <div className="flex items-center justify-center gap-x-1">
                                                 <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                 <span className="text-[3vw] md:text-[1.33vh]">
@@ -911,7 +1015,7 @@ const MapComponent = () => {
                                         <div>
                                             <img src="/bares/line.png" alt="" className="h-3" />
                                         </div>
-                                        <a href={`mailto:${bar.email}}`}>
+                                        <a href={`mailto:${bar.email}`}>
                                             <div className="flex items-center justify-center gap-x-1">
                                                 <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                 <span className="text-[3vw] md:text-[1.33vh]">
@@ -957,7 +1061,7 @@ const MapComponent = () => {
                                         <div>
                                             <img src="/bares/line.png" alt="" className="h-3" />
                                         </div>
-                                        <a href={`mailto:${bar.email}}`}>
+                                        <a href={`mailto:${bar.email}`}>
                                             <div className="flex items-center justify-center gap-x-1">
                                                 <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                 <span className="text-[3vw] md:text-[1.33vh]">
@@ -1003,7 +1107,7 @@ const MapComponent = () => {
                                         <div>
                                             <img src="/bares/line.png" alt="" className="h-3" />
                                         </div>
-                                        <a href={`mailto:${bar.email}}`} >
+                                        <a href={`mailto:${bar.email}`} >
                                             <div className="flex items-center justify-center gap-x-1">
                                                 <img src="/bares/mail.png" alt="" className="w-[2.23vh] h-[1.84vh]" />
                                                 <span className="text-[3vw] md:text-[1.33vh]">

@@ -242,7 +242,7 @@ export default async function Page({ children, params }) {
                                                 src="/musica/planeta-rave.jpg"
                                                 style={{
                                                     objectFit: 'cover',
-                                                    objectPosition: 'center'
+                                                    objectPosition: 'top'
                                                 }}
                                                 fill 
                                             />
@@ -282,14 +282,58 @@ export default async function Page({ children, params }) {
                                         </p>
                                     </div>
                                 </div>
-                                
-                                
+                                <div className="bg-[#0e359b] p-[2.83vh] flex flex-col justify-between gap-y-[2.97vh] w-[36.54vh] h-[67.13vh]">
+                                    <div className="card-1 relative">
+                                        <div className="relative w-[30.87vh] h-[28.61vh]">
+                                            <Image 
+                                                src="/musica/bunker-blizz.jpg"
+                                                style={{
+                                                    objectFit: 'cover',
+                                                    objectPosition: 'center'
+                                                }}
+                                                fill 
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="text-white h-full flex flex-col justify-center gap-y-[1.41vh]">
+                                        <h1 className={`text-[2.54vh] leading-none ${Knockout54UltraBold.className}`}>
+                                            BUNKER BLISS
+                                        </h1>
+                                        <p className={`text-[1.4vh] font-normal`}>
+                                            Presents B-Side Sessions at Temple. Curated by Mark Chez, Bunker Bliss is an Underground Music Event & Selective Talent Showcase focused on uniting Deep-digging artists with like-minded people.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="bg-[#1f9996] p-[2.83vh] flex flex-col justify-between gap-y-[2.97vh] w-[36.54vh] h-[67.13vh]">
+                                    <div className="card-4 relative">
+                                        <div className="relative w-[30.87vh] h-[41.21vh]">
+                                            <Image 
+                                                src="/musica/bunker-blizz.jpg"
+                                                style={{
+                                                    objectFit: 'cover',
+                                                    objectPosition: 'center'
+                                                }}
+                                                fill 
+                                            />
+                                        </div>
+                                        
+                                    </div>
+                                    <div className="text-white h-full flex flex-col justify-center gap-y-[1.41vh]">
+                                        <h1 className={`text-[2.54vh] uppercase leading-none ${Knockout54UltraBold.className}`}>
+                                            NENA! 
+                                        </h1>
+                                        <p className={`text-[1.4vh] font-normal`}>
+                                            Nena is a monthly residence curated by Tauro, an Argentinian DJ who has been playing for years in Buenos Aires at venues like Club 69, Crobar and many others. 
+                                            At her Temple residency she invites DJs to play with her all night long. Tech House predominates.
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                             )}
                         </ScrollHorizontal>
                         {lang == 'es' && (
                             <div className="flex flex-col justify-between items-start gap-y-[5.12vw] md:hidden" >
-                                <div className="bg-[#0e359b] p-[5.12vw] flex flex-col justify-between gap-y-[5.38vw] w-[89.74vw] h-[155.12vw]">
+                                <div className="bg-[#0e359b] p-[5.12vw] flex flex-col justify-between gap-y-[5.38vw] w-[89.74vw] h-[168.12vw]">
                                     <div className="card-1 relative">
                                         <div className="relative w-[79.48vw] h-[89.74vw]">
                                             <Image 
@@ -518,6 +562,53 @@ export default async function Page({ children, params }) {
                                         </h1>
                                         <p className={`text-[3.33vw] font-normal`}>
                                             Vinyl only night (vinyl enthusiast) playing a range of Techno, Electro and Minimal. Promoting local and international talent. Curated by local dj Franco Alexander.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="bg-[#0e359b] p-[5.12vw] flex flex-col justify-between gap-y-[5.38vw] w-[89.74vw] h-[155.12vw]">
+                                    <div className="card-1 relative">
+                                        <div className="relative w-[79.48vw] h-[89.74vw]">
+                                            <Image 
+                                                src="/musica/bunker-blizz.jpg"
+                                                style={{
+                                                    objectFit: 'cover',
+                                                    objectPosition: 'center'
+                                                }}
+                                                fill 
+                                            />
+                                        </div>
+                                       
+                                    </div>
+                                    <div className="text-white h-full flex flex-col justify-center gap-y-[2.56vw]">
+                                        <h1 className={`text-[5.12vw] leading-none ${Knockout54UltraBold.className}`}>
+                                            BUNKER BLISS
+                                        </h1>
+                                        <p className={`text-[3.33vw] font-normal`}>
+                                            Presents B-Side Sessions at Temple. Curated by Mark Chez, Bunker Bliss is an Underground Music Event & Selective Talent Showcase focused on uniting Deep-digging artists with like-minded people.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div className="bg-[#d41768] p-[5.12vw] flex flex-col justify-between gap-y-4 lg:gap-y-0  w-[89.74vw] h-[155.12vw]">
+                                    <div className="card-5 relative">
+                                        <div className="relative w-[79.48vw] h-[89.74vw]">
+                                            <Image 
+                                                src="/musica/nena-2.jpg"
+                                                style={{
+                                                    objectFit: 'cover',
+                                                    objectPosition: 'top'
+                                                }}
+                                                fill 
+                                            />
+                                        </div>
+                                    </div>
+                                    <div className="text-white h-full flex flex-col justify-center gap-y-[2.56vw]">
+                                        <h1 className={`text-[5.12vw] leading-none ${Knockout54UltraBold.className}`}>
+                                            NENA!
+                                        </h1>
+                                        <p className={`text-[3.33vw] font-normal`}>
+                                            Nena is a monthly residence curated by Tauro, an Argentinian DJ who has been playing for years in Buenos Aires at venues like Club 69, Crobar and many others. 
+                                            At her Temple residency she invites DJs to play with her all night long. Tech House predominates.
+
                                         </p>
                                     </div>
                                 </div>
