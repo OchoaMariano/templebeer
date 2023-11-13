@@ -32,12 +32,14 @@ export default function ProductBox({ cerveza }) {
                             src={cerveza.info.video}
                             className="cursor-pointer"
                             autoPlay
+                            playsInline
                             loop
                             muted
+                            preload="auto"
                             style={{
-                            objectFit: 'cover',
-                            width: '100%',
-                            height: '100%',
+                                objectFit: 'cover',
+                                width: '100%',
+                                height: '100%',
                             }}
                         />
                     </div>
