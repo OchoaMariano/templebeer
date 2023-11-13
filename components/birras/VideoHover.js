@@ -85,7 +85,7 @@ export default function ProductBox({ cerveza }) {
                 }}
             />
         </div>
-        <div className="sticker-iso-rosa absolute left-[0vh] top-[0vw] md:-left-[6.6vh] md:top-[8vh]">
+        <div className="sticker-iso-rosa absolute md:-left-[6.6vh] md:top-[8vh] hidden md:block">
             <Draggable initialPosition={{ x: 0, y: 0 }}>
                 <div className="rotate-[23deg] w-[16.92vw] h-[16.92vw] md:w-[9.69vh] md:h-[9.69vh] relative">
                     <Image 
@@ -96,7 +96,7 @@ export default function ProductBox({ cerveza }) {
                 </div>
             </Draggable>
         </div>
-        <div className="sticker-temple-amarillo absolute left-[0vh] top-[0vw] md:right-[10vh] md:top-[30vh]">
+        <div className="sticker-temple-amarillo absolute md:right-[10vh] md:top-[30vh] hidden md:block">
             <Draggable initialPosition={{ x: 0, y: 0 }}>
                 <div className="-rotate-[14.25deg] w-[39.23vw] h-[8.20vw] md:w-[16.28vh] md:h-[3.42vh] relative">
                     <Image 
