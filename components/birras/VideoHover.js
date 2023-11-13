@@ -83,7 +83,7 @@ export default function ProductBox({ cerveza }) {
                 }}
             />
         </div>
-        <div className="sticker-iso-rosa absolute -left-[1vh] top-[8vh] hidden md:block">
+        <div className="sticker-iso-rosa absolute -left-[6.6vh] top-[8vh] hidden md:block">
             <Draggable initialPosition={{ x: 0, y: 0 }}>
                 <div className="rotate-[23deg] w-[9.69vh] h-[9.69vh] relative">
                     <Image 

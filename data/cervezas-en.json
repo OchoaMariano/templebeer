@@ -16,12 +16,12 @@
         "imageInfo": "/nuestrasbirras/en/cosmic-hazy-lager/cosmic-hazy-lager-info.jpg",
         "bajada": "This new beer comes to challenge our senses. Complexity, aroma and high drinkability.",
         "destacado": "The beer that came all the way down from outer space to conquer humanity.",
-        "secondaryImage": null,
+        "secondaryImage": "/nuestrasbirras/en/cosmic-hazy-lager/bg-cosmic-hazy-lager.jpg",
         "video": null,
         "altSecondaryImage": "SPECIAL BEER"
       },
       "style": {
-        "background": "/nuestrasbirras/en/cosmic-hazy-lager/bg-cosmic-hazy-lager.jpg",
+        "background": null,
         "esquinaIzquierda": null,
         "esquinaDerecha": null
       }
