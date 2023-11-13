@@ -14,19 +14,8 @@ export default function ProductBox({ cerveza }) {
                 <p className={`text-[#D41768] text-right text-[3.33vw] uppercase ml-[10vh]`}>
                     {cerveza.info.altSecondaryImage}
                 </p>
-                {cerveza.info.secondaryImage && (         
-                    <div className="relative w-[89.74vw] h-[125.89vw]">
-                        <Image
-                        src={cerveza.info.secondaryImage}
-                        style={{
-                            objectFit: 'cover',
-                        }}
-                        fill
-                        
-                        />
-                    </div>
-                )}
-                {cerveza.info.video && (
+                
+                {cerveza.info.video ? (
                     <div className="relative w-[89.74vw] h-[125.89vw]">
                         <video
                             src={cerveza.info.video}
@@ -41,6 +30,17 @@ export default function ProductBox({ cerveza }) {
                                 width: '100%',
                                 height: '100%',
                             }}
+                        />
+                    </div>
+                ) : (
+                    <div className="relative w-[89.74vw] h-[125.89vw]">
+                        <Image
+                        src={cerveza.info.secondaryImage}
+                        style={{
+                            objectFit: 'cover',
+                        }}
+                        fill
+                        
                         />
                     </div>
                 )}

@@ -465,9 +465,8 @@ export default async function Page({ params }) {
                         </div>
                     </div>
                     <VideoMobile cerveza={cerveza} />
-                    
                     {lang == 'es' && (
-                    <div className="product-box-6-mobile">
+                        <div className="product-box-6-mobile">
                         <div className="relative h-full">
                             <div className="beers-content-wrapper flex flex-col justify-between">
                                 <div className="title">
@@ -548,7 +547,7 @@ export default async function Page({ params }) {
                                 </div>
                             </div>
                         </div>
-                    </div>
+                        </div>
                     )}
                     {lang == 'en' && (
                         <div className="product-box-6-mobile relative h-full">
