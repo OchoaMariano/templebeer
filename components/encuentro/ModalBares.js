@@ -26,7 +26,7 @@ export default function Modal() {
                 <div className="content p-[5.89vw] md:p-[3.8vh]">
                   <ScrollHorizontal>
                     <div className="relative w-[308.46vw] h-[141.79vw] md:w-[187.11vh] md:h-[67.84vh] shadow-xl ">
-                      <Image src="/encuentros/modal-bares.png" fill alt="encuentros-flyer" className="block" />
+                      <Image src="/encuentros/scroll-bares.png" fill alt="encuentros-flyer" className="block" />
                     </div>
                   </ScrollHorizontal>
                 </div>

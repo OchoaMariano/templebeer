@@ -81,7 +81,11 @@
         "destacado": "Animate a mirar con otros ojos.",
         "secondaryImage": null,
         "video": "https://storage.googleapis.com/tb-temporal/honey-video-detail.mp4",
-        "altSecondaryImage": "¿Qué decirte de esta hermosura?"
+        "altSecondaryImage": "¿Qué decirte de esta hermosura?",
+        "widthSecondary": "38vh",
+        "heightSecondary": null,
+        "widthHeight": null,
+        "heightHeight": null
       },
       "style": {
         "background": null,

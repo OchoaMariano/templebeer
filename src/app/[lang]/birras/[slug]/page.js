@@ -114,6 +114,8 @@ export default async function Page({ params }) {
     const dict = await getDictionary(langg);
     const headerDic = dict.header;
 
+    
+
     return (
         <>
             <div className="desktop hidden lg:block">
@@ -219,7 +221,7 @@ export default async function Page({ params }) {
                                                         playsInline
                                                         loop
                                                         muted
-                                                    />
+                                                />
                                                 </div>
                                             ) : (
                                                 <div className="relative w-[52.69vh] h-[55.52vh]" style={{ width: cerveza.info?.widthPrimary || '52.69vh',  height: cerveza.info?.heightPrimary || '55.52vh' }}>
@@ -239,6 +241,35 @@ export default async function Page({ params }) {
                                             <div className="">
                                                 <p className={`leading-[3.39vh] text-[3vh] uppercase ${Knockout54UltraBold.className}`} style={{ color: cerveza.style?.color || 'white' }} dangerouslySetInnerHTML={{ __html: cerveza.info.destacado }} />
                                             </div>
+                                            
+                                            {cerveza.info.video === null && cerveza.info.secondaryImage === null && (
+                                                <div className="sticker-temple-amarillo absolute -left-[7vh] top-[3vh] hidden md:block">
+                                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                                    <div className="-rotate-[14.25deg] w-[16.28vh] h-[3.42vh] relative">
+                                                        <Image 
+                                                            src="/sticker-temple-amarrillo.png"
+                                                            alt="Temple Beer"
+                                                            fill 
+                                                        />
+                                                    </div>
+                                                </Draggable>
+                                                </div>
+                                            )}
+                                             {cerveza.info.video === null && cerveza.info.secondaryImage === null && (
+                                                <div className="sticker-iso-rosa absolute right-[5vh] top-[30vh] hidden md:block">
+                                                    <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                                        <div className="rotate-[23deg] w-[9.69vh] h-[9.69vh] relative">
+                                                            <Image 
+                                                                src="/sticker-rosa-tempple.png"
+                                                                alt="Temple Beer"
+                                                                fill 
+                                                            />
+                                                        </div>
+                                                    </Draggable>
+                                                </div> 
+                                             )}
+                                                    
+
                                         </div>
                                     </div>
                                     <div className="column">
