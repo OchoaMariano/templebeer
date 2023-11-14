@@ -500,7 +500,7 @@ export default async function Page({ params }) {
                                 loop
                                 muted
                             />
-                            <div className="sticker-temple-amarillo absolute left-[55vw] md:hidden bottom-[9vw] md:right-[10vh] md:top-[30vh]">
+                            <div className="sticker-temple-amarillo absolute left-[5vw] md:hidden bottom-[9vw] md:right-[10vh] md:top-[30vh]">
                                 <Draggable initialPosition={{ x: 0, y: 0 }}>
                                     <div className="-rotate-[11.25deg] w-[39.23vw] h-[8.20vw] md:w-[16.28vh] md:h-[3.42vh] relative">
                                         <Image 

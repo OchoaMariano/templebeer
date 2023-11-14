@@ -33,7 +33,7 @@ export default function ProductBox({ cerveza }) {
                     </div>
                 )}
                 {cerveza.info.secondaryImage && (
-                    <div className="relative w-[89.74vw] h-[125.89vw]">
+                    <div className="relative w-[89.74vw] h-[125.89vw]" style={{  height: cerveza.info?.heightSecondaryM || '125.89vw' }}>
                         <Image
                         src={cerveza.info.secondaryImage}
                         style={{

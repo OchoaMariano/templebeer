@@ -84,8 +84,8 @@
         "altSecondaryImage": "¿Qué decirte de esta hermosura?",
         "widthSecondary": "38vh",
         "heightSecondary": null,
-        "widthHeight": null,
-        "heightHeight": null
+        "widthPrimary": null,
+        "heightPrimary": null
       },
       "style": {
         "background": null,
@@ -275,8 +275,9 @@
         "destacado": "Su aroma podría confundirse con el de otras flores.",
         "secondaryImage": "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/santa-planta-lemon-haze-ipa-info.jpg",
         "video": null,
-        "altSecondaryImage": "Santa planta"
-      },
+        "altSecondaryImage": "Santa planta",
+        "heightSecondaryM": "170vw"
+     },
       "style": {
         "background": "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/bg-santa-planta-lemon-haze-ipa.jpg",
         "esquinaIzquierda": null,
