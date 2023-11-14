@@ -1,7 +1,14 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 function Footer() {
+
+    const pathName = usePathname();
+    const currentPathSegments = pathName.split('/');
+    const firstSegment = currentPathSegments[1];
 
     return (
         <>
@@ -21,15 +28,30 @@ function Footer() {
                                     />
                                 </div>
                             </Link>
-                            <a href="https://www.instagram.com/templecerveza/" target="_blank">
-                                <div className="relative w-[4.87vw] h-[4.87vw]">
-                                    <Image 
-                                        src="/instagram-footer.png"
-                                        alt="icono-instagram"
-                                        fill
-                                    />
-                                </div>
-                            </a>
+                            {firstSegment == 'es' && (
+                                <a href="https://www.instagram.com/templecerveza/" target="_blank">
+                                    <div className="relative w-[4.87vw] h-[4.87vw]">
+                                        <Image 
+                                            src="/instagram-footer.png"
+                                            alt="icono-instagram"
+                                            fill
+                                        />
+                                    </div>
+                                </a>
+                            )}
+
+                            {firstSegment == 'en' && (
+                                <a href="https://www.instagram.com/templemiami/" target="_blank">
+                                    <div className="relative w-[4.87vw] h-[4.87vw]">
+                                        <Image 
+                                            src="/instagram-footer.png"
+                                            alt="icono-instagram"
+                                            fill
+                                        />
+                                    </div>
+                                </a>
+                            )}
+                            
                             <a href="https://www.tiktok.com/@templecerveza" target="_blank">
                                 <div className="relative w-[4.35vw] h-[4.87vw]">
                                     <Image 

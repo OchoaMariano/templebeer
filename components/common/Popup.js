@@ -34,6 +34,10 @@ export default function Popup () {
     window.open('https://es.wikihow.com/acelerar-el-paso-del-tiempo', '_blank');
   };
 
+  const handleNoNo = () => {
+    window.open('https://www.wikihow.com/Make-Time-Pass--Faster', '_blank');
+  };
+
   if (!showPopup) return null;
 
   return (
@@ -68,7 +72,7 @@ export default function Popup () {
             <div className="flex space-x-4">
                 
                 <button onClick={handleYes} className="px-6 py-2 border-[#1F9996] border text-white hover:bg-[#1F9996] hover:text-white text-[12px]">YES</button>
-                <button onClick={handleNo} className="px-6 py-2 border-[#D41768] border text-white hover:bg-[#D41768] hover:text-white text-[12px]">N0</button>
+                <button onClick={handleNoNo} className="px-6 py-2 border-[#D41768] border text-white hover:bg-[#D41768] hover:text-white text-[12px]">N0</button>
             </div>
             )}
         </div>

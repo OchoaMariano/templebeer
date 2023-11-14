@@ -90,14 +90,26 @@ export default function Header ({ dictonary }) {
                 </div>
                 <div className="hidden lg:block divisor h-[21px] w-[1px] bg-white"></div>
                 <div className="hidden lg:flex rrss__nav">
-                    <a href='https://www.instagram.com/templecerveza/' target='_blank'>
-                        <Image
-                            src="/instagram-icon.svg"
-                            alt="Instagram"
-                            width={16}
-                            height={16}
-                        />
-                    </a>
+                    {firstSegment == 'es' && (
+                        <a href='https://www.instagram.com/templecerveza/' target='_blank'>
+                            <Image
+                                src="/instagram-icon.svg"
+                                alt="Instagram"
+                                width={16}
+                                height={16}
+                            />
+                        </a>
+                    )}
+                    {firstSegment == 'en' && (
+                        <a href='https://www.instagram.com/templemiami/' target='_blank'>
+                            <Image
+                                src="/instagram-icon.svg"
+                                alt="Instagram"
+                                width={16}
+                                height={16}
+                            />
+                        </a>
+                    )}
                     <a href='https://www.tiktok.com/@templecerveza' target='_blank'>
                         <Image
                             src="/tik-tok-icon.svg"
@@ -223,16 +235,26 @@ export default function Header ({ dictonary }) {
                                             fill
                                         />
                                     </div>
-                                    <a href='https://www.instagram.com/templecerveza/' target='_blank'>
-                                        <div className="relative w-[4.87vw] h-[4.87vw]">
-
-                                            <Image 
-                                                src="/instagram-footer.png"
-                                                
-                                                fill
-                                            />
-                                        </div>
-                                    </a>
+                                    {firstSegment == 'es' && (
+                                        <a href='https://www.instagram.com/templecerveza/' target='_blank'>
+                                            <div className="relative w-[4.87vw] h-[4.87vw]">
+                                                <Image 
+                                                    src="/instagram-footer.png"
+                                                    fill
+                                                />
+                                            </div>
+                                        </a>
+                                    )}
+                                    {firstSegment == 'en' && (
+                                        <a href='https://www.instagram.com/templemiami/' target='_blank'>
+                                            <div className="relative w-[4.87vw] h-[4.87vw]">
+                                                <Image 
+                                                    src="/instagram-footer.png"
+                                                    fill
+                                                />
+                                            </div>
+                                        </a>
+                                    )}
                                     <a href='https://www.tiktok.com/@templecerveza' target='_blank'>
                                         <div className="relative w-[4.35vw] h-[4.87vw]">
                                             <Image 

@@ -3,7 +3,7 @@
         "mainTitle": {
             "encuentro": "Encuentro",
             "birra": "Birra",
-            "musica": "Musica",
+            "musica": "Música",
             "y": "Y"               
         },
         "beerNav": {
@@ -26,7 +26,7 @@
         "title": "Encuentros"
     },
     "musica": {
-        "title": "Musica"
+        "title": "Música"
     },
     "legales": {
         "politicas": "POLÍTICAS DE PRIVACIDAD",
@@ -54,7 +54,7 @@
             "birras": "Birras",
             "bares": "Bares",
             "encuentro": "Encuentro",
-            "musica": "Musica",
+            "musica": "Música",
             "templeAcademy": "Temple Academy",
             "legales": "Legales"
         }
