@@ -18,8 +18,10 @@ export default function Modal() {
                             src="https://storage.googleapis.com/tb-temporal/astrologi-video.mp4"
                             className="cursor-pointer"
                             autoPlay
+                            playsInline
                             loop
                             muted
+                            preload="auto"
                             style={{
                                 objectFit: 'cover',
                                 width: '100%',

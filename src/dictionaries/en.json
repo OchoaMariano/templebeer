@@ -16,7 +16,8 @@
     },
     "birras": {
         "title": "Our",
-        "title2": "beers"
+        "title2": "beers",
+        "beers": "BEERS"
     },
     "bares": {
         "title": "Bar"

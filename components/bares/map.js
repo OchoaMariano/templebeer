@@ -212,7 +212,7 @@ const MapComponent = () => {
                                             </div>
                                         </a>
                                     </div>
-                                    <span className="text-[3vw] md:text-[1.41vh]">
+                                    <span className="text-[3vw] md:text-[1.41vh] uppercase">
                                         {bar.direccion}
                                     </span>
                                 </div>
@@ -305,7 +305,7 @@ const MapComponent = () => {
                                             </div>
                                         </a>
                                     </div>
-                                    <span className="text-[1.41vh]">
+                                    <span className="text-[1.41vh] uppercase">
                                         {bar.direccion}
                                     </span>
                                 </div>
@@ -354,7 +354,7 @@ const MapComponent = () => {
                                             </div>
                                         </a>
                                     </div>
-                                    <span className="text-[1.41vh]">
+                                    <span className="text-[1.41vh] uppercase">
                                         {bar.direccion}
                                     </span>
                                 </div>
@@ -403,7 +403,7 @@ const MapComponent = () => {
                                             </div>
                                         </a>
                                     </div>
-                                    <span className="text-[1.41vh]">
+                                    <span className="text-[1.41vh] uppercase">
                                         {bar.direccion}
                                     </span>
                                 </div>
@@ -451,7 +451,7 @@ const MapComponent = () => {
                                             </div>
                                         </a>
                                     </div>
-                                    <span className="text-[1.41vh]">
+                                    <span className="text-[1.41vh] uppercase">
                                         {bar.direccion}
                                     </span>
                                 </div>
@@ -499,7 +499,7 @@ const MapComponent = () => {
                                             </div>
                                         </a>
                                     </div>
-                                    <span className="text-[1.41vh]">
+                                    <span className="text-[1.41vh] uppercase">
                                         {bar.direccion}
                                     </span>
                                 </div>
@@ -547,7 +547,7 @@ const MapComponent = () => {
                                             </div>
                                         </a>
                                     </div>
-                                    <span className="text-[1.41vh]">
+                                    <span className="text-[1.41vh] uppercase">
                                         {bar.direccion}
                                     </span>
                                 </div>
@@ -595,7 +595,7 @@ const MapComponent = () => {
                                             </div>
                                         </a>
                                     </div>
-                                    <span className="text-[1.41vh]">
+                                    <span className="text-[1.41vh] uppercase">
                                         {bar.direccion}
                                     </span>
                                 </div>
@@ -643,7 +643,7 @@ const MapComponent = () => {
                                             </div>
                                         </a>
                                     </div>
-                                    <span className="text-[1.41vh]">
+                                    <span className="text-[1.41vh] uppercase">
                                         {bar.direccion}
                                     </span>
                                 </div>
@@ -692,7 +692,7 @@ const MapComponent = () => {
                                             </div>
                                         </a>
                                     </div>
-                                    <span className="text-[1.41vh]">
+                                    <span className="text-[1.41vh] uppercase">
                                         {bar.direccion}
                                     </span>
                                 </div>

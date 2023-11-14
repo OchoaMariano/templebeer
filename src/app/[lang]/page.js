@@ -369,7 +369,6 @@ export default async function Home({params}) {
                                         </Draggable>
                                     </div>
                                 </div>
-
                             </div>
                             <div className="row">
                                 <div className="box-9">
@@ -381,11 +380,9 @@ export default async function Home({params}) {
                                         )}
                                         {lang == 'en' && (
                                             <h3 className={` text-[#D41768] text-[8.09vh] uppercase -tracking-[.42vh] -rotate-[4.41deg] ${Marker.className} leading-[7vh]`}>
-                                            {dict.home.encuentros.frase}
-                                            
+                                                {dict.home.encuentros.frase}
                                             </h3>
                                         )}
-                                       
                                     </div>
                                 </div>
                             </div>
@@ -416,16 +413,34 @@ export default async function Home({params}) {
                                 </div>
                                 <div className="box-11 pt-[6.6vh] pl-[4vh] relative">
                                     <BannerWithFloatingLinks />
-                                    <div className="absolute left-[34vh] -top-3 mb-4 mr-4 z-20">
-                                        <Draggable initialPosition={{ x: 0, y: 0 }}>
-                                            <div className="w-[19.56vh] h-[27.46vh] relative animate-pulsec">
-                                                <Image 
-                                                    src="/parlante-sticker.png"
-                                                    alt="Temple Beer"
-                                                    fill 
+                                    <div className="absolute left-[28vh] top-8 mb-4 mr-4 z-20">
+                                        <div className="group pl-[3.07vw] md:pl-[6.37vh] flex flex-row cursor-pointer items-center">
+                                            <div className="relative w-[13.33vw] h-[16.15vw] md:w-[12.06vh] md:h-[15.04vh] group-hover:rotate-[10deg] transition-transform duration-500">
+                                                <Image
+                                                    src="/musica/parlante.png"
+                                                    alt="Sticker"
+                                                    fill
                                                 />
                                             </div>
-                                        </Draggable>
+                                            <div className="flex flex-col justify-between">
+                                                <div className="absolute -right-[5.2vh] -top-[4vh] w-[9vw] h-[9vw] md:w-[8.62vh] md:h-[8.62vh] group-hover:-rotate-[18deg] transition-transform duration-100 -rotate-[40deg]">
+                                                    <Image
+                                                        src="/musica/sound.png"
+                                                        alt="Sticker"
+                                                        fill
+                                                    />
+                                                </div>
+                                                <div className="absolute -bottom-[4vh] -right-[5.2vh] w-[9vw] h-[9vw] md:w-[8.62vh] md:h-[8.62vh] group-hover:rotate-[18deg] transition-transform duration-100 rotate-[40deg]">
+                                                    <Image
+                                                        src="/musica/sound.png"
+                                                        alt="Sticker"
+                                                        fill
+                                                    />
+                                                </div>
+                                            </div>
+                                            
+                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div className="box-12 relative z-10">

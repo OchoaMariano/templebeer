@@ -79,7 +79,7 @@
         "imageInfo": "/nuestrasbirras/clasicas/honey/honey-info.jpg",
         "bajada": "¿Qué decir de esta hermosura? Probablemente el estilo de cerveza más tomado hoy en día, nuestra Honey llegó para ganar corazones. Con nuestra (casi) obsesión por la sustentabilidad, usamos miel orgánica que viene directamente desde el Delta del Río Paraná, y la agregamos en la etapa de maduración, evitando que se transforme en alcohol, resalte el aroma y el sabor. Its organic, Honey.",
         "destacado": "Animate a mirar con otros ojos.",
-        "secondaryImage": "/nuestrasbirras/clasicas/honey/honey-secondary.jpg",
+        "secondaryImage": null,
         "video": "https://storage.googleapis.com/tb-temporal/honey-video-detail.mp4",
         "altSecondaryImage": "¿Qué decirte de esta hermosura?"
       },
@@ -141,9 +141,13 @@
         "imageInfo": "/nuestrasbirras/clasicas/indie-golden/indie-golden-secondary.jpg",
         "bajada": "Refrescante como esa nueva banda emergente que descubriste hace poco. Indie Golden, entradora como tarareo de hit.",
         "destacado": "Ideal para la primera pinta",
-        "secondaryImage": "/nuestrasbirras/clasicas/indie-golden/indie-golden-info.jpg",
+        "secondaryImage": null,
         "video": "https://storage.googleapis.com/tb-temporal/indie-golden-video-detail.mp4",
-        "altSecondaryImage": "Entradora como tarareo de hit"
+        "altSecondaryImage": "Entradora como tarareo de hit",
+        "widthSecondary": "38vh",
+        "heightSecondary": null,
+        "widthHeight": null,
+        "heightHeight": null
       },
       "style": {
         "background": null,
@@ -203,7 +207,7 @@
         "imageInfo": "/nuestrasbirras/clasicas/flow-apa/flow-apa-info.jpg",
         "bajada": "Ligera, de bajo amargor y dorada como el sol que ilumina tu after, hecha con una combinación de lúpulos americanos que unimos para que arranques el verano bien frescx",
         "destacado": "Cuando la vida te sorprende, seguí el flow",
-        "secondaryImage": "/nuestrasbirras/clasicas/flow-apa/flow-apa-secondary.jpg",
+        "secondaryImage": null,
         "video": "https://storage.googleapis.com/tb-temporal/flow-apa-detail-video.mp4",
         "altSecondaryImage": "SEGUÍ EL FLOW"
       },
@@ -234,7 +238,7 @@
         "imageInfo": "/nuestrasbirras/clasicas/revolution/revolution-info.jpg",
         "bajada": "Si estabas jugando a la play, guardá la partida porque esta birra llegó para cambiar el juego.",
         "destacado": "Una re - evolución del lúpulo",
-        "secondaryImage": "/nuestrasbirras/clasicas/revolution/revolution-secondary.jpg",
+        "secondaryImage": null,
         "video": "https://storage.googleapis.com/tb-temporal/revolution-neipa-detail-video.mp4",
         "altSecondaryImage": null
       },
@@ -357,8 +361,8 @@
       "info": {
         "imageInfo": "/nuestrasbirras/limitadas/infrared-ipa/infrared-ipa-info.jpg",
         "bajada": "A de atrapante, atrevida, atractiva. <br>B de birra. <br>C de cerveza, Cautivante, coqueta. <br>D dulce si te toca, amarga si le toca a otrx. <br>E de efusiva, estilo, espectacular, espuma. <br>F fresca, fantasiosa, friiiiiiia",
-        "destacado": "Dulce si te toca,<br> amarga si le toca a <br>otrx",
-        "secondaryImage": "/nuestrasbirras/limitadas/infrared-ipa/infrared-ipa-secondary.jpg",
+        "destacado": "Dulce si te toca,<br> amarga si le toca a otrx",
+        "secondaryImage": null,
         "video": "https://storage.googleapis.com/tb-temporal/infrared-detail-video.mov",
         "altSecondaryImage": "Sassy Sassy"
       },
@@ -453,7 +457,11 @@
         "destacado": "un golpe marcial al paladar, no la vas a ver en el prime time",
         "secondaryImage": "/nuestrasbirras/especiales/kungfu-sour/kungfu-sour-secondary.jpg",
         "video": null,
-        "altSecondaryImage": "カンフー"
+        "altSecondaryImage": "カンフー",
+        "widthSecondary": null,
+        "heightSecondary": null,
+        "widthPrimary": null,
+        "heightPrimary": "65vh"
       },
       "style": {
         "background": "/nuestrasbirras/especiales/kungfu-sour/bg-kungfu-sour.jpg",
@@ -480,10 +488,11 @@
       "mainImage": "/nuestrasbirras/especiales/demon-honey/demon-honey.png",
       "info": {
         "imageInfo": "/nuestrasbirras/especiales/demon-honey/demon-honey-info.jpg",
+        "videoInfo": "https://storage.googleapis.com/tb-temporal/demon-honey-detail-video.mp4",
         "bajada": "La edición limitada que diseñamos junto a @bhaviboi a partir de un sueño que tuvo. Una honey que es un fuego. Advertencia: va a dejarte tirando UUiUUIUUIIIs",
         "destacado": "Paradoja enlatada: una fresca que es un fuego.",
-        "secondaryImage": null,
-        "video": "https://storage.googleapis.com/tb-temporal/demon-honey-detail-video.mp4",
+        "secondaryImage": "/nuestrasbirras/especiales/demon-honey/demon-honey-secondary.jpg",
+        "video": null,
         "altSecondaryImage": "RED IPA ft. @bhaviboi una honey no tan santa"
       },
       "style": {
@@ -544,9 +553,13 @@
         "imageInfo": "/nuestrasbirras/especiales/wolf-ipa-sa/wolf-ipa-sa-info.jpg",
         "bajada": null,
         "destacado": "Beber sin moderación",
-        "secondaryImage": "/nuestrasbirras/especiales/wolf-ipa-sa/wolf-ipa-sa-secondary.jpg",
+        "secondaryImage": null,
         "video": "https://storage.googleapis.com/tb-temporal/wolf-ipa-sa-detail-video.mp4",
-        "altSecondaryImage": "Sin alcohol, sin censura"
+        "altSecondaryImage": "Sin alcohol, sin censura",
+        "widthSecondary": "38vh",
+        "heightSecondary": null,
+        "widthPrimary": null,
+        "heightPrimary": "70vh"
       },
       "style": {
         "background": "/nuestrasbirras/especiales/wolf-ipa-sa/bg-wolf-ipa-sa.jpg",
@@ -561,7 +574,7 @@
     },
     {
       "id": 19,
-      "nombre": "Proyecto Alpha 1",
+      "nombre": "Proyecto Alpha I",
       "slug": "proyecto-alpha-1",
       "urlBuy": "https://tienda.temple.com.ar/productos/proyecto-alpha-barrel-aged-wolf-ipa/",
       "categoria": "especiales",
@@ -623,7 +636,7 @@
     },
     {
       "id": 21,
-      "nombre": "Alpha Barrica 1",
+      "nombre": "Alpha Barrica I",
       "slug": "alpha-barrica-1",
       "urlBuy": "https://tienda.temple.com.ar/productos/alpha-barrel-aged-750ml/",
       "categoria": "especiales",
@@ -631,7 +644,7 @@
       "propiedades": {
         "alcohol": "5,8%",
         "ibu": "50",
-        "size": "750"
+        "size": "710"
       },
       "mainImage": "/nuestrasbirras/especiales/proyecto-barrica-1/proyecto-barrica-1.png",
       "info": {
@@ -640,7 +653,11 @@
         "destacado": "Para quien sabe esperar. Una birra reposada en barrica.",
         "secondaryImage": null,
         "video": null,
-        "altSecondaryImage": null
+        "altSecondaryImage": null,
+        "widthSecondary": null,
+        "heightSecondary": null,
+        "widthPrimary": null,
+        "heightPrimary": "66.5vh"
       },
       "style": {
         "background": null,
@@ -671,7 +688,11 @@
         "destacado": "Para quien sabe esperar. Una birra reposada en barrica.",
         "secondaryImage": "/nuestrasbirras/especiales/alpha-imperial-stout/alpha-imperial-stout-secondary.jpg",
         "video": null,
-        "altSecondaryImage": "Barrel Aged Series"
+        "altSecondaryImage": "Barrel Aged Series",
+        "widthSecondary": null,
+        "heightSecondary": null,
+        "widthPrimary": null,
+        "heightPrimary": "66.5vh"
       },
       "style": {
         "background": null,

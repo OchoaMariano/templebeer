@@ -18,8 +18,10 @@ export default function Modal() {
                             src="https://storage.googleapis.com/tb-temporal/reel-temple-miami.mp4"
                             className="cursor-pointer"
                             autoPlay
+                            playsInline
                             loop
                             muted
+                            preload="auto"
                             style={{
                                 objectFit: 'cover',
                                 width: '100%',

@@ -169,10 +169,10 @@ export default async function Page({ params }) {
                                                     
                                                 </div>
                                                 <div className="description__wrapper flex flex-col pt-[2.26vh]">
-                                                    <p className={`text-white uppercase text-[11px] w-[46.88vh] ${GothamBook.className}`} style={{ color: cerveza.style?.textColor || 'white' }} dangerouslySetInnerHTML={{ __html: cerveza.descripcion }} />
+                                                    <p className={`text-white uppercase text-[1.55vh] w-[50.88vh] ${GothamBook.className}`} style={{ color: cerveza.style?.textColor || 'white' }} dangerouslySetInnerHTML={{ __html: cerveza.descripcion }} />
                                                     
                                                     {lang === 'es' && (
-                                                    <div className="propiedades__wrapper flex flex-row text-[11px  pt-[2.97vh]">
+                                                    <div className="propiedades__wrapper flex flex-row text-[1.55vh]  pt-[2.97vh]">
                                                         <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`} style={{ color: cerveza.style?.textColor || 'white', borderColor: cerveza.style?.textColor || 'white' }}>ALC. {cerveza.propiedades.alcohol}</span>
                                                         <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`} style={{ color: cerveza.style?.textColor || 'white', borderColor: cerveza.style?.textColor || 'white' }}>IBU {cerveza.propiedades.ibu}</span>
                                                         <span className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`} style={{ color: cerveza.style?.textColor || 'white', borderColor: cerveza.style?.textColor || 'white' }}>{cerveza.propiedades.size} CC.</span>
@@ -205,20 +205,38 @@ export default async function Page({ params }) {
                                     </div>
                                     <div className="column">
                                         <div className="product-box-2">
-                                            <div className="relative w-[52.69vh] h-[55.52vh]">
-                                                <Image
-                                                    src={cerveza.info.imageInfo}
-                                                    style={{
+                                            {/* Renderiza el video si cerveza.info.videoInfo no es null, de lo contrario renderiza la imagen */}
+                                            {cerveza.info.videoInfo ? (
+                                                <div className="relative w-[52.69vh] h-[55.52vh]" style={{ width: cerveza.info?.widthPrimary || '52.69vh',  height: cerveza.info?.heightPrimary || '55.52vh' }}>
+                                                    <video
+                                                        src={cerveza.info.videoInfo}
+                                                        style={{
                                                         objectFit: 'cover',
-                                                    }}
-                                                    fill
-                                                />
-                                            </div>
+                                                        width: '100%',
+                                                        height: '100%',
+                                                        }}
+                                                        autoPlay
+                                                        playsInline
+                                                        loop
+                                                        muted
+                                                    />
+                                                </div>
+                                            ) : (
+                                                <div className="relative w-[52.69vh] h-[55.52vh]" style={{ width: cerveza.info?.widthPrimary || '52.69vh',  height: cerveza.info?.heightPrimary || '55.52vh' }}>
+                                                    <Image
+                                                        src={cerveza.info.imageInfo}
+                                                        style={{
+                                                        objectFit: 'cover',
+                                                        }}
+                                                        fill
+                                                    />
+                                                </div>
+                                            )}
+
                                             <div className="pt-[2.54vh] pb-[2.54vh]">
-                                                <p className={`text-white text-[1.41vh] uppercase ${GothamBook.className}`} dangerouslySetInnerHTML={{ __html: cerveza.info.bajada }} />
+                                                <p className={`text-white text-[1.41vh] ${GothamBook.className}`} dangerouslySetInnerHTML={{ __html: cerveza.info.bajada }} />
                                             </div>
                                             <div className="">
-                                                
                                                 <p className={`leading-[3.39vh] text-[3vh] uppercase ${Knockout54UltraBold.className}`} style={{ color: cerveza.style?.color || 'white' }} dangerouslySetInnerHTML={{ __html: cerveza.info.destacado }} />
                                             </div>
                                         </div>
@@ -381,7 +399,7 @@ export default async function Page({ params }) {
                             </h1>
                         </div>
                         <div className="callToAction__wrapper flex flex-row gap-x-[10px] pt-[3.84vw]">
-                            <Link className="text-white border-b-2 border-white hover:bg-white hover:text-[#D51668] hover:border-[#D51668] transition duration-300 ease-in-out flex flex-row items-center py-1 px-2 gap-[6px] text-[10px] group" href="/birras">
+                            <Link className="text-white border-b-2 border-white hover:bg-white hover:text-[#D51668] hover:border-[#D51668] transition duration-300 ease-in-out flex flex-row items-center py-1 px-2 gap-[6px] text-[10px] group" href={`/${lang}/birras`}>
                                 <Image 
                                     src='/detallebirras/btn-arrow.png'
                                     
@@ -396,7 +414,7 @@ export default async function Page({ params }) {
                                     height={17}
                                     className="hidden group-hover:block group-hover:-rotate-30"
                                 />
-                                BIRRAS
+                                {dict.birras.beers}
                             </Link>
                             {lang == 'es' && (
                                 <Link className="text-black bg-white hover:text-[#ffffff] hover:bg-[#D51668] transition duration-300 ease-in-out py-1 px-2 text-[10px] flex items-center" href={cerveza.urlBuy}>
@@ -424,7 +442,7 @@ export default async function Page({ params }) {
                         </div>
                     </div>
                     <div className="product-box-2-mobile">
-                        <div className="flex justify-center w-[100vw] h-[122.56vw]">
+                        <div className="flex justify-center w-[100vw] h-[122.56vw] mt-[10vw]">
                             <div className="relative w-[57.94vw] h-[122.56vw]">
                                 <Image
                                     src={cerveza.mainImage}
@@ -436,26 +454,56 @@ export default async function Page({ params }) {
                             </div>
                         </div>
                     </div>
-                    <div className="product-box-3-mobile w-[100vw] h-[75.64vw] relative mb-[4.61vw]">
-                        <Image
-                            src={cerveza.info.imageInfo}
-                            style={{
+                    {/* Renderiza el video si cerveza.info.videoInfo no es null, de lo contrario renderiza la imagen */}
+                    {cerveza.info.videoInfo ? (
+                        <div className="product-box-3-mobile w-[100vw] h-[95.64vw] relative mb-[4.61vw]">
+                            <video
+                                src={cerveza.info.videoInfo}
+                                style={{
                                 objectFit: 'cover',
-                            }}
-                            fill
-                        />
-                        <div className="sticker-temple-amarillo absolute left-[55vw] md:hidden bottom-[9vw] md:right-[10vh] md:top-[30vh]">
-                            <Draggable initialPosition={{ x: 0, y: 0 }}>
-                                <div className="-rotate-[11.25deg] w-[39.23vw] h-[8.20vw] md:w-[16.28vh] md:h-[3.42vh] relative">
-                                    <Image 
-                                        src="/sticker-temple-amarrillo.png"
-                                        alt="Temple Beer"
-                                        fill 
-                                    />
-                                </div>
-                            </Draggable>
+                                width: '100%',
+                                height: '100%',
+                                }}
+                                autoPlay
+                                playsInline
+                                loop
+                                muted
+                            />
+                            <div className="sticker-temple-amarillo absolute left-[55vw] md:hidden bottom-[9vw] md:right-[10vh] md:top-[30vh]">
+                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                    <div className="-rotate-[11.25deg] w-[39.23vw] h-[8.20vw] md:w-[16.28vh] md:h-[3.42vh] relative">
+                                        <Image 
+                                            src="/sticker-temple-amarrillo.png"
+                                            alt="Temple Beer"
+                                            fill 
+                                        />
+                                    </div>
+                                </Draggable>
+                            </div>
                         </div>
-                    </div>
+                    ) : (
+                        <div className="product-box-3-mobile w-[100vw] h-[95.64vw] relative mb-[4.61vw]">
+                            <Image
+                                src={cerveza.info.imageInfo}
+                                style={{
+                                objectFit: 'cover',
+                                }}
+                                fill
+                            />
+                            <div className="sticker-temple-amarillo absolute left-[55vw] md:hidden bottom-[9vw] md:right-[10vh] md:top-[30vh]">
+                                <Draggable initialPosition={{ x: 0, y: 0 }}>
+                                    <div className="-rotate-[11.25deg] w-[39.23vw] h-[8.20vw] md:w-[16.28vh] md:h-[3.42vh] relative">
+                                        <Image 
+                                            src="/sticker-temple-amarrillo.png"
+                                            alt="Temple Beer"
+                                            fill 
+                                        />
+                                    </div>
+                                </Draggable>
+                            </div>
+                        </div>
+                    )}
+                    
                     <div className="product-box-4-mobile mb-[4.61vw]">
                         <div className="text-box flex flex-col gap-y-[4.61vw] px-[5.12vw]">
                            
@@ -467,86 +515,86 @@ export default async function Page({ params }) {
                     <VideoMobile cerveza={cerveza} />
                     {lang == 'es' && (
                         <div className="product-box-6-mobile">
-                        <div className="relative h-full">
-                            <div className="beers-content-wrapper flex flex-col justify-between">
-                                <div className="title">
-                                    <h2 className="text-[10.25vw] uppercase" style={{ color: cerveza.style?.color || 'white' }}>
-                                        BIRRAS
-                                    </h2>
-                                </div>
-                                {cerveza.gridClasicas && (
-                                <div className="beer-grid grid grid-cols-4 grid-rows-2">
-                                    {data.gridClasicas.map((clasicasObj, index) => (
-                                        <div className="beer-item py-[3.84vw] px-[0.76vw]" key={index}>
-                                            <Link href={`/${lang}/birras/${clasicasObj.slug}`}>
-                                                <div className="relative w-[22.30vw] h-[39.74vw] hover:scale-110 transition duration-100 transform">
-                                                    <Image
-                                                        src={clasicasObj.mainImage}
-                                                        style={{
-                                                            objectFit: 'cover',
-                                                        }}
-                                                        fill
-                                                        
-                                                    />
-                                                </div>
-                                            </Link>
-                                        </div>
-                                    ))}
-                                </div>
-                                )}
-                                {cerveza.gridLimitadas && (
-                                <div className="beer-grid grid grid-cols-4 grid-rows-2">
-                                    {data.gridLimitadas.map((clasicasObj, index) => (
-                                        <div className="beer-item py-[3.84vw] px-[0.76vw]" key={index}>
-                                            <Link href={`/${lang}/birras/${clasicasObj.slug}`}>
-                                                <div className="relative w-[22.30vw] h-[39.74vw] hover:scale-110 transition duration-100 transform">
-                                                    <Image
-                                                        src={clasicasObj.mainImage}
-                                                        style={{
-                                                            objectFit: 'cover',
-                                                        }}
-                                                        fill
-                                                        
-                                                    />
-                                                </div>
-                                            </Link>
-                                        </div>
-                                    ))}
-                                </div>
-                                )}
-                                {cerveza.gridEspeciales && (
-                                <div className="beer-grid grid grid-cols-4 grid-rows-2">
-                                    {data.gridEspeciales.map((clasicasObj, index) => (
-                                        <div className="beer-item py-[3.84vw] px-[0.76vw]" key={index}>
-                                            <Link href={`/${lang}/birras/${clasicasObj.slug}`}>
-                                                <div className="relative w-[22.30vw] h-[39.74vw] hover:scale-110 transition duration-100 transform">
-                                                    <Image
-                                                        src={clasicasObj.mainImage}
-                                                        style={{
-                                                            objectFit: 'cover',
-                                                        }}
-                                                        fill
-                                                        
-                                                    />
-                                                </div>
-                                            </Link>
-                                        </div>
-                                    ))}
-                                </div>
-                                )}
-                                <div className="beer-nav">
-                                    <nav className="flex flex-wrap self-stretch gap-y-[2px]">
-                                        {data.birras.map((birraObj, index) => (
-                                        <span key={index} className={`py-[2px] px-[5px] text-[2.30vw] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
-                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`/${lang}/birras/${birraObj.slug}`}>
-                                            {birraObj.title}
-                                            </Link>
-                                        </span>
+                            <div className="relative h-full">
+                                <div className="beers-content-wrapper flex flex-col justify-between">
+                                    <div className="title">
+                                        <h2 className="text-[10.25vw] uppercase" style={{ color: cerveza.style?.color || 'white' }}>
+                                            BIRRAS
+                                        </h2>
+                                    </div>
+                                    {cerveza.gridClasicas && (
+                                    <div className="beer-grid grid grid-cols-4 grid-rows-2">
+                                        {data.gridClasicas.map((clasicasObj, index) => (
+                                            <div className="beer-item py-[3.84vw] px-[0.76vw]" key={index}>
+                                                <Link href={`/${lang}/birras/${clasicasObj.slug}`}>
+                                                    <div className="relative w-[22.30vw] h-[39.74vw] hover:scale-110 transition duration-100 transform">
+                                                        <Image
+                                                            src={clasicasObj.mainImage}
+                                                            style={{
+                                                                objectFit: 'cover',
+                                                            }}
+                                                            fill
+                                                            
+                                                        />
+                                                    </div>
+                                                </Link>
+                                            </div>
                                         ))}
-                                    </nav>
+                                    </div>
+                                    )}
+                                    {cerveza.gridLimitadas && (
+                                    <div className="beer-grid grid grid-cols-4 grid-rows-2">
+                                        {data.gridLimitadas.map((clasicasObj, index) => (
+                                            <div className="beer-item py-[3.84vw] px-[0.76vw]" key={index}>
+                                                <Link href={`/${lang}/birras/${clasicasObj.slug}`}>
+                                                    <div className="relative w-[22.30vw] h-[39.74vw] hover:scale-110 transition duration-100 transform">
+                                                        <Image
+                                                            src={clasicasObj.mainImage}
+                                                            style={{
+                                                                objectFit: 'cover',
+                                                            }}
+                                                            fill
+                                                            
+                                                        />
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    )}
+                                    {cerveza.gridEspeciales && (
+                                    <div className="beer-grid grid grid-cols-4 grid-rows-2">
+                                        {data.gridEspeciales.map((clasicasObj, index) => (
+                                            <div className="beer-item py-[3.84vw] px-[0.76vw]" key={index}>
+                                                <Link href={`/${lang}/birras/${clasicasObj.slug}`}>
+                                                    <div className="relative w-[22.30vw] h-[39.74vw] hover:scale-110 transition duration-100 transform">
+                                                        <Image
+                                                            src={clasicasObj.mainImage}
+                                                            style={{
+                                                                objectFit: 'cover',
+                                                            }}
+                                                            fill
+                                                            
+                                                        />
+                                                    </div>
+                                                </Link>
+                                            </div>
+                                        ))}
+                                    </div>
+                                    )}
+                                    <div className="beer-nav">
+                                        <nav className="flex flex-wrap self-stretch gap-y-[2px]">
+                                            {data.birras.map((birraObj, index) => (
+                                            <span key={index} className={`py-[2px] px-[5px] text-[2.30vw] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} style={{ borderColor: cerveza.style?.textColor || 'white' }}  >
+                                                <Link className=" hover:text-[#FCDB00] transition duration-300 ease-in-out" style={{ color: cerveza.style?.textColor || 'white' }}  href={`/${lang}/birras/${birraObj.slug}`}>
+                                                {birraObj.title}
+                                                </Link>
+                                            </span>
+                                            ))}
+                                        </nav>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
                         </div>
                     )}
                     {lang == 'en' && (
@@ -579,8 +627,8 @@ export default async function Page({ params }) {
                             <div className="beer-nav">
                                 <nav className="flex flex-wrap self-stretch gap-y-[2px]">
                                     {data.gridEn.map((birraObj, index) => (
-                                    <span key={index} className={`py-[2px] px-[5px] text-[2.30vw] text-white border-r-[1px] border-dotted border-white uppercase ${Knockout34.className}`} >
-                                        <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`/${lang}/birras/${birraObj.slug}`}>
+                                    <span key={index} className={`py-[2px] px-[5px] text-[2.30vw]  border-r-[1px] border-dotted border-white uppercase ${Knockout34.className}`} >
+                                        <Link className="hover:text-[#FCDB00] transition duration-300 ease-in-out" style={{ color: cerveza.style?.textColor || 'white' }} href={`/${lang}/birras/${birraObj.slug}`}>
                                         {birraObj.title}
                                         </Link>
                                     </span>

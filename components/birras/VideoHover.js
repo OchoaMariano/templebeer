@@ -10,12 +10,15 @@ export default function ProductBox({ cerveza }) {
   return (
     <>
     {cerveza.info.secondaryImage && (
-      <div className="product-box-3" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+      <div className="product-box-3" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} 
+        style={{ width: cerveza.info?.widthSecondary || '34.98vh',  height: cerveza.info?.heightSecondary || '69.54vh' }}>
         <p className="mt-[9.91vh] text-right text-[1.41vh] uppercase pb-[1vh] ml-[10vh]"
            style={{ color: cerveza.style?.color || 'white', marginLeft: '10vh' }}>
           {cerveza.info.altSecondaryImage}
         </p>
-        <div className="relative w-[89.74vw] h-[125.89vw] md:w-[34.98vh] md:h-[69.54vh] mb-[11.33vh]">
+        <div className="relative w-[89.74vw] h-[125.89vw] md:w-[34.98vh] md:h-[69.54vh] mb-[11.33vh]" 
+          style={{ width: cerveza.info?.widthSecondary || '34.98vh',  height: cerveza.info?.heightSecondary || '69.54vh' }}
+        >
           {hover && cerveza.info.video ? (
             <video
               src={cerveza.info.video}
@@ -66,12 +69,16 @@ export default function ProductBox({ cerveza }) {
       </div>
     )}
     {cerveza.info.video && (
-    <div className="product-box-3" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+    <div className="product-box-3" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)} 
+    style={{ width: cerveza.info?.widthSecondary || '34.98vh',  height: cerveza.info?.heightSecondary || '69.54vh' }}>
         <p className="mt-[9.91vh] text-right text-[1.41vh] uppercase pb-[1vh]"
         style={{ color: cerveza.style?.color || 'white' }}>
         {cerveza.info.altSecondaryImage}
         </p>
-        <div className="relative w-[34.98vh] h-[69.54vh] mb-[11.33vh]">
+        <div 
+          className="relative w-[34.98vh] h-[69.54vh] mb-[11.33vh]"
+          style={{ width: cerveza.info?.widthSecondary || '34.98vh',  height: cerveza.info?.heightSecondary || '69.54vh' }}
+        >
             <video
                 src={cerveza.info.video}
                 className="cursor-pointer"
