@@ -23,8 +23,8 @@ const MapComponent = () => {
                 {id: 2, nombre: "BARRIO CHINO", provincia: "Buenos Aires", telefono: "1164957812", email: "barriochino@temple.com.ar", direccion: "Echeverria 1664, CABA", header: null  },
                 {id: 3, nombre: "PILAR", provincia: "Buenos Aires", telefono: "1156620698", email: "pilar@temple.com.ar", direccion: "Panamericana km 50, Pilar", header: null  },
                 {id: 4, nombre: "RECOLETA", provincia: "Buenos Aires", telefono: "1144066315", email: "recoleta@temple.com.ar", direccion: "Vicente Lopez 2102, CABA", header: null  },
-                {id: 5, nombre: "trastienda", provincia: "Buenos Aires", telefono: "1144493153", email: "taproom@temple.com.ar", direccion: "Colectora Este Ramal Pilar 80-181, Pilar", header: null  },
-                {id: 6, nombre: "taproom", provincia: "Buenos Aires", telefono: "1144066315", email: "taproom@temple.com.ar", direccion: "Vicente Lopez 2102, CABA", header: null  },
+                {id: 5, nombre: "trastienda", provincia: "Buenos Aires", telefono: "1159604556", email: "trastienda@temple.com.ar", direccion: "BALCARCE 460, CABA", header: null  },
+                {id: 6, nombre: "taproom", provincia: "Buenos Aires", telefono: "1144493153", email: "taproom@temple.com.ar", direccion: "COLECTORA ESTE RAMAL PILAR KM 40,5 , PILAR", header: null  },
                 {id: 7, nombre: "recoleta junin", provincia: "Buenos Aires", telefono: "1155249857", email: "recoleta.junin@temple.com.ar", direccion: "JunÍn 1725, CABA", header: null  },
                 {id: 8, nombre: "puerto madero", provincia: "Buenos Aires", telefono: "1159089020", email: "madero@temple.com.ar", direccion: "Juan Manuela Gorriti 867, CABA", header: null  },
                 {id: 9, nombre: "leloir", provincia: "Buenos Aires", telefono: "1136532867", email: "leloir@temple.com.ar", direccion: "Martín Fierro 3361, Parque Leloir", header: null  },
@@ -50,7 +50,7 @@ const MapComponent = () => {
                 {id: 1, nombre: "rosario fisherton", provincia: "santa fe", telefono: "3416953442", email: "rosario@temple.com.ar", direccion: "Alberto J. Paz 1065 Bis-Local 5, Rosario", header: true  }
             ],
             neuquen: [
-                {id: 1, nombre: "BARILOCHE catedral", provincia: "neuquén", telefono: "1567390110", email: "catedral@temple.com.ar", direccion: "Cerro Catedral - Bariloche", header: true  }
+                {id: 1, nombre: "BARILOCHE catedral", provincia: "río negro", telefono: "-", email: "catedral@temple.com.ar", direccion: "Cerro Catedral - Bariloche", header: true  }
             ],
             cordoba: [
                 {id: 1, nombre: "cordoba Güemes", provincia: "cordoba", telefono: "3516844638", email: "cordoba@temple.com.ar", direccion: "Achaval RodrÍguez 241, Córdoba", header: true  }
