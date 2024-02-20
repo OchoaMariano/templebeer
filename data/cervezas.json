@@ -277,7 +277,7 @@
         "video": null,
         "altSecondaryImage": "Santa planta",
         "heightSecondaryM": "170vw"
-     },
+      },
       "style": {
         "background": "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/bg-santa-planta-lemon-haze-ipa.jpg",
         "esquinaIzquierda": null,
@@ -395,10 +395,10 @@
       },
       "mainImage": "/nuestrasbirras/limitadas/ipanema/ipanema.png",
       "info": {
-        "imageInfo": "/nuestrasbirras/limitadas/ipanema/ipanema-info.jpg",
+        "imageInfo": "/nuestrasbirras/limitadas/ipanema/ipanema-info-new.jpg",
         "bajada": "UNA IPA TURBIA CON CUERPO, MUCHO AROMA Y SEDOSA QUE EXPLOTA DE SABORES EN CADA SORBO.",
         "destacado": "Sentir los pies tocando el mar, El ruido de las olas mezclado con buena musiquita, Una birra helada.",
-        "secondaryImage": "/nuestrasbirras/limitadas/ipanema/ipanema-secondary.jpg",
+        "secondaryImage": "/nuestrasbirras/limitadas/ipanema/ipanema-secondary-new.jpg",
         "video": null,
         "altSecondaryImage": "Sucundum"
       },
