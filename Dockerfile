@@ -1,12 +1,8 @@
 FROM node:18
-RUN mkdir /app
-COPY package.json /app/
+
 WORKDIR /app
-COPY . ./
-
-ENV NEXT_PUBLIC_APP_URL=https://www.mydomain.com
-
+COPY package*.json ./
 RUN npm install
-RUN npm run build
-EXPOSE 4000
-CMD ["npm", "run","start"]
+COPY . .
+EXPOSE 3000
+CMD npm run dev
