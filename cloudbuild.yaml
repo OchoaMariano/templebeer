@@ -8,6 +8,6 @@ steps:
 # Deploy container image to Cloud Run
 - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
   entrypoint: gcloud
-  args: ['run', 'deploy', 'templebeer', '--image', 'us-central1-docker.pkg.dev/festive-kayak-412800/web-templebeer/templebeer-2:latest', '--region', 'us-central1']
+  args: ['run', 'deploy', 'templebeer-2', '--image', 'us-central1-docker.pkg.dev/festive-kayak-412800/web-templebeer/templebeer-2:latest', '--region', 'us-central1']
 images:
   - 'us-central1-docker.pkg.dev/festive-kayak-412800/web-templebeer/templebeer-2:latest'
