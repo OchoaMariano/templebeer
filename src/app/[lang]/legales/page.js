@@ -241,7 +241,7 @@ export default async function Page({ children, params }) {
                             <div class="w-[90vw] flex flex-col gap-y-[1vh]">
                                 <h1 className="text-[4vw]">{dict.legales.cesion}</h1>
                                 <p className="text-[3vw]">
-                                {dict.legales.cesion_content}
+                                {dict.legales.cesion_content} sssss
                                 </p>
                             </div>
                     </div>
