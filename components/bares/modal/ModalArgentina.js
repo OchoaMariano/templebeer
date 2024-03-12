@@ -16,7 +16,7 @@ export default function Modal() {
           aria-hidden="true"
         >
           <Link
-            href="/es/encuentro"
+            href="/es/mapa"
             className="absolute inset-0 w-[100%] h-[100vh]"
           ></Link>
         </div>

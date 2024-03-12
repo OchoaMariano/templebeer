@@ -16,7 +16,7 @@ export default function Modal() {
           aria-hidden="true"
         >
           <Link
-            href="/es/encuentro"
+            href="/es/mapa"
             className="absolute inset-0 w-[100%] h-[100vh]"
           ></Link>
         </div>
@@ -38,19 +38,9 @@ export default function Modal() {
             </div>
           </div>
           <div className="content p-[5.89vw] md:p-[3.8vh]">
-            <div className="relative w-[66.15vw] h-[117vw] md:w-[92.91vh] md:h-[52.26vh] shadow-xl ">
-              <Image
-                src="/encuentros/modal-sanpatricio.png"
-                fill
-                alt="encuentros-flyer"
-                className="hidden md:block"
-              />
-              <Image
-                src="/encuentros/modal-sanpatricio-mobile.png"
-                fill
-                alt="encuentros-flyer"
-                className="block md:hidden"
-              />
+            <div className="relative w-[66.15vw] h-[117vw] md:w-[92.91vh] md:h-[52.26vh] shadow-xl bg-black flex flex-col justify-center items-center ">
+              <span className="text-5xl">URUGUAY</span>
+              <span className="text-2xl">PRÓXIMAMENTE</span>
             </div>
           </div>
         </div>

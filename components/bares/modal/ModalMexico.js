@@ -16,7 +16,7 @@ export default function Modal() {
           aria-hidden="true"
         >
           <Link
-            href="/es/encuentro"
+            href="/es/mapa"
             className="absolute inset-0 w-[100%] h-[100vh]"
           ></Link>
         </div>
@@ -38,19 +38,23 @@ export default function Modal() {
             </div>
           </div>
           <div className="content p-[5.89vw] md:p-[3.8vh]">
-            <div className="relative w-[66.15vw] h-[117vw] md:w-[92.91vh] md:h-[52.26vh] shadow-xl ">
-              <Image
-                src="/encuentros/modal-sanpatricio.png"
-                fill
-                alt="encuentros-flyer"
-                className="hidden md:block"
-              />
-              <Image
-                src="/encuentros/modal-sanpatricio-mobile.png"
-                fill
-                alt="encuentros-flyer"
-                className="block md:hidden"
-              />
+            <div className="relative w-[66.15vw] h-[117vw] md:w-[92.91vh] md:h-[52.26vh] shadow-xl bg-black flex flex-col justify-center items-center gap-y-10">
+              <div className="flex flex-col">
+                <span className="text-5xl">CANCÚN</span>
+                <a
+                  href="https://maps.app.goo.gl/1LX9A5F22ZCafJmx6"
+                  target="_blank"
+                  className="text-xl hover:underline"
+                >
+                  Plaza Kukulcan <br />
+                  Blvd. Kukulcan Km 13, Zona Hotelera, 77500 Cancún, Q.R.,
+                  México
+                </a>
+              </div>
+              <div className="flex flex-col">
+                <span className="text-5xl">PLAYA DEL CARMÉN</span>
+                <span className="text-2xl">PRÓXIMAMENTE</span>
+              </div>
             </div>
           </div>
         </div>
