@@ -70,50 +70,75 @@ export default async function Page({ children, searchParams, params }) {
             </div>
           </div>
           <div className="lg:hidden header__temple-wrapper  ">
-            <div className="flex  flex-col pt-96 gap-y-5">
+            <div className="flex  flex-col pt-[29rem] gap-y-4">
               <a href="bares" className="flex items-center gap-x-5 underline">
-                <Image src={ArgIcon} className="w-10" /> <span>Argentina</span>
+                <Image src={ArgIcon} className="w-10" />
+                <span className="text-base text-white">Argentina</span>
               </a>
-              <a
-                href="/en/bares"
-                className="flex items-center gap-x-5 underline"
-              >
+              <a href="/en/bares" className="flex items-center gap-x-5 ">
                 <Image src={UsaIcon} className="w-10" />
-                <span>Estados Unidos - Miami</span>
+                <div>
+                  <span className="text-base text-white underline">
+                    Estados Unidos - Miami
+                  </span>
+                  <br />
+                  <span className=" text-sm text-white">
+                    151 NW 24th St #102, Miami, FL 33127, USA
+                  </span>
+                </div>
               </a>
               <a
                 href="https://www.google.com/maps/place/Kukulcan+Plaza/@21.1024759,-86.7659361,15z/data=!4m6!3m5!1s0x8f4c2a406af99859:0x9f3a1b4e845ee08e!8m2!3d21.1024759!4d-86.7659361!16s%2Fg%2F1tdbm1dh?sa=X&ved=2ahUKEwjEsJaUm4iEAxWVqZUCHfjnBeQQ_BJ6BAgTEAA&entry=tts"
                 target="_blank"
-                className="flex items-center gap-x-5 underline"
+                className="flex items-center gap-x-5 "
               >
                 <Image src={MexIcon} className="w-10" />
-                <span>México - Cancún</span>
+                <div>
+                  <span className="text-base text-white underline">
+                    México - Cancún
+                  </span>
+                  <br />
+                  <span className=" text-sm">
+                    Plaza Kukulcan Blvd. Kukulcan Km 13, Zona Hotelera, 77500
+                    Cancún, Q.R., México
+                  </span>
+                </div>
               </a>
               <div className="flex items-center gap-x-5 ">
                 <Image src={MexIcon} className="w-10" />
-                <span>
-                  México - Playa del carmén -
-                  <span className="underline">Próximamente</span>
+                <span className="text-base text-white">
+                  México - Playa del carmén <br />
+                  <span className="underline text-sm text-white">
+                    Próximamente
+                  </span>
                 </span>
               </div>
               <div className="flex items-center gap-x-5 ">
                 <Image src={MexIcon} className="w-10" />
-                <span>
-                  Ciudad de México -
-                  <span className="underline">Próximamente</span>
+                <span className="text-base text-white">
+                  Ciudad de México <br />
+                  <span className="underline text-sm text-white">
+                    Próximamente
+                  </span>
                 </span>
               </div>
               <div className="flex items-center gap-x-5 ">
                 <Image src={EspIcon} className="w-10" />
-                <span>
-                  España - Madrid -
-                  <span className="underline">Próximamente</span>
+                <span className="text-base text-white">
+                  España - Madrid <br />
+                  <span className="underline text-sm text-white">
+                    Próximamente
+                  </span>
                 </span>
               </div>
               <div className="flex items-center gap-x-5 ">
                 <Image src={UruIcon} className="w-10" />
-                <span>
-                  Uruguay - <span className="underline">Próximamente</span>
+                <span className="text-base text-white">
+                  Uruguay
+                  <span className="underline text-sm text-white">
+                    <br />
+                    Próximamente
+                  </span>
                 </span>
               </div>
             </div>

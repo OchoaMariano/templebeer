@@ -39,8 +39,8 @@ export default function Modal() {
           </div>
           <div className="content p-[5.89vw] md:p-[3.8vh]">
             <div className="relative w-[66.15vw] h-[117vw] md:w-[92.91vh] md:h-[52.26vh] shadow-xl bg-black flex flex-col justify-center items-center ">
-              <span className="text-5xl">MADRID</span>
-              <span className="text-2xl">PRÓXIMAMENTE</span>
+              <span className="text-5xl text-white">MADRID</span>
+              <span className="text-2xl text-white">PRÓXIMAMENTE</span>
             </div>
           </div>
         </div>
