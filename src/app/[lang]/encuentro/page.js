@@ -45,8 +45,8 @@ export default async function Page({ children, searchParams, params }) {
   const showIpassionals = searchParams?.modalIpassionals;
   const showOpening = searchParams?.modalOpening;
 
-  const data = await getEncuentros()
-  console.log(data.data[0].attributes.icon.data.attributes.url)
+  const encuentros = await getEncuentros()
+  console.log(encuentros.data[0].attributes.Nombre)
 
   return (
     <div>
@@ -80,8 +80,8 @@ export default async function Page({ children, searchParams, params }) {
                             fill
                           />
                         </div>
-                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
-                          SAN PATRICIO
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentros.data[0].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
