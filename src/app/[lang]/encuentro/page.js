@@ -16,6 +16,17 @@ import ModalWynwood from "../../../../components/encuentro/ModalWynwood";
 import { getDictionary } from "../../../dictionaries";
 import { Knockout54UltraBold } from "../layout";
 
+async function getEncuentros() {
+  const apiUrl = "https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/encuentros?populate=icon&locale=es";
+  const respuesta = await fetch(apiUrl);
+  if (!respuesta.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error('Failed to fetch data')
+  }
+ 
+  return respuesta.json()
+}
+
 export default async function Page({ children, searchParams, params }) {
   const lang = params.lang;
   const dict = await getDictionary(lang);
@@ -33,6 +44,9 @@ export default async function Page({ children, searchParams, params }) {
   const showWynwood = searchParams?.modalWynwood;
   const showIpassionals = searchParams?.modalIpassionals;
   const showOpening = searchParams?.modalOpening;
+
+  const data = await getEncuentros()
+  console.log(data.data[0].attributes.icon.data.attributes.url)
 
   return (
     <div>
@@ -330,3 +344,5 @@ export default async function Page({ children, searchParams, params }) {
     </div>
   );
 }
+
+
