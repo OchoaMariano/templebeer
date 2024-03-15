@@ -16,15 +16,28 @@ import ModalWynwood from "../../../../components/encuentro/ModalWynwood";
 import { getDictionary } from "../../../dictionaries";
 import { Knockout54UltraBold } from "../layout";
 
-async function getEncuentros() {
-  const apiUrl = "https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/encuentros?populate=icon&locale=es";
+async function getEncuentrosEs() {
+  const apiUrl =
+    "https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/encuentros?populate=icon&locale=es";
   const respuesta = await fetch(apiUrl);
   if (!respuesta.ok) {
     // This will activate the closest `error.js` Error Boundary
-    throw new Error('Failed to fetch data')
+    throw new Error("Failed to fetch data");
   }
- 
-  return respuesta.json()
+
+  return respuesta.json();
+}
+
+async function getEncuentrosEn() {
+  const apiUrl =
+    "https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/encuentros?populate=icon&locale=en";
+  const respuesta = await fetch(apiUrl);
+  if (!respuesta.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return respuesta.json();
 }
 
 export default async function Page({ children, searchParams, params }) {
@@ -45,8 +58,8 @@ export default async function Page({ children, searchParams, params }) {
   const showIpassionals = searchParams?.modalIpassionals;
   const showOpening = searchParams?.modalOpening;
 
-  const encuentros = await getEncuentros()
-  console.log(encuentros.data[0].attributes.Nombre)
+  const encuentrosEs = await getEncuentrosEs();
+  const encuentrosEn = await getEncuentrosEn();
 
   return (
     <div>
@@ -75,13 +88,16 @@ export default async function Page({ children, searchParams, params }) {
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
-                            src="/encuentros/san-patricio.png"
-                            alt=""
+                            src={
+                              encuentrosEs.data[0].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosEs.data[0]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentros.data[0].attributes.Nombre}
+                          {encuentrosEs.data[0].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -92,10 +108,17 @@ export default async function Page({ children, searchParams, params }) {
                         href="encuentro/?modalBares=true"
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
-                          <Image src="/encuentros/carpeta.png" alt="" fill />
+                          <Image
+                            src={
+                              encuentrosEs.data[1].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosEs.data[1]?.attributes?.Nombre}
+                            fill
+                          />
                         </div>
-                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
-                          BARES
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentrosEs.data[1].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -107,10 +130,17 @@ export default async function Page({ children, searchParams, params }) {
                         target="_blank"
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
-                          <Image src="/encuentros/birramigx.png" alt="" fill />
+                          <Image
+                            src={
+                              encuentrosEs.data[2].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosEs.data[2]?.attributes?.Nombre}
+                            fill
+                          />
                         </div>
-                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
-                          BIRRAMIGX
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentrosEs.data[2].attributes.Nombre}
                         </span>
                       </a>
                     </div>
@@ -123,14 +153,17 @@ export default async function Page({ children, searchParams, params }) {
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
-                            src="/encuentros/mundial.png"
-                            alt="icono-mundial-temple"
+                            src={
+                              encuentrosEs.data[3].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosEs.data[3]?.attributes?.Nombre}
                             fill
                           />
                         </div>
 
-                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
-                          MUNDIAL
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentrosEs.data[3].attributes.Nombre}
                         </span>
                       </a>
                     </div>
@@ -142,11 +175,18 @@ export default async function Page({ children, searchParams, params }) {
                         target="_blank"
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
-                          <Image src="/encuentros/pasion.png" alt="" fill />
+                          <Image
+                            src={
+                              encuentrosEs.data[4].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosEs.data[4]?.attributes?.Nombre}
+                            fill
+                          />
                         </div>
 
-                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
-                          IPASIONAL
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentrosEs.data[4].attributes.Nombre}
                         </span>
                       </a>
                     </div>
@@ -158,10 +198,17 @@ export default async function Page({ children, searchParams, params }) {
                         target="_blank"
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
-                          <Image src="/encuentros/fanzine.png" alt="" fill />
+                          <Image
+                            src={
+                              encuentrosEs.data[5].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosEs.data[5]?.attributes?.Nombre}
+                            fill
+                          />
                         </div>
-                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
-                          FANZINE
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentrosEs.data[5].attributes.Nombre}
                         </span>
                       </a>
                     </div>
@@ -176,13 +223,16 @@ export default async function Page({ children, searchParams, params }) {
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
-                            src="/encuentros/culture/taco-tuesday-icono.png"
-                            alt=""
+                            src={
+                              encuentrosEn.data[0].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosEn.data[0]?.attributes?.Nombre}
                             fill
                           />
                         </div>
-                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
-                          TACO TUESDAY
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentrosEn.data[0].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -194,13 +244,16 @@ export default async function Page({ children, searchParams, params }) {
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
-                            src="/encuentros/culture/wynwood-icono.png"
-                            alt=""
+                            src={
+                              encuentrosEn.data[1].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosEn.data[1]?.attributes?.Nombre}
                             fill
                           />
                         </div>
-                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
-                          WYNWOOD BURGER
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentrosEn.data[1].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -216,7 +269,14 @@ export default async function Page({ children, searchParams, params }) {
                         href="encuentro/?modalBirra=true"
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
-                          <Image src="/encuentros/cultura.png" alt="" fill />
+                          <Image
+                            src={
+                              encuentrosEs.data[6].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosEs.data[6]?.attributes?.Nombre}
+                            fill
+                          />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
                           BIRRA, ENCUENTRO <br />& CULTURA
@@ -230,10 +290,17 @@ export default async function Page({ children, searchParams, params }) {
                         href="encuentro/?modalGhost=true"
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
-                          <Image src="/encuentros/ghost.png" alt="" fill />
+                          <Image
+                            src={
+                              encuentrosEs.data[7].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosEs.data[7]?.attributes?.Nombre}
+                            fill
+                          />
                         </div>
 
-                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center px-0">
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center px-0 uppercase">
                           MENOS GHOSTEO, <br />
                           MÁS BIRRA
                         </span>
@@ -246,10 +313,17 @@ export default async function Page({ children, searchParams, params }) {
                         href="encuentro/?modalMemes=true"
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
-                          <Image src="/encuentros/carpeta.png" alt="" fill />
+                          <Image
+                            src={
+                              encuentrosEs.data[8].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosEs.data[8]?.attributes?.Nombre}
+                            fill
+                          />
                         </div>
-                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
-                          MEMES BIRREROS
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentrosEs.data[8].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -260,10 +334,17 @@ export default async function Page({ children, searchParams, params }) {
                         href="encuentro/?modalAstronomia=true"
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
-                          <Image src="/encuentros/astrologia.png" alt="" fill />
+                          <Image
+                            src={
+                              encuentrosEs.data[9].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosEs.data[9]?.attributes?.Nombre}
+                            fill
+                          />
                         </div>
-                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
-                          ASTROLOGÍA CÓSMICA
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentrosEs.data[9].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -275,10 +356,17 @@ export default async function Page({ children, searchParams, params }) {
                         href="encuentro/?modalArtistas=true"
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
-                          <Image src="/encuentros/carpeta.png" alt="" fill />
+                          <Image
+                            src={
+                              encuentrosEs.data[10].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosEs.data[10]?.attributes?.Nombre}
+                            fill
+                          />
                         </div>
-                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
-                          1 LATA X 50 ARTISTAS
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentrosEs.data[10].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -293,13 +381,16 @@ export default async function Page({ children, searchParams, params }) {
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
-                            src="/encuentros/culture/ipassionals-icono.png"
-                            alt=""
+                            src={
+                              encuentrosEn.data[2].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosEn.data[2]?.attributes?.Nombre}
                             fill
                           />
                         </div>
-                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
-                          IPASSIONALS
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentrosEn.data[2].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -311,13 +402,16 @@ export default async function Page({ children, searchParams, params }) {
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
-                            src="/encuentros/culture/temple-miami-icono.png"
-                            alt=""
+                            src={
+                              encuentrosEn.data[3].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosEn.data[3]?.attributes?.Nombre}
                             fill
                           />
                         </div>
-                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center">
-                          OPENING
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentrosEn.data[3].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -344,5 +438,3 @@ export default async function Page({ children, searchParams, params }) {
     </div>
   );
 }
-
-
