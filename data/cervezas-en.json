@@ -3,7 +3,7 @@
     {
       "id": 1,
       "nombre": "Cosmic Hazy Lager",
-      "slug": "cosmic-hazy-lager",
+      "slug": "cosmic-hazy-lager-us",
       "url-buy": "url",
       "categoria": null,
       "descripcion": "A fresh, smooth and aromatic lager with low bitterness.",
@@ -29,7 +29,7 @@
     {
       "id": 2,
       "nombre": "Honey",
-      "slug": "honey",
+      "slug": "honey-us",
       "url-buy": "url",
       "categoria": null,
       "descripcion": "Our honey gives this blond beer just the right sweetness. An easy to take beel golden beer, with smooth, low bitterness and mild sweet grain flavour. ",
@@ -55,7 +55,7 @@
     {
       "id": 3,
       "nombre": "Indie Lager",
-      "slug": "indie-lager",
+      "slug": "indie-lager-us",
       "url-buy": "url",
       "categoria": null,
       "descripcion": "A clean and refreshing golden beer made for rebellious and explorer spirits. ",
@@ -81,7 +81,7 @@
     {
       "id": 4,
       "nombre": "Ipanema",
-      "slug": "ipanema",
+      "slug": "ipanema-us",
       "url-buy": "url",
       "categoria": null,
       "descripcion": "Freshly squeezed hazy juicy ipa with a ton of tropical aromas thanks to a generous amount of hops added in dry-hop. Mango, papaya, peach and a subtle citrus ending. A hint of wheat and oatmeal gives a distinctive hazy look and adds to very balanced mouthfeel.",
@@ -107,7 +107,7 @@
     {
       "id": 5,
       "nombre": "Royal Amber",
-      "slug": "royal-amber",
+      "slug": "royal-amber-us",
       "url-buy": "url",
       "categoria": null,
       "descripcion": "Our combination of special malts gives this amber lager roasted and caramel profile. Deep copper color and balanced bitterness.",
@@ -133,7 +133,7 @@
     {
       "id": 6,
       "nombre": "Wolf Ipa",
-      "slug": "wolf-ipa",
+      "slug": "wolf-ipa-us",
       "url-buy": "url",
       "categoria": null,
       "descripcion": "Hops at it’s best. Bold blond with fresh and intense hop flavor and aroma. Herbal and citric character. Deep and balanced bitterness.",

@@ -76,12 +76,12 @@ const data = {
         { title: "DEMON HONEY", id: 16, slug: "demon-honey" , mainImage: "/nuestrasbirras/especiales/demon-honey/demon-honey.png"},
     ],
     gridEn: [
-        { title: "Cosmic Hazy Lager", id: 1, slug: "cosmic-hazy-lager", mainImage: "/nuestrasbirras/en/cosmic-hazy-lager/cosmic-hazy-lager.png" },
-        { title: "HONEY", id: 2, slug: "honey", mainImage: "/nuestrasbirras/en/honey/honey.png" },
-        { title: "Indie Lager", id: 3, slug: "indie-lager", mainImage: "/nuestrasbirras/en/indie-lager/indie-lager.png" },
-        { title: "Ipanema", id: 4, slug: "ipanema", mainImage: "/nuestrasbirras/en/ipanema/ipanema.png" },
-        { title: "Royal Amber", id: 5, slug: "royal-amber", mainImage: "/nuestrasbirras/en/royal-amber/royal-amber.png" },
-        { title: "Wolf Ipa", id: 6, slug: "wolf-ipa", mainImage: "/nuestrasbirras/en/wolf-ipa/wolf-ipa.png" }
+        { title: "Cosmic Hazy Lager", id: 1, slug: "cosmic-hazy-lager-us", mainImage: "/nuestrasbirras/en/cosmic-hazy-lager/cosmic-hazy-lager.png" },
+        { title: "HONEY", id: 2, slug: "honey-us", mainImage: "/nuestrasbirras/en/honey/honey.png" },
+        { title: "Indie Lager", id: 3, slug: "indie-lager-us", mainImage: "/nuestrasbirras/en/indie-lager/indie-lager.png" },
+        { title: "Ipanema", id: 4, slug: "ipanema-us", mainImage: "/nuestrasbirras/en/ipanema/ipanema.png" },
+        { title: "Royal Amber", id: 5, slug: "royal-amber-us", mainImage: "/nuestrasbirras/en/royal-amber/royal-amber.png" },
+        { title: "Wolf Ipa", id: 6, slug: "wolf-ipa-us", mainImage: "/nuestrasbirras/en/wolf-ipa/wolf-ipa.png" }
     ]
 };
 

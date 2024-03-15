@@ -2,20 +2,43 @@ import Image from 'next/image'
 import { Knockout54UltraBold } from '../layout'
 import CarouselBirras from '../../../../components/birras/CarouselBirras'
 import ScrollHorizontal from '../../../../components/ScrollHorizontal'
-import cervezasClasicasData from '../../../../data/cervezasclasicas.json';
-import cervezasLimitadasData from '../../../../data/cervezaslimitadas.json';
-import cervezasEspecialesData from '../../../../data/cervezasespeciales.json';
-import cervezasInglesData from '../../../../data/cervezas-listado-en.json';
 import Draggable from '../../../../components/common/Dragabble'
 import Header from '../../../../components/common/header'
 import Footer from '../../../../components/common/Footer';
 import { getDictionary } from '../../../dictionaries';
+
+async function getBirrasClasicas() {
+    const respuesta = await fetch('https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?populate=*&filters%5Bcategorias_birra%5D[slug]=birras-clasicas&locale=es', { cache: 'no-store' });
+    return respuesta.json()
+}
+
+async function getBirrasEspeciales() {
+    const respuesta = await fetch('https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?populate=*&filters%5Bcategorias_birra%5D[slug]=birras-especiales&locale=es', { cache: 'no-store' });
+    return respuesta.json()
+}
+
+async function getBirrasLimitadas() {
+    const respuesta = await fetch('https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?populate=*&filters%5Bcategorias_birra%5D[slug]=birras-limitadas&locale=es', { cache: 'no-store' });
+    return respuesta.json()
+}
+
+async function getBirrasUs() {
+    const respuesta = await fetch('https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?populate=*&sort=id%3Adesc&locale=en', { cache: 'no-store' });
+    return respuesta.json()
+}
 
 export default async function Page({ children, params }) {
     const lang = params.lang
     const dict = await getDictionary(lang);
     const headerDic = dict.header;
 
+    const BirrasUs = getBirrasUs();
+    const BirrasClasicas = getBirrasClasicas();
+    const BirrasEspeciales = getBirrasEspeciales();
+    const BirrasLimitadas = getBirrasLimitadas();
+    
+    const [bClasicas, bEspeciales, bLimitadas, bUs] = await Promise.all([BirrasClasicas, BirrasEspeciales, BirrasLimitadas, BirrasUs]);
+    console.log(bUs)
 
     return (
         <div>
@@ -25,8 +48,7 @@ export default async function Page({ children, params }) {
                     <div className="flex flex-col lg:pl-[34px]">
                         <div className="title__wrapper flex pb-[4.24vh] px-3 lg:px-0">
                             <h1 className={`font-bold text-white text-[12.05vw] lg:text-[9.49vh] leading-none uppercase ${Knockout54UltraBold.className}`}>
-                                {dict.birras.title} <br></br> {dict.birras.title2}
-                                
+                                {dict.birras.title} <br></br> {dict.birras.title2}   
                             </h1>
                             <div className="sticker__wrapper relative">
                                 {lang === 'es' && (
@@ -54,33 +76,29 @@ export default async function Page({ children, params }) {
                                             </div>
                                         </Draggable>
                                     </div>
-                                )}
-                                
+                                )}                             
                             </div>
                         </div>
                     </div>
                     {lang === 'es' && (
                         <ScrollHorizontal>
                             <div className="carousel__wrapper w-[1172vw] h-[122.82vw] lg:w-[567.42vh] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]">
-                                <CarouselBirras cervezas={cervezasClasicasData.cervezas} titulo={cervezasClasicasData.titulo} colorBordeTitulo={cervezasClasicasData.colorBordeTitulo}  />
-                                <CarouselBirras cervezas={cervezasLimitadasData.cervezas} titulo={cervezasLimitadasData.titulo} colorBordeTitulo={cervezasLimitadasData.colorBordeTitulo}  />
-                                <CarouselBirras cervezas={cervezasEspecialesData.cervezas} titulo={cervezasEspecialesData.titulo} colorBordeTitulo={cervezasEspecialesData.colorBordeTitulo}  />
+                                <CarouselBirras birras={bClasicas.data} />
+                                <CarouselBirras birras={bLimitadas.data} />
+                                <CarouselBirras birras={bEspeciales.data}  />
                             </div>
                         </ScrollHorizontal>
                     )}
                     {lang === 'en' && (
                         <ScrollHorizontal>
                             <div className="carousel__wrapper w-[421vw] h-[122.82vw] lg:w-[100%] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]">
-                                <CarouselBirras cervezas={cervezasInglesData.cervezas} titulo={cervezasInglesData.titulo} colorBordeTitulo={cervezasInglesData.colorBordeTitulo}  />
+                                <CarouselBirras birras={bUs.data} />
                             </div>
                         </ScrollHorizontal>
-                       
                     )}
-                    
                 </div>
                 <Footer />
-            </section>
-            
+            </section>     
         </div>
     )
 }
