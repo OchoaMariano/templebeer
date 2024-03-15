@@ -1,13 +1,13 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
-import { useRouter } from 'next/navigation'
-import Link from 'next/link'
-import { i18n } from '../../src/i18n-config'
-import Image from 'next/image'
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { i18n } from "../../src/i18n-config";
+import Image from "next/image";
 
 export default function LocaleSwitcher() {
-  const [pathName, setPathName] = useState('/');
+  const [pathName, setPathName] = useState("/");
   const router = useRouter();
 
   useEffect(() => {
@@ -19,7 +19,7 @@ export default function LocaleSwitcher() {
 
   const handleLocaleChange = (locale) => {
     // Actualiza sessionStorage con el nuevo locale seleccionado
-    sessionStorage.setItem('selectedCountry', locale);
+    sessionStorage.setItem("selectedCountry", locale);
 
     // Redirige al usuario a la página correspondiente con el nuevo locale
     const newPath = redirectedPathName(locale);
@@ -28,38 +28,38 @@ export default function LocaleSwitcher() {
 
   const redirectedPathName = (locale) => {
     // Asegúrate de que el pathName no sea undefined
-    if (!pathName) return '/';
-    const segments = pathName.split('/');
+    if (!pathName) return "/";
+    const segments = pathName.split("/");
     if (segments.length > 1 && i18n.locales.includes(segments[1])) {
       segments[1] = locale;
     } else {
       segments.splice(1, 0, locale);
     }
-    return segments.join('/');
+    return segments.join("/");
   };
 
   // Objeto que asocia cada locale con una imagen
   const localeImages = {
-    es: '/bandera-arg.svg',
-    en: '/bandera-us.svg',
+    es: "/bandera-arg.svg",
+    en: "/bandera-us.svg",
+
     // Añade más locales e imágenes según sea necesario
   };
 
   return (
-    <> 
+    <>
       <ul className="flex flex-row items-center justify-center h-[21px] gap-x-[14px]">
         {i18n.locales.map((locale) => {
-          const imagePath = localeImages[locale] || '/bandera-arg.svg.png'; // Una imagen por defecto para locales sin imagen específica
+          const imagePath = localeImages[locale] || "/bandera-arg.svg.png"; // Una imagen por defecto para locales sin imagen específica
           return (
             <li key={locale} onClick={() => handleLocaleChange(locale)}>
-              <Link href={redirectedPathName(locale)} >
-                  <Image src={imagePath} alt={locale} width="24" height="17" />
-                 
+              <Link href={redirectedPathName(locale)}>
+                <Image src={imagePath} alt={locale} width="24" height="17" />
               </Link>
             </li>
-          )
+          );
         })}
       </ul>
     </>
-  )
+  );
 }

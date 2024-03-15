@@ -79,7 +79,7 @@ export default function Header({ dictonary }) {
             <Link
               href={
                 firstSegment === "es"
-                  ? createLocalePath("/mapa")
+                  ? createLocalePath("/bares")
                   : firstSegment === "en"
                   ? createLocalePath("/bares")
                   : null
@@ -156,6 +156,16 @@ export default function Header({ dictonary }) {
           <div className="hidden lg:block divisor h-[21px] w-[1px] bg-white"></div>
           <div className="hidden lg:flex lang__nav">
             <LocaleSwitcher />
+            <Link href="/mapa">
+              <Image
+                src="/mx.svg"
+                alt="Mexico"
+                className=" cursor-pointer hidden xl:block"
+                width={24}
+                height={17}
+                data-tooltip-id="tooltip-lang"
+              />
+            </Link>
             <Image
               src="/bandera-es.svg"
               alt="España"
@@ -174,15 +184,7 @@ export default function Header({ dictonary }) {
               data-tooltip-id="tooltip-lang"
               data-tooltip-content="Próximamente"
             />
-            <Image
-              src="/mx.svg"
-              alt="Mexico"
-              className="opacity-50 cursor-pointer hidden xl:block"
-              width={24}
-              height={17}
-              data-tooltip-id="tooltip-lang"
-              data-tooltip-content="Próximamente"
-            />
+
             <Tooltip id="tooltip-lang" />
           </div>
         </div>
@@ -265,6 +267,13 @@ export default function Header({ dictonary }) {
                 <div className="lang__nav">
                   <LocaleSwitcher />
                   <Image
+                    src="/mx.svg"
+                    alt="Mexico"
+                    width={24}
+                    height={17}
+                    data-tooltip-id="tooltip-lang"
+                  />
+                  <Image
                     src="/bandera-es.svg"
                     alt="Tik-Tok"
                     width={24}
@@ -281,15 +290,7 @@ export default function Header({ dictonary }) {
                     data-tooltip-id="tooltip-lang"
                     data-tooltip-content="Próximamente"
                   />
-                  <Image
-                    src="/mx.svg"
-                    alt="Mexico"
-                    className="opacity-50"
-                    width={24}
-                    height={17}
-                    data-tooltip-id="tooltip-lang"
-                    data-tooltip-content="Próximamente"
-                  />
+
                   <Tooltip id="tooltip-lang" />
                 </div>
                 <div className="">
