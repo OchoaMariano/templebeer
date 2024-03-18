@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 
 async function getMusicaEs() {
@@ -26,13 +25,13 @@ async function getMusicaEn() {
 }
 
 export default async function Page() {
-  const musicaEs = await getMusicaEs();
-  const musicaEn = await getMusicaEn();
+  const musicaEs = getMusicaEs();
+  const musicaEn = getMusicaEn();
 
   const [mEs, mEn] = await Promise.all([musicaEs, musicaEn]);
 
   mEs.data.forEach((item) => {
-    console.log(item.attributes.background);
+    console.log(item.attributes.video_url);
   });
 
   return (
@@ -44,7 +43,7 @@ export default async function Page() {
           <p dangerouslySetInnerHTML={{ __html: item.attributes.bajada }}></p>
           <a href={item.attributes.video_url}>Video</a>
           <Image
-            src={item.attributes.image.data.url}
+            src={item.attributes.image.data.attributes.url}
             alt={item.attributes.Title}
             width={500}
             height={300}

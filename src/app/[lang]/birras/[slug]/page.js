@@ -85,16 +85,22 @@ const data = {
     ]
 };
 
+async function getBirras(lang, slug) {
+    const respuesta = await fetch(`https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?filters%5Bslug%5D=${slug}&locale=${lang}`, { cache: 'no-store' });
+    return respuesta.json()
+}
+
 export default async function Page({ params }) {
    
     const { slug, lang } = params; // Asumiendo que "params" contiene un objeto con la propiedad "slug"
-    console.log (slug, lang)
+
+    const birrasByLang = await getBirras(lang, slug);
+    console.log(birrasByLang.data[0]);
     
     let cerveza = null
 
     if (lang === 'es') {
         cerveza = CervezasData.Cervezas.find(c => c.slug === slug);
-        console.log(cerveza)
         if (!cerveza) {
             return <div>Cerveza no encontrada</div>;
         }
@@ -102,7 +108,6 @@ export default async function Page({ params }) {
     
     if (lang === 'en') {
         cerveza = CervezasDataEn.Cervezas.find(c => c.slug === slug);
-        console.log(cerveza)
         if (!cerveza) {
             return <div>Cerveza no encontrada</div>;
         }
