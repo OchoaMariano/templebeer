@@ -30,7 +30,7 @@ export default async function Page() {
   const musicaEn = await getMusicaEn();
 
   const [mEs, mEn] = await Promise.all([musicaEs, musicaEn]);
-  
+
   mEs.data.forEach((item) => {
     console.log(item.attributes.background);
   });
