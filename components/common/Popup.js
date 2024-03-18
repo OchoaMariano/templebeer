@@ -12,8 +12,6 @@ export default function Popup () {
   const currentPathSegments = pathName.split('/');
   const lang = currentPathSegments[1];
 
-  console.log(lang)
-
   useEffect(() => {
     const response = sessionStorage.getItem('isOldEnough');
     if (response !== null) {
