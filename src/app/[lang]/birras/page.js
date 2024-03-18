@@ -37,8 +37,7 @@ export default async function Page({ children, params }) {
     const BirrasEspeciales = getBirrasEspeciales();
     const BirrasLimitadas = getBirrasLimitadas();
     
-    const [bClasicas, bEspeciales, bLimitadas, bUs] = await Promise.all([BirrasClasicas, BirrasEspeciales, BirrasLimitadas, BirrasUs]);
-    console.log(bUs)
+    const [bClasicas, bEspeciales, bLimitadas, bUs, ] = await Promise.all([BirrasClasicas, BirrasEspeciales, BirrasLimitadas, BirrasUs]);
 
     return (
         <div>

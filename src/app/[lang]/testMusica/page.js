@@ -29,9 +29,15 @@ export default async function Page() {
   const musicaEs = await getMusicaEs();
   const musicaEn = await getMusicaEn();
 
+  const [mEs, mEn] = await Promise.all([musicaEs, musicaEn]);
+  
+  mEs.data.forEach((item) => {
+    console.log(item.attributes.background);
+  });
+
   return (
     <div>
-      {musicaEs.data.map((item) => (
+      {mEs.data.map((item) => (
         <div key={item.id} className={`bg-${item.attributes.background}`}>
           <h2>{item.attributes.Title}</h2>
           <h1>Background Color: {item.attributes.background}</h1>
