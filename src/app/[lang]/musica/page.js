@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import Header from "../../../../components/common/header";
 import { Knockout54UltraBold } from "../layout";
@@ -35,8 +36,14 @@ export default async function Page({ children, params }) {
   const dict = await getDictionary(lang);
   const headerDic = dict.header;
 
-  const musicaEs = await getMusicaEs();
-  const musicaEn = await getMusicaEn();
+  const musicaEs = getMusicaEs();
+  const musicaEn = getMusicaEn();
+
+  const [mEs, mEn] = await Promise.all([musicaEs, musicaEn]);
+
+  mEs.data.forEach((item) => {
+    console.log(item.attributes.video_url);
+  });
 
   return (
     <div>
