@@ -12,6 +12,7 @@
     "@formatjs/intl-localematcher": "^0.4.0",
     "autoprefixer": "10.4.15",
     "axios": "^1.6.7",
+    "framer-motion": "^11.0.14",
     "gsap": "^3.12.2",
     "js-cookie": "^3.0.5",
     "locomotive-scroll": "^4.1.4",

@@ -86,7 +86,7 @@ const data = {
 };
 
 async function getBirras(lang, slug) {
-    const respuesta = await fetch(`https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?filters%5Bslug%5D=${slug}&locale=${lang}`, { cache: 'no-store' });
+    const respuesta = await fetch(`https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?populate[detailColumns][populate]=*&filters%5Bslug%5D=${slug}&locale=${lang}`, { cache: 'no-store' });
     return respuesta.json()
 }
 
@@ -95,7 +95,7 @@ export default async function Page({ params }) {
     const { slug, lang } = params; // Asumiendo que "params" contiene un objeto con la propiedad "slug"
 
     const birrasByLang = await getBirras(lang, slug);
-    console.log(birrasByLang.data[0]);
+    console.log(birrasByLang.data[0].attributes.detailColumns);
     
     let cerveza = null
 
