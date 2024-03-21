@@ -1,4 +1,4 @@
-"use client";
+
 import Image from "next/image";
 import Header from "../../../../components/common/header";
 import { Knockout54UltraBold } from "../layout";
