@@ -1,0 +1,422 @@
+{
+  "data": [
+    {
+      "id": 6,
+      "attributes": {
+        "Title": "MONTHLY OPEN DESK",
+        "bajada": "<p>Once a month TEMPLE hosts an open decks night. No mixing needed — just selecting and dancing.</p>",
+        "video_url": null,
+        "background": "#1f9996",
+        "createdAt": "2024-03-06T14:32:17.835Z",
+        "updatedAt": "2024-03-25T19:11:38.766Z",
+        "publishedAt": "2024-03-13T18:14:24.446Z",
+        "locale": "en",
+        "imageWidth": 30.87,
+        "imageHeight": 41.21,
+        "image": {
+          "data": {
+            "id": 84,
+            "attributes": {
+              "name": "open-desk.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 896,
+              "height": 1344,
+              "formats": {
+                "large": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/large_open_desk_e9c3945260/large_open_desk_e9c3945260.jpg",
+                  "hash": "large_open_desk_e9c3945260",
+                  "mime": "image/jpeg",
+                  "name": "large_open-desk.jpg",
+                  "path": null,
+                  "size": 98.73,
+                  "width": 667,
+                  "height": 1000
+                },
+                "small": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/small_open_desk_e9c3945260/small_open_desk_e9c3945260.jpg",
+                  "hash": "small_open_desk_e9c3945260",
+                  "mime": "image/jpeg",
+                  "name": "small_open-desk.jpg",
+                  "path": null,
+                  "size": 37.92,
+                  "width": 333,
+                  "height": 500
+                },
+                "medium": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/medium_open_desk_e9c3945260/medium_open_desk_e9c3945260.jpg",
+                  "hash": "medium_open_desk_e9c3945260",
+                  "mime": "image/jpeg",
+                  "name": "medium_open-desk.jpg",
+                  "path": null,
+                  "size": 66.97,
+                  "width": 500,
+                  "height": 750
+                },
+                "thumbnail": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/thumbnail_open_desk_e9c3945260/thumbnail_open_desk_e9c3945260.jpg",
+                  "hash": "thumbnail_open_desk_e9c3945260",
+                  "mime": "image/jpeg",
+                  "name": "thumbnail_open-desk.jpg",
+                  "path": null,
+                  "size": 6.62,
+                  "width": 104,
+                  "height": 156
+                }
+              },
+              "hash": "open_desk_e9c3945260",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 133,
+              "url": "https://storage.googleapis.com/temple-bucket-prod/open_desk_e9c3945260/open_desk_e9c3945260.jpg",
+              "previewUrl": null,
+              "provider": "@strapi-community/strapi-provider-upload-google-cloud-storage",
+              "provider_metadata": null,
+              "createdAt": "2024-03-06T14:32:09.287Z",
+              "updatedAt": "2024-03-06T14:32:09.287Z"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 7,
+      "attributes": {
+        "Title": "PLANETA RAVE",
+        "bajada": "<p>Planeta Rave was founded in 2021, beginning as an electronic music content platform, moving forward in time, it ended up becoming an event producer, working with the best underground electronic music djs in the world. They bring the electro sound to Temple’s booth.</p><p>&nbsp;</p>",
+        "video_url": null,
+        "background": "#d41768",
+        "createdAt": "2024-03-06T14:32:49.388Z",
+        "updatedAt": "2024-03-25T19:14:47.849Z",
+        "publishedAt": "2024-03-13T18:14:33.121Z",
+        "locale": "en",
+        "imageWidth": 30.87,
+        "imageHeight": 37.67,
+        "image": {
+          "data": {
+            "id": 85,
+            "attributes": {
+              "name": "planeta-rave.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 896,
+              "height": 1284,
+              "formats": {
+                "large": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/large_planeta_rave_22a9524654/large_planeta_rave_22a9524654.jpg",
+                  "hash": "large_planeta_rave_22a9524654",
+                  "mime": "image/jpeg",
+                  "name": "large_planeta-rave.jpg",
+                  "path": null,
+                  "size": 175.71,
+                  "width": 698,
+                  "height": 1000
+                },
+                "small": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/small_planeta_rave_22a9524654/small_planeta_rave_22a9524654.jpg",
+                  "hash": "small_planeta_rave_22a9524654",
+                  "mime": "image/jpeg",
+                  "name": "small_planeta-rave.jpg",
+                  "path": null,
+                  "size": 62.11,
+                  "width": 349,
+                  "height": 500
+                },
+                "medium": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/medium_planeta_rave_22a9524654/medium_planeta_rave_22a9524654.jpg",
+                  "hash": "medium_planeta_rave_22a9524654",
+                  "mime": "image/jpeg",
+                  "name": "medium_planeta-rave.jpg",
+                  "path": null,
+                  "size": 117.23,
+                  "width": 523,
+                  "height": 750
+                },
+                "thumbnail": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/thumbnail_planeta_rave_22a9524654/thumbnail_planeta_rave_22a9524654.jpg",
+                  "hash": "thumbnail_planeta_rave_22a9524654",
+                  "mime": "image/jpeg",
+                  "name": "thumbnail_planeta-rave.jpg",
+                  "path": null,
+                  "size": 7.7,
+                  "width": 109,
+                  "height": 156
+                }
+              },
+              "hash": "planeta_rave_22a9524654",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 226.26,
+              "url": "https://storage.googleapis.com/temple-bucket-prod/planeta_rave_22a9524654/planeta_rave_22a9524654.jpg",
+              "previewUrl": null,
+              "provider": "@strapi-community/strapi-provider-upload-google-cloud-storage",
+              "provider_metadata": null,
+              "createdAt": "2024-03-06T14:32:46.264Z",
+              "updatedAt": "2024-03-06T14:32:46.264Z"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 8,
+      "attributes": {
+        "Title": "RESAMPLED",
+        "bajada": "<p>Vinyl only night (vinyl enthusiast) playing a range of Techno, Electro and Minimal. Promoting local and international talent. Curated by local dj Franco Alexander.</p><p>&nbsp;</p>",
+        "video_url": null,
+        "background": "#f1bf00",
+        "createdAt": "2024-03-06T14:33:14.288Z",
+        "updatedAt": "2024-03-25T19:15:03.240Z",
+        "publishedAt": "2024-03-13T18:14:37.264Z",
+        "locale": "en",
+        "imageWidth": 30.87,
+        "imageHeight": 44.9,
+        "image": {
+          "data": {
+            "id": 86,
+            "attributes": {
+              "name": "resampled-2.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 1028,
+              "height": 1284,
+              "formats": {
+                "large": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/large_resampled_2_c0db8f9be2/large_resampled_2_c0db8f9be2.jpg",
+                  "hash": "large_resampled_2_c0db8f9be2",
+                  "mime": "image/jpeg",
+                  "name": "large_resampled-2.jpg",
+                  "path": null,
+                  "size": 212.92,
+                  "width": 801,
+                  "height": 1000
+                },
+                "small": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/small_resampled_2_c0db8f9be2/small_resampled_2_c0db8f9be2.jpg",
+                  "hash": "small_resampled_2_c0db8f9be2",
+                  "mime": "image/jpeg",
+                  "name": "small_resampled-2.jpg",
+                  "path": null,
+                  "size": 63.75,
+                  "width": 400,
+                  "height": 500
+                },
+                "medium": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/medium_resampled_2_c0db8f9be2/medium_resampled_2_c0db8f9be2.jpg",
+                  "hash": "medium_resampled_2_c0db8f9be2",
+                  "mime": "image/jpeg",
+                  "name": "medium_resampled-2.jpg",
+                  "path": null,
+                  "size": 129.83,
+                  "width": 600,
+                  "height": 750
+                },
+                "thumbnail": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/thumbnail_resampled_2_c0db8f9be2/thumbnail_resampled_2_c0db8f9be2.jpg",
+                  "hash": "thumbnail_resampled_2_c0db8f9be2",
+                  "mime": "image/jpeg",
+                  "name": "thumbnail_resampled-2.jpg",
+                  "path": null,
+                  "size": 7.7,
+                  "width": 125,
+                  "height": 156
+                }
+              },
+              "hash": "resampled_2_c0db8f9be2",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 326.35,
+              "url": "https://storage.googleapis.com/temple-bucket-prod/resampled_2_c0db8f9be2/resampled_2_c0db8f9be2.jpg",
+              "previewUrl": null,
+              "provider": "@strapi-community/strapi-provider-upload-google-cloud-storage",
+              "provider_metadata": null,
+              "createdAt": "2024-03-06T14:33:10.769Z",
+              "updatedAt": "2024-03-06T14:33:10.769Z"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 9,
+      "attributes": {
+        "Title": "BUNKER BLISS",
+        "bajada": "<p>Presents B-Side Sessions at Temple. Curated by Mark Chez, Bunker Bliss is an Underground Music Event &amp; Selective Talent Showcase focused on uniting Deep-digging artists with like-minded people.</p><p>&nbsp;</p>",
+        "video_url": null,
+        "background": "#0e359b",
+        "createdAt": "2024-03-06T14:33:41.915Z",
+        "updatedAt": "2024-03-25T19:15:21.695Z",
+        "publishedAt": "2024-03-13T18:14:16.271Z",
+        "locale": "en",
+        "imageWidth": 30.87,
+        "imageHeight": 41.61,
+        "image": {
+          "data": {
+            "id": 87,
+            "attributes": {
+              "name": "bunker-blizz.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 1080,
+              "height": 1080,
+              "formats": {
+                "large": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/large_bunker_blizz_75ff1b39af/large_bunker_blizz_75ff1b39af.jpg",
+                  "hash": "large_bunker_blizz_75ff1b39af",
+                  "mime": "image/jpeg",
+                  "name": "large_bunker-blizz.jpg",
+                  "path": null,
+                  "size": 160.9,
+                  "width": 1000,
+                  "height": 1000
+                },
+                "small": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/small_bunker_blizz_75ff1b39af/small_bunker_blizz_75ff1b39af.jpg",
+                  "hash": "small_bunker_blizz_75ff1b39af",
+                  "mime": "image/jpeg",
+                  "name": "small_bunker-blizz.jpg",
+                  "path": null,
+                  "size": 52.31,
+                  "width": 500,
+                  "height": 500
+                },
+                "medium": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/medium_bunker_blizz_75ff1b39af/medium_bunker_blizz_75ff1b39af.jpg",
+                  "hash": "medium_bunker_blizz_75ff1b39af",
+                  "mime": "image/jpeg",
+                  "name": "medium_bunker-blizz.jpg",
+                  "path": null,
+                  "size": 100.46,
+                  "width": 750,
+                  "height": 750
+                },
+                "thumbnail": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/thumbnail_bunker_blizz_75ff1b39af/thumbnail_bunker_blizz_75ff1b39af.jpg",
+                  "hash": "thumbnail_bunker_blizz_75ff1b39af",
+                  "mime": "image/jpeg",
+                  "name": "thumbnail_bunker-blizz.jpg",
+                  "path": null,
+                  "size": 7.7,
+                  "width": 156,
+                  "height": 156
+                }
+              },
+              "hash": "bunker_blizz_75ff1b39af",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 187.27,
+              "url": "https://storage.googleapis.com/temple-bucket-prod/bunker_blizz_75ff1b39af/bunker_blizz_75ff1b39af.jpg",
+              "previewUrl": null,
+              "provider": "@strapi-community/strapi-provider-upload-google-cloud-storage",
+              "provider_metadata": null,
+              "createdAt": "2024-03-06T14:33:39.392Z",
+              "updatedAt": "2024-03-06T14:33:39.392Z"
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": 10,
+      "attributes": {
+        "Title": "NENA!",
+        "bajada": "<p>Nena is a monthly residence curated by Tauro, an Argentinian DJ who has been playing for years in Buenos Aires at venues like Club 69, Crobar and many others. At her Temple residency she invites DJs to play with her all night long. Tech House predominates.</p>",
+        "video_url": null,
+        "background": "#1f9996",
+        "createdAt": "2024-03-06T14:34:13.351Z",
+        "updatedAt": "2024-03-25T19:15:44.752Z",
+        "publishedAt": "2024-03-13T18:14:28.470Z",
+        "locale": "en",
+        "imageWidth": 30.87,
+        "imageHeight": 42.21,
+        "image": {
+          "data": {
+            "id": 88,
+            "attributes": {
+              "name": "nena-2.jpg",
+              "alternativeText": null,
+              "caption": null,
+              "width": 1080,
+              "height": 1920,
+              "formats": {
+                "large": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/large_nena_2_7b7fba1360/large_nena_2_7b7fba1360.jpg",
+                  "hash": "large_nena_2_7b7fba1360",
+                  "mime": "image/jpeg",
+                  "name": "large_nena-2.jpg",
+                  "path": null,
+                  "size": 61.49,
+                  "width": 563,
+                  "height": 1000
+                },
+                "small": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/small_nena_2_7b7fba1360/small_nena_2_7b7fba1360.jpg",
+                  "hash": "small_nena_2_7b7fba1360",
+                  "mime": "image/jpeg",
+                  "name": "small_nena-2.jpg",
+                  "path": null,
+                  "size": 22.54,
+                  "width": 281,
+                  "height": 500
+                },
+                "medium": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/medium_nena_2_7b7fba1360/medium_nena_2_7b7fba1360.jpg",
+                  "hash": "medium_nena_2_7b7fba1360",
+                  "mime": "image/jpeg",
+                  "name": "medium_nena-2.jpg",
+                  "path": null,
+                  "size": 40.41,
+                  "width": 422,
+                  "height": 750
+                },
+                "thumbnail": {
+                  "ext": ".jpg",
+                  "url": "https://storage.googleapis.com/temple-bucket-prod/thumbnail_nena_2_7b7fba1360/thumbnail_nena_2_7b7fba1360.jpg",
+                  "hash": "thumbnail_nena_2_7b7fba1360",
+                  "mime": "image/jpeg",
+                  "name": "thumbnail_nena-2.jpg",
+                  "path": null,
+                  "size": 3.86,
+                  "width": 88,
+                  "height": 156
+                }
+              },
+              "hash": "nena_2_7b7fba1360",
+              "ext": ".jpg",
+              "mime": "image/jpeg",
+              "size": 155.73,
+              "url": "https://storage.googleapis.com/temple-bucket-prod/nena_2_7b7fba1360/nena_2_7b7fba1360.jpg",
+              "previewUrl": null,
+              "provider": "@strapi-community/strapi-provider-upload-google-cloud-storage",
+              "provider_metadata": null,
+              "createdAt": "2024-03-06T14:34:10.366Z",
+              "updatedAt": "2024-03-06T14:34:10.366Z"
+            }
+          }
+        }
+      }
+    }
+  ],
+  "meta": {
+    "pagination": { "page": 1, "pageSize": 25, "pageCount": 1, "total": 5 }
+  }
+}

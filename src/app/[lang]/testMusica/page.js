@@ -40,10 +40,6 @@ export default async function Page({ children, params }) {
 
   const [mEs, mEn] = await Promise.all([musicaEs, musicaEn]);
 
-  mEs.data.forEach((item) => {
-    console.log(item.attributes.background);
-  });
-
   return (
     <div>
       <Header dictonary={headerDic} />
@@ -78,11 +74,13 @@ export default async function Page({ children, params }) {
                       className={`bg-[${item.attributes.background}] p-[2.83vh] flex flex-col justify-between gap-y-[2.97vh] w-[36.54vh] h-[67.13vh]`}
                     >
                       <div className="card-1 relative">
-                        <div className="relative w-[30.87vh] h-[28.61vh]">
+                        <div
+                          className={`relative w-[${item.attributes.imageWidth}vh] h-[${item.attributes.imageHeight}vh] `}
+                        >
                           <Image
                             src={item.attributes.image.data.attributes.url}
                             alt={item.attributes.Title}
-                            className="w-[30.87vh] h-[28.61vh]"
+                            className={`w-[${item.attributes.imageWidth}vh] h-[${item.attributes.imageHeight}vh]`}
                             style={{
                               objectFit: "cover",
                               objectPosition: "center",
@@ -134,141 +132,43 @@ export default async function Page({ children, params }) {
               )}
               {lang == "en" && (
                 <div className="hidden md:flex flex-col md:flex-row justify-start items-start gap-x-[2.83vh] gap-y-[5.12vw] w-[194.19vh] relative">
-                  <div className="bg-[#1f9996] p-[2.83vh] flex flex-col justify-between gap-y-[2.97vh] w-[36.54vh] h-[67.13vh]">
-                    <div className="card-4 relative">
-                      <div className="relative w-[30.87vh] h-[41.21vh]">
-                        <Image
-                          src="/musica/open-desk.jpg"
-                          style={{
-                            objectFit: "cover",
-                            objectPosition: "center",
+                  {mEn.data.map((item) => (
+                    <div
+                      key={item.id}
+                      className={`bg-[${item.attributes.background}] p-[2.83vh] flex flex-col justify-between gap-y-[2.97vh] w-[36.54vh] h-[67.13vh]`}
+                    >
+                      <div className="card-4 relative">
+                        <div
+                          className={`relative w-[${item.attributes.imageWidth}vh] h-[${item.attributes.imageHeight}vh] `}
+                        >
+                          <Image
+                            src={item.attributes.image.data.attributes.url}
+                            alt={item.attributes.Title}
+                            className={`w-[${item.attributes.imageWidth}vh] h-[${item.attributes.imageHeight}vh]`}
+                            style={{
+                              objectFit: "cover",
+                              objectPosition: "center",
+                            }}
+                            width={500}
+                            height={300}
+                          />
+                        </div>
+                      </div>
+                      <div className="text-white h-full flex flex-col justify-center gap-y-[1.41vh]">
+                        <h1
+                          className={`text-[2.54vh] uppercase leading-none ${Knockout54UltraBold.className}`}
+                        >
+                          {item.attributes.Title}
+                        </h1>
+                        <div
+                          className={`!text-[1.4vh] !font-normal`}
+                          dangerouslySetInnerHTML={{
+                            __html: item.attributes.bajada,
                           }}
-                          fill
-                        />
+                        ></div>
                       </div>
                     </div>
-                    <div className="text-white h-full flex flex-col justify-center gap-y-[1.41vh]">
-                      <h1
-                        className={`text-[2.54vh] uppercase leading-none ${Knockout54UltraBold.className}`}
-                      >
-                        Monthly Open Desk
-                      </h1>
-                      <p className={`text-[1.4vh] font-normal`}>
-                        Once a month TEMPLE hosts an open decks night.<br></br>
-                        No mixing needed — just selecting and dancing.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="bg-[#d41768] p-[2.83vh] flex flex-col justify-center gap-y-[2.97vh] w-[36.54vh] h-[67.13vh]">
-                    <div className="card-2 relative">
-                      <div className="relative w-[30.87vh] h-[37.67vh]">
-                        <Image
-                          src="/musica/planeta-rave.jpg"
-                          style={{
-                            objectFit: "cover",
-                            objectPosition: "top",
-                          }}
-                          fill
-                        />
-                      </div>
-                    </div>
-                    <div className="text-white h-full flex flex-col justify-center gap-y-[1.41vh]">
-                      <h1
-                        className={`text-[2.54vh] leading-none ${Knockout54UltraBold.className}`}
-                      >
-                        PLANETA RAVE
-                      </h1>
-                      <p className={`text-[1.4vh] font-normal`}>
-                        Planeta Rave was founded in 2021, beginning as an
-                        electronic music content platform, moving forward in
-                        time, it ended up becoming an event producer, working
-                        with the best underground electronic music djs in the
-                        world. They bring the electro sound to Temple’s booth.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="bg-[#f1bf00] p-[2.83vh] flex flex-col justify-between gap-y-[2.97vh] w-[36.54vh] h-[67.13vh]">
-                    <div className="card-3 relative">
-                      <div className="relative w-[30.87vh] h-[44.90vh]">
-                        <Image
-                          src="/musica/resampled-2.jpg"
-                          style={{
-                            objectFit: "cover",
-                            objectPosition: "center",
-                          }}
-                          fill
-                        />
-                      </div>
-                    </div>
-                    <div className="text-white h-full flex flex-col justify-center gap-y-[1.41vh]">
-                      <h1
-                        className={`text-[2.54vh] leading-none ${Knockout54UltraBold.className}`}
-                      >
-                        RESAMPLED
-                      </h1>
-                      <p className={`text-[1.4vh] font-normal`}>
-                        Vinyl only night (vinyl enthusiast) playing a range of
-                        Techno, Electro and Minimal. Promoting local and
-                        international talent. Curated by local dj Franco
-                        Alexander.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="bg-[#0e359b] p-[2.83vh] flex flex-col justify-between gap-y-[2.97vh] w-[36.54vh] h-[67.13vh]">
-                    <div className="card-1 relative">
-                      <div className="relative w-[30.87vh] h-[41.61vh]">
-                        <Image
-                          src="/musica/bunker-blizz.jpg"
-                          style={{
-                            objectFit: "cover",
-                            objectPosition: "center",
-                          }}
-                          fill
-                        />
-                      </div>
-                    </div>
-                    <div className="text-white h-full flex flex-col justify-center gap-y-[1.41vh]">
-                      <h1
-                        className={`text-[2.54vh] leading-none ${Knockout54UltraBold.className}`}
-                      >
-                        BUNKER BLISS
-                      </h1>
-                      <p className={`text-[1.4vh] font-normal`}>
-                        Presents B-Side Sessions at Temple. Curated by Mark
-                        Chez, Bunker Bliss is an Underground Music Event &
-                        Selective Talent Showcase focused on uniting
-                        Deep-digging artists with like-minded people.
-                      </p>
-                    </div>
-                  </div>
-                  <div className="bg-[#1f9996] p-[2.83vh] flex flex-col justify-between gap-y-[2.97vh] w-[36.54vh] h-[67.13vh]">
-                    <div className="card-4 relative">
-                      <div className="relative w-[30.87vh] h-[42.21vh]">
-                        <Image
-                          src="/musica/nena-2.jpg"
-                          style={{
-                            objectFit: "cover",
-                            objectPosition: "top",
-                          }}
-                          fill
-                        />
-                      </div>
-                    </div>
-                    <div className="text-white h-full flex flex-col justify-center gap-y-[1.41vh]">
-                      <h1
-                        className={`text-[2.54vh] uppercase leading-none ${Knockout54UltraBold.className}`}
-                      >
-                        NENA!
-                      </h1>
-                      <p className={`text-[1.4vh] font-normal`}>
-                        Nena is a monthly residence curated by Tauro, an
-                        Argentinian DJ who has been playing for years in Buenos
-                        Aires at venues like Club 69, Crobar and many others. At
-                        her Temple residency she invites DJs to play with her
-                        all night long. Tech House predominates.
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                   <div className="sticker-temple-rosa absolute left-[108vh] top-[14vh] hidden md:block">
                     <Draggable initialPosition={{ x: 0, y: 0 }}>
                       <div className="rotate-[13.25deg] w-[22.52vh] h-[4.76vh] relative">
