@@ -39,6 +39,8 @@ async function getBirrasUs() {
   return respuesta.json();
 }
 
+
+
 export default async function Page({ children, params }) {
   const lang = params.lang;
   const dict = await getDictionary(lang);
@@ -55,6 +57,18 @@ export default async function Page({ children, params }) {
     BirrasLimitadas,
     BirrasUs,
   ]);
+
+  const bClasicasTotal = bClasicas.meta.pagination.total
+  const bEspecialesTotal = bEspeciales.meta.pagination.total
+  const bLimitadasTotal = bLimitadas.meta.pagination.total
+
+  const countBirras = bClasicasTotal + bEspecialesTotal + bLimitadasTotal
+
+  const widthBeerDesktop = 26.34
+  const widthDesktop = (countBirras * widthBeerDesktop) - 12
+  const classWidth = `lg:w-[${widthDesktop}vh]`
+
+  console.log(classWidth)
 
   return (
     <div>
@@ -103,7 +117,7 @@ export default async function Page({ children, params }) {
           </div>
           {lang === "es" && (
             <ScrollHorizontal>
-              <div className="carousel__wrapper w-[1172vw] h-[122.82vw] lg:w-[567.42vh] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]">
+              <div className={`carousel__wrapper w-[1172vw] h-[122.82vw] ${classWidth} lg:w-[567.42vh] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]`}>
                 <CarouselBirras birras={bClasicas.data} />
                 <CarouselBirras birras={bLimitadas.data} />
                 <CarouselBirras birras={bEspeciales.data} />

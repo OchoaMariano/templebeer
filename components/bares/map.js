@@ -1675,7 +1675,6 @@ const MapComponent = () => {
           </div>
         </Draggable>
       </div>
-
       <div className="sticker-temple-amarillo absolute right-[40vw] top-[315vw] md:hidden">
         <Draggable initialPosition={{ x: 0, y: 0 }}>
           <div className="rotate-[-5deg] w-[30.76vw] h-[6.34vw] relative">

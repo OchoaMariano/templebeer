@@ -6,6 +6,7 @@ import ScrollHorizontal from "../../../../components/ScrollHorizontal";
 import Draggable from "../../../../components/common/Dragabble";
 import Footer from "../../../../components/common/Footer";
 import { getDictionary } from "../../../dictionaries";
+import AnimatedHeader from "../../../../components/common/AnimatedHeader";
 
 async function getMusicaEs() {
   const apiUrl =
@@ -54,11 +55,7 @@ export default async function Page({ children, params }) {
       >
         <div className="page__wrapper pt-[18.15vw] md:pt-[6.37vh] px-[5.12vw] md:px-[4.83vh] overflow-hidden">
           <div className="title__wrapper pt-[3.84vw] md:pt-[2.83vh] relative flex flex-row items-center">
-            <h1
-              className={`text-white text-[12.05vw] md:text-[9.49vh] leading-none uppercase ${Knockout54UltraBold.className}`}
-            >
-              {dict.musica.title}
-            </h1>
+            <AnimatedHeader title={dict.musica.title} font={Knockout54UltraBold.className} />
             <div className="group pl-[3.07vw] md:pl-[6.37vh] flex flex-row cursor-pointer items-center">
               <div className="relative w-[13.33vw] h-[16.15vw] md:w-[9.06vh] md:h-[11.04vh] group-hover:rotate-[20deg] transition-transform duration-500">
                 <Image src="/musica/parlante.png" alt="Sticker" fill />
@@ -151,6 +148,7 @@ export default async function Page({ children, params }) {
                       </p>
                     </div>
                   </div>
+
                   <div className="bg-[#f1bf00] p-[2.83vh] flex flex-col justify-between gap-y-[2.97vh] w-[36.54vh] h-[67.13vh]">
                     <div className="card-3 relative">
                       <div className="relative w-[30.87vh] h-[44.90vh]">
@@ -188,6 +186,7 @@ export default async function Page({ children, params }) {
                       </p>
                     </div>
                   </div>
+
                   <div className="bg-[#1f9996] p-[2.83vh] flex flex-col justify-between gap-y-[2.97vh] w-[36.54vh] h-[67.13vh]">
                     <div className="card-4 relative">
                       <div className="relative w-[30.87vh] h-[41.21vh]">
@@ -226,6 +225,7 @@ export default async function Page({ children, params }) {
                       </p>
                     </div>
                   </div>
+                  
                   <div className="bg-[#d41768] p-[2.83vh] flex flex-col justify-between gap-y-[2.97vh] w-[36.54vh] h-[67.13vh]">
                     <div className="card-5 relative">
                       <div className="relative w-[30.87vh] h-[46.74vh]">

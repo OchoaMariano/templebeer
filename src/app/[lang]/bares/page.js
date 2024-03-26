@@ -6,6 +6,14 @@ import Map from "../../../../components/bares/map";
 import { Knockout54UltraBold, Knockout34 } from "../layout";
 import { getDictionary } from "../../../dictionaries";
 
+async function getBaresByLang(lang) {
+  const respuesta = await fetch(
+    `https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/bares?&locale=${lang}`,
+    { cache: "no-store" }
+  );
+  return respuesta.json();
+}
+
 export default async function Page({ children, params }) {
   const lang = params.lang;
   const dict = await getDictionary(lang);
@@ -344,6 +352,9 @@ export default async function Page({ children, params }) {
     },
   };
 
+  const baresApi = await getBaresByLang(lang);
+  console.log(baresApi)
+
   return (
     <div>
       <Header dictonary={headerDic} />
@@ -354,9 +365,7 @@ export default async function Page({ children, params }) {
         <div className="page__wrapper flex flex-col">
           <div className="flex pt-[18.15vw] px-5 lg:hidden">
             <div className="relative w-full">
-              <h3
-                className={`text-white text-[12.05vw] uppercase ${Knockout54UltraBold.className}`}
-              >
+              <h3 className={`text-white text-[12.05vw] uppercase ${Knockout54UltraBold.className}`}>
                 {dict.bares.title}
               </h3>
             </div>
