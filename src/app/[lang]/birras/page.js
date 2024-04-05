@@ -39,9 +39,7 @@ async function getBirrasUs() {
   return respuesta.json();
 }
 
-
-
-export default async function Page({ children, params }) {
+export default async function Page({ params }) {
   const lang = params.lang;
   const dict = await getDictionary(lang);
   const headerDic = dict.header;
@@ -58,31 +56,14 @@ export default async function Page({ children, params }) {
     BirrasUs,
   ]);
 
-  const bClasicasTotal = bClasicas.meta.pagination.total
-  const bEspecialesTotal = bEspeciales.meta.pagination.total
-  const bLimitadasTotal = bLimitadas.meta.pagination.total
-
-  const countBirras = bClasicasTotal + bEspecialesTotal + bLimitadasTotal
-
-  const widthBeerDesktop = 26.34
-  const widthDesktop = (countBirras * widthBeerDesktop) - 12
-  const classWidth = `lg:w-[${widthDesktop}vh]`
-
-  console.log(classWidth)
-
   return (
     <div>
       <Header dictonary={headerDic} />
-      <section
-        className="lg:h-screen bg-cover bg-center"
-        style={{ backgroundImage: "url(/background-home.jpeg)" }}
-      >
+      <section className="lg:h-screen bg-cover bg-center" style={{ backgroundImage: "url(/background-home.jpeg)" }}>
         <div className="grid content-center lg:content-end h-full pb-[7.08vh] pt-[16.15vw] lg:pt-[0] gap-y-[7.69vw] lg:gap-y-[0]">
           <div className="flex flex-col lg:pl-[34px]">
             <div className="title__wrapper flex pb-[4.24vh] px-3 lg:px-0">
-              <h1
-                className={`font-bold text-white text-[12.05vw] lg:text-[9.49vh] leading-none uppercase ${Knockout54UltraBold.className}`}
-              >
+              <h1 className={`font-bold text-white text-[12.05vw] lg:text-[9.49vh] leading-none uppercase ${Knockout54UltraBold.className}`}>
                 {dict.birras.title} <br></br> {dict.birras.title2}
               </h1>
               <div className="sticker__wrapper relative">
@@ -117,7 +98,7 @@ export default async function Page({ children, params }) {
           </div>
           {lang === "es" && (
             <ScrollHorizontal>
-              <div className={`carousel__wrapper w-[1172vw] h-[122.82vw] ${classWidth} lg:w-[567.42vh] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]`}>
+              <div className={`carousel__wrapper  h-[122.82vw] w-[100%] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]`}>
                 <CarouselBirras birras={bClasicas.data} />
                 <CarouselBirras birras={bLimitadas.data} />
                 <CarouselBirras birras={bEspeciales.data} />

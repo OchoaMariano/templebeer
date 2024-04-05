@@ -4,22 +4,22 @@ import ScrollHorizontal from "../../../../components/ScrollHorizontal";
 import Draggable from "../../../../components/common/Dragabble";
 import { getDictionary } from "../../../dictionaries";
 
-export default async function Page({ children, params }) {
+async function getLegales(lang) {
+  const apiUrl = `https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/legale?populate=secciones&locale=${lang}`;
+  const respuesta = await fetch(apiUrl);
+  if (!respuesta.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+  return respuesta.json();
+}
+
+export default async function Page({ params }) {
   const lang = params.lang;
   const dict = await getDictionary(lang);
   const headerDic = dict.header;
-  async function getLegales() {
-    const apiUrl = `https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/legale?populate=secciones&locale=${lang}`;
-    const respuesta = await fetch(apiUrl);
-    if (!respuesta.ok) {
-      // This will activate the closest `error.js` Error Boundary
-      throw new Error("Failed to fetch data");
-    }
 
-    return respuesta.json();
-  }
-
-  const legales = await getLegales();
+  const legales = await getLegales(lang);
 
   return (
     <div>

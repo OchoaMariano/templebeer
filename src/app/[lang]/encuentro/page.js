@@ -40,7 +40,7 @@ async function getEncuentrosEn() {
   return respuesta.json();
 }
 
-export default async function Page({ children, searchParams, params }) {
+export default async function Page({ searchParams, params }) {
   const lang = params.lang;
   const dict = await getDictionary(lang);
   const headerDic = dict.header;

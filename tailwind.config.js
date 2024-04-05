@@ -48,6 +48,6 @@ module.exports = {
         '360': '360deg',
       },
     },
-  },
+  },  
   plugins: [],
 }

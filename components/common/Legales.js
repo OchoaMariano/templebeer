@@ -6,7 +6,6 @@ import { createLocalePath } from '../../src/utils/pathUtils'
 
 function Legales ({lang}) {
     const pathName = usePathname();
-    console.log(lang)
     
     return (
         <>
