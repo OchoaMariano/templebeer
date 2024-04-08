@@ -44,13 +44,22 @@ const data = {
         { title: "IPANEMA HAZY IPA", id: 5, slug: "ipanema" },
         { title: "COSMIC HAZY LAGER", id: 6, slug: "cosmic-hazy-lager" },
     ]
-  };
+};
+
+async function getAllBirras(lang) {
+    const respuesta = await fetch(`https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?locale=${lang}`, { cache: 'no-store' });
+    return respuesta.json()
+}
   
 
 export default async function Home({params}) {
     const lang = params.lang
     const dict = await getDictionary(lang);
     const headerDic = dict.header;
+
+    const allBirras =  await getAllBirras(lang);
+    const orderAllBirras = [...allBirras.data];
+    orderAllBirras.sort((a, b) => b.id - a.id);
 
 
     return (
@@ -188,11 +197,11 @@ export default async function Home({params}) {
                                                 </h1>
                                                 {lang === 'es' && (
                                                     <nav className="flex flex-wrap self-stretch gap-y-[2px] pt-2 pr-6">
-                                                    {data.birras.map((birraObj, index) => (
+                                                    {allBirras.data.map((birraObj, index) => (
                                                         <span key={index} className={`py-[2px] px-[5px] text-[1.41vh] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
-                                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" 
-                                                            href={`${lang}/birras/${birraObj.slug}`}>
-                                                            {birraObj.title}
+                                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out uppercase" 
+                                                            href={`${lang}/birras/${birraObj.attributes.slug}`}>
+                                                            {birraObj.attributes.nombre}
                                                             </Link>
                                                         </span>
                                                         ))}
@@ -200,17 +209,16 @@ export default async function Home({params}) {
                                                 )}
                                                 {lang === 'en' && (
                                                     <nav className="flex flex-wrap self-stretch gap-y-[2px] pt-2 pr-6">
-                                                    {data.birrasEn.map((birraObj, index) => (
+                                                    {orderAllBirras.map((birraObj, index) => (
                                                         <span key={index} className={`py-[2px] px-[5px] text-[1.41vh] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
-                                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" 
-                                                            href={`${lang}/birras/${birraObj.slug}`}>
-                                                            {birraObj.title}
+                                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out uppercase" 
+                                                            href={`${lang}/birras/${birraObj.attributes.slug}`}>
+                                                            {birraObj.attributes.nombre}
                                                             </Link>
                                                         </span>
                                                         ))}
                                                     </nav>
                                                 )}
-                                                
                                             </div>
                                         </div>
                                     </div>

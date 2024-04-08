@@ -12,233 +12,9 @@ import CervezasDataEn from "../../../../../data/cervezas-en.json";
 import { getDictionary } from "../../../../dictionaries";
 import Draggable from "../../../../../components/common/Dragabble";
 
-const data = {
-  birras: [
-    { title: "WOLF IPA", id: 1, slug: "wolf-ipa" },
-    { title: "ROYAL SCOTTISH", id: 2, slug: "royal-scotish" },
-    { title: "HONEY", id: 3, slug: "honey" },
-    { title: "CÓSMICA HOPPY LAGER", id: 4, slug: "cosmica-lager" },
-    { title: "INDIE GOLDEN", id: 5, slug: "indie-golden" },
-    { title: "BLACK SOUL STOUT", id: 6, slug: "black-soul-stout" },
-    { title: "FLOW APA", id: 7, slug: "flow-apa" },
-    { title: "REVOLUTION NEIPA", id: 8, slug: "revolution-neipa" },
-    { title: "LEMON HAZE IPA", id: 9, slug: "lemon-haze-ipa" },
-    { title: "CRITICAL APA", id: 10, slug: "critical-apa" },
-    { title: "KANDY KUSH HONEY", id: 11, slug: "kandy-kush-honey" },
-    { title: "INFRARED IPA", id: 12, slug: "infrared-ipa" },
-    { title: "IPANEMA HAZY IPA", id: 13, slug: "ipanema" },
-    { title: "JAMMIN IMPERIAL STOUT", id: 14, slug: "jammin-imperial-stout" },
-    { title: "KUNG FU SOUR", id: 15, slug: "kung-fu-sour" },
-    { title: "DEMON HONEY", id: 16, slug: "demon-honey" },
-    { title: "MILKSHAKE NEIPA", id: 17, slug: "milkshake-neipa" },
-    { title: "WOLF IPA 0%", id: 18, slug: "wolf-ipa-sin-alcohol" },
-    { title: "ALPHA I", id: 19, slug: "proyecto-alpha-1" },
-    { title: "ALPHA II", id: 20, slug: "proyecto-alpha-2" },
-    { title: "ALPHA BARRICA I", id: 21, slug: "alpha-barrica-1" },
-    { title: "ALPHA IMPERIAL STOUT", id: 22, slug: "alpha-imperial-stout" },
-  ],
-  gridClasicas: [
-    {
-      title: "WOLF IPA",
-      id: 1,
-      slug: "wolf-ipa",
-      mainImage: "/nuestrasbirras/clasicas/wolf-ipa/wolf-ipa.png",
-    },
-    {
-      title: "ROYAL SCOTTISH",
-      id: 2,
-      slug: "royal-scotish",
-      mainImage: "/nuestrasbirras/clasicas/scotish/scotish.png",
-    },
-    {
-      title: "HONEY",
-      id: 3,
-      slug: "honey",
-      mainImage: "/nuestrasbirras/clasicas/honey/honey.png",
-    },
-    {
-      title: "CÓSMICA HOPPY LAGER",
-      id: 4,
-      slug: "cosmica-lager",
-      mainImage: "/nuestrasbirras/clasicas/cosmica/cosmica.png",
-    },
-    {
-      title: "INDIE GOLDEN",
-      id: 5,
-      slug: "indie-golden",
-      mainImage: "/nuestrasbirras/clasicas/indie-golden/indie-golden.png",
-    },
-    {
-      title: "BLACK SOUL STOUT",
-      id: 6,
-      slug: "black-soul-stout",
-      mainImage:
-        "/nuestrasbirras/clasicas/black-soul-stout/black-soul-stout.png",
-    },
-    {
-      title: "FLOW APA",
-      id: 7,
-      slug: "flow-apa",
-      mainImage: "/nuestrasbirras/clasicas/flow-apa/flow-apa.png",
-    },
-    {
-      title: "REVOLUTION NEIPA",
-      id: 8,
-      slug: "revolution-neipa",
-      mainImage: "/nuestrasbirras/clasicas/revolution/revolution.png",
-    },
-  ],
-  gridEspeciales: [
-    {
-      title: "KUNG FU SOUR",
-      id: 15,
-      slug: "kung-fu-sour",
-      mainImage: "/nuestrasbirras/especiales/kungfu-sour/kungfu-sour.png",
-    },
-    {
-      title: "DEMON HONEY",
-      id: 16,
-      slug: "demon-honey",
-      mainImage: "/nuestrasbirras/especiales/demon-honey/demon-honey.png",
-    },
-    {
-      title: "MILKSHAKE NEIPA",
-      id: 17,
-      slug: "milkshake-neipa",
-      mainImage:
-        "/nuestrasbirras/especiales/milkshake-neipa/milkshake-neipa.png",
-    },
-    {
-      title: "WOLF IPA 0%",
-      id: 17,
-      slug: "wolf-ipa-sin-alcohol",
-      mainImage: "/nuestrasbirras/especiales/wolf-ipa-sa/wolf-ipa-sa.png",
-    },
-    {
-      title: "ALPHA",
-      id: 19,
-      slug: "proyecto-alpha-1",
-      mainImage:
-        "/nuestrasbirras/especiales/proyecto-alpha-1/proyecto-alpha-1.png",
-    },
-    {
-      title: "ALPHA II",
-      id: 20,
-      slug: "proyecto-alpha-2",
-      mainImage:
-        "/nuestrasbirras/especiales/proyecto-alpha-2/proyecto-alpha-2.png",
-    },
-    {
-      title: "ALPHA BARRICA",
-      id: 21,
-      slug: "alpha-barrica-1",
-      mainImage:
-        "/nuestrasbirras/especiales/proyecto-barrica-1/proyecto-barrica-1.png",
-    },
-    {
-      title: "ALPHA STOUT",
-      id: 22,
-      slug: "alpha-imperial-stout",
-      mainImage:
-        "/nuestrasbirras/especiales/alpha-imperial-stout/alpha-imperial-stout.png",
-    },
-  ],
-  gridLimitadas: [
-    {
-      title: "LEMON HAZE IPA",
-      id: 9,
-      slug: "lemon-haze-ipa",
-      mainImage:
-        "/nuestrasbirras/limitadas/santa-planta-lemon-haze-ipa/santa-planta-lemon-haze-ipa.png",
-    },
-    {
-      title: "CRITICAL APA",
-      id: 10,
-      slug: "critical-apa",
-      mainImage:
-        "/nuestrasbirras/limitadas/santa-planta-critical-apa/santa-planta-critical-apa.png",
-    },
-    {
-      title: "KANDY KUSH HONEY",
-      id: 11,
-      slug: "kandy-kush-honey",
-      mainImage:
-        "/nuestrasbirras/limitadas/santa-planta-kandy-kush-honey/santa-planta-kandy-kush-honey.png",
-    },
-    {
-      title: "INFRARED IPA",
-      id: 12,
-      slug: "infrared-ipa",
-      mainImage: "/nuestrasbirras/limitadas/infrared-ipa/infrared-ipa.png",
-    },
-    {
-      title: "IPANEMA HAZY IPA",
-      id: 13,
-      slug: "ipanema",
-      mainImage: "/nuestrasbirras/limitadas/ipanema/ipanema.png",
-    },
-    {
-      title: "JAMMIN IMPERIAL STOUT",
-      id: 14,
-      slug: "jammin-imperial-stout",
-      mainImage:
-        "/nuestrasbirras/especiales/jammin-imperial-stout/jammin-imperial-stout.png",
-    },
-    {
-      title: "KUNG FU SOUR",
-      id: 15,
-      slug: "kung-fu-sour",
-      mainImage: "/nuestrasbirras/especiales/kungfu-sour/kungfu-sour.png",
-    },
-    {
-      title: "DEMON HONEY",
-      id: 16,
-      slug: "demon-honey",
-      mainImage: "/nuestrasbirras/especiales/demon-honey/demon-honey.png",
-    },
-  ],
-  gridEn: [
-    {
-      title: "Cosmic Hazy Lager",
-      id: 1,
-      slug: "cosmic-hazy-lager-us",
-      mainImage: "/nuestrasbirras/en/cosmic-hazy-lager/cosmic-hazy-lager.png",
-    },
-    {
-      title: "HONEY",
-      id: 2,
-      slug: "honey-us",
-      mainImage: "/nuestrasbirras/en/honey/honey.png",
-    },
-    {
-      title: "Indie Lager",
-      id: 3,
-      slug: "indie-lager-us",
-      mainImage: "/nuestrasbirras/en/indie-lager/indie-lager.png",
-    },
-    {
-      title: "Ipanema",
-      id: 4,
-      slug: "ipanema-us",
-      mainImage: "/nuestrasbirras/en/ipanema/ipanema.png",
-    },
-    {
-      title: "Royal Amber",
-      id: 5,
-      slug: "royal-amber-us",
-      mainImage: "/nuestrasbirras/en/royal-amber/royal-amber.png",
-    },
-    {
-      title: "Wolf Ipa",
-      id: 6,
-      slug: "wolf-ipa-us",
-      mainImage: "/nuestrasbirras/en/wolf-ipa/wolf-ipa.png",
-    },
-  ],
-};
 
 async function getBirras(lang, slug) {
-    const respuesta = await fetch(`https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?filters%5Bslug%5D=${slug}&populate=propiedadesBirra%2C%20productImage%2C%20backgroundImage%2C%20decorationBackgroundImageLeft%2C%20decorationBackgroundImageRight%2CdetailColumns.birras.productImage%2C%20detailColumns.image&locale=${lang}`, { cache: 'no-store' });
+    const respuesta = await fetch(`https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?filters%5Bslug%5D=${slug}&populate=propiedadesBirra%2C%20productImage%2C%20backgroundImage%2C%20decorationBackgroundImageLeft%2C%20decorationBackgroundImageRight%2CdetailColumns.birras.productImage%2C%20detailColumns.image%2C%20detailColumns.video&locale=${lang}`, { cache: 'no-store' });
     return respuesta.json()
 }
 
@@ -269,6 +45,9 @@ export default async function Page({ params }) {
       detailColumnsVideo = element;
     }
   }); 
+
+  const orderDetailColumnsGris = [...detailColumnsGrid.birras.data]
+  orderDetailColumnsGris.sort((a, b) => b.id - a.id)
 
   let cerveza = null
 
@@ -323,11 +102,13 @@ export default async function Page({ params }) {
                       </div>
 
                       <div className="main-content-wrapper">
+
                         <div className="product-title-box">
                           <h1 className={`text-[9.49vh] text-white leading-none uppercase ${Knockout54UltraBold.className}`}>
                             {birraObject.attributes.nombre}
                           </h1>
                         </div>
+                        {/* DONE - 90% - TODO: cerveza.urlBuy */}
                         <div className="callToAction__wrapper flex flex-row gap-x-[10px] pt-[2.97vh]">
                           <Link
                             className="text-white border-b-2 border-white hover:bg-white hover:text-[#D51668] hover:border-[#D51668] transition duration-300 ease-in-out flex flex-row items-center py-1 px-2 gap-[6px] text-[10px] group"
@@ -433,10 +214,12 @@ export default async function Page({ params }) {
                       </div>
                     </div>
                   </div>
+
+                  {/* DONE - 100% */}
                   <div className="column">
                     <div className="product-box-2">
-                      {/* Renderiza el video si cerveza.info.videoInfo no es null, de lo contrario renderiza la imagen */}
-                      {cerveza.info.videoInfo ? (
+                      {/* Renderiza el video si detailColumnsClaim.video.data no es null, de lo contrario renderiza la imagen */}
+                      {detailColumnsClaim.video.data ? (
                         <div
                           className="relative w-[52.69vh] h-[55.52vh]"
                           style={{
@@ -445,7 +228,7 @@ export default async function Page({ params }) {
                           }}
                         >
                           <video
-                            src={cerveza.info.videoInfo}
+                            src={detailColumnsClaim.video.data.attributes.url}
                             style={{
                               objectFit: "cover",
                               width: "100%",
@@ -494,8 +277,8 @@ export default async function Page({ params }) {
                         />
                       </div>
 
-                      {cerveza.info.video === null &&
-                        cerveza.info.secondaryImage === null && (
+                      {detailColumnsClaim.video.data === null &&
+                        detailColumnsClaim.image.data === null && (
                           <div className="sticker-temple-amarillo absolute -left-[7vh] top-[3vh] hidden md:block">
                             <Draggable initialPosition={{ x: 0, y: 0 }}>
                               <div className="-rotate-[14.25deg] w-[16.28vh] h-[3.42vh] relative">
@@ -508,8 +291,8 @@ export default async function Page({ params }) {
                             </Draggable>
                           </div>
                         )}
-                      {cerveza.info.video === null &&
-                        cerveza.info.secondaryImage === null && (
+                      {detailColumnsClaim.video.data === null &&
+                        detailColumnsClaim.image.data === null && (
                           <div className="sticker-iso-rosa absolute right-[5vh] top-[30vh] hidden md:block">
                             <Draggable initialPosition={{ x: 0, y: 0 }}>
                               <div className="rotate-[23deg] w-[9.69vh] h-[9.69vh] relative">
@@ -524,8 +307,10 @@ export default async function Page({ params }) {
                         )}
                     </div>
                   </div>
+                  
+                  {/* DONE - 100% */}
                   <div className="column">
-                    <VideoHover cerveza={cerveza} />
+                    <VideoHover cerveza={detailColumnsVideo} />
                   </div>
 
                   {/* DONE - 100% */}
@@ -610,7 +395,7 @@ export default async function Page({ params }) {
                           </div>
                         </div>
                         <div className="beer-grid grid grid-cols-3 grid-rows-2">
-                          {detailColumnsGrid.birras.data.map((enObj, index) => (
+                          {orderDetailColumnsGris.map((enObj, index) => (
                             <div
                               className="beer-item py-[2.12vh] px-[0.42vh]"
                               key={index}
@@ -631,7 +416,7 @@ export default async function Page({ params }) {
                         </div>
                         <div className="beer-nav">
                           <nav className="flex flex-wrap self-stretch gap-y-[2px] pt-2 pr-6">
-                            {detailColumnsGrid.birras.data.map((birraObj, index) => (
+                            {orderDetailColumnsGris.map((birraObj, index) => (
                               <span
                                 key={index}
                                 className={`py-[2px] px-[5px] text-[1.41vh] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`}
@@ -774,12 +559,12 @@ export default async function Page({ params }) {
             </div>
           </div>
 
-          {/* API DONE - 0% */}
+          {/* API DONE - 100% */}
           {/* Renderiza el video si cerveza.info.videoInfo no es null, de lo contrario renderiza la imagen */}
-          {cerveza.info.videoInfo ? (
+          {detailColumnsClaim.video.data ? (
             <div className="product-box-3-mobile w-[100vw] h-[95.64vw] relative mb-[4.61vw]">
               <video
-                src={cerveza.info.videoInfo}
+                src={detailColumnsClaim.video.data.attributes.url}
                 style={{
                   objectFit: "cover",
                   width: "100%",
@@ -841,7 +626,7 @@ export default async function Page({ params }) {
             </div>
           </div>
           
-          {/* API DONE - 0% */}
+          {/* API DONE - 100% */}
           <VideoMobile cerveza={detailColumnsVideo} />
            
           {/* API DONE - 100% -- STYLE COLOR */}
@@ -920,7 +705,7 @@ export default async function Page({ params }) {
                 </div>
               </div>
               <div className="beer-grid grid grid-cols-3 grid-rows-2">
-                {detailColumnsGrid.birras.data.map((enObj, index) => (
+                {orderDetailColumnsGris.map((enObj, index) => (
                   <div
                     className="beer-item py-[3.84vw] px-[0.76vw]"
                     key={index}
@@ -941,7 +726,7 @@ export default async function Page({ params }) {
               </div>
               <div className="beer-nav">
                 <nav className="flex flex-wrap self-stretch gap-y-[2px]">
-                  {detailColumnsGrid.birras.data.map((birraObj, index) => (
+                  {orderDetailColumnsGris.map((birraObj, index) => (
                     <span
                       key={index}
                       className={`py-[2px] px-[5px] text-[2.30vw]  border-r-[1px] border-dotted border-white uppercase ${Knockout34.className}`}
