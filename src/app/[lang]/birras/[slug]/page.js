@@ -49,6 +49,11 @@ export default async function Page({ params }) {
   const orderDetailColumnsGris = [...detailColumnsGrid.birras.data]
   orderDetailColumnsGris.sort((a, b) => b.id - a.id)
 
+
+  const { darkColor } = birraObject.attributes // Texto y color cuando el fondo es claro o oscuro (TRUE OR FALSE)
+  const { hightlightColor } = birraObject.attributes // Color destacado de la cerveza
+  console.log(hightlightColor)
+
   let cerveza = null
 
   if (lang === "es") {
@@ -108,7 +113,7 @@ export default async function Page({ params }) {
                             {birraObject.attributes.nombre}
                           </h1>
                         </div>
-                        {/* DONE - 90% - TODO: cerveza.urlBuy */}
+                        {/* DONE - 100% */}
                         <div className="callToAction__wrapper flex flex-row gap-x-[10px] pt-[2.97vh]">
                           <Link
                             className="text-white border-b-2 border-white hover:bg-white hover:text-[#D51668] hover:border-[#D51668] transition duration-300 ease-in-out flex flex-row items-center py-1 px-2 gap-[6px] text-[10px] group"
@@ -132,7 +137,7 @@ export default async function Page({ params }) {
                             <a
                               className="text-black bg-white hover:text-[#ffffff] hover:bg-[#D51668] transition duration-300 ease-in-out py-1 px-2 text-[10px] flex items-center"
                               target="_blank"
-                              href={cerveza.urlBuy}
+                              href={birraObject.attributes.urlComprar}
                             >
                               COMPRAR
                             </a>
@@ -142,7 +147,7 @@ export default async function Page({ params }) {
                           <p
                             className={`text-white uppercase text-[1.55vh] w-[50.88vh] ${GothamBook.className}`}
                             style={{
-                              color: cerveza.style?.textColor || "white",
+                              color: darkColor ? "black" : "white",
                             }}
                             dangerouslySetInnerHTML={{
                               __html: birraObject.attributes.descripcion,
@@ -154,9 +159,8 @@ export default async function Page({ params }) {
                               <span
                                 className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
                                 style={{
-                                  color: cerveza.style?.textColor || "white",
-                                  borderColor:
-                                    cerveza.style?.textColor || "white",
+                                  color: darkColor ? "black" : "white",
+                                  borderColor: darkColor ? "black" : "white",
                                 }}
                               >
                                 ALC. {birraObject.attributes.propiedadesBirra.alcohol}%
@@ -164,9 +168,8 @@ export default async function Page({ params }) {
                               <span
                                 className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
                                 style={{
-                                  color: cerveza.style?.textColor || "white",
-                                  borderColor:
-                                    cerveza.style?.textColor || "white",
+                                  color: darkColor ? "black" : "white",
+                                  borderColor: darkColor ? "black" : "white",
                                 }}
                               >
                                 IBU {birraObject.attributes.propiedadesBirra.ibu}
@@ -174,9 +177,8 @@ export default async function Page({ params }) {
                               <span
                                 className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
                                 style={{
-                                  color: cerveza.style?.textColor || "white",
-                                  borderColor:
-                                    cerveza.style?.textColor || "white",
+                                  color: darkColor ? "black" : "white",
+                                  borderColor: darkColor ? "black" : "white",
                                 }}
                               >
                                 {birraObject.attributes.propiedadesBirra.size} CC.
@@ -270,7 +272,7 @@ export default async function Page({ params }) {
                       <div className="">
                         <p
                           className={`leading-[3.39vh] text-[3vh] uppercase ${Knockout54UltraBold.className}`}
-                          style={{ color: cerveza.style?.color || "white" }}
+                          style={{ color: hightlightColor || "white" }}
                           dangerouslySetInnerHTML={{
                             __html: detailColumnsClaim.claim,
                           }}
@@ -310,7 +312,7 @@ export default async function Page({ params }) {
                   
                   {/* DONE - 100% */}
                   <div className="column">
-                    <VideoHover cerveza={detailColumnsVideo} />
+                    <VideoHover cerveza={detailColumnsVideo} hightlightColor={hightlightColor}/>
                   </div>
 
                   {/* DONE - 100% */}
@@ -334,7 +336,7 @@ export default async function Page({ params }) {
                           <div className="title pb-[0.21vh]">
                             <h2
                               className="text-[5.66vh] uppercase px-[2.40vh]"
-                              style={{ color: cerveza.style?.color || "white" }}
+                              style={{ color: hightlightColor || "white" }}
                             >
                               BIRRAS
                             </h2>
@@ -388,7 +390,7 @@ export default async function Page({ params }) {
                           <div className="title pb-[0.21vh]">
                             <h2
                               className="text-[5.66vh] uppercase px-[2.40vh]"
-                              style={{ color: cerveza.style?.color || "white" }}
+                              style={{ color: hightlightColor || "white" }}
                             >
                               BEERS
                             </h2>
@@ -483,7 +485,7 @@ export default async function Page({ params }) {
               {lang == "es" && (
                 <Link
                   className="text-black bg-white hover:text-[#ffffff] hover:bg-[#D51668] transition duration-300 ease-in-out py-1 px-2 text-[10px] flex items-center"
-                  href={cerveza.urlBuy}
+                  href={birraObject.attributes.urlComprar}
                 >
                   COMPRAR
                 </Link>
@@ -492,7 +494,7 @@ export default async function Page({ params }) {
             <div className="description__wrapper flex flex-col">
               <p
                 className={`text-white uppercase text-[2.82vw] ${GothamBook.className}`}
-                style={{ color: cerveza.style?.textColor || "white" }}
+                style={{ color: darkColor ? "black" : "white" }}
                 dangerouslySetInnerHTML={{ __html: birraObject.attributes.descripcion }}
               />
 
@@ -501,8 +503,8 @@ export default async function Page({ params }) {
                   <span
                     className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
                     style={{
-                      color: cerveza.style?.textColor || "white",
-                      borderColor: cerveza.style?.textColor || "white",
+                      color: darkColor ? "black" : "white",
+                      borderColor: darkColor ? "black" : "white",
                     }}
                   >
                     ALC. {birraObject.attributes.propiedadesBirra.alcohol}
@@ -510,8 +512,8 @@ export default async function Page({ params }) {
                   <span
                     className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
                     style={{
-                      color: cerveza.style?.textColor || "white",
-                      borderColor: cerveza.style?.textColor || "white",
+                      color: darkColor ? "black" : "white",
+                      borderColor: darkColor ? "black" : "white",
                     }}
                   >
                     IBU {birraObject.attributes.propiedadesBirra.ibu}
@@ -519,8 +521,8 @@ export default async function Page({ params }) {
                   <span
                     className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
                     style={{
-                      color: cerveza.style?.textColor || "white",
-                      borderColor: cerveza.style?.textColor || "white",
+                      color: darkColor ? "black" : "white",
+                      borderColor: darkColor ? "black" : "white",
                     }}
                   >
                     {birraObject.attributes.propiedadesBirra.size} CC.
@@ -620,14 +622,14 @@ export default async function Page({ params }) {
 
               <p
                 className={`leading-[6.41vw] text-[6.41vw] uppercase `}
-                style={{ color: cerveza.style?.color || "white" }}
+                style={{ color: hightlightColor || "white" }}
                 dangerouslySetInnerHTML={{ __html: detailColumnsClaim.claim }}
               />
             </div>
           </div>
           
           {/* API DONE - 100% */}
-          <VideoMobile cerveza={detailColumnsVideo} />
+          <VideoMobile cerveza={detailColumnsVideo} hightlightColor={hightlightColor} />
            
           {/* API DONE - 100% -- STYLE COLOR */}
           {lang == "es" && (
@@ -637,7 +639,7 @@ export default async function Page({ params }) {
                   <div className="title">
                     <h2
                       className="text-[10.25vw] uppercase"
-                      style={{ color: cerveza.style?.color || "white" }}
+                      style={{ color: hightlightColor || "white" }}
                     >
                       BIRRAS
                     </h2>
@@ -670,13 +672,13 @@ export default async function Page({ params }) {
                           key={index}
                           className={`py-[2px] px-[5px] text-[2.30vw] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`}
                           style={{
-                            borderColor: cerveza.style?.textColor || "white",
+                            borderColor: darkColor ? "black" : "white",
                           }}
                         >
                           <Link
                             className=" hover:text-[#FCDB00] transition duration-300 ease-in-out uppercase"
                             style={{
-                              color: cerveza.style?.textColor || "white",
+                              color: darkColor ? "black" : "white",
                             }}
                             href={`/${lang}/birras/${birraObj.attributes.slug}`}
                           >
@@ -698,7 +700,7 @@ export default async function Page({ params }) {
                 <div className="title">
                   <h2
                     className="text-[10.25vw] uppercase"
-                    style={{ color: cerveza.style?.color || "white" }}
+                    style={{ color: hightlightColor || "white" }}
                   >
                     BEERS
                   </h2>
@@ -733,7 +735,7 @@ export default async function Page({ params }) {
                     >
                       <Link
                         className="hover:text-[#FCDB00] transition duration-300 ease-in-out uppercase"
-                        style={{ color: cerveza.style?.textColor || "white" }}
+                        style={{ color: darkColor ? "black" : "white" }}
                         href={`/${lang}/birras/${birraObj.attributes.slug}`}
                       >
                         {birraObj.attributes.nombre}

@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import Draggable from '../common/Dragabble';
 
-export default function ProductBox({ cerveza }) {
+export default function ProductBox({ cerveza, hightlightColor }) {
   if (!cerveza) return null;
 
   return (
@@ -11,7 +11,7 @@ export default function ProductBox({ cerveza }) {
     {cerveza?.video?.data ? (
       <div className="product-box-3" style={{ width: cerveza?.info?.widthSecondary || '34.98vh',  height: cerveza?.info?.heightSecondary || '69.54vh' }}>
           <p className="mt-[9.91vh] text-right text-[1.41vh] uppercase pb-[1vh]"
-          style={{ color: cerveza.style?.color || 'white' }}>
+          style={{ color: hightlightColor || 'white' }}>
             {cerveza.video.data.alternativeText}
           </p>
           <div 
@@ -59,7 +59,7 @@ export default function ProductBox({ cerveza }) {
     ) : (
       <div className="product-box-3" style={{ width: cerveza?.info?.widthSecondary || '34.98vh',  height: cerveza?.info?.heightSecondary || '69.54vh' }}>
         <p className="mt-[9.91vh] text-right text-[1.41vh] uppercase pb-[1vh] ml-[10vh]"
-           style={{ color: cerveza?.style?.color || 'white', marginLeft: '10vh' }}>
+           style={{ color: hightlightColor || 'white', marginLeft: '10vh' }}>
           {cerveza?.image.data.attributes.alternativeText}
         </p>
         <div className="relative w-[89.74vw] h-[125.89vw] md:w-[34.98vh] md:h-[69.54vh] mb-[11.33vh]" 

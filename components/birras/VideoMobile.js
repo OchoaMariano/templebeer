@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Draggable from '../common/Dragabble';
 
-export default function ProductBox({ cerveza }) {
+export default function ProductBox({ cerveza, hightlightColor }) {
     const { image, video } = cerveza || {};
 
     return (
@@ -13,7 +13,7 @@ export default function ProductBox({ cerveza }) {
             <div className="product-box-5-mobile mb-[4.61vw]">
                 <div className="secondary-image-box flex flex-col gap-y-[4.61vw] px-[5.12vw] relative">
                     {/* ALTERNATIVE TEXT */}
-                    <p className={`text-[#D41768] text-right text-[3.33vw] uppercase ml-[10vh]`}>
+                    <p className={` text-right text-[3.33vw] uppercase ml-[10vh]`} style={{ color: hightlightColor || 'white' }}>
                         {image?.data?.attributes.alternativeText || video?.data?.attributes.alternativeText}
                     </p>
                     
