@@ -25,66 +25,66 @@ const MapComponent = (zonas) => {
         {/* MAPA DESKTOP */}  
         <div className="hidden lg:block pt-custom pt-[7.08vh] pb-custom pb-[6.23vh] z-[100]">
           <div className="relative h-mapa-custom h-[80vh] w-mapa-custom w-[43.9vh]">
-            <Image src="/bares/mapa-arg.png" alt="" className="w-full" fill />
+            <Image src="/bares/mapa-arg.png" alt="mapa de la Argentina" className="w-full" fill />
             <div
               className="h-[3.68vh] w-[3.68vh] point-map hover:scale-110 transform ease-in-out duration-300 salta top-[4.37vh] right-[25vh] absolute cursor-pointer"
               onClick={() => handleMapPointClick("salta")}
             >
-              <Image src="/bares/point-mapa.png" alt="" fill />
+              <Image src="/bares/point-mapa.png" alt="Icono punto en el mapa" fill />
             </div>
             <div
               className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute tucuman top-[11vh] right-[27vh] cursor-pointer"
               onClick={() => handleMapPointClick("tucuman")}
             >
-              <Image src="/bares/point-mapa.png" alt="" fill />
+              <Image src="/bares/point-mapa.png" alt="Icono punto en el mapa" fill />
             </div>
             <div
               className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute corrientes top-[14vh] right-[9vh] cursor-pointer"
               onClick={() => handleMapPointClick("corrientes")}
             >
-              <Image src="/bares/point-mapa.png" alt="" fill />
+              <Image src="/bares/point-mapa.png" alt="Icono punto en el mapa" fill />
             </div>
             <div
               className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute cordoba top-[23vh] right-[23.23vh] cursor-pointer"
               onClick={() => handleMapPointClick("cordoba")}
             >
-              <Image src="/bares/point-mapa.png" alt="" fill />
+              <Image src="/bares/point-mapa.png" alt="Icono punto en el mapa" fill />
             </div>
             <div
               className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute santa-fe top-[24vh] right-[18.27vh] cursor-pointer"
               onClick={() => handleMapPointClick("santa-fe")}
             >
-              <Image src="/bares/point-mapa.png" alt="" fill />
+              <Image src="/bares/point-mapa.png" alt="Icono punto en el mapa" fill />
             </div>
             <div
               className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute bsas-norte top-[30vh] right-[13.45vh] cursor-pointer"
               onClick={() => handleMapPointClick("buenos-aires")}
             >
-              <Image src="/bares/point-mapa.png" alt="" fill />
+              <Image src="/bares/point-mapa.png" alt="Icono punto en el mapa" fill />
             </div>
             <div
               className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute bsas-sur top-[36.5vh] right-[13.45vh] cursor-pointer"
               onClick={() => handleMapPointClick("costa-argentina")}
             >
-              <Image src="/bares/point-mapa.png" alt="" fill />
+              <Image src="/bares/point-mapa.png" alt="Icono punto en el mapa" fill />
             </div>
             <div
               className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute neuquen top-[42vh] right-[35vh] cursor-pointer"
               onClick={() => handleMapPointClick("rio-negro")}
             >
-              <Image src="/bares/point-mapa.png" alt="" fill />
+              <Image src="/bares/point-mapa.png" alt="Icono punto en el mapa" fill />
             </div>
             <div
               className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute chubut-norte top-[57vh] right-[30vh] cursor-pointer"
               onClick={() => handleMapPointClick("chubut")}
             >
-              <Image src="/bares/point-mapa.png" alt="" fill />
+              <Image src="/bares/point-mapa.png" alt="Icono punto en el mapa" fill />
             </div>
             <div
               className="point-map h-[3.68vh] w-[3.68vh] hover:scale-110 transform ease-in-out duration-300 absolute chubut-sur top-[68vh] right-[32vh] cursor-pointer"
               onClick={() => handleMapPointClick("santa-cruz")}
             >
-              <Image src="/bares/point-mapa.png" alt="" fill />
+              <Image src="/bares/point-mapa.png" alt="Icono punto en el mapa" fill />
             </div>
           </div>
         </div>
@@ -96,7 +96,7 @@ const MapComponent = (zonas) => {
         <div className="hidden lg:block absolute pl-[85vh] top-[22vh] z-10">
           <Draggable initialPosition={{ x: 0, y: 0 }}>
             <div className="relative w-[19.26vh] h-[19.26vh]">
-              <Image src="/bares/sticker-bares.png" alt="Sticker" fill />
+              <Image src="/bares/sticker-bares.png" alt="Sticker Bares" fill />
             </div>
           </Draggable>
         </div>
@@ -129,7 +129,7 @@ const MapComponent = (zonas) => {
                                   <div className="flex items-center justify-center gap-x-1">
                                     <img
                                       src="/bares/wa.png"
-                                      alt=""
+                                      alt="Icono Whatsapp"
                                       className="w-[1.84vh] h-[1.84vh]"
                                     />
                                     <span className="text-[3vw] md:text-[1.33vh]">
@@ -141,7 +141,7 @@ const MapComponent = (zonas) => {
                               
                               {bar.attributes.Telefono && (
                                 <div>
-                                  <img src="/bares/line.png" alt="" className="h-3" />
+                                  <img src="/bares/line.png" alt="Icono Linea" className="h-3" />
                                 </div>
                               )}
 
@@ -150,7 +150,7 @@ const MapComponent = (zonas) => {
                                   <div className="flex items-center justify-center gap-x-1">
                                     <img
                                       src="/bares/mail.png"
-                                      alt=""
+                                      alt="Icono Mail"
                                       className="w-[2.23vh] h-[1.84vh]"
                                     />
                                     <span className="text-[3vw] md:text-[1.33vh]">
@@ -205,7 +205,7 @@ const MapComponent = (zonas) => {
                                 <div className="flex items-center justify-center gap-x-1">
                                   <img
                                     src="/bares/wa.png"
-                                    alt=""
+                                    alt="Icono Whatsapp"
                                     className="w-[1.84vh] h-[1.84vh]"
                                   />
                                   <span className="text-[3vw] md:text-[1.33vh]">
@@ -217,7 +217,7 @@ const MapComponent = (zonas) => {
                             
                             {bar.attributes.Telefono && (
                               <div>
-                                <img src="/bares/line.png" alt="" className="h-3" />
+                                <img src="/bares/line.png" alt="Icono Linea" className="h-3" />
                               </div>
                             )}
 
@@ -226,7 +226,7 @@ const MapComponent = (zonas) => {
                                 <div className="flex items-center justify-center gap-x-1">
                                   <img
                                     src="/bares/mail.png"
-                                    alt=""
+                                    alt="Icono Mail"
                                     className="w-[2.23vh] h-[1.84vh]"
                                   />
                                   <span className="text-[3vw] md:text-[1.33vh]">
@@ -255,7 +255,7 @@ const MapComponent = (zonas) => {
       <div className="sticker-iso-rosa absolute right-[30vw] top-[120vw] md:left-[0vh] md:top-[65vh] md:right-0 md:hidden">
         <Draggable initialPosition={{ x: 0, y: 0 }}>
           <div className="rotate-[23deg] w-[14.61vw] h-[14.61vw] md:w-[9.69vh] md:h-[9.69vh] relative">
-            <Image src="/sticker-rosa-tempple.png" alt="Temple Beer" fill />
+            <Image src="/sticker-rosa-tempple.png" alt="Sticker Temple Beer Rosa" fill />
           </div>
         </Draggable>
       </div>
@@ -263,7 +263,7 @@ const MapComponent = (zonas) => {
       <div className="sticker-temple-rosa absolute right-[40vw] top-[165vw] md:hidden">
         <Draggable initialPosition={{ x: 0, y: 0 }}>
           <div className=" -rotate-[5deg] w-[30.76vw] h-[6.34vw] relative">
-            <Image src="/sticker-temple-rosa.png" alt="Temple Beer" fill />
+            <Image src="/sticker-temple-rosa.png" alt="Sticker Temple Beer Rosa" fill />
           </div>
         </Draggable>
       </div>
@@ -271,7 +271,7 @@ const MapComponent = (zonas) => {
       <div className="sticker-temple-amarillo absolute right-[40vw] top-[315vw] md:hidden">
         <Draggable initialPosition={{ x: 0, y: 0 }}>
           <div className="rotate-[-5deg] w-[30.76vw] h-[6.34vw] relative">
-            <Image src="/sticker-temple-amarrillo.png" alt="Temple Beer" fill />
+            <Image src="/sticker-temple-amarrillo.png" alt="Sticker Temple Beer Amarillo" fill />
           </div>
         </Draggable>
       </div>
@@ -279,7 +279,7 @@ const MapComponent = (zonas) => {
       <div className="sticker-temple-verde absolute right-[50vw] top-[405vw] md:hidden">
         <Draggable initialPosition={{ x: 0, y: 0 }}>
           <div className="rotate-[9deg] w-[30.76vw] h-[6.34vw] relative">
-            <Image src="/sticker-temple-verde.png" alt="Temple Beer" fill />
+            <Image src="/sticker-temple-verde.png" alt="Sticker Temple Beer Verde" fill />
           </div>
         </Draggable>
       </div>

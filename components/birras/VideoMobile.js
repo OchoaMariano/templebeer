@@ -22,6 +22,7 @@ export default function ProductBox({ cerveza, hightlightColor }) {
                         <div className="relative w-[89.74vw] h-[125.89vw]">
                             <video
                                 src={video?.data?.attributes.url}
+                                alt={video?.data?.attributes.alternativeText}
                                 className="cursor-pointer"
                                 autoPlay
                                 playsInline
@@ -41,6 +42,7 @@ export default function ProductBox({ cerveza, hightlightColor }) {
                         <div className="relative w-[89.74vw] h-[125.89vw]" style={{  height: cerveza.info?.heightSecondaryM || '125.89vw' }}>
                             <Image
                             src={image.data.attributes.url}
+                            alt={image.data.attributes.alternativeText}
                             style={{
                                 objectFit: 'cover',
                             }}
@@ -57,7 +59,7 @@ export default function ProductBox({ cerveza, hightlightColor }) {
                                 <div className="rotate-[23deg] w-[16.92vw] h-[16.92vw] md:w-[9.69vh] md:h-[9.69vh] relative">
                                     <Image 
                                         src="/sticker-rosa-tempple.png"
-                                        alt="Temple Beer"
+                                        alt="Sticker Temple Beer Rosa"
                                         fill 
                                     />
                                 </div>
@@ -70,7 +72,7 @@ export default function ProductBox({ cerveza, hightlightColor }) {
                                 <div className="rotate-[23deg] w-[16.92vw] h-[16.92vw] md:w-[9.69vh] md:h-[9.69vh] relative">
                                     <Image 
                                         src="/sticker-rosa-tempple.png"
-                                        alt="Temple Beer"
+                                        alt="Sticker Temple Beer Rosa"
                                         fill 
                                     />
                                 </div>

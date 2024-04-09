@@ -11,46 +11,10 @@ import Footer from '../../../components/common/Footer';
 import { Knockout54UltraBold, Knockout34, Knockout54, Marker } from './layout'
 import { getDictionary } from '../../dictionaries';
 
-const data = {
-    birras: [
-        { title: "WOLF IPA", id: 1, slug: "wolf-ipa" },
-        { title: "ROYAL SCOTTISH", id: 2, slug: "royal-scotish" },
-        { title: "HONEY", id: 3, slug: "honey" },
-        { title: "CÓSMICA HOPPY LAGER", id: 4, slug: "cosmica-lager" },
-        { title: "INDIE GOLDEN", id: 5, slug: "indie-golden" },
-        { title: "BLACK SOUL STOUT", id: 6, slug: "black-soul-stout" },
-        { title: "FLOW APA", id: 7, slug: "flow-apa" },
-        { title: "REVOLUTION NEIPA", id: 8, slug: "revolution-neipa" },
-        { title: "LEMON HAZE IPA", id: 9, slug: "lemon-haze-ipa" },
-        { title: "CRITICAL APA", id: 10, slug: "critical-apa" },
-        { title: "KANDY KUSH HONEY", id: 11, slug: "kandy-kush-honey" },
-        { title: "INFRARED IPA", id: 12, slug: "infrared-ipa" },
-        { title: "IPANEMA HAZY IPA", id: 13, slug: "ipanema" },
-        { title: "JAMMIN IMPERIAL STOUT", id: 14, slug: "jammin-imperial-stout" },
-        { title: "KUNG FU SOUR", id: 15, slug: "kung-fu-sour" },
-        { title: "DEMON HONEY", id: 16, slug: "demon-honey" },
-        { title: "MILKSHAKE NEIPA", id: 17, slug: "milkshake-neipa" },
-        { title: "WOLF IPA 0%", id: 18, slug: "wolf-ipa-sin-alcohol" },
-        { title: "ALPHA I", id: 19, slug: "proyecto-alpha-1" },
-        { title: "ALPHA II", id: 20, slug: "proyecto-alpha-2" },
-        { title: "ALPHA BARRICA I", id: 21, slug: "alpha-barrica-1" },
-        { title: "ALPHA IMPERIAL STOUT", id: 22, slug: "alpha-imperial-stout" }
-    ],
-    birrasEn: [
-        { title: "WOLF IPA", id: 1, slug: "wolf-ipa" },
-        { title: "ROYAL AMBER", id: 2, slug: "royal-amber" },
-        { title: "HONEY", id: 3, slug: "honey" },
-        { title: "INDIE LAGER", id: 4, slug: "indie-lager" },
-        { title: "IPANEMA HAZY IPA", id: 5, slug: "ipanema" },
-        { title: "COSMIC HAZY LAGER", id: 6, slug: "cosmic-hazy-lager" },
-    ]
-};
-
 async function getAllBirras(lang) {
     const respuesta = await fetch(`https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?locale=${lang}`, { cache: 'no-store' });
     return respuesta.json()
 }
-  
 
 export default async function Home({params}) {
     const lang = params.lang
@@ -69,22 +33,21 @@ export default async function Home({params}) {
                 <ScrollHorizontal>
                     <div className="row" data-scroll data-scroll-speed="-.1" data-scroll-offset="0,100%" data-scroll-event-progress="progressEvent">  
                         <div className="column">
-                            <div className="main-box-1-wrapper">
-                                
+                            <div className="main-box-1-wrapper">                               
                                 <div className="beer-wrapper">
                                     <div className="flex items-center justify-center z-10 h-full cursor-pointer transform transition-transform duration-300 hover:scale-110">
                                         <Link href={`${lang}/birras/wolf-ipa`} className="relative w-[34.70vh] h-[51.69vh]">
                                             {lang == 'es' && (
                                                 <Image 
                                                     src="/nuestrasbirras/clasicas/wolf-ipa/wolf-ipa.png"
-                                                    alt="Lata de Cerveza"
+                                                    alt="Lata de Cerveza principal wolf ipa"
                                                     fill
                                                 />
                                             )}
                                             {lang == 'en' && (
                                                 <Image 
                                                     src="/nuestrasbirras/en/wolf-ipa/wolf-ipa.png"
-                                                    alt="Lata de Cerveza"
+                                                    alt="Lata de Cerveza principal wolf ipa"
                                                     fill
                                                 />
                                             )}
@@ -94,14 +57,14 @@ export default async function Home({params}) {
                                         <div className="relative w-[16.85vh] h-[15.86vh]">
                                             <Image
                                                 src="/sticker-isologo.png"
-                                                alt="Sticker"
+                                                alt="Sticker de cerveza"
                                                 fill
                                             />
                                         </div>
                                     </div>
                                     <Image 
                                         src="/back-main-image.png"
-                                        alt="Temple Beer"
+                                        alt="Temple Beer background rosa"
                                         fill
                                     />
                                 </div>
@@ -118,7 +81,7 @@ export default async function Home({params}) {
                                                 <div className="rotate-[17deg] w-[10.48vh] h-[17.30vh] relative">
                                                     <Image 
                                                         src="/nuestrasbirras/sticker-cerveza.svg"
-                                                        alt="Temple Beer"
+                                                        alt="Sticker Temple Beer Cerveza"
                                                         fill 
                                                     />
                                                 </div>
@@ -129,7 +92,7 @@ export default async function Home({params}) {
                                                 <div className="rotate-[-10.5deg] w-[22.80vh] h-[4.53vh] relative">
                                                     <Image 
                                                         src="/sticker-temple-amarrillo.png"
-                                                        alt="Temple Beer"
+                                                        alt="Sticker Temple Beer Amarillo"
                                                         fill 
                                                     />
                                                 </div>
@@ -140,7 +103,7 @@ export default async function Home({params}) {
                                                 <div className="rotate-[-10.5deg] w-[20.67vh] h-[20.82vh] relative">
                                                     <Image 
                                                         src="/sticker-hand.png"
-                                                        alt="Temple Beer"
+                                                        alt="Sticker Temple Beer Hand"
                                                         fill 
                                                     />
                                                 </div>
@@ -157,7 +120,7 @@ export default async function Home({params}) {
                                                         <div className=" -rotate-[5deg] w-[25.07vh] h-[5.09vh] relative">
                                                             <Image 
                                                                 src="/sticker-temple-rosa.png"
-                                                                alt="Temple Beer"
+                                                                alt="Sticker Temple Beer Rosa"
                                                                 fill 
                                                             />
                                                         </div>
@@ -167,7 +130,7 @@ export default async function Home({params}) {
                                                 <div className="relative w-[32.71vh] h-[17.84vh]">
                                                     <Image 
                                                         src="/header-collage.png"
-                                                        alt="Temple Beer"
+                                                        alt="Collage Temple Beer"
                                                         style={{
                                                         objectFit: 'contain',
                                                         objectPosition: 'top'
@@ -178,7 +141,7 @@ export default async function Home({params}) {
                                                 <div className="relative w-[32.71vh] h-[29.60vh] -top-2">
                                                 <Image 
                                                     src="/art-beer.png"
-                                                    alt="Temple Beer"
+                                                    alt="Sticker Temple Beer Art"
                                                     style={{
                                                     objectFit: 'contain',
                                                     objectPosition: 'top'
@@ -228,7 +191,7 @@ export default async function Home({params}) {
                                         <div className="picture-box-2">
                                             <Image 
                                                 src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjRveTUxeDk5cHZmeWFtNWJreTNzM2t0NTgxbDEzOHJjZ3h2YzVhYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KBw4MkRoLLLzmK5NTp/giphy-downsized-large.gif"
-                                                alt="Temple Beer"
+                                                alt="Temple Beer Gif"
                                                 fill
                                                 style={{
                                                 objectFit: 'cover',
@@ -239,7 +202,7 @@ export default async function Home({params}) {
                                         <div className="picture-box-3">
                                             <Image 
                                                 src="/frame-4.png"
-                                                alt="Temple Beer"
+                                                alt="Temple Beer Frame"
                                                 fill
                                                 style={{
                                                 objectFit: 'cover',
@@ -259,6 +222,7 @@ export default async function Home({params}) {
                                             <div className="relative w-[8.07vh] h-[8.21vh]">
                                                 <Image  
                                                     src="/qrcode.png"
+                                                    alt="icon qr code"
                                                     fill
                                                 />
                                             </div>
@@ -266,6 +230,7 @@ export default async function Home({params}) {
                                                 <div className="div-block-6 w-[3.68vh] h-[3.82vh] mr-[1vh] relative group-hover:rotate-90 transition-transform duration-500">
                                                     <Image 
                                                         src="/arrow-qr.svg"
+                                                        alt="icon flecha"
                                                         style={{
                                                             objectFit: 'cover',
                                                             objectPosition: 'center'
@@ -276,6 +241,7 @@ export default async function Home({params}) {
                                                 <div className="div-block-7 w-[3.68vh] h-[3.82vh] relative p-2 group-hover:rotate-360 transition-transform duration-500">
                                                     <Image 
                                                         src="/instagram-qr.svg"
+                                                        alt="icon instagram"
                                                         style={{
                                                             objectFit: 'cover',
                                                             objectPosition: 'center'
@@ -291,6 +257,7 @@ export default async function Home({params}) {
                                             <div className="relative w-[8.07vh] h-[8.21vh]">
                                                 <Image  
                                                     src="/qrcode.png"
+                                                    alt="icon qr code"
                                                     fill
                                                 />
                                             </div>
@@ -298,6 +265,7 @@ export default async function Home({params}) {
                                                 <div className="div-block-6 w-[3.68vh] h-[3.82vh] mr-[1vh] relative group-hover:rotate-90 transition-transform duration-500">
                                                     <Image 
                                                         src="/arrow-qr.svg"
+                                                        alt="icon flecha"
                                                         style={{
                                                             objectFit: 'cover',
                                                             objectPosition: 'center'
@@ -308,6 +276,7 @@ export default async function Home({params}) {
                                                 <div className="div-block-7 w-[3.68vh] h-[3.82vh] relative p-2 group-hover:rotate-360 transition-transform duration-500">
                                                     <Image 
                                                         src="/instagram-qr.svg"
+                                                        alt="icon instagram"
                                                         style={{
                                                             objectFit: 'cover',
                                                             objectPosition: 'center'
@@ -323,12 +292,14 @@ export default async function Home({params}) {
                                 <div className="box-6">
                                     <Image 
                                         src="/box-6.png"
+                                        alt="Temple Beer box"
                                         fill
                                     />
                                 </div>
                                 <div className="box-7">
                                     <Image 
                                         src="/box-7.png"
+                                        alt="Temple Beer box"
                                         fill
                                     />
                                 </div>
@@ -336,6 +307,7 @@ export default async function Home({params}) {
                                     <div className="div-block-8 w-[32.86vh] h-[25.49vh] relative">
                                         <Image 
                                             src="/box-8.png"
+                                            alt="Temple Beer box"
                                             style={{
                                                 objectFit: 'cover',
                                                 objectPosition: 'center'
@@ -348,7 +320,7 @@ export default async function Home({params}) {
                                             <div className="rotate-[17deg] w-[9.69vh] h-[9.69vh] relative">
                                                 <Image 
                                                     src="/sticker-rosa-tempple.png"
-                                                    alt="Temple Beer"
+                                                    alt="Sticker Temple Beer Rosa"
                                                     fill 
                                                 />
                                             </div>
@@ -359,7 +331,7 @@ export default async function Home({params}) {
                                             <div className="rotate-[9deg] w-[25.07vh] h-[5.09vh] relative">
                                                 <Image 
                                                     src="/sticker-temple-verde.png"
-                                                    alt="Temple Beer"
+                                                    alt="Sticker Temple Beer Verde"
                                                     fill 
                                                 />
                                             </div>
@@ -370,7 +342,7 @@ export default async function Home({params}) {
                                             <div className=" w-[12.32vh] h-[12.18vh] relative">
                                                 <Image 
                                                     src="/sticker-musica.png"
-                                                    alt="Temple Beer"
+                                                    alt="Sticker Temple Beer Musica"
                                                     fill 
                                                 />
                                             </div>
@@ -399,6 +371,7 @@ export default async function Home({params}) {
                                     <Link href={`${lang}/encuentro`} className="encuentros w-[44.61vh] h-[61.89vh] -top-[34.5vh] absolute">
                                         <Image 
                                             src="/encuentros-back.png"
+                                            alt="Temple Beer Encuentros"
                                             style={{
                                                 objectFit: 'contain',
                                                 objectPosition: 'center'
@@ -426,7 +399,7 @@ export default async function Home({params}) {
                                             <div className="relative w-[13.33vw] h-[16.15vw] md:w-[12.06vh] md:h-[15.04vh] group-hover:rotate-[10deg] transition-transform duration-500">
                                                 <Image
                                                     src="/musica/parlante.png"
-                                                    alt="Sticker"
+                                                    alt="Sticker Temple Beer Parlante"
                                                     fill
                                                 />
                                             </div>
@@ -434,14 +407,14 @@ export default async function Home({params}) {
                                                 <div className="absolute -right-[5.2vh] -top-[4vh] w-[9vw] h-[9vw] md:w-[8.62vh] md:h-[8.62vh] group-hover:-rotate-[18deg] transition-transform duration-100 -rotate-[40deg]">
                                                     <Image
                                                         src="/musica/sound.png"
-                                                        alt="Sticker"
+                                                        alt="Sticker Temple Beer Sound"
                                                         fill
                                                     />
                                                 </div>
                                                 <div className="absolute -bottom-[4vh] -right-[5.2vh] w-[9vw] h-[9vw] md:w-[8.62vh] md:h-[8.62vh] group-hover:rotate-[18deg] transition-transform duration-100 rotate-[40deg]">
                                                     <Image
                                                         src="/musica/sound.png"
-                                                        alt="Sticker"
+                                                        alt="Sticker Temple Beer Sound"
                                                         fill
                                                     />
                                                 </div>
@@ -455,6 +428,7 @@ export default async function Home({params}) {
                                     <div className="beer-png w-[18.55vh] h-[60.62vh] -top-[30.82vh] right-[0vh] absolute">
                                         <Image 
                                             src="/vaso-birra.png"
+                                            alt="Sticker Temple Beer Vaso Birra"
                                             style={{
                                                 objectFit: 'contain',
                                             }}
@@ -467,6 +441,7 @@ export default async function Home({params}) {
                     </div>
                 </ScrollHorizontal>    
             </div>
+
             <div className="mobile bg-cover bg-center block md:hidden overflow-hidden" style={{ backgroundImage: 'url(/background-home.jpeg)' }}>
                 <div className="mobile-box-1">
                     <div className="beer-wrapper-mobile">
@@ -476,14 +451,14 @@ export default async function Home({params}) {
                                     {lang == 'es' && (
                                         <Image 
                                             src="/nuestrasbirras/clasicas/wolf-ipa/wolf-ipa.png"
-                                            alt="Lata de Cerveza"
+                                            alt="Lata de Cerveza Principal Wolf Ipa"
                                             fill
                                         />
                                     )}
                                     {lang == 'en' && (
                                         <Image 
                                             src="/nuestrasbirras/en/wolf-ipa/wolf-ipa.png"
-                                            alt="Lata de Cerveza"
+                                            alt="Lata de Cerveza Principal Wolf Ipa"
                                             fill
                                         />
                                     )}
@@ -493,14 +468,14 @@ export default async function Home({params}) {
                                 <div className="relative w-[21.53vw] h-[20.25vw]">
                                     <Image
                                         src="/sticker-isologo.png"
-                                        alt="Sticker"
+                                        alt="Sticker Isologo"
                                         fill
                                     />
                                 </div>
                             </div>
                             <Image 
                                 src="/back-main-image.png"
-                                alt="Temple Beer"
+                                alt="Temple Beer Image"
                                 fill
                             />
                         </div>
@@ -518,7 +493,7 @@ export default async function Home({params}) {
                                     <div className="rotate-[17deg] w-[17.31vw] h-[17.83vw] relative">
                                         <Image 
                                             src="/nuestrasbirras/sticker-cerveza.svg"
-                                            alt="Temple Beer"
+                                            alt="Sticker Temple Beer"
                                             fill 
                                         />
                                     </div>
@@ -540,7 +515,7 @@ export default async function Home({params}) {
                                         <div className="-rotate-[5deg] w-[22.02vw] h-[4.45vw] relative">
                                             <Image 
                                                 src="/sticker-temple-rosa.png"
-                                                alt="Temple Beer"
+                                                alt="Sticker Temple Beer Rosa"
                                                 fill 
                                             />
                                         </div>
@@ -550,7 +525,7 @@ export default async function Home({params}) {
                                 <div className="relative w-[32.56vw] h-[23.84vw] rounded-tl-[7.69vw] overflow-hidden">
                                     <Image 
                                         src="/header-collage.png"
-                                        alt="Temple Beer"
+                                        alt="Sticker Temple Beer Collage"
                                         style={{
                                         objectFit: 'cover',
                                         objectPosition: 'center'
@@ -561,7 +536,7 @@ export default async function Home({params}) {
                                 <div className="relative w-[32.56vw] h-[36.41vw]">
                                 <Image 
                                     src="/art-beer.png"
-                                    alt="Temple Beer"
+                                    alt="Sticker Temple Beer Art Beer"
                                     style={{
                                     objectFit: 'cover',
                                     objectPosition: 'center'
@@ -580,10 +555,10 @@ export default async function Home({params}) {
                                 </h1>
                                 {lang == 'es' && (
                                     <nav className="flex flex-wrap self-stretch">
-                                    {data.birras.map((birraObj, index) => (
+                                    {allBirras.data.map((birraObj, index) => (
                                         <span key={index} className={`text-[2.30vw] py-[0.51vw] px-[1.28vw] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
-                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`${lang}/birras/${birraObj.slug}`}>
-                                            {birraObj.title}
+                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`${lang}/birras/${birraObj.attributes.slug}`}>
+                                            {birraObj.attributes.nombre}
                                             </Link>
                                         </span>
                                     ))}
@@ -591,10 +566,10 @@ export default async function Home({params}) {
                                 )}
                                 {lang == 'en' && (
                                     <nav className="flex flex-wrap self-stretch">
-                                    {data.birrasEn.map((birraObj, index) => (
+                                    {allBirras.data.map((birraObj, index) => (
                                         <span key={index} className={`text-[2.30vw] py-[0.51vw] px-[1.28vw] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`} >
-                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`${lang}/birras/${birraObj.slug}`}>
-                                            {birraObj.title}
+                                            <Link className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out" href={`${lang}/birras/${birraObj.attributes.slug}`}>
+                                            {birraObj.attributes.nombre}
                                             </Link>
                                         </span>
                                         ))}
@@ -611,7 +586,7 @@ export default async function Home({params}) {
                             <div className="column-especial relative w-[62.82vw] h-[94.87vw]">
                                 <Image 
                                     src="/frame-2.jpg"
-                                    alt="Temple Beer"
+                                    alt="Temple Beer Frame 2"
                                     style={{
                                     objectFit: 'cover',
                                     }}
@@ -622,7 +597,7 @@ export default async function Home({params}) {
                             <div className="column-especial relative w-[62.82vw] h-[94.87vw]">
                                 <Image 
                                     src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExdjRveTUxeDk5cHZmeWFtNWJreTNzM2t0NTgxbDEzOHJjZ3h2YzVhYSZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/KBw4MkRoLLLzmK5NTp/giphy-downsized-large.gif"
-                                    alt="Temple Beer"
+                                    alt="Temple Beer Gif"
                                     fill
                                     style={{
                                     objectFit: 'cover',
@@ -633,7 +608,7 @@ export default async function Home({params}) {
                             <div className="column-especial relative w-[62.82vw] h-[94.87vw]">
                                 <Image 
                                     src="/frame-4.png"
-                                    alt="Temple Beer"
+                                    alt="Temple Beer Frame 4"
                                     fill
                                     style={{
                                     objectFit: 'cover',
@@ -652,6 +627,7 @@ export default async function Home({params}) {
                                     <div className="div-block-6 w-[6.66vw] h-[8.46vw] relative group-hover:rotate-90 transition-transform duration-500">
                                         <Image 
                                             src="/arrow-qr.svg"
+                                            alt="icon qr code"
                                             style={{
                                                 objectFit: 'cover',
                                                 objectPosition: 'center'
@@ -662,7 +638,7 @@ export default async function Home({params}) {
                                     <div className="w-[17.43vw] h-[17.69vw] relative">
                                         <Image 
                                             src="/qrcode.png"
-                                            alt="Temple Beer"
+                                            alt="icon qr code"
                                             style={{
                                             objectFit: 'cover',
                                             objectPosition: 'center'
@@ -677,6 +653,7 @@ export default async function Home({params}) {
                                     <div className="div-block-6 w-[6.66vw] h-[8.46vw] relative group-hover:rotate-90 transition-transform duration-500">
                                         <Image 
                                             src="/arrow-qr.svg"
+                                            alt="icon qr code"
                                             style={{
                                                 objectFit: 'cover',
                                                 objectPosition: 'center'
@@ -687,7 +664,8 @@ export default async function Home({params}) {
                                     <div className="w-[17.43vw] h-[17.69vw] relative">
                                         <Image 
                                             src="/qrcode.png"
-                                            alt="Temple Beer"
+
+                                            alt="icon qr code"
                                             style={{
                                             objectFit: 'cover',
                                             objectPosition: 'center'
@@ -702,7 +680,7 @@ export default async function Home({params}) {
                                     <div className="rotate-[-10.5deg] w-[41.28vw] h-[8.20vw] relative">
                                         <Image 
                                             src="/sticker-temple-amarrillo.png"
-                                            alt="Temple Beer"
+                                            alt="Sticker Temple Beer Amarillo"
                                             fill 
                                         />
                                     </div>
@@ -713,7 +691,7 @@ export default async function Home({params}) {
                                     <div className="rotate-[-10.5deg] w-[23.58vw] h-[23.84vw] relative">
                                         <Image 
                                             src="/sticker-hand.png"
-                                            alt="Temple Beer"
+                                            alt="Sticker Temple Beer Hand"
                                             fill 
                                         />
                                     </div>
@@ -724,7 +702,7 @@ export default async function Home({params}) {
                             <div className="w-[43.58vw] h-[17.69vw] relative">
                                 <Image 
                                     src="/box-6.png"
-                                    alt="Temple Beer"
+                                    alt="Sticker Temple Beer Box 6"
                                     style={{
                                     objectFit: 'cover',
                                     objectPosition: 'center'
@@ -739,7 +717,7 @@ export default async function Home({params}) {
                             <div className="w-[43.58vw] h-[50.51vw] relative">
                                 <Image 
                                     src="/box-7.png"
-                                    alt="Temple Beer"
+                                    alt="Temple Beer Box 7"
                                     style={{
                                     objectFit: 'cover',
                                     objectPosition: 'center'
@@ -752,7 +730,7 @@ export default async function Home({params}) {
                             <div className="w-[43.58vw] h-[50.51vw] relative">
                                 <Image 
                                     src="/box-8.png"
-                                    alt="Temple Beer"
+                                    alt="Temple Beer Box 8"
                                     style={{
                                     objectFit: 'cover',
                                     objectPosition: 'center'
@@ -764,7 +742,7 @@ export default async function Home({params}) {
                                         <div className="rotate-[-10.5deg] w-[22.30vw] h-[22.05vw] relative">
                                             <Image 
                                                 src="/sticker-musica.png"
-                                                alt="Temple Beer"
+                                                alt="Sticker Temple Beer Musica"
                                                 fill 
                                             />
                                         </div>
@@ -775,7 +753,7 @@ export default async function Home({params}) {
                                         <div className="rotate-[17deg] w-[12.24vw] h-[12.24vw] relative">
                                             <Image 
                                                 src="/sticker-rosa-tempple.png"
-                                                alt="Temple Beer"
+                                                alt="Sticker Temple Beer Rosa"
                                                 fill 
                                             />
                                         </div>
@@ -790,6 +768,7 @@ export default async function Home({params}) {
                         <Link href={`${lang}/encuentro`} className="w-[39.74vw] h-[53.07vw] relative">
                             <Image 
                                 src="/encuentros-back.png"
+                                alt="Encuentro"
                                 style={{
                                     objectFit: 'contain',
                                     objectPosition: 'center'
@@ -808,7 +787,7 @@ export default async function Home({params}) {
                                     <div className="rotate-[9deg] w-[37.17vw] h-[7.53vw] relative">
                                         <Image 
                                             src="/sticker-temple-verde.png"
-                                            alt="Temple Beer"
+                                            alt="Sticker Temple Beer Verde"
                                             fill 
                                         />
                                     </div>
@@ -825,7 +804,7 @@ export default async function Home({params}) {
                                 <div className="w-[29.76vw] h-[41.12vw] relative">
                                     <Image 
                                         src="/parlante-sticker.png"
-                                        alt="Temple Beer"
+                                        alt="Sticker Temple Beer Parlante"
                                         fill 
                                     />
                                 </div>
@@ -835,6 +814,7 @@ export default async function Home({params}) {
                     <div className="beer-png w-[25.38vw] h-[83.33vw] bottom-[8vw] right-[0vw] absolute z-10">
                         <Image 
                             src="/vaso-birra.png"
+                            alt="Sticker Vaso Birra Temple Beer"
                             style={{
                                 objectFit: 'contain',
                                 

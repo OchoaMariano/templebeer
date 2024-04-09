@@ -44,7 +44,7 @@ export default async function Page({ params }) {
             <div className="absolute left-[62.30vw] z-10">
               <Draggable initialPosition={{ x: 0, y: 0 }}>
                 <div className="relative w-[25.38vw] h-[25.38vw]">
-                  <Image src="/bares/sticker-bares.png" alt="Sticker" fill />
+                  <Image src="/bares/sticker-bares.png" alt="Sticker Bares" fill />
                 </div>
               </Draggable>
             </div>
@@ -58,7 +58,7 @@ export default async function Page({ params }) {
                     <Image src="/bares/mapa-usa.png" alt="mapa-miami" fill />
                     <img
                       src="/bares/point-mapa.png"
-                      alt=""
+                      alt="icono punto en el mapa"
                       class="absolute miami top-[50vw] right-[2vw] md:top-[59vh] md:right-[3vh] w-[4vw] h-[4vw] md:w-[5vh] md:h-[5vh] hover:scale-110 transform ease-in-out duration-300 cursor-pointer"
                     />
                   </div>
@@ -69,7 +69,7 @@ export default async function Page({ params }) {
                     <div className="relative w-[19.26vh] h-[19.26vh]">
                       <Image
                         src="/bares/sticker-bares.png"
-                        alt="Sticker"
+                        alt="Sticker Bares Cerveza"
                         fill
                       />
                     </div>
@@ -102,7 +102,7 @@ export default async function Page({ params }) {
                               <div className="flex items-center justify-center gap-x-1">
                                 <img
                                   src="/bares/wa.png"
-                                  alt=""
+                                  alt="icono whatsapp"
                                   className="w-[1.84vh] h-[1.84vh]"
                                 />
                                 <span className="text-[3vw] md:text-[1.33vh]">
@@ -114,7 +114,7 @@ export default async function Page({ params }) {
                             <div>
                               <img
                                 src="/bares/line.png"
-                                alt=""
+                                alt="icono linea"
                                 className="h-3"
                               />
                             </div>
@@ -122,7 +122,7 @@ export default async function Page({ params }) {
                               <div className="flex items-center justify-center gap-x-1">
                                 <img
                                   src="/bares/mail.png"
-                                  alt=""
+                                  alt="icono mail"
                                   className="w-[2.23vh] h-[1.84vh]"
                                 />
                                 <span className="text-[3vw] md:text-[1.33vh]">
@@ -143,7 +143,7 @@ export default async function Page({ params }) {
                         <div className="rotate-[7.25deg] w-[22.80vh] h-[4.53vh] relative">
                           <Image
                             src="/sticker-temple-amarrillo.png"
-                            alt="Temple Beer"
+                            alt="Sticker Temple Beer Amarillo"
                             fill
                           />
                         </div>
@@ -154,7 +154,7 @@ export default async function Page({ params }) {
                         <div className=" -rotate-[13.25deg] w-[22.52vh] h-[4.76vh] relative">
                           <Image
                             src="/sticker-temple-rosa.png"
-                            alt="Temple Beer"
+                            alt="Sticker Temple Beer Rosa"
                             fill
                           />
                         </div>
@@ -168,7 +168,7 @@ export default async function Page({ params }) {
                   <div className="rotate-[23deg] w-[14.61vw] h-[14.61vw] md:w-[9.69vh] md:h-[9.69vh] relative">
                     <Image
                       src="/sticker-rosa-tempple.png"
-                      alt="Temple Beer"
+                      alt="Sticker Temple Beer Rosa"
                       fill
                     />
                   </div>
@@ -179,7 +179,7 @@ export default async function Page({ params }) {
                   <div className=" -rotate-[5deg] w-[30.76vw] h-[6.34vw] relative">
                     <Image
                       src="/sticker-temple-rosa.png"
-                      alt="Temple Beer"
+                      alt="Sticker Temple Beer Rosa"
                       fill
                     />
                   </div>
@@ -190,7 +190,7 @@ export default async function Page({ params }) {
                   <div className="rotate-[-5deg] w-[30.76vw] h-[6.34vw] relative">
                     <Image
                       src="/sticker-temple-amarrillo.png"
-                      alt="Temple Beer"
+                      alt="Sticker Temple Beer Amarillo"
                       fill
                     />
                   </div>
@@ -201,7 +201,7 @@ export default async function Page({ params }) {
                   <div className="rotate-[9deg] w-[30.76vw] h-[6.34vw] relative">
                     <Image
                       src="/sticker-temple-verde.png"
-                      alt="Temple Beer"
+                      alt="Sticker Temple Beer Verde"
                       fill
                     />
                   </div>

@@ -1,3 +1,4 @@
+import { Suspense } from 'react'
 import Image from "next/image";
 import { Knockout54UltraBold } from "../layout";
 import CarouselBirras from "../../../../components/birras/CarouselBirras";
@@ -73,7 +74,7 @@ export default async function Page({ params }) {
                       <div className="rotate-[17deg] w-[13.84vw] h-[33.84vw] lg:w-[10.48vh] lg:h-[25.49vh] relative">
                         <Image
                           src="/nuestrasbirras/sticker-cerveza.svg"
-                          alt="Temple Beer"
+                          alt="Icono vaso de cerveza"
                           fill
                         />
                       </div>
@@ -86,7 +87,7 @@ export default async function Page({ params }) {
                       <div className="rotate-[17deg] w-[13.84vw] h-[33.84vw] lg:w-[10.48vh] lg:h-[25.49vh] relative">
                         <Image
                           src="/nuestrasbirras/sticker-cerveza.svg"
-                          alt="Temple Beer"
+                          alt="Icono vaso de cerveza"
                           fill
                         />
                       </div>
@@ -97,20 +98,24 @@ export default async function Page({ params }) {
             </div>
           </div>
           {lang === "es" && (
-            <ScrollHorizontal>
-              <div className={`carousel__wrapper  h-[122.82vw] w-[100%] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]`}>
-                <CarouselBirras birras={bClasicas.data} />
-                <CarouselBirras birras={bLimitadas.data} />
-                <CarouselBirras birras={bEspeciales.data} />
-              </div>
-            </ScrollHorizontal>
+            <Suspense fallback={<p>Cargando cervezas...</p>}>
+              <ScrollHorizontal>
+                <div className={`carousel__wrapper  h-[122.82vw] w-[100%] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]`}>
+                  <CarouselBirras birras={bClasicas.data} />
+                  <CarouselBirras birras={bLimitadas.data} />
+                  <CarouselBirras birras={bEspeciales.data} />
+                </div>
+              </ScrollHorizontal>
+            </Suspense>
           )}
           {lang === "en" && (
-            <ScrollHorizontal>
-              <div className="carousel__wrapper w-[421vw] h-[122.82vw] lg:w-[100%] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]">
-                <CarouselBirras birras={bUs.data} />
-              </div>
-            </ScrollHorizontal>
+            <Suspense fallback={<p>Loading beers...</p>}>
+              <ScrollHorizontal>
+                <div className="carousel__wrapper w-[421vw] h-[122.82vw] lg:w-[100%] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]">
+                  <CarouselBirras birras={bUs.data} />
+                </div>
+              </ScrollHorizontal>
+            </Suspense>
           )}
         </div>
         <Footer />

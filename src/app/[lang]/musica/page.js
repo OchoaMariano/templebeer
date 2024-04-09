@@ -34,10 +34,10 @@ export default async function Page({ params }) {
             </h1>
             <div className="group pl-[3.07vw] md:pl-[6.37vh] flex flex-row cursor-pointer items-center">
               <div className="relative w-[13.33vw] h-[16.15vw] md:w-[9.06vh] md:h-[11.04vh] group-hover:rotate-[20deg] transition-transform duration-500">
-                <Image src="/musica/parlante.png" alt="Sticker" fill />
+                <Image src="/musica/parlante.png" alt="Sticker Parlante" fill />
               </div>
               <div className="relative w-[9vw] h-[9vw] md:w-[10.62vh] md:h-[10.62vh] group-hover:-rotate-[18deg] transition-transform duration-100 ">
-                <Image src="/musica/sound.png" alt="Sticker" fill />
+                <Image src="/musica/sound.png" alt="Sticker Sound" fill />
               </div>
             </div>
           </div>
@@ -69,7 +69,7 @@ export default async function Page({ params }) {
                             target="_blank"
                           >
                             <div className="relative w-[2.83vh] h-[2.26vh]">
-                              <Image src="/musica/video.svg" alt="" fill />
+                              <Image src="/musica/video.svg" alt="Icono Video" fill />
                             </div>
                           </a>
                         </div>
@@ -93,7 +93,7 @@ export default async function Page({ params }) {
                     <div className="rotate-[13.25deg] w-[22.52vh] h-[4.76vh] relative">
                       <Image
                         src="/sticker-temple-rosa.png"
-                        alt="Temple Beer"
+                        alt="Sticker Temple Beer Rosa"
                         fill
                       />
                     </div>
@@ -123,7 +123,7 @@ export default async function Page({ params }) {
                       <div className="absolute top-[40.94vw] -left-[4vw] bg-black rounded-full w-[12.82vw] h-[12.82vw] flex items-center justify-center cursor-pointer">
                         <a href={item.attributes.video_url} target="_blank">
                           <div className="relative w-[2.83vh] h-[2.26vh]">
-                            <Image src="/musica/video.svg" alt="" fill />
+                            <Image src="/musica/video.svg" alt="Icono video" fill />
                           </div>
                         </a>
                       </div>
@@ -147,14 +147,14 @@ export default async function Page({ params }) {
             <div className="absolute left-[28vh] bottom-[13vh]">
               <Draggable initialPosition={{ x: 0, y: 0 }}>
                 <div className="rotate-[-10.5deg] w-[20.67vh] h-[20.82vh] relative">
-                  <Image src="/sticker-hand.png" alt="Temple Beer" fill />
+                  <Image src="/sticker-hand.png" alt="Icono Hand Temple Beer" fill />
                 </div>
               </Draggable>
             </div>
             <div className="absolute right-[10vh] -top-[3vh] mb-4 mr-4 z-10">
               <Draggable initialPosition={{ x: 0, y: 0 }}>
                 <div className=" w-[12.32vh] h-[12.18vh] relative">
-                  <Image src="/sticker-musica.png" alt="Temple Beer" fill />
+                  <Image src="/sticker-musica.png" alt="Musica Temple Beer" fill />
                 </div>
               </Draggable>
             </div>

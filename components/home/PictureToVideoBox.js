@@ -42,7 +42,7 @@ export default function PictureToVideoBox() {
         // Se muestra la imagen cuando no hay hover
         <Image 
           src="/frame-2.jpg"
-          alt="Temple Beer"
+          alt="Temple Beer Frame 2"
           layout="fill"
           objectFit="cover"
           style={{

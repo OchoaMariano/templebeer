@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { createLocalePath } from '../../src/utils/pathUtils'
 
-function CarouselBirras({ cervezas, titulo, colorBordeTitulo, birras }) {
+function CarouselBirras({ birras }) {
   const pathName = usePathname();
 
     return (
@@ -17,7 +17,7 @@ function CarouselBirras({ cervezas, titulo, colorBordeTitulo, birras }) {
                     <div className="w-[70.25vw] h-[109.74vw] lg:h-[40.5vh] lg:w-[26.34vh] relative">
                         <Image 
                           src={birra.attributes.productImage?.data.attributes.url}
-                          alt={birra.attributes.productImage?.data.attributes.name}
+                          alt={birra.attributes.productImage?.data.attributes.alternativeText}
                           style={{
                               objectFit: 'cover'
                             }}
