@@ -708,6 +708,11 @@
       "gridClasicas": null,
       "gridLimitadas": null,
       "gridEspeciales": true
+    },
+    {
+      "id": 25,
+      "nombre": "Tripy Botanical Pale",
+      "slug": "trippy-botanical-pale"
     }
   ]
 }

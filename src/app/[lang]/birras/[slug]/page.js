@@ -13,21 +13,26 @@ import CervezasDataEn from "../../../../../data/cervezas-en.json";
 import { getDictionary } from "../../../../dictionaries";
 import Draggable from "../../../../../components/common/Dragabble";
 
-
 async function getBirras(lang, slug) {
-    const respuesta = await fetch(`https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?filters%5Bslug%5D=${slug}&populate=propiedadesBirra%2C%20productImage%2C%20backgroundImage%2C%20decorationBackgroundImageLeft%2C%20decorationBackgroundImageRight%2CdetailColumns.birras.productImage%2C%20detailColumns.image%2C%20detailColumns.video&locale=${lang}`, { cache: 'no-store' });
-    return respuesta.json()
+  const respuesta = await fetch(
+    `https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?filters%5Bslug%5D=${slug}&populate=propiedadesBirra%2C%20productImage%2C%20backgroundImage%2C%20decorationBackgroundImageLeft%2C%20decorationBackgroundImageRight%2CdetailColumns.birras.productImage%2C%20detailColumns.image%2C%20detailColumns.video&locale=${lang}`,
+    { cache: "no-store" }
+  );
+  return respuesta.json();
 }
 
 async function getAllBirras(lang) {
-  const respuesta = await fetch(`https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?locale=${lang}`, { cache: 'no-store' });
-  return respuesta.json()
+  const respuesta = await fetch(
+    `https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?locale=${lang}`,
+    { cache: "no-store" }
+  );
+  return respuesta.json();
 }
 
 export default async function Page({ params }) {
   const { slug, lang } = params; // Asumiendo que "params" contiene un objeto con la propiedad "slug"
 
-  const allBirras =  getAllBirras(lang);
+  const allBirras = getAllBirras(lang);
   const birrasBySlug = getBirras(lang, slug);
 
   const [allB, bbs] = await Promise.all([allBirras, birrasBySlug]);
@@ -37,16 +42,18 @@ export default async function Page({ params }) {
 
   let detailColumnsClaim, detailColumnsGrid, detailColumnsVideo;
 
-  birraObject.attributes.detailColumns.forEach(element => {
-    if (element.__component == 'shared.column-claim') {
+  birraObject.attributes.detailColumns.forEach((element) => {
+    if (element.__component == "shared.column-claim") {
       detailColumnsClaim = element;
-    } else if (element.__component == 'shared.grid-birras') {
+    } else if (element.__component == "shared.grid-birras") {
       detailColumnsGrid = element;
-    } else if (element.__component == 'shared.column-content') {
+    } else if (element.__component == "shared.column-content") {
       detailColumnsVideo = element;
     }
-  }); 
+  });
 
+  const orderDetailColumnsGris = [...detailColumnsGrid.birras.data];
+  orderDetailColumnsGris.sort((a, b) => b.id - a.id);
   const orderDetailColumnsGris = [...detailColumnsGrid.birras.data]
   orderDetailColumnsGris.sort((a, b) => b.id - a.id)
 
@@ -55,7 +62,7 @@ export default async function Page({ params }) {
 
   // TODO: TOMAR "MEDIDAS" O RELACION DE ASPECTO DE LAS IMAGENES Y VIDEOS PARA RENDERIZAR CUSTOM Y DEJAR DE LLAMAR AL OBJETO ESTATICO CON LA DATA
 
-  let cerveza = null
+  let cerveza = null;
 
   if (lang === "es") {
     cerveza = CervezasData.Cervezas.find((c) => c.slug === slug);
