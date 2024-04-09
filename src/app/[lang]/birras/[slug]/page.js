@@ -13,6 +13,11 @@ import CervezasDataEn from "../../../../../data/cervezas-en.json";
 import { getDictionary } from "../../../../dictionaries";
 import Draggable from "../../../../../components/common/Dragabble";
 
+//
+// TODO: TOMAR "MEDIDAS" O RELACION DE ASPECTO DE LAS IMAGENES Y VIDEOS PARA RENDERIZAR CUSTOM Y DEJAR DE LLAMAR AL OBJETO ESTATICO CON LA DATA --> CervezasData y CervezasDataEn 
+//
+
+// Get Beer by Slug and Lang with all fields and relations
 async function getBirras(lang, slug) {
   const respuesta = await fetch(
     `https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?filters%5Bslug%5D=${slug}&populate=propiedadesBirra%2C%20productImage%2C%20backgroundImage%2C%20decorationBackgroundImageLeft%2C%20decorationBackgroundImageRight%2CdetailColumns.birras.productImage%2C%20detailColumns.image%2C%20detailColumns.video&locale=${lang}`,
@@ -21,6 +26,7 @@ async function getBirras(lang, slug) {
   return respuesta.json();
 }
 
+// Get Beer by Slug and Lang with all fields and relations
 async function getAllBirras(lang) {
   const respuesta = await fetch(
     `https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?locale=${lang}`,
@@ -57,8 +63,6 @@ export default async function Page({ params }) {
 
   const { darkColor } = birraObject.attributes // Texto y color cuando el fondo es claro o oscuro (TRUE OR FALSE)
   const { hightlightColor } = birraObject.attributes // Color destacado de la cerveza
-
-  // TODO: TOMAR "MEDIDAS" O RELACION DE ASPECTO DE LAS IMAGENES Y VIDEOS PARA RENDERIZAR CUSTOM Y DEJAR DE LLAMAR AL OBJETO ESTATICO CON LA DATA
 
   let cerveza = null;
 

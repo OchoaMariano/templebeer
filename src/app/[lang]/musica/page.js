@@ -6,6 +6,11 @@ import Draggable from "../../../../components/common/Dragabble";
 import Footer from "../../../../components/common/Footer";
 import { getDictionary } from "../../../dictionaries";
 
+//
+// TODO: SUSPENSE ANIMATION
+//
+
+//Get all music events from API
 async function getMusicaByLang(lang){
   const respuesta = await fetch(
     `https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/musicas?populate=image&locale=${lang}`,
@@ -24,7 +29,8 @@ export default async function Page({ params }) {
   return (
     <div>
       <Header dictonary={headerDic} />
-      <section className="md:h-screen bg-cover bg-center md:flex md:items-center" style={{ backgroundImage: "url(/background-home.jpeg)" }}>
+      <section className="md:h-screen bg-cover bg-center md:flex md:items-center" 
+              style={{ backgroundImage: "url(/background-home.jpeg)" }}>
         <div className="page__wrapper pt-[18.15vw] md:pt-[6.37vh] px-[5.12vw] md:px-[4.83vh] overflow-hidden">
 
           {/* HEADING */}
@@ -47,14 +53,15 @@ export default async function Page({ params }) {
             <ScrollHorizontal>
               <div className="hidden md:flex flex-col md:flex-row justify-between items-start gap-x-[2.83vh] gap-y-[5.12vw] w-[194.19vh] relative">
                 {allMusica.data.map((item) => (
-                  <div key={item.id} className={`bg-[${item.attributes.background}] p-[2.83vh] flex flex-col justify-between gap-y-[2.97vh] w-[36.54vh] h-[67.13vh]`}>
+                  <div key={item.id} className="p-[2.83vh] flex flex-col justify-between gap-y-[2.97vh] w-[36.54vh] h-[67.13vh]" style={{backgroundColor: item.attributes.background }}>
                     <div className="card-1 relative">
-                      <div className={`relative w-[${item.attributes.imageWidth}vh] h-[${item.attributes.imageHeight}vh] `}>
+                      <div className="relative">
                         <Image
                           src={item.attributes.image.data.attributes.url}
                           alt={item.attributes.Title}
-                          className={`w-[${item.attributes.imageWidth}vh] h-[${item.attributes.imageHeight}vh]`}
-                          style={{
+                          style={{ 
+                            width: `${item.attributes.imageWidth}vh`,
+                            height: `${item.attributes.imageHeight}vh`,
                             objectFit: "cover",
                             objectPosition: "center",
                           }}
@@ -105,7 +112,11 @@ export default async function Page({ params }) {
             {/* MOBILE */}
             <div className="flex flex-col justify-between items-start gap-y-[5.12vw] md:hidden">
               {allMusica.data.map((item) => (
-                <div key={item.id} className={`bg-[${item.attributes.background}] p-[5.12vw] flex flex-col justify-between gap-y-4 lg:gap-y-0  w-[89.74vw] h-[100%]`}>
+                <div 
+                  key={item.id} 
+                  className={`bg-[${item.attributes.background}] p-[5.12vw] flex flex-col justify-between gap-y-4 lg:gap-y-0  w-[89.74vw] h-[100%]`}
+                  style={{backgroundColor: item.attributes.background }}
+                >
                   <div className="card-1 relative">
                     <div className={` relative w-[79.48vw] h-[85.74vw] `}>
                       <Image
@@ -142,8 +153,6 @@ export default async function Page({ params }) {
                 </div>
               ))}
             </div>
-
-
             <div className="absolute left-[28vh] bottom-[13vh]">
               <Draggable initialPosition={{ x: 0, y: 0 }}>
                 <div className="rotate-[-10.5deg] w-[20.67vh] h-[20.82vh] relative">

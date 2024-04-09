@@ -8,54 +8,43 @@ import Header from "../../../../components/common/header";
 import Footer from "../../../../components/common/Footer";
 import { getDictionary } from "../../../dictionaries";
 
-async function getBirrasClasicas() {
+// Get all beers from orden-birra ENDPOINT to show ordered CMS Beers
+async function getOrderedBirrasByLang(lang){
   const respuesta = await fetch(
-    "https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?populate=*&filters%5Bcategorias_birra%5D[slug]=birras-clasicas&locale=es",
+    `https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/orden-birra?populate=listaBirras.birras.productImage%2C%20listaBirras.birras.categorias_birra&locale=${lang}`,
     { cache: "no-store" }
   );
   return respuesta.json();
-}
-
-async function getBirrasEspeciales() {
-  const respuesta = await fetch(
-    "https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?populate=*&filters%5Bcategorias_birra%5D[slug]=birras-especiales&locale=es",
-    { cache: "no-store" }
-  );
-  return respuesta.json();
-}
-
-async function getBirrasLimitadas() {
-  const respuesta = await fetch(
-    "https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?populate=*&filters%5Bcategorias_birra%5D[slug]=birras-limitadas&locale=es",
-    { cache: "no-store" }
-  );
-  return respuesta.json();
-}
-
-async function getBirrasUs() {
-  const respuesta = await fetch(
-    "https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/birras?populate=*&sort=id%3Adesc&locale=en",
-    { cache: "no-store" }
-  );
-  return respuesta.json();
-}
+} 
 
 export default async function Page({ params }) {
   const lang = params.lang;
   const dict = await getDictionary(lang);
   const headerDic = dict.header;
 
-  const BirrasUs = getBirrasUs();
-  const BirrasClasicas = getBirrasClasicas();
-  const BirrasEspeciales = getBirrasEspeciales();
-  const BirrasLimitadas = getBirrasLimitadas();
+  const getAllOrderedBirras = await getOrderedBirrasByLang(lang);
 
-  const [bClasicas, bEspeciales, bLimitadas, bUs] = await Promise.all([
-    BirrasClasicas,
-    BirrasEspeciales,
-    BirrasLimitadas,
-    BirrasUs,
-  ]);
+  const { listaBirras } = getAllOrderedBirras.data.attributes;
+  const { data: birras } = listaBirras.birras;
+
+  const categorias = {
+    'birras-clasicas': [],
+    'birras-especiales': [],
+    'birras-limitadas': []
+  };
+
+  birras.forEach(birra => {
+    const categoriaSlug = birra.attributes.categorias_birra.data.attributes.slug;
+    if (categorias.hasOwnProperty(categoriaSlug)) {
+      categorias[categoriaSlug].push(birra);
+    }
+  });
+
+  const { 
+    'birras-clasicas': birrasClasicas, 
+    'birras-especiales': birrasEspeciales, 
+    'birras-limitadas': birrasLimitadas 
+  } = categorias;
 
   return (
     <div>
@@ -101,9 +90,9 @@ export default async function Page({ params }) {
             <Suspense fallback={<p>Cargando cervezas...</p>}>
               <ScrollHorizontal>
                 <div className={`carousel__wrapper  h-[122.82vw] w-[100%] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]`}>
-                  <CarouselBirras birras={bClasicas.data} />
-                  <CarouselBirras birras={bLimitadas.data} />
-                  <CarouselBirras birras={bEspeciales.data} />
+                  <CarouselBirras birras={birrasClasicas} />
+                  <CarouselBirras birras={birrasLimitadas} />
+                  <CarouselBirras birras={birrasEspeciales} />
                 </div>
               </ScrollHorizontal>
             </Suspense>
@@ -112,7 +101,7 @@ export default async function Page({ params }) {
             <Suspense fallback={<p>Loading beers...</p>}>
               <ScrollHorizontal>
                 <div className="carousel__wrapper w-[421vw] h-[122.82vw] lg:w-[100%] lg:h-[51.98vh] flex flex-row justify-start items-end pl-[10.76vw] lg:pl-[0px] mt-[4.29vw] lg:mt-[0]">
-                  <CarouselBirras birras={bUs.data} />
+                  <CarouselBirras birras={birras} />
                 </div>
               </ScrollHorizontal>
             </Suspense>
