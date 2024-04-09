@@ -54,8 +54,6 @@ export default async function Page({ params }) {
 
   const orderDetailColumnsGris = [...detailColumnsGrid.birras.data];
   orderDetailColumnsGris.sort((a, b) => b.id - a.id);
-  const orderDetailColumnsGris = [...detailColumnsGrid.birras.data]
-  orderDetailColumnsGris.sort((a, b) => b.id - a.id)
 
   const { darkColor } = birraObject.attributes // Texto y color cuando el fondo es claro o oscuro (TRUE OR FALSE)
   const { hightlightColor } = birraObject.attributes // Color destacado de la cerveza
