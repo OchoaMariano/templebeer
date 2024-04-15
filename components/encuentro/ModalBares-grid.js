@@ -112,7 +112,8 @@ export default function Modal() {
                         backgroundImage: "url('/encuentros/corrientes.png')",
                       }}
                     >
-                      CORRIENTES
+                      {" "}
+                      <span className="text-white"> CORRIENTES</span>
                     </div>
                     <div
                       class="h-full flex justify-center items-center bg-cover bg-center "
@@ -120,7 +121,7 @@ export default function Modal() {
                         backgroundImage: "url('/encuentros/fisherton.png')",
                       }}
                     >
-                      FISHERTON
+                      <span className="text-white">FISHERTON</span>
                     </div>
                   </div>
                   <div className="relative row-span-2 flex justify-center items-center">
@@ -149,12 +150,12 @@ export default function Modal() {
                       ></div>
                     </div>
                     <div
-                      class="bg-orange-800 h-full flex justify-center items-center bg-cover bg-center"
+                      class="h-full flex justify-center items-center bg-cover bg-center"
                       style={{
                         backgroundImage: "url('/encuentros/miami.png')",
                       }}
                     >
-                      MIAMI
+                      <span className="text-white">MIAMI</span>
                     </div>
                   </div>
                 </div>
