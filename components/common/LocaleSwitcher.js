@@ -18,22 +18,18 @@ export default function LocaleSwitcher() {
   }, [router.asPath]);
 
   const handleLocaleChange = (locale) => {
-    // Actualiza sessionStorage con el nuevo locale seleccionado
-    sessionStorage.setItem("selectedCountry", locale);
-
-    // Redirige al usuario a la página correspondiente con el nuevo locale
-    const newPath = redirectedPathName(locale);
-    router.push(newPath);
+    sessionStorage.setItem("selectedCountry", locale); // Guarda el nuevo locale en sessionStorage
+    const newPath = redirectedPathName(locale); // Calcula la nueva ruta
+    router.push(newPath); // Redirige al usuario
   };
 
   const redirectedPathName = (locale) => {
-    // Asegúrate de que el pathName no sea undefined
     if (!pathName) return "/";
     const segments = pathName.split("/");
     if (segments.length > 1 && i18n.locales.includes(segments[1])) {
-      segments[1] = locale;
+      segments[1] = locale; // Asegura que el segundo segmento es el locale correcto
     } else {
-      segments.splice(1, 0, locale);
+      segments.splice(1, 0, locale); // Inserta el locale si no estaba presente
     }
     return segments.join("/");
   };
@@ -42,6 +38,7 @@ export default function LocaleSwitcher() {
   const localeImages = {
     es: "/bandera-arg.svg",
     en: "/bandera-us.svg",
+    "es-MX": "/mx.svg", // Añade la imagen para el locale 'es-MX'
 
     // Añade más locales e imágenes según sea necesario
   };

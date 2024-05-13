@@ -27,8 +27,7 @@ export default function Header({ dictonary }) {
 
     // Chequeamos si el primer segmento es un locale válido
     // Asegurándonos de que la longitud del segmento sea igual a la de los códigos de idioma.
-    const isLocale =
-      i18n.locales.includes(firstSegment) && firstSegment.length === 2; // Asumiendo que todos los locales tienen 2 caracteres
+    const isLocale = i18n.locales.includes(firstSegment); // Asumiendo que todos los locales tienen 2 caracteres
 
     // Si es un locale, y el path no comienza con ese locale, lo agregamos
     if (isLocale) {
@@ -82,7 +81,7 @@ export default function Header({ dictonary }) {
                   ? createLocalePath("/bares")
                   : firstSegment === "en"
                   ? createLocalePath("/bares")
-                  : null
+                  : "es-MX"
               }
               className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"
             >
@@ -117,6 +116,16 @@ export default function Header({ dictonary }) {
                 href="https://www.instagram.com/templecerveza/"
                 target="_blank"
               >
+                <Image
+                  src="/instagram-icon.svg"
+                  alt="Instagram"
+                  width={16}
+                  height={16}
+                />
+              </a>
+            )}
+            {firstSegment == "es-MX" && (
+              <a href="https://www.instagram.com/templemex" target="_blank">
                 <Image
                   src="/instagram-icon.svg"
                   alt="Instagram"
@@ -224,7 +233,7 @@ export default function Header({ dictonary }) {
                     ? createLocalePath("/mapa")
                     : firstSegment === "en"
                     ? createLocalePath("/bares")
-                    : null
+                    : "es-MX"
                 }
                 className="text-[9vw] uppercase nav__item text-white transition duration-300 ease-in-out"
               >

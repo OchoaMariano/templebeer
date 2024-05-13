@@ -13,7 +13,10 @@ export default function SelectCountry() {
     const selectedCountry = sessionStorage.getItem("selectedCountry");
     if (selectedCountry) {
       setShouldShow(false);
-      const locale = selectedCountry === "es" ? "es" : "en";
+      const locale =
+        selectedCountry === "es" || selectedCountry === "es-MX"
+          ? "es-MX"
+          : "en"; // Incluye 'es-MX' aquí también
       // Solo redirige si está en la ruta raíz
       if (router.pathname === "/") {
         router.replace(`/${locale}`);
@@ -26,7 +29,8 @@ export default function SelectCountry() {
   const handleCountrySelect = (countryCode) => {
     sessionStorage.setItem("selectedCountry", countryCode);
     setShouldShow(false);
-    const locale = countryCode === "es" ? "es" : "en";
+    const locale =
+      countryCode === "es" || countryCode === "es-MX" ? "es-MX" : "en"; // Cambia para incluir 'es-MX'
     router.push(`/${locale}`);
   };
 
@@ -39,7 +43,10 @@ export default function SelectCountry() {
       <div className="fixed z-[100] inset-0">
         <div
           className="min-h-screen flex flex-col items-center justify-center lg:justify-between text-white bg-cover bg-center lg:py-40"
-          style={{ backgroundImage: "url(/background.jpg)" }}
+          style={{
+            backgroundImage:
+              "url(https://storage.googleapis.com/temple-bucket-prod/background_5eb594baa5/background_5eb594baa5.jpg)",
+          }}
         >
           <Head>
             <title>Temple Beer</title>
@@ -70,14 +77,13 @@ export default function SelectCountry() {
                 className="w-12 h-[6.79vh]"
                 onClick={() => handleCountrySelect("en")}
               />
-              <Link href="/mapa">
-                <FlagButton
-                  img="/mx.svg"
-                  alt="USA Flag"
-                  className="w-12 h-[6.79vh]"
-                  onClick={() => handleCountrySelect("en")}
-                />
-              </Link>
+              <FlagButton
+                img="/mx.svg" // Asegúrate de que esta ruta a la imagen sea correcta
+                alt="Mexico Flag"
+                className="w-12 h-[6.79vh]"
+                onClick={() => handleCountrySelect("es-MX")} // Cambia aquí para usar 'es-MX'
+              />
+
               <FlagButton
                 img="/flags-cooming-1.png"
                 alt="Spain Flag"
