@@ -81,7 +81,9 @@ export default function Header({ dictonary }) {
                   ? createLocalePath("/bares")
                   : firstSegment === "en"
                   ? createLocalePath("/bares")
-                  : "es-MX"
+                  : firstSegment === "es-MX"
+                  ? createLocalePath("/bares")
+                  : "es"
               }
               className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"
             >
@@ -144,14 +146,27 @@ export default function Header({ dictonary }) {
                 />
               </a>
             )}
-            <a href="https://www.tiktok.com/@templecerveza" target="_blank">
-              <Image
-                src="/tik-tok-icon.svg"
-                alt="Tik-Tok"
-                width={12}
-                height={14}
-              />
-            </a>
+            {firstSegment == "en" && (
+              <a href="https://www.tiktok.com/@templecerveza" target="_blank">
+                <Image
+                  src="/tik-tok-icon.svg"
+                  alt="Tik-Tok"
+                  width={12}
+                  height={14}
+                />
+              </a>
+            )}
+            {firstSegment == "es" && (
+              <a href="https://www.tiktok.com/@templecerveza" target="_blank">
+                <Image
+                  src="/tik-tok-icon.svg"
+                  alt="Tik-Tok"
+                  width={12}
+                  height={14}
+                />
+              </a>
+            )}
+
             {firstSegment == "es" && (
               <a
                 href="https://encasa.temple.com.ar/"
@@ -165,16 +180,6 @@ export default function Header({ dictonary }) {
           <div className="hidden lg:block divisor h-[21px] w-[1px] bg-white"></div>
           <div className="hidden lg:flex lang__nav">
             <LocaleSwitcher />
-            <Link href="/mapa">
-              <Image
-                src="/mx.svg"
-                alt="Mexico"
-                className=" cursor-pointer hidden xl:block"
-                width={24}
-                height={17}
-                data-tooltip-id="tooltip-lang"
-              />
-            </Link>
             <Image
               src="/bandera-es.svg"
               alt="España"
@@ -230,10 +235,12 @@ export default function Header({ dictonary }) {
               <Link
                 href={
                   firstSegment === "es"
-                    ? createLocalePath("/mapa")
+                    ? createLocalePath("/bares")
                     : firstSegment === "en"
                     ? createLocalePath("/bares")
-                    : "es-MX"
+                    : firstSegment === "es-MX"
+                    ? createLocalePath("/bares")
+                    : "es"
                 }
                 className="text-[9vw] uppercase nav__item text-white transition duration-300 ease-in-out"
               >
@@ -276,13 +283,6 @@ export default function Header({ dictonary }) {
                 <div className="lang__nav">
                   <LocaleSwitcher />
                   <Image
-                    src="/mx.svg"
-                    alt="Mexico"
-                    width={24}
-                    height={17}
-                    data-tooltip-id="tooltip-lang"
-                  />
-                  <Image
                     src="/bandera-es.svg"
                     alt="Tik-Tok"
                     width={24}
@@ -317,6 +317,16 @@ export default function Header({ dictonary }) {
                         </div>
                       </a>
                     )}
+                    {firstSegment == "es-MX" && (
+                      <a
+                        href="https://www.instagram.com/templemex"
+                        target="_blank"
+                      >
+                        <div className="relative w-[4.87vw] h-[4.87vw]">
+                          <Image src="/instagram-footer.png" fill />
+                        </div>
+                      </a>
+                    )}
                     {firstSegment == "en" && (
                       <a
                         href="https://www.instagram.com/templemiami/"
@@ -327,21 +337,40 @@ export default function Header({ dictonary }) {
                         </div>
                       </a>
                     )}
-                    <a
-                      href="https://www.tiktok.com/@templecerveza"
-                      target="_blank"
-                    >
-                      <div className="relative w-[4.35vw] h-[4.87vw]">
-                        <Image
-                          src="/tik-tok-footer.png"
-                          style={{
-                            objectFit: "cover",
-                            objectPosition: "center",
-                          }}
-                          fill
-                        />
-                      </div>
-                    </a>
+                    {firstSegment == "es" && (
+                      <a
+                        href="https://www.tiktok.com/@templecerveza"
+                        target="_blank"
+                      >
+                        <div className="relative w-[4.35vw] h-[4.87vw]">
+                          <Image
+                            src="/tik-tok-footer.png"
+                            style={{
+                              objectFit: "cover",
+                              objectPosition: "center",
+                            }}
+                            fill
+                          />
+                        </div>
+                      </a>
+                    )}
+                    {firstSegment == "en" && (
+                      <a
+                        href="https://www.tiktok.com/@templecerveza"
+                        target="_blank"
+                      >
+                        <div className="relative w-[4.35vw] h-[4.87vw]">
+                          <Image
+                            src="/tik-tok-footer.png"
+                            style={{
+                              objectFit: "cover",
+                              objectPosition: "center",
+                            }}
+                            fill
+                          />
+                        </div>
+                      </a>
+                    )}
                   </div>
                 </div>
               </div>

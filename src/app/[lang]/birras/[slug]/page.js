@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import { Suspense } from 'react'
+import { Suspense } from "react";
 import { GothamBook } from "../../layout";
 import { Knockout54UltraBold, Knockout34 } from "../../layout";
 import ScrollHorizontal from "../../../../../components/ScrollHorizontal";
@@ -14,7 +14,7 @@ import { getDictionary } from "../../../../dictionaries";
 import Draggable from "../../../../../components/common/Dragabble";
 
 //
-// TODO: TOMAR "MEDIDAS" O RELACION DE ASPECTO DE LAS IMAGENES Y VIDEOS PARA RENDERIZAR CUSTOM Y DEJAR DE LLAMAR AL OBJETO ESTATICO CON LA DATA --> CervezasData y CervezasDataEn 
+// TODO: TOMAR "MEDIDAS" O RELACION DE ASPECTO DE LAS IMAGENES Y VIDEOS PARA RENDERIZAR CUSTOM Y DEJAR DE LLAMAR AL OBJETO ESTATICO CON LA DATA --> CervezasData y CervezasDataEn
 //
 
 // Get Beer by Slug and Lang with all fields and relations
@@ -61,8 +61,8 @@ export default async function Page({ params }) {
   const orderDetailColumnsGris = [...detailColumnsGrid.birras.data];
   orderDetailColumnsGris.sort((a, b) => b.id - a.id);
 
-  const { darkColor } = birraObject.attributes // Texto y color cuando el fondo es claro o oscuro (TRUE OR FALSE)
-  const { hightlightColor } = birraObject.attributes // Color destacado de la cerveza
+  const { darkColor } = birraObject.attributes; // Texto y color cuando el fondo es claro o oscuro (TRUE OR FALSE)
+  const { hightlightColor } = birraObject.attributes; // Color destacado de la cerveza
 
   let cerveza = null;
 
@@ -93,7 +93,9 @@ export default async function Page({ params }) {
           <Header dictonary={headerDic} />
 
           {/* SECTIO CONTAINER */}
-          <section className="h-screen bg-cover bg-center" style={{
+          <section
+            className="h-screen bg-cover bg-center"
+            style={{
               backgroundImage: birraObject.attributes.backgroundImage?.data
                 ? `url(${birraObject.attributes.backgroundImage?.data.attributes.url})`
                 : "url(/background-home.jpeg)",
@@ -108,8 +110,14 @@ export default async function Page({ params }) {
                         <div className="absolute right-0 bottom-0">
                           <div className="relative w-[47.30vh] h-[83vh]">
                             <Image
-                              src={birraObject.attributes.productImage.data.attributes.url}
-                              alt={birraObject.attributes.productImage.data.attributes.alternativeText}
+                              src={
+                                birraObject.attributes.productImage.data
+                                  .attributes.url
+                              }
+                              alt={
+                                birraObject.attributes.productImage.data
+                                  .attributes.alternativeText
+                              }
                               style={{
                                 objectFit: "cover",
                               }}
@@ -119,9 +127,10 @@ export default async function Page({ params }) {
                         </div>
 
                         <div className="main-content-wrapper">
-
                           <div className="product-title-box">
-                            <h1 className={`text-[9.49vh] text-white leading-none uppercase ${Knockout54UltraBold.className}`}>
+                            <h1
+                              className={`text-[9.49vh] text-white leading-none uppercase ${Knockout54UltraBold.className}`}
+                            >
                               {birraObject.attributes.nombre}
                             </h1>
                           </div>
@@ -177,7 +186,12 @@ export default async function Page({ params }) {
                                     borderColor: darkColor ? "black" : "white",
                                   }}
                                 >
-                                  ALC. {birraObject.attributes.propiedadesBirra.alcohol}%
+                                  ALC.{" "}
+                                  {
+                                    birraObject.attributes.propiedadesBirra
+                                      .alcohol
+                                  }
+                                  %
                                 </span>
                                 <span
                                   className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
@@ -186,7 +200,8 @@ export default async function Page({ params }) {
                                     borderColor: darkColor ? "black" : "white",
                                   }}
                                 >
-                                  IBU {birraObject.attributes.propiedadesBirra.ibu}
+                                  IBU{" "}
+                                  {birraObject.attributes.propiedadesBirra.ibu}
                                 </span>
                                 <span
                                   className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
@@ -195,7 +210,46 @@ export default async function Page({ params }) {
                                     borderColor: darkColor ? "black" : "white",
                                   }}
                                 >
-                                  {birraObject.attributes.propiedadesBirra.size} CC.
+                                  {birraObject.attributes.propiedadesBirra.size}{" "}
+                                  CC.
+                                </span>
+                              </div>
+                            )}
+                            {lang === "es-MX" && (
+                              <div className="propiedades__wrapper flex flex-row text-[1.55vh]  pt-[2.97vh]">
+                                <span
+                                  className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
+                                  style={{
+                                    color: darkColor ? "black" : "white",
+                                    borderColor: darkColor ? "black" : "white",
+                                  }}
+                                >
+                                  ALC.{" "}
+                                  {
+                                    birraObject.attributes.propiedadesBirra
+                                      .alcohol
+                                  }
+                                  %
+                                </span>
+                                <span
+                                  className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
+                                  style={{
+                                    color: darkColor ? "black" : "white",
+                                    borderColor: darkColor ? "black" : "white",
+                                  }}
+                                >
+                                  IBU{" "}
+                                  {birraObject.attributes.propiedadesBirra.ibu}
+                                </span>
+                                <span
+                                  className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
+                                  style={{
+                                    color: darkColor ? "black" : "white",
+                                    borderColor: darkColor ? "black" : "white",
+                                  }}
+                                >
+                                  {birraObject.attributes.propiedadesBirra.size}{" "}
+                                  CC.
                                 </span>
                               </div>
                             )}
@@ -204,22 +258,36 @@ export default async function Page({ params }) {
                                 <span
                                   className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
                                 >
-                                  ALC. {birraObject.attributes.propiedadesBirra.alcohol}
+                                  ALC.{" "}
+                                  {
+                                    birraObject.attributes.propiedadesBirra
+                                      .alcohol
+                                  }
                                 </span>
                                 <span
                                   className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
                                 >
-                                  FLOZ {birraObject.attributes.propiedadesBirra.size}
+                                  FLOZ{" "}
+                                  {birraObject.attributes.propiedadesBirra.size}
                                 </span>
                               </div>
                             )}
                           </div>
-                          {birraObject.attributes.decorationBackgroundImageLeft.data && (
+                          {birraObject.attributes.decorationBackgroundImageLeft
+                            .data && (
                             <div className="trama__wrapper absolute bottom-0 left-0">
                               <div className="relative w-[600px] h-[200px] z-20">
                                 <Image
-                                  src={birraObject.attributes.decorationBackgroundImageLeft.data?.attributes.url}
-                                  alt={birraObject.attributes.decorationBackgroundImageLeft.data?.attributes.alternativeText}
+                                  src={
+                                    birraObject.attributes
+                                      .decorationBackgroundImageLeft.data
+                                      ?.attributes.url
+                                  }
+                                  alt={
+                                    birraObject.attributes
+                                      .decorationBackgroundImageLeft.data
+                                      ?.attributes.alternativeText
+                                  }
                                   fill
                                   style={{
                                     objectFit: "cover",
@@ -240,8 +308,8 @@ export default async function Page({ params }) {
                           <div
                             className="relative w-[52.69vh] h-[55.52vh]"
                             style={{
-                              width: cerveza.info?.widthPrimary || "52.69vh",
-                              height: cerveza.info?.heightPrimary || "55.52vh",
+                              width: "52.69vh",
+                              height: "55.52vh",
                             }}
                           >
                             <video
@@ -261,13 +329,16 @@ export default async function Page({ params }) {
                           <div
                             className="relative w-[52.69vh] h-[55.52vh]"
                             style={{
-                              width: cerveza.info?.widthPrimary || "52.69vh",
-                              height: cerveza.info?.heightPrimary || "55.52vh",
+                              width: "52.69vh",
+                              height: "55.52vh",
                             }}
                           >
                             <Image
                               src={detailColumnsClaim.image.data.attributes.url}
-                              alt={detailColumnsClaim.image.data.attributes.alternativeText}
+                              alt={
+                                detailColumnsClaim.image.data.attributes
+                                  .alternativeText
+                              }
                               style={{
                                 objectFit: "cover",
                               }}
@@ -324,22 +395,34 @@ export default async function Page({ params }) {
                           )}
                       </div>
                     </div>
-                    
+
                     {/* DONE - 100% */}
                     <div className="column">
-                      <VideoHover cerveza={detailColumnsVideo} hightlightColor={hightlightColor}/>
+                      <VideoHover
+                        cerveza={detailColumnsVideo}
+                        hightlightColor={hightlightColor}
+                      />
                     </div>
 
                     {/* DONE - 100% */}
                     <div className="column">
                       {lang == "es" && (
                         <div className="product-box-4 relative h-full">
-                          {birraObject.attributes.decorationBackgroundImageRight.data && (
+                          {birraObject.attributes.decorationBackgroundImageRight
+                            .data && (
                             <div className="absolute right-0 top-0">
                               <div className="relative w-[35.83vh] h-[16.28vh]">
                                 <Image
-                                  src={birraObject.attributes.decorationBackgroundImageRight.data.attributes.url}
-                                  alt={birraObject.attributes.decorationBackgroundImageRight.data.attributes.alternativeText}
+                                  src={
+                                    birraObject.attributes
+                                      .decorationBackgroundImageRight.data
+                                      .attributes.url
+                                  }
+                                  alt={
+                                    birraObject.attributes
+                                      .decorationBackgroundImageRight.data
+                                      .attributes.alternativeText
+                                  }
                                   style={{
                                     objectFit: "cover",
                                   }}
@@ -358,27 +441,35 @@ export default async function Page({ params }) {
                               </h2>
                             </div>
                             <div className="beer-grid grid grid-cols-4 grid-rows-2">
-                              {detailColumnsGrid?.birras.data.map((clasicasObj, index) => (
-                                <div
-                                  className="beer-item py-[2.12vh] px-[0.42vh]"
-                                  key={index}
-                                >
-                                  <Link
-                                    href={`/${lang}/birras/${clasicasObj.attributes.slug}`}
+                              {detailColumnsGrid?.birras.data.map(
+                                (clasicasObj, index) => (
+                                  <div
+                                    className="beer-item py-[2.12vh] px-[0.42vh]"
+                                    key={index}
                                   >
-                                    <div className="relative w-[14.02vh] h-[25.07vh] hover:scale-110 transition duration-100 transform">
-                                      <Image
-                                        src={clasicasObj.attributes.productImage.data.attributes.formats.small.url}
-                                        alt={clasicasObj.attributes.productImage.data.attributes.alternativeText}
-                                        style={{
-                                          objectFit: "cover",
-                                        }}
-                                        fill
-                                      />
-                                    </div>
-                                  </Link>
-                                </div>
-                              ))}
+                                    <Link
+                                      href={`/${lang}/birras/${clasicasObj.attributes.slug}`}
+                                    >
+                                      <div className="relative w-[14.02vh] h-[25.07vh] hover:scale-110 transition duration-100 transform">
+                                        <Image
+                                          src={
+                                            clasicasObj.attributes.productImage
+                                              .data.attributes.formats.small.url
+                                          }
+                                          alt={
+                                            clasicasObj.attributes.productImage
+                                              .data.attributes.alternativeText
+                                          }
+                                          style={{
+                                            objectFit: "cover",
+                                          }}
+                                          fill
+                                        />
+                                      </div>
+                                    </Link>
+                                  </div>
+                                )
+                              )}
                             </div>
                             <div className="beer-nav">
                               <nav className="flex flex-wrap self-stretch gap-y-[2px] pt-2 pr-6">
@@ -400,7 +491,93 @@ export default async function Page({ params }) {
                           </div>
                         </div>
                       )}
-                      
+
+                      {lang == "es-MX" && (
+                        <div className="product-box-4 relative h-full">
+                          {birraObject.attributes.decorationBackgroundImageRight
+                            .data && (
+                            <div className="absolute right-0 top-0">
+                              <div className="relative w-[35.83vh] h-[16.28vh]">
+                                <Image
+                                  src={
+                                    birraObject.attributes
+                                      .decorationBackgroundImageRight.data
+                                      .attributes.url
+                                  }
+                                  alt={
+                                    birraObject.attributes
+                                      .decorationBackgroundImageRight.data
+                                      .attributes.alternativeText
+                                  }
+                                  style={{
+                                    objectFit: "cover",
+                                  }}
+                                  fill
+                                />
+                              </div>
+                            </div>
+                          )}
+                          <div className="beers-content-wrapper flex flex-col justify-between">
+                            <div className="title pb-[0.21vh]">
+                              <h2
+                                className="text-[5.66vh] uppercase px-[2.40vh]"
+                                style={{ color: hightlightColor || "white" }}
+                              >
+                                CERVEZAS
+                              </h2>
+                            </div>
+                            <div className="beer-grid grid grid-cols-4 grid-rows-2">
+                              {detailColumnsGrid?.birras.data.map(
+                                (clasicasObj, index) => (
+                                  <div
+                                    className="beer-item py-[2.12vh] px-[0.42vh]"
+                                    key={index}
+                                  >
+                                    <Link
+                                      href={`/${lang}/birras/${clasicasObj.attributes.slug}`}
+                                    >
+                                      <div className="relative w-[14.02vh] h-[25.07vh] hover:scale-110 transition duration-100 transform">
+                                        <Image
+                                          src={
+                                            clasicasObj.attributes.productImage
+                                              .data.attributes.formats.small.url
+                                          }
+                                          alt={
+                                            clasicasObj.attributes.productImage
+                                              .data.attributes.alternativeText
+                                          }
+                                          style={{
+                                            objectFit: "cover",
+                                          }}
+                                          fill
+                                        />
+                                      </div>
+                                    </Link>
+                                  </div>
+                                )
+                              )}
+                            </div>
+                            <div className="beer-nav">
+                              <nav className="flex flex-wrap self-stretch gap-y-[2px] pt-2 pr-6">
+                                {allBirraList.data.map((birraObj, index) => (
+                                  <span
+                                    key={index}
+                                    className={`py-[2px] px-[5px] text-[1.41vh] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`}
+                                  >
+                                    <Link
+                                      className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out uppercase"
+                                      href={`/${lang}/birras/${birraObj.attributes.slug}`}
+                                    >
+                                      {birraObj.attributes.nombre}
+                                    </Link>
+                                  </span>
+                                ))}
+                              </nav>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+
                       {lang == "en" && (
                         <div className="product-box-4-en relative h-full">
                           <div className="beers-content-wrapper flex flex-col justify-between">
@@ -419,11 +596,19 @@ export default async function Page({ params }) {
                                 className="beer-item py-[2.12vh] px-[0.42vh]"
                                 key={index}
                               >
-                                <Link href={`/${lang}/birras/${enObj.attributes.slug}`}>
+                                <Link
+                                  href={`/${lang}/birras/${enObj.attributes.slug}`}
+                                >
                                   <div className="relative w-[14.02vh] h-[25.07vh] hover:scale-110 transition duration-100 transform">
                                     <Image
-                                      src={enObj.attributes.productImage.data.attributes.formats.small.url}
-                                      alt={enObj.attributes.productImage.data.attributes.alternativeText}
+                                      src={
+                                        enObj.attributes.productImage.data
+                                          .attributes.formats.small.url
+                                      }
+                                      alt={
+                                        enObj.attributes.productImage.data
+                                          .attributes.alternativeText
+                                      }
                                       style={{
                                         objectFit: "cover",
                                       }}
@@ -470,14 +655,16 @@ export default async function Page({ params }) {
             className="bg-cover bg-center pt-[20vw]"
             style={{
               backgroundImage: birraObject.attributes.backgroundImage?.data
-              ? `url(${birraObject.attributes.backgroundImage?.data.attributes.url})`
-              : "url(/background-home.jpeg)",
+                ? `url(${birraObject.attributes.backgroundImage?.data.attributes.url})`
+                : "url(/background-home.jpeg)",
             }}
           >
             {/* API DONE - 90% -- FALTA: URL BUY & cerveza.style?.textColor */}
             <div className="product-box-1-mobile">
               <div className="product-title-box-mobile">
-                <h1 className={`text-[12.05vw] text-white leading-none uppercase ${Knockout54UltraBold.className}`}>
+                <h1
+                  className={`text-[12.05vw] text-white leading-none uppercase ${Knockout54UltraBold.className}`}
+                >
                   {birraObject.attributes.nombre}
                 </h1>
               </div>
@@ -515,10 +702,43 @@ export default async function Page({ params }) {
                 <div
                   className={`text-white uppercase text-[2.82vw] ${GothamBook.className}`}
                   style={{ color: darkColor ? "black" : "white" }}
-                  dangerouslySetInnerHTML={{ __html: birraObject.attributes.descripcion }}
+                  dangerouslySetInnerHTML={{
+                    __html: birraObject.attributes.descripcion,
+                  }}
                 ></div>
 
                 {lang === "es" && (
+                  <div className="propiedades__wrapper flex flex-row text-[2.82vw] pt-[3.84vw]">
+                    <span
+                      className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
+                      style={{
+                        color: darkColor ? "black" : "white",
+                        borderColor: darkColor ? "black" : "white",
+                      }}
+                    >
+                      ALC. {birraObject.attributes.propiedadesBirra.alcohol}
+                    </span>
+                    <span
+                      className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
+                      style={{
+                        color: darkColor ? "black" : "white",
+                        borderColor: darkColor ? "black" : "white",
+                      }}
+                    >
+                      IBU {birraObject.attributes.propiedadesBirra.ibu}
+                    </span>
+                    <span
+                      className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
+                      style={{
+                        color: darkColor ? "black" : "white",
+                        borderColor: darkColor ? "black" : "white",
+                      }}
+                    >
+                      {birraObject.attributes.propiedadesBirra.size} CC.
+                    </span>
+                  </div>
+                )}
+                {lang === "es-MX" && (
                   <div className="propiedades__wrapper flex flex-row text-[2.82vw] pt-[3.84vw]">
                     <span
                       className={`text-white border border-white py-[6px] px-[10px] ${GothamBook.className}`}
@@ -571,8 +791,13 @@ export default async function Page({ params }) {
               <div className="flex justify-center w-[100vw] h-[122.56vw] mt-[10vw]">
                 <div className="relative w-[57.94vw] h-[122.56vw]">
                   <Image
-                    src={birraObject.attributes.productImage.data.attributes.url}
-                    alt={birraObject.attributes.productImage.data.attributes.alternativeText}
+                    src={
+                      birraObject.attributes.productImage.data.attributes.url
+                    }
+                    alt={
+                      birraObject.attributes.productImage.data.attributes
+                        .alternativeText
+                    }
                     style={{
                       objectFit: "cover",
                     }}
@@ -640,7 +865,9 @@ export default async function Page({ params }) {
               <div className="text-box flex flex-col gap-y-[4.61vw] px-[5.12vw]">
                 <div
                   className={`text-white text-[3.33vw] uppercase ${GothamBook.className}`}
-                  dangerouslySetInnerHTML={{ __html: detailColumnsClaim.bajada }}
+                  dangerouslySetInnerHTML={{
+                    __html: detailColumnsClaim.bajada,
+                  }}
                 ></div>
 
                 <div
@@ -650,10 +877,13 @@ export default async function Page({ params }) {
                 ></div>
               </div>
             </div>
-            
+
             {/* API DONE - 100% */}
-            <VideoMobile cerveza={detailColumnsVideo} hightlightColor={hightlightColor} />
-            
+            <VideoMobile
+              cerveza={detailColumnsVideo}
+              hightlightColor={hightlightColor}
+            />
+
             {/* API DONE - 100% -- STYLE COLOR */}
             {lang == "es" && (
               <div className="product-box-6-mobile">
@@ -667,27 +897,109 @@ export default async function Page({ params }) {
                         BIRRAS
                       </h2>
                     </div>
-                    
+
                     <div className="beer-grid grid grid-cols-4 grid-rows-2">
-                      {detailColumnsGrid?.birras.data.map((clasicasObj, index) => (
-                        <div
-                          className="beer-item py-[3.84vw] px-[0.76vw]"
-                          key={index}
-                        >
-                          <Link href={`/${lang}/birras/${clasicasObj.attributes.slug}`}>
-                            <div className="relative w-[22.30vw] h-[39.74vw] hover:scale-110 transition duration-100 transform">
-                              <Image
-                                src={clasicasObj.attributes.productImage.data.attributes.formats.small.url}
-                                alt={clasicasObj.attributes.productImage.data.attributes.alternativeText}
-                                style={{
-                                  objectFit: "cover",
-                                }}
-                                fill
-                              />
-                            </div>
-                          </Link>
-                        </div>
-                      ))}
+                      {detailColumnsGrid?.birras.data.map(
+                        (clasicasObj, index) => (
+                          <div
+                            className="beer-item py-[3.84vw] px-[0.76vw]"
+                            key={index}
+                          >
+                            <Link
+                              href={`/${lang}/birras/${clasicasObj.attributes.slug}`}
+                            >
+                              <div className="relative w-[22.30vw] h-[39.74vw] hover:scale-110 transition duration-100 transform">
+                                <Image
+                                  src={
+                                    clasicasObj.attributes.productImage.data
+                                      .attributes.formats.small.url
+                                  }
+                                  alt={
+                                    clasicasObj.attributes.productImage.data
+                                      .attributes.alternativeText
+                                  }
+                                  style={{
+                                    objectFit: "cover",
+                                  }}
+                                  fill
+                                />
+                              </div>
+                            </Link>
+                          </div>
+                        )
+                      )}
+                    </div>
+                    <div className="beer-nav">
+                      <nav className="flex flex-wrap self-stretch gap-y-[2px]">
+                        {allBirraList.data.map((birraObj, index) => (
+                          <span
+                            key={index}
+                            className={`py-[2px] px-[5px] text-[2.30vw] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`}
+                            style={{
+                              borderColor: darkColor ? "black" : "white",
+                            }}
+                          >
+                            <Link
+                              className=" hover:text-[#FCDB00] transition duration-300 ease-in-out uppercase"
+                              style={{
+                                color: darkColor ? "black" : "white",
+                              }}
+                              href={`/${lang}/birras/${birraObj.attributes.slug}`}
+                            >
+                              {birraObj.attributes.nombre}
+                            </Link>
+                          </span>
+                        ))}
+                      </nav>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            )}
+
+            {lang == "es-MX" && (
+              <div className="product-box-6-mobile">
+                <div className="relative h-full">
+                  <div className="beers-content-wrapper flex flex-col justify-between">
+                    <div className="title">
+                      <h2
+                        className="text-[10.25vw] uppercase"
+                        style={{ color: hightlightColor || "white" }}
+                      >
+                        CERVEZAS
+                      </h2>
+                    </div>
+
+                    <div className="beer-grid grid grid-cols-4 grid-rows-2">
+                      {detailColumnsGrid?.birras.data.map(
+                        (clasicasObj, index) => (
+                          <div
+                            className="beer-item py-[3.84vw] px-[0.76vw]"
+                            key={index}
+                          >
+                            <Link
+                              href={`/${lang}/birras/${clasicasObj.attributes.slug}`}
+                            >
+                              <div className="relative w-[22.30vw] h-[39.74vw] hover:scale-110 transition duration-100 transform">
+                                <Image
+                                  src={
+                                    clasicasObj.attributes.productImage.data
+                                      .attributes.formats.small.url
+                                  }
+                                  alt={
+                                    clasicasObj.attributes.productImage.data
+                                      .attributes.alternativeText
+                                  }
+                                  style={{
+                                    objectFit: "cover",
+                                  }}
+                                  fill
+                                />
+                              </div>
+                            </Link>
+                          </div>
+                        )
+                      )}
                     </div>
                     <div className="beer-nav">
                       <nav className="flex flex-wrap self-stretch gap-y-[2px]">
@@ -739,8 +1051,14 @@ export default async function Page({ params }) {
                       <Link href={`/${lang}/birras/${enObj.attributes.slug}`}>
                         <div className="relative w-[22.30vw] h-[39.74vw] hover:scale-110 transition duration-100 transform">
                           <Image
-                            src={enObj.attributes.productImage.data.attributes.formats.small.url}
-                            alt={enObj.attributes.productImage.data.attributes.alternativeText}
+                            src={
+                              enObj.attributes.productImage.data.attributes
+                                .formats.small.url
+                            }
+                            alt={
+                              enObj.attributes.productImage.data.attributes
+                                .alternativeText
+                            }
                             style={{
                               objectFit: "cover",
                             }}

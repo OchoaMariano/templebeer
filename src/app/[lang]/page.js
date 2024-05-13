@@ -48,25 +48,42 @@ export default async function Home({ params }) {
               <div className="main-box-1-wrapper">
                 <div className="beer-wrapper">
                   <div className="flex items-center justify-center z-10 h-full cursor-pointer transform transition-transform duration-300 hover:scale-110">
-                    <Link
-                      href={`${lang}/birras/wolf-ipa`}
-                      className="relative w-[34.70vh] h-[51.69vh]"
-                    >
-                      {lang == "es" && (
+                    {lang == "es" && (
+                      <Link
+                        href={`${lang}/birras/wolf-ipa`}
+                        className="relative w-[34.70vh] h-[51.69vh]"
+                      >
                         <Image
                           src="/nuestrasbirras/clasicas/wolf-ipa/wolf-ipa.png"
                           alt="Lata de Cerveza principal wolf ipa"
                           fill
                         />
-                      )}
-                      {lang == "en" && (
+                      </Link>
+                    )}
+                    {lang == "es-MX" && (
+                      <Link
+                        href={`${lang}/birras/wolf-ipa-mx`}
+                        className="relative w-[34.70vh] h-[51.69vh]"
+                      >
+                        <Image
+                          src="/wolf-ipa-mx.png"
+                          alt="Lata de Cerveza principal wolf ipa"
+                          fill
+                        />
+                      </Link>
+                    )}
+                    {lang == "en" && (
+                      <Link
+                        href={`${lang}/birras/wolf-ipa-us`}
+                        className="relative w-[34.70vh] h-[51.69vh]"
+                      >
                         <Image
                           src="/nuestrasbirras/en/wolf-ipa/wolf-ipa.png"
                           alt="Lata de Cerveza principal wolf ipa"
                           fill
                         />
-                      )}
-                    </Link>
+                      </Link>
+                    )}
                   </div>
                   <div className="absolute -bottom-5 -right-12 mb-4 mr-4 z-10">
                     <div className="relative w-[16.85vh] h-[15.86vh]">
@@ -188,15 +205,55 @@ export default async function Home({ params }) {
                     </div>
                     <div className="box-3">
                       <div className="nav__wrapper">
-                        <h1 className="text-4xl font-bold text-white text-[50px]">
-                          <Link
-                            className={`text-white hover:text-[#D51668] transition duration-300 ease-in-out text-[7.08vh] uppercase ${Knockout54.className}`}
-                            href={`${lang}/birras`}
-                          >
-                            {dict.home.beerNav.title}
-                          </Link>
-                        </h1>
                         {lang === "es" && (
+                          <h1 className="text-4xl font-bold text-white text-[50px]">
+                            <Link
+                              className={`text-white hover:text-[#D51668] transition duration-300 ease-in-out text-[7.08vh] uppercase ${Knockout54.className}`}
+                              href={`${lang}/birras`}
+                            >
+                              {dict.home.beerNav.title}
+                            </Link>
+                          </h1>
+                        )}
+                        {lang === "es-MX" && (
+                          <h1 className="text-4xl font-bold text-white text-[50px]">
+                            <Link
+                              className={`text-white hover:text-[#D51668] transition duration-300 ease-in-out text-[6.18vh] uppercase ${Knockout54.className}`}
+                              href={`${lang}/birras`}
+                            >
+                              {dict.home.beerNav.title}
+                            </Link>
+                          </h1>
+                        )}
+                        {lang === "en" && (
+                          <h1 className="text-4xl font-bold text-white text-[50px]">
+                            <Link
+                              className={`text-white hover:text-[#D51668] transition duration-300 ease-in-out text-[7.08vh] uppercase ${Knockout54.className}`}
+                              href={`${lang}/birras`}
+                            >
+                              {dict.home.beerNav.title}
+                            </Link>
+                          </h1>
+                        )}
+
+                        {lang === "es" && (
+                          <nav className="flex flex-wrap self-stretch gap-y-[2px] pt-2 pr-6">
+                            {allBirras.data.map((birraObj, index) => (
+                              <span
+                                key={index}
+                                className={`py-[2px] px-[5px] text-[1.41vh] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`}
+                              >
+                                <Link
+                                  className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out uppercase"
+                                  href={`${lang}/birras/${birraObj.attributes.slug}`}
+                                >
+                                  {birraObj.attributes.nombre}
+                                </Link>
+                              </span>
+                            ))}
+                          </nav>
+                        )}
+                        {lang === "es-MX" && (
                           <nav className="flex flex-wrap self-stretch gap-y-[2px] pt-2 pr-6">
                             {allBirras.data.map((birraObj, index) => (
                               <span
@@ -434,6 +491,13 @@ export default async function Home({ params }) {
                         {dict.home.encuentros.frase}
                       </h3>
                     )}
+                    {lang == "es-MX" && (
+                      <h3
+                        className={` text-[#D41768] text-[9.09vh] uppercase -tracking-[.42vh] -rotate-[4.41deg] ${Marker.className} leading-[10vh]`}
+                      >
+                        {dict.home.encuentros.frase}
+                      </h3>
+                    )}
                     {lang == "en" && (
                       <h3
                         className={` text-[#D41768] text-[8.09vh] uppercase -tracking-[.42vh] -rotate-[4.41deg] ${Marker.className} leading-[7vh]`}
@@ -462,6 +526,13 @@ export default async function Home({ params }) {
                   </Link>
                   <Link href={`${lang}/encuentro`}>
                     {lang == "es" && (
+                      <h3
+                        className={`absolute text-[#192F5D] text-[3.82vh] uppercase top-[14vh] left-[11.5vh] -tracking-[.4vh] -rotate-[4.41deg] z-[100] ${Marker.className} cursor-pointer`}
+                      >
+                        {dict.home.encuentros.link}
+                      </h3>
+                    )}
+                    {lang == "es-MX" && (
                       <h3
                         className={`absolute text-[#192F5D] text-[3.82vh] uppercase top-[14vh] left-[11.5vh] -tracking-[.4vh] -rotate-[4.41deg] z-[100] ${Marker.className} cursor-pointer`}
                       >
@@ -533,25 +604,42 @@ export default async function Home({ params }) {
           <div className="beer-wrapper-mobile">
             <div className="flex justify-center relative w-[90.51vw] h-[55.89vw]">
               <div className="flex items-center justify-center z-10 h-full cursor-pointer transform transition-transform duration-300 hover:scale-110">
-                <Link
-                  href={`${lang}/birras/wolf-ipa`}
-                  className="relative w-[29.74vw] h-[41.28vw]"
-                >
-                  {lang == "es" && (
+                {lang == "es" && (
+                  <Link
+                    href={`${lang}/birras/wolf-ipa`}
+                    className="relative w-[29.74vw] h-[41.28vw]"
+                  >
                     <Image
                       src="/nuestrasbirras/clasicas/wolf-ipa/wolf-ipa.png"
-                      alt="Lata de Cerveza Principal Wolf Ipa"
+                      alt="Lata de Cerveza principal wolf ipa"
                       fill
                     />
-                  )}
-                  {lang == "en" && (
+                  </Link>
+                )}
+                {lang == "es-MX" && (
+                  <Link
+                    href={`${lang}/birras/wolf-ipa-mx`}
+                    className="relative w-[29.74vw] h-[41.28vw]"
+                  >
+                    <Image
+                      src="/wolf-ipa-mx.png"
+                      alt="Lata de Cerveza principal wolf ipa"
+                      fill
+                    />
+                  </Link>
+                )}
+                {lang == "en" && (
+                  <Link
+                    href={`${lang}/birras/wolf-ipa-us`}
+                    className="relative w-[29.74vw] h-[41.28vw]"
+                  >
                     <Image
                       src="/nuestrasbirras/en/wolf-ipa/wolf-ipa.png"
-                      alt="Lata de Cerveza Principal Wolf Ipa"
+                      alt="Lata de Cerveza principal wolf ipa"
                       fill
                     />
-                  )}
-                </Link>
+                  </Link>
+                )}
               </div>
               <div className="absolute -bottom-10 right-2 mb-4 mr-4 z-10">
                 <div className="relative w-[21.53vw] h-[20.25vw]">
@@ -650,16 +738,17 @@ export default async function Home({ params }) {
               </div>
             </div>
             <div className="column-mobile">
-              <div className="birras-nav w-[55.64vw] h-[64.25vw]">
-                <h1 className="leading-[7vw]">
-                  <Link
-                    className={`text-white uppercase hover:text-[#D51668] transition duration-300 ease-in-out text-[6.9vw] ${Knockout54.className}`}
-                    href={`${lang}/birras`}
-                  >
-                    {dict.home.beerNav.title}
-                  </Link>
-                </h1>
-                {lang == "es" && (
+              {lang == "es" && (
+                <div className="birras-nav w-[55.64vw] h-[64.25vw]">
+                  <h1 className="leading-[7vw]">
+                    <Link
+                      className={`text-white uppercase hover:text-[#D51668] transition duration-300 ease-in-out text-[6.9vw] ${Knockout54.className}`}
+                      href={`${lang}/birras`}
+                    >
+                      {dict.home.beerNav.title}
+                    </Link>
+                  </h1>
+
                   <nav className="flex flex-wrap self-stretch">
                     {allBirras.data.map((birraObj, index) => (
                       <span
@@ -675,8 +764,47 @@ export default async function Home({ params }) {
                       </span>
                     ))}
                   </nav>
-                )}
-                {lang == "en" && (
+                </div>
+              )}
+              {lang == "es-MX" && (
+                <div className="birras-nav w-[55.64vw] h-[50.25vw]">
+                  <h1 className="leading-[7vw]">
+                    <Link
+                      className={`text-white uppercase hover:text-[#D51668] transition duration-300 ease-in-out text-[6.9vw] ${Knockout54.className}`}
+                      href={`${lang}/birras`}
+                    >
+                      {dict.home.beerNav.title}
+                    </Link>
+                  </h1>
+
+                  <nav className="flex flex-wrap self-stretch">
+                    {allBirras.data.map((birraObj, index) => (
+                      <span
+                        key={index}
+                        className={`text-[2.00vw] py-[0.51vw] px-[1.28vw] text-white border-r-[1px] border-dotted border-white ${Knockout34.className}`}
+                      >
+                        <Link
+                          className="text-white hover:text-[#FCDB00] transition duration-300 ease-in-out uppercase"
+                          href={`${lang}/birras/${birraObj.attributes.slug}`}
+                        >
+                          {birraObj.attributes.nombre}
+                        </Link>
+                      </span>
+                    ))}
+                  </nav>
+                </div>
+              )}
+              {lang == "en" && (
+                <div className="birras-nav w-[55.64vw] h-[64.25vw]">
+                  <h1 className="leading-[7vw]">
+                    <Link
+                      className={`text-white uppercase hover:text-[#D51668] transition duration-300 ease-in-out text-[6.9vw] ${Knockout54.className}`}
+                      href={`${lang}/birras`}
+                    >
+                      {dict.home.beerNav.title}
+                    </Link>
+                  </h1>
+
                   <nav className="flex flex-wrap self-stretch">
                     {allBirras.data.map((birraObj, index) => (
                       <span
@@ -692,8 +820,8 @@ export default async function Home({ params }) {
                       </span>
                     ))}
                   </nav>
-                )}
-              </div>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -799,7 +927,7 @@ export default async function Home({ params }) {
                   </div>
                 </a>
               )}
-              {lang == "es" && (
+              {lang == "es-MX" && (
                 <a
                   href="https://www.instagram.com/templemex"
                   className="flex flex-row group items-end gap-x-[3.33vw]"
