@@ -23,39 +23,11 @@ import ModalMemesMx from "../../../../components/encuentro/ModalMemesBirrerosMx"
 import { getDictionary } from "../../../dictionaries";
 import { Knockout54UltraBold } from "../layout";
 
-async function getEncuentrosEs() {
-  const apiUrl =
-    "https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/encuentros?populate=icon&locale=es";
-  const respuesta = await fetch(apiUrl);
-  if (!respuesta.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-
-  return respuesta.json();
-}
-
-async function getEncuentrosEn() {
-  const apiUrl =
-    "https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/encuentros?populate=icon&locale=en";
-  const respuesta = await fetch(apiUrl);
-  if (!respuesta.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-
-  return respuesta.json();
-}
-
-async function getEncuentrosMex() {
-  const apiUrl =
-    "https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/encuentros?populate=icon&locale=es-MX";
-  const respuesta = await fetch(apiUrl);
-  if (!respuesta.ok) {
-    // This will activate the closest `error.js` Error Boundary
-    throw new Error("Failed to fetch data");
-  }
-
+async function getEncuentros(lang) {
+  const respuesta = await fetch(
+    `https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/encuentros?populate=icon&locale=${lang}`,
+    { cache: "no-store" }
+  );
   return respuesta.json();
 }
 
@@ -84,9 +56,7 @@ export default async function Page({ searchParams, params }) {
   const showModalAstronomiaMx = searchParams?.modalAstronomiaMx;
   const showModalArtistasMx = searchParams?.modalArtistasMx;
 
-  const encuentrosEs = await getEncuentrosEs();
-  const encuentrosEn = await getEncuentrosEn();
-  const encuentrosMex = await getEncuentrosMex();
+  const encuentros = await getEncuentros(lang);
 
   return (
     <div>
@@ -116,15 +86,15 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosEs.data[0].attributes?.icon?.data
+                              encuentros.data[0].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosEs.data[0]?.attributes?.Nombre}
+                            alt={encuentros.data[0]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosEs.data[0].attributes.Nombre}
+                          {encuentros.data[0].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -137,15 +107,15 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosEs.data[1].attributes?.icon?.data
+                              encuentros.data[1].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosEs.data[1]?.attributes?.Nombre}
+                            alt={encuentros.data[1]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosEs.data[1].attributes.Nombre}
+                          {encuentros.data[1].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -159,15 +129,15 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosEs.data[2].attributes?.icon?.data
+                              encuentros.data[2].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosEs.data[2]?.attributes?.Nombre}
+                            alt={encuentros.data[2]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosEs.data[2].attributes.Nombre}
+                          {encuentros.data[2].attributes.Nombre}
                         </span>
                       </a>
                     </div>
@@ -181,16 +151,16 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosEs.data[3].attributes?.icon?.data
+                              encuentros.data[3].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosEs.data[3]?.attributes?.Nombre}
+                            alt={encuentros.data[3]?.attributes?.Nombre}
                             fill
                           />
                         </div>
 
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosEs.data[3].attributes.Nombre}
+                          {encuentros.data[3].attributes.Nombre}
                         </span>
                       </a>
                     </div>
@@ -204,16 +174,16 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosEs.data[4].attributes?.icon?.data
+                              encuentros.data[4].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosEs.data[4]?.attributes?.Nombre}
+                            alt={encuentros.data[4]?.attributes?.Nombre}
                             fill
                           />
                         </div>
 
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosEs.data[4].attributes.Nombre}
+                          {encuentros.data[4].attributes.Nombre}
                         </span>
                       </a>
                     </div>
@@ -227,15 +197,15 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosEs.data[5].attributes?.icon?.data
+                              encuentros.data[5].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosEs.data[5]?.attributes?.Nombre}
+                            alt={encuentros.data[5]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosEs.data[5].attributes.Nombre}
+                          {encuentros.data[5].attributes.Nombre}
                         </span>
                       </a>
                     </div>
@@ -251,15 +221,15 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosEn.data[0].attributes?.icon?.data
+                              encuentros.data[0].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosEn.data[0]?.attributes?.Nombre}
+                            alt={encuentros.data[0]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosEn.data[0].attributes.Nombre}
+                          {encuentros.data[0].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -272,15 +242,15 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosEn.data[1].attributes?.icon?.data
+                              encuentros.data[1].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosEn.data[1]?.attributes?.Nombre}
+                            alt={encuentros.data[1]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosEn.data[1].attributes.Nombre}
+                          {encuentros.data[1].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -296,15 +266,15 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosMex.data[0].attributes?.icon?.data
+                              encuentros.data[0].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosMex.data[0]?.attributes?.Nombre}
+                            alt={encuentros.data[0]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosMex.data[0].attributes.Nombre}
+                          {encuentros.data[0].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -318,15 +288,15 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosMex.data[1].attributes?.icon?.data
+                              encuentros.data[1].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosMex.data[1]?.attributes?.Nombre}
+                            alt={encuentros.data[1]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosMex.data[1].attributes.Nombre}
+                          {encuentros.data[1].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -339,17 +309,17 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosMex.data[2].attributes?.icon?.data
+                              encuentros.data[2].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosMex.data[2]?.attributes?.Nombre}
+                            alt={encuentros.data[2]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span
                           className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase"
                           dangerouslySetInnerHTML={{
-                            __html: encuentrosMex.data[2].attributes.Nombre,
+                            __html: encuentros.data[2].attributes.Nombre,
                           }}
                         ></span>
                       </a>
@@ -363,10 +333,10 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosMex.data[4].attributes?.icon?.data
+                              encuentros.data[4].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosMex.data[4]?.attributes?.Nombre}
+                            alt={encuentros.data[4]?.attributes?.Nombre}
                             fill
                           />
                         </div>
@@ -374,7 +344,7 @@ export default async function Page({ searchParams, params }) {
                         <span
                           className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase"
                           dangerouslySetInnerHTML={{
-                            __html: encuentrosMex.data[4].attributes.Nombre,
+                            __html: encuentros.data[4].attributes.Nombre,
                           }}
                         ></span>
                       </a>
@@ -393,10 +363,10 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosEs.data[6].attributes?.icon?.data
+                              encuentros.data[6].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosEs.data[6]?.attributes?.Nombre}
+                            alt={encuentros.data[6]?.attributes?.Nombre}
                             fill
                           />
                         </div>
@@ -414,10 +384,10 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosEs.data[7].attributes?.icon?.data
+                              encuentros.data[7].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosEs.data[7]?.attributes?.Nombre}
+                            alt={encuentros.data[7]?.attributes?.Nombre}
                             fill
                           />
                         </div>
@@ -437,15 +407,15 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosEs.data[8].attributes?.icon?.data
+                              encuentros.data[8].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosEs.data[8]?.attributes?.Nombre}
+                            alt={encuentros.data[8]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosEs.data[8].attributes.Nombre}
+                          {encuentros.data[8].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -458,15 +428,15 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosEs.data[9].attributes?.icon?.data
+                              encuentros.data[9].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosEs.data[9]?.attributes?.Nombre}
+                            alt={encuentros.data[9]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosEs.data[9].attributes.Nombre}
+                          {encuentros.data[9].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -480,15 +450,15 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosEs.data[10].attributes?.icon?.data
+                              encuentros.data[10].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosEs.data[10]?.attributes?.Nombre}
+                            alt={encuentros.data[10]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosEs.data[10].attributes.Nombre}
+                          {encuentros.data[10].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -504,15 +474,15 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosEn.data[2].attributes?.icon?.data
+                              encuentros.data[2].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosEn.data[2]?.attributes?.Nombre}
+                            alt={encuentros.data[2]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosEn.data[2].attributes.Nombre}
+                          {encuentros.data[2].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -525,15 +495,15 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosEn.data[3].attributes?.icon?.data
+                              encuentros.data[3].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosEn.data[3]?.attributes?.Nombre}
+                            alt={encuentros.data[3]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosEn.data[3].attributes.Nombre}
+                          {encuentros.data[3].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -549,17 +519,17 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosMex.data[3].attributes?.icon?.data
+                              encuentros.data[3].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosMex.data[3]?.attributes?.Nombre}
+                            alt={encuentros.data[3]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span
                           className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase"
                           dangerouslySetInnerHTML={{
-                            __html: encuentrosMex.data[3].attributes.Nombre,
+                            __html: encuentros.data[3].attributes.Nombre,
                           }}
                         ></span>
                       </Link>
@@ -573,16 +543,16 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosMex.data[5].attributes?.icon?.data
+                              encuentros.data[5].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosMex.data[5]?.attributes?.Nombre}
+                            alt={encuentros.data[5]?.attributes?.Nombre}
                             fill
                           />
                         </div>
 
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center px-0 uppercase">
-                          {encuentrosMex.data[5].attributes.Nombre}
+                          {encuentros.data[5].attributes.Nombre}
                         </span>
                       </Link>
                     </div>
@@ -595,15 +565,15 @@ export default async function Page({ searchParams, params }) {
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
                             src={
-                              encuentrosMex.data[6].attributes?.icon?.data
+                              encuentros.data[6].attributes?.icon?.data
                                 ?.attributes?.url
                             }
-                            alt={encuentrosMex.data[6]?.attributes?.Nombre}
+                            alt={encuentros.data[6]?.attributes?.Nombre}
                             fill
                           />
                         </div>
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
-                          {encuentrosMex.data[6].attributes.Nombre}
+                          {encuentros.data[6].attributes.Nombre}
                         </span>
                       </Link>
                     </div>

@@ -180,15 +180,16 @@ export default function Header({ dictonary }) {
           <div className="hidden lg:block divisor h-[21px] w-[1px] bg-white"></div>
           <div className="hidden lg:flex lang__nav">
             <LocaleSwitcher />
-            <Image
-              src="/bandera-es.svg"
-              alt="España"
-              className="cursor-pointer hidden xl:block"
-              width={24}
-              height={17}
-              data-tooltip-id="tooltip-lang"
-              data-tooltip-content="Próximamente"
-            />
+            <a href="/mapa">
+              <Image
+                src="/bandera-esp.png"
+                alt="España"
+                className="cursor-pointer hidden xl:block"
+                width={26}
+                height={17}
+                data-tooltip-id="tooltip-lang"
+              />
+            </a>
             <Image
               src="/uy.svg"
               alt="Uruguay"
