@@ -13,6 +13,13 @@ import ModalTaco from "../../../../components/encuentro/ModalTacoTuesday";
 import ModalIpassionals from "../../../../components/encuentro/ModalIpassionals";
 import ModalOpening from "../../../../components/encuentro/ModalOpening";
 import ModalWynwood from "../../../../components/encuentro/ModalWynwood";
+import ModalSanPatricioMx from "../../../../components/encuentro/ModalSanPatricioMx";
+import ModalArtistasMx from "../../../../components/encuentro/ModalArtistasMx";
+import ModalAstronomiaMx from "../../../../components/encuentro/ModalAstronomiaMx";
+import ModalBirraMx from "../../../../components/encuentro/ModalBirraMx";
+import ModalGhosteoMx from "../../../../components/encuentro/ModalGhosteoMx";
+import ModalIpassionalsMx from "../../../../components/encuentro/ModalIpassionalsMx";
+import ModalMemesMx from "../../../../components/encuentro/ModalMemesBirrerosMx";
 import { getDictionary } from "../../../dictionaries";
 import { Knockout54UltraBold } from "../layout";
 
@@ -40,6 +47,18 @@ async function getEncuentrosEn() {
   return respuesta.json();
 }
 
+async function getEncuentrosMex() {
+  const apiUrl =
+    "https://backend-templebeer-kkoiwxzayq-uc.a.run.app/api/encuentros?populate=icon&locale=es-MX";
+  const respuesta = await fetch(apiUrl);
+  if (!respuesta.ok) {
+    // This will activate the closest `error.js` Error Boundary
+    throw new Error("Failed to fetch data");
+  }
+
+  return respuesta.json();
+}
+
 export default async function Page({ searchParams, params }) {
   const lang = params.lang;
   const dict = await getDictionary(lang);
@@ -58,8 +77,16 @@ export default async function Page({ searchParams, params }) {
   const showIpassionals = searchParams?.modalIpassionals;
   const showOpening = searchParams?.modalOpening;
 
+  const showModalSanPatricioMx = searchParams?.modalSanPatricioMx;
+  const showModalBirraMx = searchParams?.modalBirraMx;
+  const showModalGhostMx = searchParams?.modalGhostMx;
+  const showModalMemesMx = searchParams?.modalMemesMx;
+  const showModalAstronomiaMx = searchParams?.modalAstronomiaMx;
+  const showModalArtistasMx = searchParams?.modalArtistasMx;
+
   const encuentrosEs = await getEncuentrosEs();
   const encuentrosEn = await getEncuentrosEn();
+  const encuentrosMex = await getEncuentrosMex();
 
   return (
     <div>
@@ -259,6 +286,101 @@ export default async function Page({ searchParams, params }) {
                     </div>
                   </div>
                 )}
+                {lang == "es-MX" && (
+                  <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-20 gap-y-10 items-start">
+                    <div className="flex transform hover-bouncesmooth cursor-pointer">
+                      <Link
+                        className="flex flex-col justify-center md:items-center gap-y-4"
+                        href="encuentro/?modalSanPatricioMx=true"
+                      >
+                        <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
+                          <Image
+                            src={
+                              encuentrosMex.data[0].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosMex.data[0]?.attributes?.Nombre}
+                            fill
+                          />
+                        </div>
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentrosMex.data[0].attributes.Nombre}
+                        </span>
+                      </Link>
+                    </div>
+
+                    <div className="flex transform hover-bouncesmooth cursor-pointer">
+                      <Link
+                        className="flex flex-col justify-center md:items-center gap-y-4"
+                        href="https://www.ipasionales.templebeer.com/"
+                        target="_blank"
+                      >
+                        <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
+                          <Image
+                            src={
+                              encuentrosMex.data[1].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosMex.data[1]?.attributes?.Nombre}
+                            fill
+                          />
+                        </div>
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentrosMex.data[1].attributes.Nombre}
+                        </span>
+                      </Link>
+                    </div>
+
+                    <div className="flex transform hover-bouncesmooth cursor-pointer">
+                      <a
+                        className="flex flex-col justify-center items-center gap-y-4"
+                        href="encuentro/?modalBirraMx=true"
+                      >
+                        <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
+                          <Image
+                            src={
+                              encuentrosMex.data[2].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosMex.data[2]?.attributes?.Nombre}
+                            fill
+                          />
+                        </div>
+                        <span
+                          className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase"
+                          dangerouslySetInnerHTML={{
+                            __html: encuentrosMex.data[2].attributes.Nombre,
+                          }}
+                        ></span>
+                      </a>
+                    </div>
+
+                    <div className="flex cursor-pointer transform hover-bouncesmooth">
+                      <a
+                        className="flex flex-col justify-center items-center gap-y-4"
+                        href="encuentro/?modalGhostMx=true"
+                      >
+                        <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
+                          <Image
+                            src={
+                              encuentrosMex.data[4].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosMex.data[4]?.attributes?.Nombre}
+                            fill
+                          />
+                        </div>
+
+                        <span
+                          className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase"
+                          dangerouslySetInnerHTML={{
+                            __html: encuentrosMex.data[4].attributes.Nombre,
+                          }}
+                        ></span>
+                      </a>
+                    </div>
+                  </div>
+                )}
               </div>
               <div className="w-full lg:w-1/2 flex items-start justify-end md:justify-end text-white">
                 {lang == "es" && (
@@ -417,6 +539,76 @@ export default async function Page({ searchParams, params }) {
                     </div>
                   </div>
                 )}
+                {lang == "es-MX" && (
+                  <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-20 gap-y-10 items-start">
+                    <div className="flex flex-col transform hover-bouncesmooth cursor-pointer">
+                      <Link
+                        className="flex flex-col justify-center items-center gap-y-4"
+                        href="encuentro/?modalMemesMx=true"
+                      >
+                        <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
+                          <Image
+                            src={
+                              encuentrosMex.data[3].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosMex.data[3]?.attributes?.Nombre}
+                            fill
+                          />
+                        </div>
+                        <span
+                          className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase"
+                          dangerouslySetInnerHTML={{
+                            __html: encuentrosMex.data[3].attributes.Nombre,
+                          }}
+                        ></span>
+                      </Link>
+                    </div>
+
+                    <div className="flex flex-col transform hover-bouncesmooth cursor-pointer">
+                      <Link
+                        className="flex flex-col justify-center items-center gap-y-4"
+                        href="encuentro/?modalAstronomiaMx=true"
+                      >
+                        <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
+                          <Image
+                            src={
+                              encuentrosMex.data[5].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosMex.data[5]?.attributes?.Nombre}
+                            fill
+                          />
+                        </div>
+
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center px-0 uppercase">
+                          {encuentrosMex.data[5].attributes.Nombre}
+                        </span>
+                      </Link>
+                    </div>
+                    <img src="" alt="" className="hidden md:block" />
+                    <div className="flex flex-col transform hover-bouncesmooth cursor-pointer">
+                      <Link
+                        className="flex flex-col justify-center items-center gap-y-4"
+                        href="encuentro/?modalArtistasMx=true"
+                      >
+                        <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
+                          <Image
+                            src={
+                              encuentrosMex.data[6].attributes?.icon?.data
+                                ?.attributes?.url
+                            }
+                            alt={encuentrosMex.data[6]?.attributes?.Nombre}
+                            fill
+                          />
+                        </div>
+                        <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
+                          {encuentrosMex.data[6].attributes.Nombre}
+                        </span>
+                      </Link>
+                    </div>
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -435,6 +627,13 @@ export default async function Page({ searchParams, params }) {
       {showIpassionals && <ModalIpassionals />}
       {showWynwood && <ModalWynwood />}
       {showOpening && <ModalOpening />}
+
+      {showModalSanPatricioMx && <ModalSanPatricioMx />}
+      {showModalBirraMx && <ModalBirraMx />}
+      {showModalGhostMx && <ModalGhosteoMx />}
+      {showModalMemesMx && <ModalMemesMx />}
+      {showModalAstronomiaMx && <ModalAstronomiaMx />}
+      {showModalArtistasMx && <ModalArtistasMx />}
     </div>
   );
 }

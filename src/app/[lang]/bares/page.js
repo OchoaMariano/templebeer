@@ -37,14 +37,20 @@ export default async function Page({ params }) {
         <div className="page__wrapper flex flex-col">
           <div className="flex pt-[18.15vw] px-5 lg:hidden">
             <div className="relative w-full">
-              <h3 className={`text-white text-[12.05vw] uppercase ${Knockout54UltraBold.className}`}>
+              <h3
+                className={`text-white text-[12.05vw] uppercase ${Knockout54UltraBold.className}`}
+              >
                 {dict.bares.title}
               </h3>
             </div>
             <div className="absolute left-[62.30vw] z-10">
               <Draggable initialPosition={{ x: 0, y: 0 }}>
                 <div className="relative w-[25.38vw] h-[25.38vw]">
-                  <Image src="/bares/sticker-bares.png" alt="Sticker Bares" fill />
+                  <Image
+                    src="/bares/sticker-bares.png"
+                    alt="Sticker Bares"
+                    fill
+                  />
                 </div>
               </Draggable>
             </div>
@@ -77,15 +83,22 @@ export default async function Page({ params }) {
                 </div>
 
                 <div className="lg:h-[65.72vh] lg:w-[454.87vh] pt-[5.94vh] flex flex-col justify-start items-start ">
-                  <h3 className={`text-white text-[9.49vh] uppercase md:pb-[2.56vh] hidden md:block ${Knockout54UltraBold.className}`}>
+                  <h3
+                    className={`text-white text-[9.49vh] uppercase md:pb-[2.56vh] hidden md:block ${Knockout54UltraBold.className}`}
+                  >
                     {dict.bares.title}
                   </h3>
                   <div className="buenos-aires grid grid-rows-3 grid-flow-col gap-4 gap-x-[1.84vh] text-white relative">
                     {zonas.data.map((bar, index) => (
-                      <div key={index} className="border-l-2 border-white border-dashed relative w-[84.61vw] h-[24.87vw] md:w-[43.20vh] md:h-[16.57vh]">
+                      <div
+                        key={index}
+                        className="border-l-2 border-white border-dashed relative w-[84.61vw] h-[24.87vw] md:w-[43.20vh] md:h-[16.57vh]"
+                      >
                         {index == 0 && (
                           <div className="text-black absolute pl-[0vw] md:pl-[2.40vh] -top-[8vw] md:top-[1vh]">
-                            <span className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}>
+                            <span
+                              className={`${Knockout34.className} bg-white text-[1.41vh] leading-normal px-2 lg:py-0.5 uppercase`}
+                            >
                               {bar.attributes.zona}
                             </span>
                           </div>
@@ -106,7 +119,10 @@ export default async function Page({ params }) {
                                   className="w-[1.84vh] h-[1.84vh]"
                                 />
                                 <span className="text-[3vw] md:text-[1.33vh]">
-                                  {bar.attributes.bares.data[0].attributes.Telefono}
+                                  {
+                                    bar.attributes.bares.data[0].attributes
+                                      .Telefono
+                                  }
                                 </span>
                               </div>
                             </a>
@@ -118,7 +134,10 @@ export default async function Page({ params }) {
                                 className="h-3"
                               />
                             </div>
-                            <a href={`mailto:${bar.attributes.bares.data[0].attributes.Email}`} target="_blank">
+                            <a
+                              href={`mailto:${bar.attributes.bares.data[0].attributes.Email}`}
+                              target="_blank"
+                            >
                               <div className="flex items-center justify-center gap-x-1">
                                 <img
                                   src="/bares/mail.png"
@@ -126,7 +145,10 @@ export default async function Page({ params }) {
                                   className="w-[2.23vh] h-[1.84vh]"
                                 />
                                 <span className="text-[3vw] md:text-[1.33vh]">
-                                  {bar.attributes.bares.data[0].attributes.Email}
+                                  {
+                                    bar.attributes.bares.data[0].attributes
+                                      .Email
+                                  }
                                 </span>
                               </div>
                             </a>
