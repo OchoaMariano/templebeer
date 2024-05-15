@@ -6,7 +6,7 @@ import ModalAstronomia from "../../../../components/encuentro/ModalAstronomia";
 import ModalGhosteo from "../../../../components/encuentro/ModalGhosteo";
 import ModalBirra from "../../../../components/encuentro/ModalBirra";
 import ModalArtistas from "../../../../components/encuentro/ModalArtistas";
-import ModalBares from "../../../../components/encuentro/ModalBares";
+import ModalBares from "../../../../components/encuentro/ModalBares-grid";
 import ModalMemes from "../../../../components/encuentro/ModalMemesBirreros";
 import ModalSanPatricio from "../../../../components/encuentro/ModalSanPatricio";
 import ModalTaco from "../../../../components/encuentro/ModalTacoTuesday";
