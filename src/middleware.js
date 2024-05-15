@@ -1,8 +1,8 @@
-import { NextResponse } from 'next/server';
+import { NextResponse } from "next/server";
 
-import { i18n } from './i18n-config';
-import { match as matchLocale } from '@formatjs/intl-localematcher';
-import Negotiator from 'negotiator';
+import { i18n } from "./i18n-config";
+import { match as matchLocale } from "@formatjs/intl-localematcher";
+import Negotiator from "negotiator";
 
 function getLocale(request) {
   const negotiatorHeaders = {};
@@ -10,7 +10,9 @@ function getLocale(request) {
 
   const locales = i18n.locales;
 
-  let languages = new Negotiator({ headers: negotiatorHeaders }).languages(locales);
+  let languages = new Negotiator({ headers: negotiatorHeaders }).languages(
+    locales
+  );
 
   const locale = matchLocale(languages, locales, i18n.defaultLocale);
 
@@ -33,11 +35,14 @@ export function middleware(request) {
     const locale = getLocale(request);
 
     return NextResponse.redirect(
-      new URL(`/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`, request.url)
+      new URL(
+        `/${locale}${pathname.startsWith("/") ? "" : "/"}${pathname}`,
+        request.url
+      )
     );
   }
 }
 
 export const config = {
-  matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+  matcher: ["/((?!api|_next/static|_next/image|favicon.ico).*)"],
 };
