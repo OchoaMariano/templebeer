@@ -29,8 +29,7 @@ export default function SelectCountry() {
   const handleCountrySelect = (countryCode) => {
     sessionStorage.setItem("selectedCountry", countryCode);
     setShouldShow(false);
-    const locale =
-      countryCode === "es" || countryCode === "es-MX" ? "es-MX" : "en"; // Cambia para incluir 'es-MX'
+    const locale = countryCode; // Cambia para incluir 'es-MX'
     router.push(`/${locale}`);
   };
 
