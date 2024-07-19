@@ -2,8 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import '~locomotive-scroll/dist/locomotive-scroll.css';
-
+@import "~locomotive-scroll/dist/locomotive-scroll.css";
 
 :root {
   --foreground-rgb: 0, 0, 0;
@@ -21,15 +20,19 @@
 
 @keyframes scroll {
   0% {
-      transform: translateX(0);
+    transform: translateX(0);
   }
   100% {
-      transform: translateX(-100%);
+    transform: translateX(-100%);
   }
 }
 
 @keyframes bounce {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: scale(1);
   }
   40% {
@@ -49,7 +52,11 @@
 }
 
 @keyframes bouncesmooth {
-  0%, 20%, 50%, 80%, 100% {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
     transform: scale(1);
   }
   40% {
@@ -141,14 +148,13 @@ body {
 }
 
 .main__nav .nav__item {
-  color: #FFF;
+  color: #fff;
   text-align: center;
   font-size: 1.41vh;
   font-style: normal;
   font-weight: 500;
   line-height: 6.4px; /* 64% */
   text-transform: uppercase;
-  
 }
 
 .rrss__nav {
@@ -165,8 +171,8 @@ body {
   align-items: center;
   gap: 17px;
   align-self: stretch;
-  border: 1px solid #FFF;
-  color: #FFF;
+  border: 1px solid #fff;
+  color: #fff;
   text-align: center;
   font-size: 1.41vh;
   font-style: normal;
@@ -211,7 +217,6 @@ body {
 .inline {
   display: inline;
 }
-
 
 .view-section__wrapper__desktop {
   display: none;
@@ -260,7 +265,9 @@ body {
   justify-content: flex-start;
   display: flex;
 }
-
+.test {
+  display: block;
+}
 .beer-wrapper {
   z-index: 8;
   height: 64.58vh;
@@ -315,9 +322,11 @@ body {
   position: relative;
 }
 
-.picture-box-1, .picture-box-2, .picture-box-3 {
+.picture-box-1,
+.picture-box-2,
+.picture-box-3 {
   width: 39.94vh;
-  height: 64.30vh;
+  height: 64.3vh;
   position: relative;
 }
 
@@ -330,7 +339,7 @@ body {
 
 .box-5 {
   width: 27.33vh;
-  height: 31.30vh;
+  height: 31.3vh;
   text-align: right;
   align-self: flex-end;
   position: relative;
@@ -350,22 +359,22 @@ body {
 }
 
 .box-6 {
-  width: 21.10vh;
-  height: 31.30vh;
+  width: 21.1vh;
+  height: 31.3vh;
   align-self: flex-end;
   position: relative;
 }
 
 .box-7 {
   width: 32.86vh;
-  height: 31.30vh;
+  height: 31.3vh;
   align-self: flex-end;
   position: relative;
 }
 
 .box-8 {
   width: 32.86vh;
-  height: 31.30vh;
+  height: 31.3vh;
   align-self: flex-end;
   position: relative;
 }
@@ -460,9 +469,11 @@ body {
   grid-row-gap: 5.12vw;
 }
 
-.row-1 {}
+.row-1 {
+}
 
-.row-2 {}
+.row-2 {
+}
 
 .banner-wrapper {
   width: 140vh;
@@ -490,7 +501,7 @@ body {
 .product-viewport {
   width: 100vw;
   height: 100vh;
-  padding-top: 9.20vh;
+  padding-top: 9.2vh;
   padding-bottom: 0;
   position: fixed;
 }
@@ -566,12 +577,12 @@ body {
   margin-bottom: 5.12vw;
 }
 
+/* md */
+@media (min-width: 640px) {
+}
 
 /* md */
-@media (min-width: 640px) { }
-
-/* md */
-@media (min-width: 768px) { 
+@media (min-width: 768px) {
   .min-height-custom {
     min-height: 0; /* Anula la altura mínima */
   }
@@ -599,7 +610,7 @@ body {
 }
 
 /* lg */
-@media (min-width: 1024px) { 
+@media (min-width: 1024px) {
   .view-section__wrapper__desktop {
     display: block;
   }
@@ -607,28 +618,29 @@ body {
     width: 140vh;
     height: 7.64vh;
   }
-  
+
   .banner-content {
     display: flex;
     width: 262.88vh;
   }
-  
+
   .banner {
     width: 131.44vh;
     height: 7.64vh;
   }
-
-} 
+}
 
 /* xl */
-@media (min-width: 1280px) { }
+@media (min-width: 1280px) {
+}
 
 /* 2xl */
-@media (min-width: 1440px) { }
+@media (min-width: 1440px) {
+}
 
 /* 3xl */
-@media (min-width: 1680px) { }
-
+@media (min-width: 1680px) {
+}
 
 .animate-wiggle {
   -webkit-animation: wiggle 1s infinite;
@@ -662,7 +674,8 @@ body {
   overflow: hidden;
 }
 
-.picture-box-1 video, .picture-box-1 img {
+.picture-box-1 video,
+.picture-box-1 img {
   transition: opacity 0.5s ease-in-out;
 }
 
@@ -672,13 +685,14 @@ body {
   left: 0;
 }
 
-
 @keyframes moveLinks {
   0% {
     transform: translateX(0%);
   }
   100% {
-    transform: translateX(-52%); /* Mueve los enlaces un tercio del ancho total para que se repita continuamente */
+    transform: translateX(
+      -52%
+    ); /* Mueve los enlaces un tercio del ancho total para que se repita continuamente */
   }
 }
 
@@ -710,7 +724,7 @@ body {
     transform: scale(1);
   }
   50% {
-    transform: scale(1.10);
+    transform: scale(1.1);
   }
   100% {
     transform: scale(1);
@@ -736,7 +750,8 @@ body {
   position: relative;
 }
 
-.logo-normal, .logo-hover {
+.logo-normal,
+.logo-hover {
   position: absolute;
   top: 0;
   left: 0;
