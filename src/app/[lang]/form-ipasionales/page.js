@@ -73,15 +73,7 @@ export default function Page() {
       // Aquí puedes manejar el envío del formulario
       console.log(formData);
       setIsSubmitted(true); // Actualiza el estado
-    } catch (error) {
-      toast.error(
-        "Error: registro no completado, por favor vuelve a intentarlo",
-        {
-          duration: 4000,
-          position: "top-center",
-        }
-      );
-    }
+    } catch (error) {}
   };
 
   return (
