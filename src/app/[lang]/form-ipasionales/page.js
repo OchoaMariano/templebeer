@@ -66,7 +66,7 @@ export default function Page() {
       >
         <div className="w-full h-full overflow-y-scroll">
           <div className="max-w-[552px] mx-auto">
-            <div className="bg-black py-10 space-y-8 px-5  lg:px-12 my-10 lg:my-0">
+            <div className="bg-black py-14 space-y-8 px-5  lg:px-12 my-10 lg:my-0">
               <div>
                 <Image src={Logo} className="w-16 mx-auto" />
               </div>
@@ -87,7 +87,7 @@ export default function Page() {
               </div>
               <div className="space-y-4">
                 <div>
-                  <Image src={Listo} className="w-32 mx-auto" />
+                  <Image src={Listo} className="w-28 mx-auto" />
                 </div>
                 <p className="text-center font-normal text-[12.5px] leading-[13.5px] px-8 lg:px-20">
                   Abrite una birra y espera a que anunciemos a los finalistas.
@@ -98,7 +98,7 @@ export default function Page() {
               </div>
               <div className="relative">
                 <div>
-                  <Image src={Participa} className="w-48 mx-auto" />
+                  <Image src={Participa} className="w-40 mx-auto" />
                 </div>
                 <div className="static lg:absolute -right-8 -bottom-5 pt-6">
                   <Image src={Ipasionales} className="w-24 mx-auto" />
@@ -106,12 +106,12 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="text-black bg-white py-20 lg:py-10 px-5 lg:px-12 my-10 lg:my-0">
+            <div className="text-black bg-white py-20 lg:py-10 px-3 lg:px-12 my-10 lg:my-0">
               <form
                 onSubmit={handleSubmit}
-                className="px-1 space-y-8 lg:space-y-6"
+                className="px-1 space-y-8 lg:space-y-10"
               >
-                <div className="text-[12.45px] space-y-3 leading-[14px]">
+                <div className="text-[11px] lg:text-[12.45px] space-y-4 leading-[14px]">
                   <label className="font-semibold">
                     1. Razón por la que más amás a la WOLF IPA
                   </label>
@@ -161,7 +161,7 @@ export default function Page() {
                   </div>
                 </div>
 
-                <div className="text-[12.45px]  space-y-3  leading-[14px]">
+                <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
                   <div className="flex flex-col">
                     <label className="font-semibold ">
                       2. ¿Qué harias por un año de birra gratis?
@@ -176,12 +176,12 @@ export default function Page() {
                       placeholder="Contanos!"
                       onChange={handleChange}
                       required
-                      className="w-full px-2 border-2 rounded-lg pb-10 "
+                      className="w-full px-2 border rounded-xl pt-4 pb-16 border-[#BEBEBE] placeholder:text-[#BEBEBE] pl-5 text-[#BEBEBE]"
                     ></textarea>
                   </div>
                 </div>
 
-                <div className="text-[12.45px]  space-y-3  leading-[14px]">
+                <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
                   <label className="font-semibold">
                     3. ¿Tenés alguna anécdota en TEMPLE o con la WOLF IPA?
                   </label>
@@ -191,30 +191,29 @@ export default function Page() {
                       placeholder="Contanos!"
                       onChange={handleChange}
                       required
-                      className="w-full px-2 border-2 rounded-lg pb-10"
+                      className="w-full px-2 border rounded-xl pt-4 pb-16 border-[#BEBEBE] placeholder:text-[#BEBEBE] pl-5 text-[#BEBEBE]"
                     ></textarea>
                   </div>
                 </div>
 
-                <div className="text-[12.45px]  space-y-3  leading-[14px]">
+                <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
                   <label className="font-semibold">
                     4. ¿Tenes alguna prueba fotográfica de que sos un IPAsional?
                   </label>
                   <div className="pl-5">
-                    {" "}
                     <textarea
                       name="fotografia"
                       placeholder="Contanos!"
                       onChange={handleChange}
                       required
-                      className="w-full px-2 border-2 rounded-lg pb-10"
+                      className="w-full px-2 border rounded-xl pt-4 pb-16 border-[#BEBEBE] placeholder:text-[#BEBEBE] pl-5 text-[#BEBEBE]"
                     ></textarea>
                   </div>
                 </div>
 
-                <div className="text-[12.45px] space-y-3 leading-[14px]">
+                <div className="text-[11px] lg:text-[12.45px] space-y-4 leading-[14px]">
                   <label className="font-semibold text-[12.45px]">
-                    5. ¿Te gustaría que compartamos tu respuesta en nuestras
+                    5. ¿Te gustaria que compartamos tu respuesta en nuestras
                     redes?
                   </label>
                   <div className="flex flex-col font-normal gap-y-2 pl-5">
@@ -226,7 +225,7 @@ export default function Page() {
                         onChange={handleChange}
                         required
                       />
-                      Si
+                      Mandale
                     </label>
                     <label className="gap-x-2 flex items-center">
                       <input
@@ -236,12 +235,12 @@ export default function Page() {
                         onChange={handleChange}
                         required
                       />
-                      No
+                      Prefiero mantenerme en el anonimato, como Batman
                     </label>
                   </div>
                 </div>
 
-                <div className="text-[12.45px] space-y-3 flex flex-col  leading-[14px]">
+                <div className="text-[11px] lg:text-[12.45px] space-y-3 flex flex-col  leading-[14px]">
                   <label className="font-semibold">6. @ de tu Instagram</label>
                   <div className="pl-5">
                     <input
@@ -250,12 +249,12 @@ export default function Page() {
                       name="instagram"
                       onChange={handleChange}
                       required
-                      className="px-2 border-2 rounded-lg w-fit"
+                      className="w-fit px-2 py-1.5 border rounded-xl border-[#BEBEBE] placeholder:text-[#BEBEBE] pl-5 text-[#BEBEBE]"
                     />
                   </div>
                 </div>
 
-                <div className="text-[12.45px] space-y-3 flex flex-col  leading-[14px]">
+                <div className="text-[11px] lg:text-[12.45px] space-y-3 flex flex-col  leading-[14px]">
                   <label className="font-semibold">7. Tu número de celu</label>
                   <div className="pl-5">
                     <input
@@ -263,7 +262,7 @@ export default function Page() {
                       name="celular"
                       onChange={handleChange}
                       required
-                      className="px-2 border-2 rounded-lg w-fit"
+                      className="w-fit px-2 py-1.5 border rounded-xl border-[#BEBEBE] placeholder:text-[#BEBEBE] pl-5 text-[#BEBEBE]"
                     />
                   </div>
                 </div>
