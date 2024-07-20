@@ -449,7 +449,7 @@ export default function Page() {
                       name="telefono"
                       onChange={handleChange}
                       required
-                      className="w-full px-2 py-1.5 border rounded-xl border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
+                      className="w-full px-2 py-2 border rounded-xl border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
                     />
                   </div>
                 </div>
