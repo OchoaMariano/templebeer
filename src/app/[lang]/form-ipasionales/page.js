@@ -29,6 +29,8 @@ const supabase = createClient(supabaseUrl, supabaseKey);
 
 export default function Page() {
   const [formData, setFormData] = useState({
+    nombre: "",
+    email: "",
     porque_amas_wolf_ipa: "",
     que_harias_un_año_gratis: "",
     anecdota: "",
@@ -93,7 +95,7 @@ export default function Page() {
         ]);
 
       if (insertError) throw insertError;
-      const emailto = "mochoa@mg54.com";
+
       // Enviar email de notificación
       const emailSubject = "Gracias por participar en Temple Beer";
       const emailBody = `
@@ -104,7 +106,7 @@ export default function Page() {
       const emailPreview = "Tu participación en Temple Beer ha sido registrada";
 
       const emailSent = await sendEmail(
-        emailto, // Asumiendo que el campo 'instagram' contiene el email del usuario
+        formData.email, // Asumiendo que el campo 'instagram' contiene el email del usuario
         emailSubject,
         emailBody,
         emailPreview,
@@ -117,6 +119,8 @@ export default function Page() {
 
       // Limpia el formulario
       setFormData({
+        nombre: "",
+        email: "",
         porque_amas_wolf_ipa: "",
         que_harias_un_año_gratis: "",
         anecdota: "",
@@ -235,9 +239,45 @@ export default function Page() {
                 onSubmit={handleSubmit}
                 className="px-1 space-y-8 lg:space-y-10"
               >
+                <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
+                  <div className="flex flex-col">
+                    <label className="font-semibold ">
+                      1. Nombre y apellido:
+                    </label>
+                  </div>
+                  <div className="pl-5">
+                    <input
+                      name="nombre"
+                      placeholder="Nombre y apellido:"
+                      onChange={handleChange}
+                      required
+                      className="w-full px-2 border rounded-xl py-2 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
+                    ></input>
+                  </div>
+                </div>
+                <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
+                  <div className="flex flex-col">
+                    <label className="font-semibold ">
+                      2. Un mail de contacto
+                    </label>
+                    <span className={`font-light pl-4 ${GothamBook.className}`}>
+                      En este correo vas a recibir todas las novedades
+                    </span>
+                  </div>
+                  <div className="pl-5">
+                    <input
+                      name="email"
+                      type="email"
+                      placeholder="Email"
+                      onChange={handleChange}
+                      required
+                      className="w-full px-2 border rounded-xl py-2 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
+                    ></input>
+                  </div>
+                </div>
                 <div className="text-[11px] lg:text-[12.45px] space-y-4 leading-[14px]">
                   <label className={`font-bold`}>
-                    1. Razón por la que más amás a la WOLF IPA
+                    3. Razón por la que más amás a la WOLF IPA
                   </label>
                   <div className="flex flex-col font-normal gap-y-2 pl-5">
                     <label className="gap-x-2 flex items-center ">
@@ -294,7 +334,7 @@ export default function Page() {
                 <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
                   <div className="flex flex-col">
                     <label className="font-semibold ">
-                      2. ¿Qué harias por un año de birra gratis?
+                      4. ¿Qué harias por un año de birra gratis?
                     </label>
                     <span className={`font-light pl-4 ${GothamBook.className}`}>
                       Es tu momento de lucirte y contarnos con lujo de detalles
@@ -313,7 +353,7 @@ export default function Page() {
 
                 <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
                   <label className="font-semibold">
-                    3. ¿Tenés alguna anécdota en TEMPLE o con la WOLF IPA?
+                    5. ¿Tenés alguna anécdota en TEMPLE o con la WOLF IPA?
                   </label>
                   <div className="pl-5">
                     <textarea
@@ -328,7 +368,7 @@ export default function Page() {
 
                 <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
                   <label className="font-semibold">
-                    4. ¿Tenes alguna prueba fotográfica de que sos un IPAsional?
+                    6. ¿Tenes alguna prueba fotográfica de que sos un IPAsional?
                   </label>
                   <div className="pl-5">
                     <input
@@ -358,7 +398,7 @@ export default function Page() {
 
                 <div className="text-[11px] lg:text-[12.45px] space-y-4 leading-[14px]">
                   <label className="font-semibold text-[12.45px]">
-                    5. ¿Te gustaria que compartamos tu respuesta en nuestras
+                    7. ¿Te gustaria que compartamos tu respuesta en nuestras
                     redes?
                   </label>
                   <div className="flex flex-col font-normal gap-y-2 pl-5">
@@ -388,7 +428,7 @@ export default function Page() {
                 </div>
 
                 <div className="text-[11px] lg:text-[12.45px] space-y-3 flex flex-col  leading-[14px]">
-                  <label className="font-semibold">6. @ de tu Instagram</label>
+                  <label className="font-semibold">8. @ de tu Instagram</label>
                   <div className="pl-5">
                     <input
                       type="text"
@@ -396,20 +436,20 @@ export default function Page() {
                       name="instagram"
                       onChange={handleChange}
                       required
-                      className="w-fit px-2 py-1.5 border rounded-xl border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
+                      className="w-full px-2 py-2 border rounded-xl border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
                     />
                   </div>
                 </div>
 
                 <div className="text-[11px] lg:text-[12.45px] space-y-3 flex flex-col  leading-[14px]">
-                  <label className="font-semibold">7. Tu número de celu</label>
+                  <label className="font-semibold">9. Tu número de celu</label>
                   <div className="pl-5">
                     <input
                       type="number"
                       name="telefono"
                       onChange={handleChange}
                       required
-                      className="w-fit px-2 py-1.5 border rounded-xl border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
+                      className="w-full px-2 py-1.5 border rounded-xl border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
                     />
                   </div>
                 </div>
