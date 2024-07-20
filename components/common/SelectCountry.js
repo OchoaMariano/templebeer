@@ -1,36 +1,59 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { useRouter } from "next/navigation";
-import Link from "next/link";
+import { useRouter, usePathname } from "next/navigation";
 import Head from "next/head";
+import { i18n } from "@/i18n-config";
 
-export default function SelectCountry() {
+export default function SelectCountry({ onComplete }) {
   const [shouldShow, setShouldShow] = useState(false);
   const router = useRouter();
+  const pathname = usePathname();
 
   useEffect(() => {
     const selectedCountry = sessionStorage.getItem("selectedCountry");
+
+    // Don't show the popup for /es/form-ipasionales
+    if (pathname === "/es/form-ipasionales") {
+      setShouldShow(false);
+      return;
+    }
+
     if (selectedCountry) {
       setShouldShow(false);
-      const locale =
-        selectedCountry === "es" || selectedCountry === "es-MX"
-          ? "es-MX"
-          : "en"; // Incluye 'es-MX' aquí también
+      const locale = selectedCountry;
+
       // Solo redirige si está en la ruta raíz
-      if (router.pathname === "/") {
+      if (pathname === "/") {
         router.replace(`/${locale}`);
       }
     } else {
       setShouldShow(true);
     }
-  }, [router]);
+  }, [router, pathname]);
 
   const handleCountrySelect = (countryCode) => {
     sessionStorage.setItem("selectedCountry", countryCode);
     setShouldShow(false);
-    const locale = countryCode; // Cambia para incluir 'es-MX'
-    router.push(`/${locale}`);
+    const locale = countryCode;
+
+    // Definir los locales válidos
+    const validLocales = ["es", "en", "es-MX"];
+
+    // Obtener la parte de la ruta después del locale actual (si existe)
+    const pathParts = pathname.split("/").filter((part) => part !== "");
+    const currentLocale = validLocales.includes(pathParts[0])
+      ? pathParts[0]
+      : null;
+    const restOfPath = currentLocale
+      ? "/" + pathParts.slice(1).join("/")
+      : pathname;
+
+    // Construir la nueva ruta
+    const newPath = `/${locale}${restOfPath}`;
+
+    router.push(newPath);
+    onComplete();
   };
 
   if (!shouldShow) {
@@ -77,10 +100,10 @@ export default function SelectCountry() {
                 onClick={() => handleCountrySelect("en")}
               />
               <FlagButton
-                img="/mx.svg" // Asegúrate de que esta ruta a la imagen sea correcta
+                img="/mx.svg"
                 alt="Mexico Flag"
                 className="w-12 h-[6.79vh]"
-                onClick={() => handleCountrySelect("es-MX")} // Cambia aquí para usar 'es-MX'
+                onClick={() => handleCountrySelect("es-MX")}
               />
 
               <FlagButton

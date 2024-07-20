@@ -80,7 +80,7 @@ export default function Page() {
   return (
     <>
       <div
-        className={`${isSubmitted ? "z-0" : "z-50"}`}
+        className={`${isSubmitted ? "z-0" : "z-40"}`}
         style={{
           backgroundImage: "url(/form-ipasionales/bg.jpeg)",
           backgroundPosition: "center",

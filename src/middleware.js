@@ -1,5 +1,4 @@
 import { NextResponse } from "next/server";
-
 import { i18n } from "./i18n-config";
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
@@ -21,6 +20,11 @@ function getLocale(request) {
 
 export function middleware(request) {
   const pathname = request.nextUrl.pathname;
+
+  // Si la solicitud es para /form-ipasionales, no aplicamos el middleware
+  if (pathname === "/es/form-ipasionales") {
+    return NextResponse.next();
+  }
 
   // Si la solicitud parece ser para un recurso estático, no interferimos
   if (pathname.match(/\.(jpg|jpeg|png|svg|css|js|woff2?|ttf|eot|json)$/)) {

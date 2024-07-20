@@ -1,4 +1,5 @@
 "use client";
+
 // components/Popup.js
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
