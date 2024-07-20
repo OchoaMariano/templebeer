@@ -13,6 +13,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
+import {
+  Knockout54UltraBold,
+  Knockout34,
+  Knockout54,
+  Marker,
+  GothamBook,
+} from "../layout";
+import { sendEmail } from "@/utils/emailService";
 
 const supabaseUrl = "https://vgmbsfkdcztdrgztmlxj.supabase.co";
 const supabaseKey =
@@ -24,7 +32,7 @@ export default function Page() {
     porque_amas_wolf_ipa: "",
     que_harias_un_año_gratis: "",
     anecdota: "",
-    prueba_grafica: "",
+    prueba_grafica: null,
     compartir_respuesta: false,
     instagram: "",
     telefono: "",
@@ -32,38 +40,87 @@ export default function Page() {
     mayor_18: false,
   });
 
-  const [isSubmitted, setIsSubmitted] = useState(false); // Nuevo estado
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [fileError, setFileError] = useState("");
+  const [error, setError] = useState(null);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
+    setFormData((prevData) => ({
+      ...prevData,
+      [name]: type === "checkbox" ? checked : value,
+    }));
+  };
 
-    if (type === "checkbox") {
-      setFormData({
-        ...formData,
-        [name]: checked,
-      });
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file && file.size <= 2 * 1024 * 1024) {
+      setFormData((prevData) => ({
+        ...prevData,
+        prueba_grafica: file,
+      }));
+      setFileError("");
     } else {
-      setFormData({
-        ...formData,
-        [name]: value,
-      });
+      setFileError("El archivo debe ser menor a 2MB");
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setError(null);
 
     try {
-      const { data, error } = await supabase
-        .from("registros")
-        .insert([formData]);
+      let imageUrl = null;
+      if (formData.prueba_grafica) {
+        const { data, error: uploadError } = await supabase.storage
+          .from("imagenes_registros")
+          .upload(
+            `${Date.now()}_${formData.prueba_grafica.name}`,
+            formData.prueba_grafica
+          );
 
-      if (error) throw error;
+        if (uploadError) throw uploadError;
+        imageUrl = data.path;
+      }
+
+      const { data, error: insertError } = await supabase
+        .from("registros")
+        .insert([
+          {
+            ...formData,
+            prueba_grafica: imageUrl,
+          },
+        ]);
+
+      if (insertError) throw insertError;
+      const emailto = "mochoa@mg54.com";
+      // Enviar email de notificación
+      const emailSubject = "Gracias por participar en Temple Beer";
+      const emailBody = `
+        <h1>¡Gracias por participar!</h1>
+        <p>Hemos recibido tu formulario correctamente.</p>
+        <p>Pronto nos pondremos en contacto contigo.</p>
+      `;
+      const emailPreview = "Tu participación en Temple Beer ha sido registrada";
+
+      const emailSent = await sendEmail(
+        emailto, // Asumiendo que el campo 'instagram' contiene el email del usuario
+        emailSubject,
+        emailBody,
+        emailPreview,
+        "Temple Beer"
+      );
+
+      if (!emailSent) {
+        console.error("Failed to send notification email");
+      }
+
+      // Limpia el formulario
       setFormData({
         porque_amas_wolf_ipa: "",
         que_harias_un_año_gratis: "",
         anecdota: "",
-        prueba_grafica: "",
+        prueba_grafica: null,
         compartir_respuesta: false,
         instagram: "",
         telefono: "",
@@ -71,14 +128,47 @@ export default function Page() {
         mayor_18: false,
       });
 
-      // Aquí puedes manejar el envío del formulario
-      console.log(formData);
-      setIsSubmitted(true); // Actualiza el estado
-    } catch (error) {}
+      // Resetea el input de archivo
+      const fileInput = document.querySelector('input[type="file"]');
+      if (fileInput) fileInput.value = "";
+
+      console.log("Formulario enviado con éxito");
+      setIsSubmitted(true);
+    } catch (error) {
+      console.error("Error:", error);
+      setError(error.message || "Ocurrió un error al enviar el formulario");
+    }
   };
 
+  // Renderizado del formulario
+  if (isSubmitted) {
+    return (
+      <>
+        <div className="absolute w-full h-screen z-50 transition-all ease-in-out duration-300">
+          <div className="w-full h-full relative hidden lg:block">
+            <Image
+              src={BgDesk}
+              className="w-full h-full object-cover object-center"
+            />
+            <Link href="/">
+              <Image src={Close} className="w-10 absolute top-10 right-10" />
+            </Link>
+          </div>
+          <div className="lg:hidden bg-[#009995] h-full w-full">
+            <div className="w-full h-full relative ">
+              <Image src={BgMob} className="w-full h-full object-contain" />
+              <Link href="/">
+                <Image src={Close} className="w-10 absolute top-5 right-5" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </>
+    );
+  }
+
   return (
-    <>
+    <div className="relative overflow-y-scroll scroll-smooth">
       <div
         className={`${isSubmitted ? "z-0" : "z-40"}`}
         style={{
@@ -86,7 +176,7 @@ export default function Page() {
           backgroundPosition: "center",
           backgroundSize: "cover",
           width: "100%",
-          height: "100%", // Puedes ajustar la altura según sea necesario
+          height: "100%",
           position: "fixed",
         }}
       >
@@ -123,8 +213,13 @@ export default function Page() {
                 </p>
               </div>
               <div className="relative">
-                <div>
-                  <Image src={Participa} className="w-40 mx-auto" />
+                <div className="flex items-center justify-center py-4">
+                  <Link
+                    href="#form"
+                    className="bg-[#FCDC00] text-black px-4 py-2 text-[17px] font-semibold hover:bg-[#ffe74c] transition-all ease-in-out duration-300 uppercase"
+                  >
+                    SCROLLEA Y PARTICIPÁ
+                  </Link>
                 </div>
                 <div className="static lg:absolute -right-8 -bottom-5 pt-6">
                   <Image src={Ipasionales} className="w-24 mx-auto" />
@@ -132,13 +227,16 @@ export default function Page() {
               </div>
             </div>
 
-            <div className="text-black bg-white py-20 lg:py-10 px-3 lg:px-12 my-10 lg:my-0">
+            <div
+              className="text-black bg-white py-20 lg:py-12 px-3 lg:px-12 my-10 lg:my-0"
+              id="form"
+            >
               <form
                 onSubmit={handleSubmit}
                 className="px-1 space-y-8 lg:space-y-10"
               >
                 <div className="text-[11px] lg:text-[12.45px] space-y-4 leading-[14px]">
-                  <label className="font-semibold">
+                  <label className={`font-bold`}>
                     1. Razón por la que más amás a la WOLF IPA
                   </label>
                   <div className="flex flex-col font-normal gap-y-2 pl-5">
@@ -150,7 +248,7 @@ export default function Page() {
                         onChange={handleChange}
                         required
                       />
-                      <span>
+                      <span className={`${GothamBook.className}`}>
                         Aroma (huelo todo antes de probarlo, lo admito)
                       </span>
                     </label>
@@ -162,7 +260,9 @@ export default function Page() {
                         onChange={handleChange}
                         required
                       />
-                      Amargor (lo único amargo que admito en mi vida)
+                      <span className={`${GothamBook.className}`}>
+                        Amargor (lo único amargo que admito en mi vida)
+                      </span>
                     </label>
                     <label className="gap-x-2 flex items-center">
                       <input
@@ -172,7 +272,9 @@ export default function Page() {
                         onChange={handleChange}
                         required
                       />
-                      Sabor a lúpulo (lupumaniaco de la cuna al cajon)
+                      <span className={`${GothamBook.className}`}>
+                        Sabor a lúpulo (lupumaniaco de la cuna al cajon)
+                      </span>
                     </label>
                     <label className="gap-x-2 flex items-center">
                       <input
@@ -182,7 +284,9 @@ export default function Page() {
                         onChange={handleChange}
                         required
                       />
-                      Diseño (me gusta el arrrrte)
+                      <span className={`${GothamBook.className}`}>
+                        Diseño (me gusta el arrrrte)
+                      </span>
                     </label>
                   </div>
                 </div>
@@ -192,7 +296,7 @@ export default function Page() {
                     <label className="font-semibold ">
                       2. ¿Qué harias por un año de birra gratis?
                     </label>
-                    <span className="font-normal pl-4">
+                    <span className={`font-light pl-4 ${GothamBook.className}`}>
                       Es tu momento de lucirte y contarnos con lujo de detalles
                     </span>
                   </div>
@@ -202,7 +306,7 @@ export default function Page() {
                       placeholder="Contanos!"
                       onChange={handleChange}
                       required
-                      className="w-full px-2 border rounded-xl pt-4 pb-16 border-[#BEBEBE] placeholder:text-[#BEBEBE] pl-5 text-[#BEBEBE]"
+                      className="w-full px-2 border rounded-xl pt-4 pb-16 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
                     ></textarea>
                   </div>
                 </div>
@@ -217,7 +321,7 @@ export default function Page() {
                       placeholder="Contanos!"
                       onChange={handleChange}
                       required
-                      className="w-full px-2 border rounded-xl pt-4 pb-16 border-[#BEBEBE] placeholder:text-[#BEBEBE] pl-5 text-[#BEBEBE]"
+                      className="w-full px-2 border rounded-xl pt-4 pb-16 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
                     ></textarea>
                   </div>
                 </div>
@@ -227,13 +331,28 @@ export default function Page() {
                     4. ¿Tenes alguna prueba fotográfica de que sos un IPAsional?
                   </label>
                   <div className="pl-5">
-                    <textarea
+                    <input
+                      type="file"
                       name="prueba_grafica"
-                      placeholder="Contanos!"
-                      onChange={handleChange}
+                      accept="image/*"
+                      onChange={handleFileChange}
                       required
-                      className="w-full px-2 border rounded-xl pt-4 pb-16 border-[#BEBEBE] placeholder:text-[#BEBEBE] pl-5 text-[#BEBEBE]"
-                    ></textarea>
+                      className="w-full px-2 border rounded-xl pt-4 pb-4 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 text-[#ADADAD]"
+                    />
+                    {formData.prueba_grafica && (
+                      <p
+                        className={`mt-2 text-sm text-gray-500 ${GothamBook.className}`}
+                      >
+                        Archivo seleccionado: {formData.prueba_grafica.name}
+                      </p>
+                    )}
+                    {fileError && (
+                      <p
+                        className={`mt-2 text-sm text-red-500 ${GothamBook.className}`}
+                      >
+                        {fileError}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -251,7 +370,7 @@ export default function Page() {
                         onChange={handleChange}
                         required
                       />
-                      Mandale
+                      <span className={`${GothamBook.className}`}>Mandale</span>
                     </label>
                     <label className="gap-x-2 flex items-center">
                       <input
@@ -261,7 +380,9 @@ export default function Page() {
                         onChange={handleChange}
                         required
                       />
-                      Prefiero mantenerme en el anonimato, como Batman
+                      <span className={`${GothamBook.className}`}>
+                        Prefiero mantenerme en el anonimato, como Batman
+                      </span>
                     </label>
                   </div>
                 </div>
@@ -275,7 +396,7 @@ export default function Page() {
                       name="instagram"
                       onChange={handleChange}
                       required
-                      className="w-fit px-2 py-1.5 border rounded-xl border-[#BEBEBE] placeholder:text-[#BEBEBE] pl-5 text-[#BEBEBE]"
+                      className="w-fit px-2 py-1.5 border rounded-xl border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
                     />
                   </div>
                 </div>
@@ -288,13 +409,13 @@ export default function Page() {
                       name="telefono"
                       onChange={handleChange}
                       required
-                      className="w-fit px-2 py-1.5 border rounded-xl border-[#BEBEBE] placeholder:text-[#BEBEBE] pl-5 text-[#BEBEBE]"
+                      className="w-fit px-2 py-1.5 border rounded-xl border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <div className="text-[10px] flex justify-center items-center text-[#BEBEBE]">
+                  <div className="text-[10px] flex justify-center items-center text-[#ADADAD]">
                     <label className="flex gap-x-2 justify-center items-center">
                       <input
                         type="checkbox"
@@ -302,11 +423,20 @@ export default function Page() {
                         onChange={handleChange}
                         required
                       />
-                      <span>Acepto las bases y condiciones</span>
+                      <span>
+                        Acepto las{" "}
+                        <a
+                          href="https://docs.google.com/document/d/1MKRyec4tyjSSh1DAZN_GxWgNH89GAzqww6TgpJqLB84/edit"
+                          target="_blank"
+                          className="underline text-black"
+                        >
+                          bases y condiciones
+                        </a>
+                      </span>
                     </label>
                   </div>
 
-                  <div className="text-[10px] flex justify-center items-center text-[#BEBEBE]">
+                  <div className="text-[10px] flex justify-center items-center text-[#ADADAD]">
                     <label className="flex gap-x-2 justify-center items-center">
                       <input
                         type="checkbox"
@@ -324,11 +454,12 @@ export default function Page() {
                 </div>
 
                 <div className="flex justify-center items-center">
+                  {error && <div className="text-red-500 mt-4">{error}</div>}
                   <button
                     type="submit"
-                    className="bg-[#FCDC00] text-[#303E48] px-4 py-2 text-[17px] font-semibold hover:bg-[#ffe74c] transition-all ease-in-out duration-300"
+                    className="bg-[#FCDC00] text-black px-4 py-2 text-[17px] font-semibold hover:bg-[#ffe74c] transition-all ease-in-out duration-300 uppercase"
                   >
-                    Enviar
+                    Enviar!
                   </button>
                 </div>
               </form>
@@ -336,29 +467,6 @@ export default function Page() {
           </div>
         </div>
       </div>
-      <div
-        className={`absolute w-full h-screen z-40 ${
-          isSubmitted ? "opacity-100" : "opacity-0"
-        } transition-all ease-in-out duration-300`}
-      >
-        <div className="w-full h-full relative hidden lg:block">
-          <Image
-            src={BgDesk}
-            className="w-full h-full object-cover object-center"
-          />
-          <Link href="/">
-            <Image src={Close} className="w-10 absolute top-10 right-10" />
-          </Link>
-        </div>
-        <div className="lg:hidden bg-[#009995] h-full w-full">
-          <div className="w-full h-full relative ">
-            <Image src={BgMob} className="w-full h-full object-contain" />
-            <Link href="/">
-              <Image src={Close} className="w-10 absolute top-5 right-5" />
-            </Link>
-          </div>
-        </div>
-      </div>
-    </>
+    </div>
   );
 }

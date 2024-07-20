@@ -2,6 +2,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import { i18n } from "../../i18n-config";
 import ClientRootLayout from "./ClientRootLayout";
+import Head from "next/head";
 
 export const Knockout34 = localFont({
   src: [
@@ -62,14 +63,17 @@ export async function generateStaticParams() {
   return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export const metadata = {
-  title: "Temple Beer",
-  description: "Temple Beer - Encuentro, Birra y Música",
-};
-
 export default function RootLayout({ children, params }) {
   return (
     <html lang={params.lang} className="scroll-smooth">
+      <Head>
+        <title>Temple Beer</title>
+        <meta
+          name="description"
+          content="Temple Beer - Encuentro, Birra y Música"
+        />
+        <link rel="shortcut icon" href="/favicon.png" />
+      </Head>
       <body className={Knockout54.className}>
         <ClientRootLayout params={params}>{children}</ClientRootLayout>
       </body>
