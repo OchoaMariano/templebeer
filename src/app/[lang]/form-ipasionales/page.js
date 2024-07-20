@@ -466,7 +466,7 @@ export default function Page() {
                       <span>
                         Acepto las{" "}
                         <a
-                          href="https://docs.google.com/document/d/1MKRyec4tyjSSh1DAZN_GxWgNH89GAzqww6TgpJqLB84/edit"
+                          href="https://vgmbsfkdcztdrgztmlxj.supabase.co/storage/v1/object/public/imagenes_registros/docs/BASES%20Y%20CONDICIONES%20CONCURSO.pdf"
                           target="_blank"
                           className="underline text-black"
                         >
