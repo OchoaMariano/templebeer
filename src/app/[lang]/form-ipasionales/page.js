@@ -3,24 +3,21 @@
 import Logo from "../../../../public/form-ipasionales/logo.png";
 import Frase from "../../../../public/form-ipasionales/frase.png";
 import Listo from "../../../../public/form-ipasionales/listo.png";
-import Participa from "../../../../public/form-ipasionales/participa.png";
 import Ipasionales from "../../../../public/form-ipasionales/ipasionales.png";
 import FraseForm from "../../../../public/form-ipasionales/frase-form.png";
 import BgDesk from "../../../../public/form-ipasionales/bg2.png";
 import BgMob from "../../../../public/form-ipasionales/bg2-mob.png";
 import Close from "../../../../public/form-ipasionales/close.png";
+import { render } from "@react-email/render";
+
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
-import {
-  Knockout54UltraBold,
-  Knockout34,
-  Knockout54,
-  Marker,
-  GothamBook,
-} from "../layout";
+import { GothamBook } from "../layout";
 import { sendEmail } from "@/utils/emailService";
+import EmailTemplate from "../../../../components/email/TemplateIpasionales";
+import EmailTemplateB from "../../../../components/email/TemplateB";
 
 const supabaseUrl = "https://vgmbsfkdcztdrgztmlxj.supabase.co";
 const supabaseKey =
@@ -96,17 +93,23 @@ export default function Page() {
 
       if (insertError) throw insertError;
 
+      // Separar nombre y apellido
+      const [nombre, ...apellidoArray] = formData.nombre.split(" ");
+      const apellido = apellidoArray.join(" ");
+      console.log(nombre, apellido);
+
+      // Renderizar el template del email
+      const emailBody = render(
+        <EmailTemplateB nombre={nombre} apellido={apellido} />
+      );
+
       // Enviar email de notificación
-      const emailSubject = "Gracias por participar en Temple Beer";
-      const emailBody = `
-        <h1>¡Gracias por participar!</h1>
-        <p>Hemos recibido tu formulario correctamente.</p>
-        <p>Pronto nos pondremos en contacto contigo.</p>
-      `;
-      const emailPreview = "Tu participación en Temple Beer ha sido registrada";
+      const emailSubject = "¡Bienvenido al IPAsional Club Social!";
+      const emailPreview =
+        "Tu membresía al IPAsional Club Social ha sido confirmada";
 
       const emailSent = await sendEmail(
-        formData.email, // Asumiendo que el campo 'instagram' contiene el email del usuario
+        formData.email,
         emailSubject,
         emailBody,
         emailPreview,
@@ -196,7 +199,7 @@ export default function Page() {
                 </div>
                 <div className="font-normal text-[14.5px] text-white">
                   <p>
-                    <span className="font-semibold">01.</span> Completa tus
+                    <span className="font-semibold">01.</span> Completá tus
                     datos
                   </p>
                   <p>
@@ -210,10 +213,10 @@ export default function Page() {
                   <Image src={Listo} className="w-28 mx-auto" />
                 </div>
                 <p className="text-center font-normal text-[12.5px] leading-[13.5px] px-8 lg:px-20 text-white">
-                  Abrite una birra y espera a que anunciemos a los finalistas.
+                  Abrite una birra y esperá a que anunciemos a los finalistas.
                   Las votaciones van a ser en nuestro
-                  <span className="font-medium"> Instagram</span> y va a ser
-                  decisión popular.
+                  <span className="font-medium"> Instagram</span> y por decisión
+                  popular.
                 </p>
               </div>
               <div className="relative">
@@ -313,7 +316,7 @@ export default function Page() {
                         required
                       />
                       <span className={`${GothamBook.className}`}>
-                        Sabor a lúpulo (lupumaniaco de la cuna al cajon)
+                        Sabor a lúpulo (lupumaníaco de la cuna al cajón)
                       </span>
                     </label>
                     <label className="gap-x-2 flex items-center">
@@ -368,7 +371,7 @@ export default function Page() {
 
                 <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
                   <label className="font-semibold">
-                    6. ¿Tenes alguna prueba fotográfica de que sos un IPAsional?
+                    6. ¿Tenés alguna prueba fotográfica de que sos un IPAsional?
                   </label>
                   <div className="pl-5">
                     <input
@@ -398,7 +401,7 @@ export default function Page() {
 
                 <div className="text-[11px] lg:text-[12.45px] space-y-4 leading-[14px]">
                   <label className="font-semibold text-[12.45px]">
-                    7. ¿Te gustaria que compartamos tu respuesta en nuestras
+                    7. ¿Te gustaría que compartamos tu respuesta en nuestras
                     redes?
                   </label>
                   <div className="flex flex-col font-normal gap-y-2 pl-5">
@@ -499,7 +502,7 @@ export default function Page() {
                     type="submit"
                     className="bg-[#FCDC00] text-black px-4 py-2 text-[17px] font-semibold hover:bg-[#ffe74c] transition-all ease-in-out duration-300 uppercase"
                   >
-                    Enviar!
+                    ¡ENVIAR!
                   </button>
                 </div>
               </form>
