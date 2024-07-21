@@ -100,7 +100,7 @@ export default function Page() {
 
       // Renderizar el template del email
       const emailBody = render(
-        <EmailTemplateB nombre={nombre} apellido={apellido} />
+        <EmailTemplate nombre={nombre} apellido={apellido} />
       );
 
       // Enviar email de notificación
