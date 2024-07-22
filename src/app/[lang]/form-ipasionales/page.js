@@ -256,7 +256,7 @@ export default function Page() {
                         queremos darte tu propia credencial IPAsional
                         (imaginate que hacemos un gesto pomposo con la mano).
                       </p>
-                      <img src="${credentialImageUrl}" alt="Credencial personalizada" style="width: 100%; max-width: 600px; height: auto; margin-bottom: 30px;">
+                      <img src="${credentialImageUrl}" alt="Credencial personalizada" style="width: 100%; max-width: 600px; height: auto; margin-bottom: 10px;">
                       <a href="${credentialImageUrl}" download="credencial.png" style="margin: 0 0 30px;">
                         <button style="
                           border: none;
