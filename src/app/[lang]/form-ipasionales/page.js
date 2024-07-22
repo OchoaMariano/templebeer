@@ -39,6 +39,7 @@ export default function Page() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [fileError, setFileError] = useState("");
   const [error, setError] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
@@ -64,6 +65,7 @@ export default function Page() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(null);
+    setIsSubmitting(true);
 
     try {
       let imageUrl = null;
@@ -151,7 +153,7 @@ export default function Page() {
                             line-height: 10px;
                             color: #606060;
                           ">
-                        22 de JULIO, 2024. Republica Argentina.
+                        
                       </h1>
                     </td>
                   </tr>
@@ -443,7 +445,10 @@ export default function Page() {
 
       console.log("Formulario enviado con éxito");
       setIsSubmitted(true);
+      // Si el envío es exitoso:
+      setIsSubmitting(false);
     } catch (error) {
+      setIsSubmitting(false);
       console.error("Error:", error);
       setError(error.message || "Ocurrió un error al enviar el formulario");
     }
@@ -549,7 +554,9 @@ export default function Page() {
             >
               <form
                 onSubmit={handleSubmit}
-                className="px-1 space-y-8 lg:space-y-10"
+                className={`px-1 space-y-8 lg:space-y-10 ${
+                  isSubmitting ? "opacity-50" : ""
+                }`}
               >
                 <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
                   <div className="flex flex-col">
@@ -809,9 +816,24 @@ export default function Page() {
                   {error && <div className="text-red-500 mt-4">{error}</div>}
                   <button
                     type="submit"
-                    className="bg-[#FCDC00] text-black px-4 py-2 text-[17px] font-semibold hover:bg-[#ffe74c] transition-all ease-in-out duration-300 uppercase"
+                    disabled={isSubmitting}
+                    className={`bg-[#FCDC00] text-black px-4 py-2 text-[17px] font-semibold transition-all ease-in-out duration-300 uppercase
+                      ${
+                        isSubmitting
+                          ? "opacity-50 cursor-not-allowed"
+                          : "hover:bg-[#ffe74c]"
+                      }`}
                   >
-                    ¡ENVIAR!
+                    {isSubmitting ? (
+                      <>
+                        <span className="mr-2">ENVIANDO...</span>
+                        <span className="animate-spin inline-block">
+                          &#8987;
+                        </span>
+                      </>
+                    ) : (
+                      "¡ENVIAR!"
+                    )}
                   </button>
                 </div>
               </form>
