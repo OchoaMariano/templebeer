@@ -98,9 +98,8 @@ export default function Page() {
       const apellido = apellidoArray.join(" ");
       console.log(nombre, apellido);
 
-      const credentialImageUrl = `${
-        process.env.NEXT_PUBLIC_BASE_URL
-      }/api/generate-credential?nombre=${encodeURIComponent(
+      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+      const credentialImageUrl = `${baseUrl}/api/generate-credential?nombre=${encodeURIComponent(
         nombre
       )}&apellido=${encodeURIComponent(apellido)}`;
 
@@ -257,7 +256,21 @@ export default function Page() {
                         queremos darte tu propia credencial IPAsional
                         (imaginate que hacemos un gesto pomposo con la mano).
                       </p>
-                      <img src="${credentialImageUrl}" alt="Credencial personalizada" style="width: 100%; max-width: 600px; height: auto;">
+                      <img src="${credentialImageUrl}" alt="Credencial personalizada" style="width: 100%; max-width: 600px; height: auto; margin-bottom: 30px;">
+                      <a href="${credentialImageUrl}" download="credencial.png" style="margin: 0 0 30px;">
+                        <button style="
+                          border: none;
+                          color: black;
+                          padding: 15px 0px;
+                          text-align: center;
+                          text-decoration: underline;
+                          display: inline-block;
+                          font-size: 16px;
+                          margin: 4px 2px;
+                          cursor: pointer;
+                          background-color: #fff;
+                        ">Descargar Credencial </button>
+                      </a>
                       <p style="margin: 0 0 30px; text-align: justify">
                         Ahora sí, flamante nuevo miembro de nuestro club, como
                         regalo especial queremos darte un montón de
