@@ -717,7 +717,7 @@ export default function Page() {
 
                 <div className="text-[11px] lg:text-[12.45px] space-y-4 leading-[14px]">
                   <label className="font-semibold text-[12.45px]">
-                    7. ¿Te gustaría que compartamos tu respuesta en nuestras
+                    7. ¿Te gustaria que compartamos tu respuesta en nuestras
                     redes?
                   </label>
                   <div className="flex flex-col font-normal gap-y-2 pl-5">
