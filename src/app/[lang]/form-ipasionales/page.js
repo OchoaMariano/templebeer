@@ -98,7 +98,9 @@ export default function Page() {
       const apellido = apellidoArray.join(" ");
       console.log(nombre, apellido);
 
-      const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+      // Oculto en produccion
+      // const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+      const baseUrl = "https://templebeer.com/";
       const credentialImageUrl = `${baseUrl}/api/generate-credential?nombre=${encodeURIComponent(
         nombre
       )}&apellido=${encodeURIComponent(apellido)}`;
