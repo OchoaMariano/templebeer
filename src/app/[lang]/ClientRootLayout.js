@@ -6,6 +6,7 @@ import Head from "next/head";
 import Popup from "../../../components/common/Popup";
 import SelectCountry from "../../../components/common/SelectCountry";
 import Legales from "../../../components/common/Legales";
+import Loader from "../../../components/common/Loader";
 
 export default function ClientRootLayout({ children, params }) {
   const [isLoading, setIsLoading] = useState(true);
@@ -23,7 +24,7 @@ export default function ClientRootLayout({ children, params }) {
   }, [pathname]);
 
   if (isLoading) {
-    return <div>Loading...</div>; // O un componente de carga más elaborado
+    return <Loader />;
   }
 
   return (

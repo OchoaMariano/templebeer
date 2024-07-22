@@ -8,7 +8,6 @@ import FraseForm from "../../../../public/form-ipasionales/frase-form.png";
 import BgDesk from "../../../../public/form-ipasionales/bg2.png";
 import BgMob from "../../../../public/form-ipasionales/bg2-mob.png";
 import Close from "../../../../public/form-ipasionales/close.png";
-import { render } from "@react-email/render";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -16,8 +15,6 @@ import { useState } from "react";
 import { createClient } from "@supabase/supabase-js";
 import { GothamBook } from "../layout";
 import { sendEmail } from "@/utils/emailService";
-import EmailTemplate from "../../../../components/email/TemplateIpasionales";
-import EmailTemplateB from "../../../../components/email/TemplateB";
 
 const supabaseUrl = "https://vgmbsfkdcztdrgztmlxj.supabase.co";
 const supabaseKey =
@@ -123,7 +120,7 @@ export default function Page() {
     <div class="email-container" style="max-width: 680px; margin: 0 auto">
       <table border="0" cellpadding="0" cellspacing="0" role="presentation" style="max-width: 680px; width: 100%">
         <tr>
-          <td style="background-color: white" class="btr">
+          <td style="background-color: #fff" class="btr">
             <div dir="ltr" style="
                   display: table;
                   width: 100%;
@@ -278,6 +275,7 @@ export default function Page() {
                         regalo especial queremos darte un montón de
                         promociones especiales, solo por ser vos.
                       </p>
+                      <img src="https://vgmbsfkdcztdrgztmlxj.supabase.co/storage/v1/object/public/imagenes_registros/mailing/beneficios.png" alt="Credencial personalizada" style="width: 100%; max-width: 600px; height: auto; margin-bottom: 20px;">
                       <p style="margin: 0 0 30px; text-align: justify">
                         Usalos sin miedo, que la idea es disfrutar y tomarnos
                         unas WOLF brindando con amigos. Y quien te dice, que
@@ -455,19 +453,26 @@ export default function Page() {
   if (isSubmitted) {
     return (
       <>
-        <div className="absolute w-full h-screen z-50 transition-all ease-in-out duration-300">
+        <div className="absolute w-full h-screen z-50 transition-all ease-in-out duration-300 bg-[#009997]">
           <div className="w-full h-full relative hidden lg:block">
             <Image
               src={BgDesk}
-              className="w-full h-full object-cover object-center"
+              layout="fill"
+              objectFit="contain"
+              className="w-full h-full"
             />
             <Link href="/">
               <Image src={Close} className="w-10 absolute top-10 right-10" />
             </Link>
           </div>
           <div className="lg:hidden bg-[#009995] h-full w-full">
-            <div className="w-full h-full relative ">
-              <Image src={BgMob} className="w-full h-full object-contain" />
+            <div className="w-full h-full relative">
+              <Image
+                src={BgMob}
+                layout="fill"
+                objectFit="contain"
+                className="w-full h-full"
+              />
               <Link href="/">
                 <Image src={Close} className="w-10 absolute top-5 right-5" />
               </Link>

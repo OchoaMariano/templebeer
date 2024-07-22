@@ -10,6 +10,7 @@ import Header from "../../../components/common/header";
 import Footer from "../../../components/common/Footer";
 import { Knockout54UltraBold, Knockout34, Knockout54, Marker } from "./layout";
 import { getDictionary } from "../../dictionaries";
+import BannerPopup from "../../../components/common/PopupIpasionales";
 
 // #region GET BIRRAS
 async function getAllBirras(lang) {
@@ -32,6 +33,7 @@ export default async function Home({ params }) {
   return (
     <>
       <Header dictonary={headerDic} />
+      <BannerPopup />
       <div
         className="desktop h-screen bg-cover bg-center hidden md:block"
         style={{ backgroundImage: "url(/background-home.jpeg)" }}

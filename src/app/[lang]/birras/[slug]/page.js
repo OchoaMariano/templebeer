@@ -12,6 +12,7 @@ import CervezasData from "../../../../../data/cervezas.json";
 import CervezasDataEn from "../../../../../data/cervezas-en.json";
 import { getDictionary } from "../../../../dictionaries";
 import Draggable from "../../../../../components/common/Dragabble";
+import Loader from "../../../../../components/common/Loader";
 
 //
 // TODO: TOMAR "MEDIDAS" O RELACION DE ASPECTO DE LAS IMAGENES Y VIDEOS PARA RENDERIZAR CUSTOM Y DEJAR DE LLAMAR AL OBJETO ESTATICO CON LA DATA --> CervezasData y CervezasDataEn
@@ -86,7 +87,7 @@ export default async function Page({ params }) {
 
   return (
     <>
-      <Suspense fallback={<p>Cargando cerveza...</p>}>
+      <Suspense fallback={<Loader />}>
         {/* DESKTOP VIEW */}
         <div className="desktop hidden lg:block">
           {/* NAV HEADER */}
