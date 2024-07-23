@@ -36,6 +36,90 @@ export default function Page() {
     mayor_18: false,
   });
 
+  const validateForm = (data) => {
+    const errors = {};
+
+    // Nombre y Apellido
+    if (!data.nombre.trim()) {
+      errors.nombre = "El nombre y apellido son requeridos";
+    } else {
+      const words = data.nombre.trim().split(/\s+/);
+      if (words.length < 2) {
+        errors.nombre = "Por favor, ingresá tu nombre y tu apellido";
+      }
+    }
+
+    // Email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!data.email.trim()) {
+      errors.email = "El email es requerido";
+    } else if (!emailRegex.test(data.email)) {
+      errors.email = "Por favor, ingresá un email válido";
+    }
+
+    // Razón por la que amas Wolf IPA
+    if (!data.porque_amas_wolf_ipa) {
+      errors.porque_amas_wolf_ipa = "Por favor, seleccioná una opción";
+    }
+
+    // Qué harías por un año de birra gratis
+    if (!data.que_harias_un_año_gratis.trim()) {
+      errors.que_harias_un_año_gratis = "Este campo es requerido";
+    } else if (data.que_harias_un_año_gratis.trim().length < 10) {
+      errors.que_harias_un_año_gratis =
+        "Por favor, danos más detalles (minimo 10 caracteres)";
+    }
+
+    // Anécdota
+    if (!data.anecdota.trim()) {
+      errors.anecdota = "Este campo es requerido";
+    } else if (data.anecdota.trim().length < 10) {
+      errors.anecdota = "Por favor, danos más detalles (minimo 10 caracteres)";
+    }
+
+    // Prueba gráfica
+    if (!data.prueba_grafica) {
+      errors.prueba_grafica = "Por favor, suba una imagen";
+    } else if (data.prueba_grafica.size > 2 * 1024 * 1024) {
+      errors.prueba_grafica = "El archivo no puede superar los 2MB";
+    }
+
+    // Compartir respuesta
+    if (data.compartir_respuesta === undefined) {
+      errors.compartir_respuesta = "Por favor, seleccioná una opción";
+    }
+
+    // Instagram
+    if (!data.instagram.trim()) {
+      errors.instagram = "El @ de Instagram es requerido";
+    } else if (!data.instagram.startsWith("@")) {
+      errors.instagram = "El @ de Instagram debe comenzar con @";
+    }
+
+    // Teléfono
+    const phoneRegex = /^\d{10}$/;
+    if (!data.telefono.trim()) {
+      errors.telefono = "El número de teléfono es requerido";
+    } else if (!phoneRegex.test(data.telefono)) {
+      errors.telefono =
+        "Por favor, ingresá un número de celular válido de 10 dígitos";
+    }
+
+    // Bases y condiciones
+    if (!data.bases) {
+      errors.bases = "Tenés que aceptar las bases y condiciones";
+    }
+
+    // Mayor de 18 años
+    if (!data.mayor_18) {
+      errors.mayor_18 = "Tenés que confirmar que sos mayor de 18 años";
+    }
+
+    return errors;
+  };
+
+  const [formErrors, setFormErrors] = useState({});
+
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [fileError, setFileError] = useState("");
   const [error, setError] = useState(null);
@@ -43,28 +127,58 @@ export default function Page() {
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
-    setFormData((prevData) => ({
-      ...prevData,
+    setFormData((prevState) => ({
+      ...prevState,
       [name]: type === "checkbox" ? checked : value,
     }));
+
+    // Validar el campo actual
+    const errors = validateForm({
+      ...formData,
+      [name]: type === "checkbox" ? checked : value,
+    });
+    setFormErrors((prevErrors) => ({ ...prevErrors, [name]: errors[name] }));
   };
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
-    if (file && file.size <= 2 * 1024 * 1024) {
-      setFormData((prevData) => ({
-        ...prevData,
-        prueba_grafica: file,
-      }));
-      setFileError("");
+    if (file) {
+      if (file.size > 2 * 1024 * 1024) {
+        // 2MB limit
+        setFormErrors((prevErrors) => ({
+          ...prevErrors,
+          prueba_grafica: "El archivo no debe superar los 2MB",
+        }));
+        e.target.value = ""; // Limpiar el input
+      } else {
+        setFormData((prevData) => ({
+          ...prevData,
+          prueba_grafica: file,
+        }));
+        setFormErrors((prevErrors) => ({
+          ...prevErrors,
+          prueba_grafica: "",
+        }));
+      }
     } else {
-      setFileError("El archivo debe ser menor a 2MB");
+      setFormErrors((prevErrors) => ({
+        ...prevErrors,
+        prueba_grafica: "Por favor, subi una imagen",
+      }));
     }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(null);
+
+    // Validar todos los campos
+    const errors = validateForm(formData);
+
+    if (Object.keys(errors).length > 0) {
+      setFormErrors(errors);
+      setError("Por favor, corrija los errores en el formulario.");
+      return;
+    }
     setIsSubmitting(true);
 
     try {
@@ -449,8 +563,9 @@ export default function Page() {
       setIsSubmitting(false);
     } catch (error) {
       setIsSubmitting(false);
-      console.error("Error:", error);
-      setError(error.message || "Ocurrió un error al enviar el formulario");
+      setError(
+        "Ocurrió un error al enviar el formulario. Por favor, intente de nuevo."
+      );
     }
   };
 
@@ -570,8 +685,15 @@ export default function Page() {
                       placeholder="Nombre y apellido:"
                       onChange={handleChange}
                       required
-                      className="w-full px-2 border rounded-xl py-2 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
+                      className={`w-full px-2 border rounded-xl py-2 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 ${
+                        formErrors.nombre ? "border-red-500" : ""
+                      }`}
                     ></input>
+                    {formErrors.nombre && (
+                      <p className="text-red-500 text-[0.9em] mt-1">
+                        {formErrors.nombre}
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
@@ -590,8 +712,15 @@ export default function Page() {
                       placeholder="Email"
                       onChange={handleChange}
                       required
-                      className="w-full px-2 border rounded-xl py-2 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
+                      className={`w-full px-2 border rounded-xl py-2 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 ${
+                        formErrors.email ? "border-red-500" : ""
+                      }`}
                     ></input>
+                    {formErrors.email && (
+                      <p className="text-red-500 text-[0.9em] mt-1">
+                        {formErrors.email}
+                      </p>
+                    )}
                   </div>
                 </div>
                 <div className="text-[11px] lg:text-[12.45px] space-y-4 leading-[14px]">
@@ -648,6 +777,11 @@ export default function Page() {
                       </span>
                     </label>
                   </div>
+                  {formErrors.porque_amas_wolf_ipa && (
+                    <p className="text-red-500 text-[0.9em] mt-1">
+                      {formErrors.porque_amas_wolf_ipa}
+                    </p>
+                  )}
                 </div>
 
                 <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
@@ -668,6 +802,11 @@ export default function Page() {
                       className="w-full px-2 border rounded-xl pt-4 pb-16 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
                     ></textarea>
                   </div>
+                  {formErrors.que_harias_un_año_gratis && (
+                    <p className="text-red-500 text-[0.9em] mt-1">
+                      {formErrors.que_harias_un_año_gratis}
+                    </p>
+                  )}
                 </div>
 
                 <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
@@ -683,9 +822,14 @@ export default function Page() {
                       className="w-full px-2 border rounded-xl pt-4 pb-16 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
                     ></textarea>
                   </div>
+                  {formErrors.anecdota && (
+                    <p className="text-red-500 text-[0.9em] mt-1">
+                      {formErrors.anecdota}
+                    </p>
+                  )}
                 </div>
 
-                <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
+                <div className="text-[11px] lg:text-[12.45px] space-y-4 leading-[14px]">
                   <label className="font-semibold">
                     6. ¿Tenés alguna prueba fotográfica de que sos un IPAsional?
                   </label>
@@ -696,20 +840,22 @@ export default function Page() {
                       accept="image/*"
                       onChange={handleFileChange}
                       required
-                      className="w-full px-2 border rounded-xl pt-4 pb-4 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 text-[#ADADAD]"
+                      className={`w-full px-2 border rounded-xl pt-4 pb-4 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 text-[#ADADAD] ${
+                        formErrors.prueba_grafica ? "border-red-500" : ""
+                      }`}
                     />
-                    {formData.prueba_grafica && (
+                    {formData.prueba_grafica && !formErrors.prueba_grafica && (
                       <p
                         className={`mt-2 text-sm text-gray-500 ${GothamBook.className}`}
                       >
                         Archivo seleccionado: {formData.prueba_grafica.name}
                       </p>
                     )}
-                    {fileError && (
+                    {formErrors.prueba_grafica && (
                       <p
                         className={`mt-2 text-sm text-red-500 ${GothamBook.className}`}
                       >
-                        {fileError}
+                        {formErrors.prueba_grafica}
                       </p>
                     )}
                   </div>
@@ -743,6 +889,11 @@ export default function Page() {
                         Prefiero mantenerme en el anonimato, como Batman
                       </span>
                     </label>
+                    {formErrors.compartir_respuesta && (
+                      <p className="text-red-500 text-[0.9em] mt-1">
+                        {formErrors.compartir_respuesta}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -757,6 +908,11 @@ export default function Page() {
                       required
                       className="w-full px-2 py-2 border rounded-xl border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
                     />
+                    {formErrors.instagram && (
+                      <p className="text-red-500 text-[0.9em] mt-1">
+                        {formErrors.instagram}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -770,6 +926,11 @@ export default function Page() {
                       required
                       className="w-full px-2 py-2 border rounded-xl border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
                     />
+                    {formErrors.telefono && (
+                      <p className="text-red-500 text-[0.9em] mt-1">
+                        {formErrors.telefono}
+                      </p>
+                    )}
                   </div>
                 </div>
 
@@ -792,6 +953,11 @@ export default function Page() {
                           bases y condiciones
                         </a>
                       </span>
+                      {formErrors.bases && (
+                        <p className="text-red-500 text-[0.9em] mt-1">
+                          {formErrors.bases}
+                        </p>
+                      )}
                     </label>
                   </div>
 
@@ -805,6 +971,11 @@ export default function Page() {
                       />
                       <span>Soy mayor de 18 años</span>
                     </label>
+                    {formErrors.mayor_18 && (
+                      <p className="text-red-500 text-[0.9em] mt-1">
+                        {formErrors.mayor_18}
+                      </p>
+                    )}
                   </div>
                 </div>
 
