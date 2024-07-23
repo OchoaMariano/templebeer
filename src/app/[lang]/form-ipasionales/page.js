@@ -77,11 +77,9 @@ export default function Page() {
       errors.anecdota = "Por favor, danos más detalles (minimo 10 caracteres)";
     }
 
-    // Prueba gráfica
-    if (!data.prueba_grafica) {
-      errors.prueba_grafica = "Por favor, suba una imagen";
-    } else if (data.prueba_grafica.size > 2 * 1024 * 1024) {
-      errors.prueba_grafica = "El archivo no puede superar los 2MB";
+    // Prueba gráfica (opcional)
+    if (data.prueba_grafica && data.prueba_grafica.size > 2 * 1024 * 1024) {
+      errors.prueba_grafica = "El archivo no debe superar los 2MB";
     }
 
     // Compartir respuesta
@@ -121,7 +119,6 @@ export default function Page() {
   const [formErrors, setFormErrors] = useState({});
 
   const [isSubmitted, setIsSubmitted] = useState(false);
-  const [fileError, setFileError] = useState("");
   const [error, setError] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -161,9 +158,14 @@ export default function Page() {
         }));
       }
     } else {
+      // Si no se selecciona un archivo, simplemente limpiamos el campo y cualquier error
+      setFormData((prevData) => ({
+        ...prevData,
+        prueba_grafica: null,
+      }));
       setFormErrors((prevErrors) => ({
         ...prevErrors,
-        prueba_grafica: "Por favor, subi una imagen",
+        prueba_grafica: "",
       }));
     }
   };
@@ -476,36 +478,11 @@ export default function Page() {
                         color: #888888;
                         line-height: 12px;
                       ">
-                    TE ESPERAMOS EN CASA CON UN 20% OFF // 20% de descuento en
-                    Temple Bar. Tope de Reintegro: $4,500. No acumulable con
-                    otras promociones o beneficios Ipasionales. Valido para
-                    todos los Temple Bar de Republica Argentina desde el 22 de
-                    Julio de 2024 al 31 de agosto de 2024. Deberá validar su
-                    registro Ipasional junto a su DNI para acceder a la
-                    promo.<br /><br />
-                    HAPPY HOUR TODO EL DIA PARA IPASIONALES // Precio de pinta
-                    de Wolf IPA para Ipasionales: $3,500. Solo aplicable a
-                    Wolf IPA. No acumulable con otras promociones o beneficios
-                    Ipasionales. Valido para todos los Temple Bar de Republica
-                    Argentina desde el 22 de Julio de 2024 al 31 de agosto de
-                    2024. Deberá validar su registro Ipasional junto a su DNI
-                    para acceder a la promo.<br /><br />
-                    BRINDIS CUMPLEAÑERO // Copón de 2 litros gratis para el
-                    Cumpleañero Ipasional. A partir de 8 pintas consumidas en
-                    la fecha, se entrega de regalo un copón de 2 litros gratis
-                    al cumpleañero del día. No acumulable con otras
-                    promociones o beneficios Ipasionales. Valido para todos
-                    los Temple Bar de República Argentina desde el 22 de Julio
-                    de 2024 al 31 de agosto de 2024. Deberá validar su
-                    registro Ipasional junto a su DNI para acceder a la
-                    promo.<br /><br />
-                    CÓDIGO “IPASIONALES” CON 20% OFF EN TODA NUESTRA WEB<br /><br />
-                    Promoción sin obligación de compra, organizada por
-                    CERVECERÍA Y MALTERÍA QUILMES S.A.I.C.A.Y.G., Av. Del
-                    Libertador 7206 piso 26°, CABA, CUIT N° 33-50835825-9.
-                    Vigencia del 24 de julio al 31 de octubre de 2024 en el
-                    territorio de la República Argentina. Para más información
-                    y condiciones o limitaciones aplicables consulte en:
+                    TE ESPERAMOS EN CASA CON UN 20% OFF // 20% de descuento en Temple Bar. Tope de Reintegro: $4,500. No acumulable con otras promociones o beneficios Ipasionales. Valido para todos los Temple Bar de Republica Argentina desde el 22 de Julio de 2024 al 31 de agosto de 2024. Deberá validar su registro Ipasional junto a su DNI para acceder a la promo.<br /><br />
+                    HAPPY HOUR TODO EL DIA PARA IPASIONALES // Precio de pinta de Wolf IPA para Ipasionales: $3,500. Solo aplicable a Wolf IPA. No acumulable con otras promociones o beneficios Ipasionales. Valido para todos los Temple Bar de Republica Argentina desde el 22 de Julio de 2024 al 31 de agosto de 2024. Deberá validar su registro Ipasional junto a su DNI para acceder a la promo.<br /><br />
+                    BRINDIS CUMPLEAÑERO // Copón de 2 litros gratis para el Cumpleañero Ipasional. A partir de 8 pintas consumidas en la fecha, se entrega de regalo un copón de 2 litros gratis al cumpleañero del día.  No acumulable con otras promociones o beneficios Ipasionales  . Valido para todos los Temple Bar de República Argentina desde el 22 de Julio de 2024 al 31 de agosto de 2024. Deberá validar su registro Ipasional junto a su DNI para acceder a la promo.<br /><br />
+                    CÓDIGO “IPASIONALES” CON 20% OFF EN TODA  NUESTRA WEB<br /><br />
+                    Promoción sin obligación de compra. Vigencia del 22 de julio al 31 de octubre de 2024 en el territorio de la República Argentina. Para más información y condiciones o limitaciones aplicables consulte en:
                     <a href="https://www.ipasionales.templebeer.com" target="_blank"
                       style="color: #888888 !important">https://www.ipasionales.templebeer.com</a>. BEBER CON
                     MODERACIÓN. PROHIBIDA SU VENTA A MENORES DE
@@ -832,6 +809,7 @@ export default function Page() {
                 <div className="text-[11px] lg:text-[12.45px] space-y-4 leading-[14px]">
                   <label className="font-semibold">
                     6. ¿Tenés alguna prueba fotográfica de que sos un IPAsional?
+                    (Opcional)
                   </label>
                   <div className="pl-5">
                     <input
@@ -839,7 +817,6 @@ export default function Page() {
                       name="prueba_grafica"
                       accept="image/*"
                       onChange={handleFileChange}
-                      required
                       className={`w-full px-2 border rounded-xl pt-4 pb-4 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 text-[#ADADAD] ${
                         formErrors.prueba_grafica ? "border-red-500" : ""
                       }`}
