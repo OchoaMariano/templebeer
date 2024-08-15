@@ -3,7 +3,8 @@ import { NextResponse } from "next/server";
 import { sendEmail } from "@/utils/emailService";
 
 const supabaseUrl = "https://vgmbsfkdcztdrgztmlxj.supabase.co";
-const supabaseKey = process.env.SUPABASE_KEY;
+const supabaseKey =
+  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZnbWJzZmtkY3p0ZHJnenRtbHhqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MjE0MDQ1ODAsImV4cCI6MjAzNjk4MDU4MH0.NP0IFhSs44vnuXRoOiumF9HcBX4kynKwdBBtQiJa_9s";
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 export async function POST(req) {
