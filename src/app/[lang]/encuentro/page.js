@@ -168,7 +168,7 @@ export default async function Page({ searchParams, params }) {
                     <div className="flex transform hover-bouncesmooth cursor-pointer">
                       <a
                         className="flex flex-col justify-center items-center gap-y-4"
-                        href="https://www.ipasionales.templebeer.com/"
+                        href="/form-ipasionales"
                         target="_blank"
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
