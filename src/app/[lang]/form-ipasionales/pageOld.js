@@ -2,7 +2,6 @@
 
 import Logo from "../../../../public/form-ipasionales/logo.png";
 import Frase from "../../../../public/form-ipasionales/frase.png";
-import Frase_v2 from "../../../../public/form-ipasionales/frase_v2.png";
 import Listo from "../../../../public/form-ipasionales/listo.png";
 import Ipasionales from "../../../../public/form-ipasionales/ipasionales.png";
 import FraseForm from "../../../../public/form-ipasionales/frase-form.png";
@@ -20,6 +19,11 @@ export default function Page() {
     nombre: "",
     email: "",
     porque_amas_wolf_ipa: "",
+    que_harias_un_año_gratis: "",
+    anecdota: "",
+    prueba_grafica: null,
+    compartir_respuesta: false,
+    instagram: "",
     telefono: "",
     bases: false,
     mayor_18: false,
@@ -49,6 +53,38 @@ export default function Page() {
     // Razón por la que amas Wolf IPA
     if (!data.porque_amas_wolf_ipa) {
       errors.porque_amas_wolf_ipa = "Por favor, seleccioná una opción";
+    }
+
+    // Qué harías por un año de birra gratis
+    if (!data.que_harias_un_año_gratis.trim()) {
+      errors.que_harias_un_año_gratis = "Este campo es requerido";
+    } else if (data.que_harias_un_año_gratis.trim().length < 10) {
+      errors.que_harias_un_año_gratis =
+        "Por favor, danos más detalles (minimo 10 caracteres)";
+    }
+
+    // Anécdota
+    if (!data.anecdota.trim()) {
+      errors.anecdota = "Este campo es requerido";
+    } else if (data.anecdota.trim().length < 10) {
+      errors.anecdota = "Por favor, danos más detalles (minimo 10 caracteres)";
+    }
+
+    // Prueba gráfica (opcional)
+    if (data.prueba_grafica && data.prueba_grafica.size > 2 * 1024 * 1024) {
+      errors.prueba_grafica = "El archivo no debe superar los 2MB";
+    }
+
+    // Compartir respuesta
+    if (data.compartir_respuesta === undefined) {
+      errors.compartir_respuesta = "Por favor, seleccioná una opción";
+    }
+
+    // Instagram
+    if (!data.instagram.trim()) {
+      errors.instagram = "El @ de Instagram es requerido";
+    } else if (!data.instagram.startsWith("@")) {
+      errors.instagram = "El @ de Instagram debe comenzar con @";
     }
 
     // Teléfono
@@ -93,6 +129,39 @@ export default function Page() {
     setFormErrors((prevErrors) => ({ ...prevErrors, [name]: errors[name] }));
   };
 
+  const handleFileChange = (e) => {
+    const file = e.target.files[0];
+    if (file) {
+      if (file.size > 2 * 1024 * 1024) {
+        // 2MB limit
+        setFormErrors((prevErrors) => ({
+          ...prevErrors,
+          prueba_grafica: "El archivo no debe superar los 2MB",
+        }));
+        e.target.value = ""; // Limpiar el input
+      } else {
+        setFormData((prevData) => ({
+          ...prevData,
+          prueba_grafica: file,
+        }));
+        setFormErrors((prevErrors) => ({
+          ...prevErrors,
+          prueba_grafica: "",
+        }));
+      }
+    } else {
+      // Si no se selecciona un archivo, simplemente limpiamos el campo y cualquier error
+      setFormData((prevData) => ({
+        ...prevData,
+        prueba_grafica: null,
+      }));
+      setFormErrors((prevErrors) => ({
+        ...prevErrors,
+        prueba_grafica: "",
+      }));
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
@@ -124,6 +193,11 @@ export default function Page() {
         nombre: "",
         email: "",
         porque_amas_wolf_ipa: "",
+        que_harias_un_año_gratis: "",
+        anecdota: "",
+        prueba_grafica: null,
+        compartir_respuesta: false,
+        instagram: "",
         telefono: "",
         bases: false,
         mayor_18: false,
@@ -193,15 +267,29 @@ export default function Page() {
                 <Image src={Logo} className="w-16 mx-auto" />
               </div>
               <div className="space-y-4">
-                <div className="flex items-center justify-center">
-                  <Image src={Frase_v2} className="w-96" />
+                <div>
+                  <Image src={Frase} className="w-96" />
+                </div>
+                <div className="font-normal text-[14.5px] text-white">
+                  <p>
+                    <span className="font-semibold">01.</span> Completá tus
+                    datos
+                  </p>
+                  <p>
+                    <span className="font-semibold">02.</span> Contanos por qué
+                    sos el más IPASIONAL de todos
+                  </p>
                 </div>
               </div>
               <div className="space-y-4">
+                <div>
+                  <Image src={Listo} className="w-28 mx-auto" />
+                </div>
                 <p className="text-center font-normal text-[12.5px] leading-[13.5px] px-8 lg:px-20 text-white">
-                  Completá tus datos y por ser parte de nuestro Club Social te
-                  regalamos un montón de beneficios para disfrutar de la mejor
-                  IPA, la WOLF IPA.
+                  Abrite una birra y esperá a que anunciemos a los finalistas.
+                  Las votaciones van a ser en nuestro
+                  <span className="font-medium"> Instagram</span> y por decisión
+                  popular.
                 </p>
               </div>
               <div className="relative">
@@ -338,6 +426,141 @@ export default function Page() {
                       {formErrors.porque_amas_wolf_ipa}
                     </p>
                   )}
+                </div>
+
+                <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
+                  <div className="flex flex-col">
+                    <label className="font-semibold ">
+                      4. ¿Qué harias por un año de birra gratis?
+                    </label>
+                    <span className={`font-light pl-4 ${GothamBook.className}`}>
+                      Es tu momento de lucirte y contarnos con lujo de detalles
+                    </span>
+                  </div>
+                  <div className="pl-5">
+                    <textarea
+                      name="que_harias_un_año_gratis"
+                      placeholder="Contanos!"
+                      onChange={handleChange}
+                      required
+                      className="w-full px-2 border rounded-xl pt-4 pb-16 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
+                    ></textarea>
+                  </div>
+                  {formErrors.que_harias_un_año_gratis && (
+                    <p className="text-red-500 text-[0.9em] mt-1">
+                      {formErrors.que_harias_un_año_gratis}
+                    </p>
+                  )}
+                </div>
+
+                <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
+                  <label className="font-semibold">
+                    5. ¿Tenés alguna anécdota en TEMPLE o con la WOLF IPA?
+                  </label>
+                  <div className="pl-5">
+                    <textarea
+                      name="anecdota"
+                      placeholder="Contanos!"
+                      onChange={handleChange}
+                      required
+                      className="w-full px-2 border rounded-xl pt-4 pb-16 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
+                    ></textarea>
+                  </div>
+                  {formErrors.anecdota && (
+                    <p className="text-red-500 text-[0.9em] mt-1">
+                      {formErrors.anecdota}
+                    </p>
+                  )}
+                </div>
+
+                <div className="text-[11px] lg:text-[12.45px] space-y-4 leading-[14px]">
+                  <label className="font-semibold">
+                    6. ¿Tenés alguna prueba fotográfica de que sos un IPAsional?
+                    <span className={`font-light pl-4 ${GothamBook.className}`}>
+                      Dejanos una muestra Ipasional para poder participar del
+                      año de birra gratis.
+                    </span>
+                  </label>
+                  <div className="pl-5">
+                    <input
+                      type="file"
+                      name="prueba_grafica"
+                      accept="image/*"
+                      onChange={handleFileChange}
+                      className={`w-full px-2 border rounded-xl pt-4 pb-4 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 text-[#ADADAD] ${
+                        formErrors.prueba_grafica ? "border-red-500" : ""
+                      }`}
+                    />
+                    {formData.prueba_grafica && !formErrors.prueba_grafica && (
+                      <p
+                        className={`mt-2 text-sm text-gray-500 ${GothamBook.className}`}
+                      >
+                        Archivo seleccionado: {formData.prueba_grafica.name}
+                      </p>
+                    )}
+                    {formErrors.prueba_grafica && (
+                      <p
+                        className={`mt-2 text-sm text-red-500 ${GothamBook.className}`}
+                      >
+                        {formErrors.prueba_grafica}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="text-[11px] lg:text-[12.45px] space-y-4 leading-[14px]">
+                  <label className="font-semibold text-[12.45px]">
+                    7. ¿Te gustaria que compartamos tu respuesta en nuestras
+                    redes?
+                  </label>
+                  <div className="flex flex-col font-normal gap-y-2 pl-5">
+                    <label className="gap-x-2 flex items-center">
+                      <input
+                        type="radio"
+                        name="compartir_respuesta"
+                        value={true}
+                        onChange={handleChange}
+                        required
+                      />
+                      <span className={`${GothamBook.className}`}>Mandale</span>
+                    </label>
+                    <label className="gap-x-2 flex items-center">
+                      <input
+                        type="radio"
+                        name="compartir_respuesta"
+                        value={false}
+                        onChange={handleChange}
+                        required
+                      />
+                      <span className={`${GothamBook.className}`}>
+                        Prefiero mantenerme en el anonimato, como Batman
+                      </span>
+                    </label>
+                    {formErrors.compartir_respuesta && (
+                      <p className="text-red-500 text-[0.9em] mt-1">
+                        {formErrors.compartir_respuesta}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="text-[11px] lg:text-[12.45px] space-y-3 flex flex-col  leading-[14px]">
+                  <label className="font-semibold">8. @ de tu Instagram</label>
+                  <div className="pl-5">
+                    <input
+                      type="text"
+                      placeholder="instagram.com//@"
+                      name="instagram"
+                      onChange={handleChange}
+                      required
+                      className="w-full px-2 py-2 border rounded-xl border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
+                    />
+                    {formErrors.instagram && (
+                      <p className="text-red-500 text-[0.9em] mt-1">
+                        {formErrors.instagram}
+                      </p>
+                    )}
+                  </div>
                 </div>
 
                 <div className="text-[11px] lg:text-[12.45px] space-y-3 flex flex-col  leading-[14px]">

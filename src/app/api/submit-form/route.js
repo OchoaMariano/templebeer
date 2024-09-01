@@ -301,10 +301,15 @@ export async function POST(req) {
                         color: #888888;
                         line-height: 12px;
                       ">
-                    TE ESPERAMOS EN CASA CON UN 20% OFF // 20% de descuento en Temple Bar. Tope de Reintegro: $4,500. No acumulable con otras promociones o beneficios Ipasionales. Valido para todos los Temple Bar de Republica Argentina desde el 22 de Julio de 2024 al 31 de agosto de 2024. Deberá validar su registro Ipasional junto a su DNI para acceder a la promo.<br /><br />
-                    HAPPY HOUR TODO EL DIA PARA IPASIONALES // Precio de pinta de Wolf IPA para Ipasionales: $3,500. Solo aplicable a Wolf IPA. No acumulable con otras promociones o beneficios Ipasionales. Valido para todos los Temple Bar de Republica Argentina desde el 22 de Julio de 2024 al 31 de agosto de 2024. Deberá validar su registro Ipasional junto a su DNI para acceder a la promo.<br /><br />
-                    BRINDIS CUMPLEAÑERO // Copón de 2 litros gratis para el Cumpleañero Ipasional. A partir de 8 pintas consumidas en la fecha, se entrega de regalo un copón de 2 litros gratis al cumpleañero del día.  No acumulable con otras promociones o beneficios Ipasionales  . Valido para todos los Temple Bar de República Argentina desde el 22 de Julio de 2024 al 31 de agosto de 2024. Deberá validar su registro Ipasional junto a su DNI para acceder a la promo.<br /><br />
-                    CÓDIGO “IPASIONALES” CON 20% OFF EN TODA  NUESTRA WEB<br /><br />
+                      TE ESPERAMOS EN CASA CON UN 20% OFF // 20% de descuento en Temple Bar. Tope de Reintegro: $4,500. No acumulable con otras promociones o beneficios Ipasionales. Valido para todos los Temple Bar de República Argentina desde el 22 de Julio de 2024 al 31 de octubre de 2024. Deberá validar su registro Ipasional junto a su DNI para acceder a la promo.
+<br /><br />
+                      HAPPY HOUR TODO EL DIA PARA IPASIONALES // Precio de pinta de Wolf IPA para Ipasionales: $4,500. Solo aplicable a Wolf IPA. No acumulable con otras promociones o beneficios Ipasionales. Valido para todos los Temple Bar de República Argentina desde el 22 de Julio de 2024 al 31 de octubre de 2024. Deberá validar su registro Ipasional junto a su DNI para acceder a la promo.
+<br /><br />
+                      BRINDIS CUMPLEAÑERO // Copón de 2 litros gratis para el Cumpleañero Ipasional. A partir de 8 pintas consumidas en la fecha, se entrega de regalo un copón de 2 litros gratis al cumpleañero del día. No acumulable con otras promociones o beneficios Ipasionales. Valido para todos los Temple Bar de República Argentina desde el 22 de Julio de 2024 al 31 de octubre de 2024. Deberá validar su registro Ipasional junto a su DNI para acceder a la promo.
+<br /><br />
+                      CÓDIGO “IPASIONALES” CON 20% OFF EN TODA NUESTRA WEB desde el 22 de Julio de 2024 al 31 de octubre de 2024.
+<br /><br />
+
                     Promoción sin obligación de compra. Vigencia del 22 de julio al 31 de octubre de 2024 en el territorio de la República Argentina. Para más información y condiciones o limitaciones aplicables consulte en:
                     <a href="https://templebeer.com/es" target="_blank"
                       style="color: #888888 !important">https://templebeer.com/es</a>. BEBER CON

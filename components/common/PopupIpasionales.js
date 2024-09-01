@@ -40,8 +40,8 @@ const BannerPopup = () => {
         <Image
           src={
             isMobile
-              ? "/form-ipasionales/popup/temple-ipasionales-pop-mob.jpg"
-              : "/form-ipasionales/popup/temple-ipasionales-pop-desk.jpg"
+              ? "/form-ipasionales/popup/temple-ipasionales-pop-mob_v2.jpg"
+              : "/form-ipasionales/popup/temple-ipasionales-pop-desk_v2.jpg"
           }
           alt="Banner"
           width={1200}
