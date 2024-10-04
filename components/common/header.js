@@ -110,6 +110,14 @@ export default function Header({ dictonary }) {
                 Temple Academy
               </a>
             )}
+            {firstSegment == "es" && (
+              <a
+                href="/es/franquicias"
+                className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"
+              >
+                Franquicias
+              </a>
+            )}
           </div>
           <div className="hidden lg:block divisor h-[21px] w-[1px] bg-white"></div>
           <div className="hidden lg:flex rrss__nav">
