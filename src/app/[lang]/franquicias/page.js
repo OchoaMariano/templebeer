@@ -37,10 +37,10 @@ export default async function Page({ children, searchParams, params }) {
           style={{ backgroundImage: "url(/background-home.jpeg)" }}
         >
           <div className="pt-32  flex justify-center flex-col items-center w-full text-center z-50">
-            <h1 className="text-xl lg:text-4xl uppercase pb-4 lg:pb-0">
+            <h1 className="text-xl lg:text-4xl uppercase pb-4 lg:pb-0 text-white">
               ¿Queres abrir tu propia franquicia?{" "}
             </h1>
-            <h3 className="pb-4 text-sm lg:text-base">
+            <h3 className="pb-4 text-sm lg:text-base text-white">
               Dejanos tus datos y nos contactaremos con vos a la brevedad.{" "}
             </h3>
             <a
