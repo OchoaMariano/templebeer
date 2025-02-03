@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import Header from "../../../../components/common/header";
 import Footer from "../../../../components/common/Footer";
 import ModalArgentina from "../../../../components/bares/modal-franquicias/ModalArgentina";
@@ -9,7 +8,6 @@ import ModalEspana from "../../../../components/bares/modal-franquicias/ModalEsp
 import ModalUruguay from "../../../../components/bares/modal-franquicias/ModalUruguay";
 import ModalFranquicias from "../../../../components/bares/modal-franquicias/ModalFranquicias";
 import { getDictionary } from "../../../dictionaries";
-import { Knockout54UltraBold } from "../layout";
 import ArgIcon from "../../../../public/argentina.png";
 import UsaIcon from "../../../../public/usa.png";
 import MexIcon from "../../../../public/mexico.png";
