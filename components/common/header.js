@@ -102,6 +102,14 @@ export default function Header({ dictonary }) {
               {dictonary.nav.musica}
             </Link>
             {firstSegment == "es" && (
+              <Link
+                href={createLocalePath("/ipasionales")}
+                className="nav__item text-white border-b-2 border-transparent hidden hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"
+              >
+                {dictonary.nav.ipasionales}
+              </Link>
+            )}
+            {firstSegment == "es" && (
               <a
                 href="https://templeacademy.notion.site/templeacademy/0f69945dbb6247a1b08f8eae47bb2442?v=bdfe9a6a777c4281adda7ea36cf7d43c"
                 target="_blank"
@@ -267,6 +275,14 @@ export default function Header({ dictonary }) {
               >
                 {dictonary.nav.musica}
               </Link>
+              {firstSegment == "es" && (
+                <Link
+                  href={createLocalePath("/ipasionales")}
+                  className="text-[9vw] uppercase nav__item text-white transition duration-300 ease-in-out hidden"
+                >
+                  {dictonary.nav.ipasionales}
+                </Link>
+              )}
             </div>
             <div className="flex flex-col py-[5.12vw] mb-[10vw]">
               <div className="flex flex-start items-start justify-start gap-x-[2.52vw] text-white pb-[5.12vw]">

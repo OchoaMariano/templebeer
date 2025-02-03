@@ -20,6 +20,7 @@ import ModalBirraMx from "../../../../components/encuentro/ModalBirraMx";
 import ModalGhosteoMx from "../../../../components/encuentro/ModalGhosteoMx";
 import ModalIpassionalsMx from "../../../../components/encuentro/ModalIpassionalsMx";
 import ModalMemesMx from "../../../../components/encuentro/ModalMemesBirrerosMx";
+import ModalIpasionales from "../../../../components/encuentro/ModalIpasionales";
 import { getDictionary } from "../../../dictionaries";
 import { Knockout54UltraBold } from "../layout";
 
@@ -43,6 +44,7 @@ export default async function Page({ searchParams, params }) {
   const showModalBares = searchParams?.modalBares;
   const showModalMemes = searchParams?.modalMemes;
   const showModalSanPatricio = searchParams?.modalSanPatricio;
+  const showModalIpasionales = searchParams?.modalIpasionales;
 
   const showModalTaco = searchParams?.modalTacoTuesday;
   const showWynwood = searchParams?.modalWynwood;
@@ -166,10 +168,9 @@ export default async function Page({ searchParams, params }) {
                     </div>
 
                     <div className="flex transform hover-bouncesmooth cursor-pointer">
-                      <a
+                      <Link
                         className="flex flex-col justify-center items-center gap-y-4"
-                        href="/form-ipasionales"
-                        target="_blank"
+                        href="encuentro/?modalIpasionales=true"
                       >
                         <div className="w-[20.76vw] h-[20.51vw] md:w-[16vh] md:h-[16vh] relative">
                           <Image
@@ -185,7 +186,7 @@ export default async function Page({ searchParams, params }) {
                         <span className="text-[2.56vw] md:text-[1.41vh] leading-normal text-center uppercase">
                           {encuentros.data[4].attributes.Nombre}
                         </span>
-                      </a>
+                      </Link>
                     </div>
 
                     <div className="flex transform hover-bouncesmooth cursor-pointer">
@@ -592,6 +593,7 @@ export default async function Page({ searchParams, params }) {
       {showModalBares && <ModalBares />}
       {showModalMemes && <ModalMemes />}
       {showModalSanPatricio && <ModalSanPatricio />}
+      {showModalIpasionales && <ModalIpasionales />}
 
       {showModalTaco && <ModalTaco />}
       {showIpassionals && <ModalIpassionals />}

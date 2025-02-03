@@ -773,3 +773,13 @@ body {
 .wrapper__logo:hover .logo-normal {
   opacity: 0;
 }
+
+/* Ocultar la barra de scroll en navegadores modernos */
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none; /* Para Internet Explorer y Edge */
+  scrollbar-width: none; /* Para Firefox */
+}

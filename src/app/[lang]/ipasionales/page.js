@@ -291,7 +291,7 @@ export default function Page() {
                   <div className="pl-5">
                     <input
                       name="nombre"
-                      placeholder="Nombre y apellido:"
+                      placeholder="Nombre y apellido"
                       onChange={handleChange}
                       required
                       className={`w-full px-2 border rounded-xl py-2 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 ${
@@ -305,6 +305,7 @@ export default function Page() {
                     )}
                   </div>
                 </div>
+
                 <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
                   <div className="flex flex-col">
                     <label className="font-semibold ">
@@ -313,29 +314,49 @@ export default function Page() {
                   </div>
                   <div className="pl-5">
                     <input
-                      name="date"
+                      name="nacimiento"
                       type="date"
                       placeholder="Fecha de nacimiento"
                       onChange={handleChange}
                       required
                       className={`w-full px-2 border rounded-xl py-2 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 ${
-                        formErrors.date ? "border-red-500" : ""
+                        formErrors.nacimiento ? "border-red-500" : ""
                       }`}
                     ></input>
-                    {formErrors.date && (
+                    {formErrors.nacimiento && (
                       <p className="text-red-500 text-[0.9em] mt-1">
-                        {formErrors.date}
+                        {formErrors.nacimiento}
                       </p>
                     )}
                   </div>
                 </div>
+
+                <div className="text-[11px] lg:text-[12.45px] space-y-3 flex flex-col  leading-[14px]">
+                  <label className="font-semibold">3. Número de Dni</label>
+                  <div className="pl-5">
+                    <input
+                      name="dni"
+                      type="number"
+                      placeholder="Dni"
+                      onChange={handleChange}
+                      required
+                      className="w-full px-2 py-2 border rounded-xl border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
+                    />
+                    {formErrors.dni && (
+                      <p className="text-red-500 text-[0.9em] mt-1">
+                        {formErrors.dni}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
                 <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
                   <div className="flex flex-col">
                     <label className="font-semibold ">
-                      2. Un mail de contacto
+                      4. Email de contacto
                     </label>
                     <span className={`font-light pl-4 ${GothamBook.className}`}>
-                      En este correo vas a recibir todas las novedades
+                      En este correo vas a recibir la credencial.
                     </span>
                   </div>
                   <div className="pl-5">
@@ -356,9 +377,99 @@ export default function Page() {
                     )}
                   </div>
                 </div>
+
+                <div className="text-[11px] lg:text-[12.45px] space-y-3 flex flex-col  leading-[14px]">
+                  <label className="font-semibold">5. Tu número de celu</label>
+                  <div className="pl-5">
+                    <input
+                      type="number"
+                      name="telefono"
+                      placeholder="Celular"
+                      onChange={handleChange}
+                      required
+                      className="w-full px-2 py-2 border rounded-xl border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
+                    />
+                    {formErrors.telefono && (
+                      <p className="text-red-500 text-[0.9em] mt-1">
+                        {formErrors.telefono}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
+                  <div className="flex flex-col">
+                    <label className="font-semibold ">
+                      6. Localidad / Barrio:
+                    </label>
+                  </div>
+                  <div className="pl-5">
+                    <input
+                      name="localidad"
+                      placeholder="Localidad / Barrio"
+                      onChange={handleChange}
+                      required
+                      className={`w-full px-2 border rounded-xl py-2 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 ${
+                        formErrors.localidad ? "border-red-500" : ""
+                      }`}
+                    ></input>
+                    {formErrors.localidad && (
+                      <p className="text-red-500 text-[0.9em] mt-1">
+                        {formErrors.localidad}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
+                  <div className="flex flex-col">
+                    <label className="font-semibold ">
+                      7. Temple favorito:
+                    </label>
+                  </div>
+                  <div className="pl-5">
+                    <input
+                      name="favorito"
+                      placeholder="Temple favorito"
+                      onChange={handleChange}
+                      required
+                      className={`w-full px-2 border rounded-xl py-2 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 ${
+                        formErrors.favorito ? "border-red-500" : ""
+                      }`}
+                    ></input>
+                    {formErrors.favorito && (
+                      <p className="text-red-500 text-[0.9em] mt-1">
+                        {formErrors.favorito}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="text-[11px] lg:text-[12.45px]  space-y-4  leading-[14px]">
+                  <div className="flex flex-col">
+                    <label className="font-semibold ">8. Birra favorita:</label>
+                  </div>
+                  <div className="pl-5">
+                    <input
+                      name="birra"
+                      placeholder="Birra favorita"
+                      onChange={handleChange}
+                      required
+                      className={`w-full px-2 border rounded-xl py-2 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 ${
+                        formErrors.birra ? "border-red-500" : ""
+                      }`}
+                    ></input>
+                    {formErrors.birra && (
+                      <p className="text-red-500 text-[0.9em] mt-1">
+                        {formErrors.birra}
+                      </p>
+                    )}
+                  </div>
+                </div>
+
                 <div className="text-[11px] lg:text-[12.45px] space-y-4 leading-[14px]">
                   <label className={`font-bold`}>
-                    3. Razón por la que más amás a la WOLF IPA
+                    9. Razón por la que más amás a la WOLF IPA
                   </label>
                   <div className="flex flex-col font-normal gap-y-2 pl-5">
                     <label className="gap-x-2 flex items-center ">
@@ -417,19 +528,30 @@ export default function Page() {
                   )}
                 </div>
 
-                <div className="text-[11px] lg:text-[12.45px] space-y-3 flex flex-col  leading-[14px]">
-                  <label className="font-semibold">9. Tu número de celu</label>
+                <div className="text-[11px] lg:text-[12.45px] space-y-4 leading-[14px]">
+                  <div className="flex flex-col">
+                    <label className="font-semibold">
+                      10. ¡Déjanos un comentario!
+                    </label>
+                    <span className={`font-light pl-4 ${GothamBook.className}`}>
+                      Te dejamos un espacio para que nos digas lo que quieras
+                      porque somos copados y porque nos da TOC que sean 9
+                      preguntas y no 10 😅
+                    </span>
+                  </div>
                   <div className="pl-5">
-                    <input
-                      type="number"
-                      name="telefono"
+                    <textarea
+                      name="comentario"
+                      placeholder="Dejanos tu comentario"
                       onChange={handleChange}
                       required
-                      className="w-full px-2 py-2 border rounded-xl border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 "
-                    />
-                    {formErrors.telefono && (
+                      className={`w-full px-2 border rounded-xl py-2 border-[#BEBEBE] placeholder:text-[#ADADAD] pl-5 h-24 resize-none ${
+                        formErrors.comentario ? "border-red-500" : ""
+                      }`}
+                    ></textarea>
+                    {formErrors.comentario && (
                       <p className="text-red-500 text-[0.9em] mt-1">
-                        {formErrors.telefono}
+                        {formErrors.comentario}
                       </p>
                     )}
                   </div>
