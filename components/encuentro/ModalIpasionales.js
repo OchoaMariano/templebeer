@@ -27,7 +27,7 @@ export default function Modal() {
           &#8203;
         </span>
         <div
-          className="inline-block bg-cover bg-center shadow-xl rounded-t-xl transform transition-all align-middle w-[] h-[] md:w-[100.56vh] md:h-[65.29vh]"
+          className="inline-block bg-cover bg-center shadow-xl rounded-t-xl transform transition-all align-middle w-[] h-[] md:w-[120.56vh] md:h-[75.29vh]"
           style={{
             backgroundImage: 'url("/ipassionales/bg-hof-ipassionales.jpg")',
           }}
