@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import ScrollHorizontal from "../ScrollHorizontal";
 
 export default function Modal() {
   return (
@@ -28,7 +27,7 @@ export default function Modal() {
           &#8203;
         </span>
         <div
-          className="inline-block bg-cover bg-[#ECEBEB] shadow-xl rounded-t-xl transform transition-all align-middle w-[85.38vw] h-[166.66vw] md:w-[126.48vh] md:h-[81.72vh]"
+          className="inline-block bg-cover bg-center shadow-xl rounded-t-xl transform transition-all align-middle w-[] h-[] md:w-[120.56vh] md:h-[75.29vh]"
           style={{
             backgroundImage: 'url("/ipassionales/bg-hof-ipassionales.jpg")',
           }}
@@ -43,89 +42,85 @@ export default function Modal() {
               <div className="close_red w-full h-[6.29vw] md:h-[3vh] bg-[#fff] rounded-full"></div>
             </div>
           </div>
-          <div className="content p-[5.89vw] md:p-[3.8vh] mt-14 md:mt-0  2xl:mt-14">
-            <h1 className="text-3xl font-bold text-white pb-4 uppercase">
-              Hall of fame
-            </h1>
-            <ScrollHorizontal>
-              <div className="flex gap-4 mx-auto">
-                <div className="bg-[#231f21] p-4 2xl:p-10 min-w-[60vw] md:min-w-[25vw]">
-                  <div>
-                    <Image
-                      src="/ipassionales/reina-2022.png"
-                      alt="Cande"
-                      width={500}
-                      height={500}
-                      className="w-2/3 2xl:w-[55%] mx-auto h-auto px-10 py-2"
-                    />
-                  </div>
-                  <h2 className="text-base 2xl:text-xl font-bold text-[#fddd02]">
+          <div className="content p-[5.89vw] md:p-[3.8vh] ">
+            <div className="relative w-[66.15vw] h-[117vw] md:w-[92.91vh] md:h-[52.26vh] shadow-xl overflow-hidden overflow-y-scroll scrollbar-none">
+              <h1 className="text-3xl font-bold text-black pb-4 uppercase">
+                Hall of fame
+              </h1>
+              <div className="grid grid-cols-1 xl:grid-cols-2 gap-4 max-w-[1000px] mx-auto ">
+                <div className="bg-[#231f21] p-4 lg:p-10">
+                  <Image
+                    src="/ipassionales/reina-2022.png"
+                    alt="Cande"
+                    width={500}
+                    height={500}
+                    className="w-full h-auto px-10 py-2"
+                  />
+                  <h2 className="text-xl font-bold text-[#fddd02]">
                     REINA IPASIONAL 2022:{" "}
                     <span className="text-white">
                       CANDE <br />
-                      <span className="text-xs 2xl:text-sm">
-                        (GUALEGUAYCHÚ)
-                      </span>
+                      <span className="text-sm">(GUALEGUAYCHÚ)</span>
                     </span>
                   </h2>
-                  <p className="text-xs 2xl:text-sm text-white pt-4">
+                  <p className="text-sm text-white pt-4">
                     Dejando su marca en cada pinta, Cande transforma latas de
                     WOLF IPA en un vestido que deslumbró a todos (nivel estuvo
                     exhibido en Casa TEMPLE). Su IPAsión fue tal que se vistió
                     de creatividad y orgullo birrero.
                   </p>
                 </div>
-                <div className="bg-[#231f21] p-4 2xl:p-10 min-w-[60vw] md:min-w-[25vw]">
-                  <div>
-                    <Image
-                      src="/ipassionales/reina2023.png"
-                      alt="Cande"
-                      width={500}
-                      height={500}
-                      className="w-2/3 2xl:w-[55%] mx-auto h-auto px-10 py-2"
-                    />
-                  </div>
-                  <h2 className="text-base 2xl:text-xl font-bold text-[#fddd02]">
+                <div className="bg-[#231f21] p-4 lg:p-10">
+                  <Image
+                    src="/ipassionales/reina2023.png"
+                    alt="Cande"
+                    width={500}
+                    height={500}
+                    className="w-full h-auto px-10 py-2"
+                  />
+                  <h2 className="text-xl font-bold text-[#fddd02]">
                     REINA IPASIONAL 2023:{" "}
                     <span className="text-white">
                       MILAGROS <br />
-                      <span className="text-xs 2xl:text-sm">(BOULOGNE)</span>
+                      <span className="text-sm">(BOULOGNE)</span>
                     </span>
                   </h2>
-                  <p className="text-xs 2xl:text-sm text-white pt-4">
+                  <p className="text-sm text-white pt-4">
                     Con manos de artista y alma de IPAsional, Milagros convirtió
                     las latas de WOLF IPA en arte repujado, dejando un legado
                     tan eterno como su amor la Wolf.
                   </p>
                 </div>
-                <div className="bg-[#231f21] p-4 2xl:p-10 min-w-[60vw] md:min-w-[25vw]">
-                  <div>
+              </div>
+              <div className="grid grid-cols-1 gap-4 max-w-[1000px] mx-auto pt-4">
+                <div className="bg-[#231f21] p-4 lg:p-10 flex flex-col xl:flex-row gap-8">
+                  <div className="w-full xl:w-1/2">
                     <Image
                       src="/ipassionales/rey-2024.png"
                       alt="Cande"
                       width={500}
                       height={500}
-                      className="w-2/3 2xl:w-[55%] mx-auto h-auto px-10 py-2"
+                      className="w-full h-auto"
                     />
                   </div>
-                  <h2 className="text-base 2xl:text-xl font-bold text-[#fddd02]">
-                    REY IPASIONAL 2024:{" "}
-                    <span className="text-white">
-                      LUCAS <br />
-                      <span className="text-xs 2xl:text-sm">
-                        (BUENOS AIRES)
+                  <div className="w-full xl:w-1/2 flex flex-col justify-center">
+                    <h2 className="text-xl lg:text-2xl font-bold text-[#fddd02] text-center">
+                      REY IPASIONAL 2024:{" "}
+                      <span className="text-white">
+                        LUCAS <br />
+                        <span className="text-sm">(BUENOS AIRES)</span>
                       </span>
-                    </span>
-                  </h2>
-                  <p className="text-xs 2xl:text-sm text-white pt-4">
-                    Lucas llevó su IPAsión al siguiente nivel: se tatuó el logo
-                    de TEMPLE en su piel y -redoblando la apuesta- subió al
-                    escenario con su banda para tocar en nuestro bar, viviendo
-                    cada nota al ritmo de la WOLF IPA.
-                  </p>
+                    </h2>
+                    <p className="text-lg text-white pt-4">
+                      Lucas llevó su IPAsión al siguiente nivel: se tatuó el
+                      logo de TEMPLE en su piel y -redoblando la apuesta- subió
+                      al escenario con su banda para tocar en nuestro bar,
+                      viviendo cada nota al ritmo de la WOLF IPA.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </ScrollHorizontal>
+            </div>
           </div>
         </div>
       </div>

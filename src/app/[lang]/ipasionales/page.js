@@ -9,6 +9,10 @@ import FraseForm from "../../../../public/form-ipasionales/frase-form.png";
 import BgDesk from "../../../../public/form-ipasionales/bg2.png";
 import BgMob from "../../../../public/form-ipasionales/bg2-mob.png";
 import Close from "../../../../public/form-ipasionales/close.png";
+import Credencial1 from "../../../../public/form-ipasionales/credencial-1.jpg";
+import Credencial2 from "../../../../public/form-ipasionales/credencial-2.jpg";
+import Credencial3 from "../../../../public/form-ipasionales/credencial-3.jpg";
+import Credencial4 from "../../../../public/form-ipasionales/credencial-4.jpg";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -258,13 +262,19 @@ export default function Page() {
                 </p>
               </div>
               <div className="relative">
-                <div className="flex items-center justify-center py-4">
+                <div className="flex items-center justify-center py-4 hidden">
                   <Link
                     href="#form"
                     className="bg-[#FCDC00] text-black px-4 py-2 text-[17px] font-semibold hover:bg-[#ffe74c] transition-all ease-in-out duration-300 uppercase"
                   >
                     SCROLLEA Y PARTICIPÁ
                   </Link>
+                </div>
+                <div className="grid grid-cols-4 lg:pb-24 gap-x-1.5">
+                  <Image src={Credencial1} className="w-28 mx-auto" />
+                  <Image src={Credencial2} className="w-28 mx-auto" />
+                  <Image src={Credencial3} className="w-28 mx-auto" />
+                  <Image src={Credencial4} className="w-28 mx-auto" />
                 </div>
                 <div className="static lg:absolute -right-8 -bottom-5 pt-6">
                   <Image src={Ipasionales} className="w-24 mx-auto" />
@@ -602,7 +612,7 @@ export default function Page() {
                   </div>
                 </div>
 
-                <div className="py-2">
+                <div className="py-2 hidden">
                   <Image src={FraseForm} className="w-44 mx-auto" />
                 </div>
 
@@ -631,6 +641,15 @@ export default function Page() {
                   </button>
                 </div>
               </form>
+              <p className="text-[10px] text-center text-black pt-10">
+                Promoción sin obligación de compra. Consultar vigencia de las
+                promociones en la web oficial, válido en el territorio de la
+                República Argentina. Para más información y condiciones o
+                limitaciones aplicables consulte en: https://templebeer.com/es.
+                <br />
+                <br />
+                BEBER CON MODERACIÓN. PROHIBIDA SU VENTA A MENORES DE 18 AÑOS
+              </p>
             </div>
           </div>
         </div>
