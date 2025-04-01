@@ -79,7 +79,7 @@ export default function SelectCountry({ onComplete }) {
             <div className="text-center mb-4">
               <img
                 src="/logo-temple-select-country.svg"
-                alt="Temple Logo"
+                alt="Temple Beer"
                 className="w-48 h-48 mx-auto"
               />
             </div>

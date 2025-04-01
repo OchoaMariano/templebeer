@@ -47,7 +47,7 @@ export default function Popup() {
       >
         <div className="flex flex-col items-center justify-center gap-y-[30px]">
           <div className="logo__wrapper relative w-[95px] h-[91px]">
-            <Image src="/isologo-temple.png" alt="Temple Beer Isologo" fill />
+            <Image src="/isologo-temple.png" alt="Temple Beer" fill />
           </div>
           {lang == "es" && (
             <h2 className="text-lg text-[33px] mb-4 text-white">
