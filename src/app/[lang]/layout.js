@@ -72,6 +72,13 @@ export default function RootLayout({ children, params }) {
           name="description"
           content="Temple Beer - Encuentro, Birra y Música"
         />
+        <meta property="og:title" content="Temple Beer" />
+        <meta
+          property="og:description"
+          content="Temple Beer - Encuentro, Birra y Música"
+        />
+        <meta property="og:url" content="https://templebeer.com/" />
+
         <link rel="shortcut icon" href="/favicon.png" />
       </Head>
       <body className={Knockout54.className}>
