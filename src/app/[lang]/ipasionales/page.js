@@ -241,7 +241,7 @@ export default function Page() {
         }}
       >
         <div className="w-full h-full overflow-y-scroll">
-          <div className="max-w-[552px] mx-auto">
+          <div className="max-w-[800px] mx-auto">
             <div className="bg-black py-14 space-y-8 px-5  lg:px-12 my-10 lg:my-0">
               <div>
                 <Image src={Logo} className="w-16 mx-auto" />
@@ -259,7 +259,7 @@ export default function Page() {
                 </p>
               </div>
               <div className="relative">
-                <div className="flex items-center justify-center py-4 hidden">
+                <div className="items-center justify-center py-4 hidden">
                   <Link
                     href="#form"
                     className="bg-[#FCDC00] text-black px-4 py-2 text-[17px] font-semibold hover:bg-[#ffe74c] transition-all ease-in-out duration-300 uppercase"
@@ -267,10 +267,10 @@ export default function Page() {
                     SCROLLEA Y PARTICIPÁ
                   </Link>
                 </div>
-                <div className="grid grid-cols-3 lg:pb-24 gap-x-5 ">
-                  <Image src={Credencial1} className="w-full" />
-                  <Image src={Credencial2} className="w-full" />
-                  <Image src={Credencial3} className="w-full" />
+                <div className="grid grid-cols-1 lg:grid-cols-3 lg:pb-24 gap-5">
+                  <Image src={Credencial1} className="w-52 mx-auto lg:w-full" />
+                  <Image src={Credencial2} className="w-52 mx-auto lg:w-full" />
+                  <Image src={Credencial3} className="w-52 mx-auto lg:w-full" />
                 </div>
                 <div className="static lg:absolute -right-8 -bottom-5 pt-6">
                   <Image src={Ipasionales} className="w-24 mx-auto" />
