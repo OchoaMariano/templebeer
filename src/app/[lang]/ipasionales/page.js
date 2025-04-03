@@ -1,18 +1,15 @@
 "use client";
 
 import Logo from "../../../../public/form-ipasionales/logo.png";
-import Frase from "../../../../public/form-ipasionales/frase.png";
 import Frase_v2 from "../../../../public/form-ipasionales/frase_v2.png";
-import Listo from "../../../../public/form-ipasionales/listo.png";
 import Ipasionales from "../../../../public/form-ipasionales/ipasionales.png";
 import FraseForm from "../../../../public/form-ipasionales/frase-form.png";
 import BgDesk from "../../../../public/form-ipasionales/bg2.png";
 import BgMob from "../../../../public/form-ipasionales/bg2-mob.png";
 import Close from "../../../../public/form-ipasionales/close.png";
-import Credencial1 from "../../../../public/form-ipasionales/credencial-1.jpg";
-import Credencial2 from "../../../../public/form-ipasionales/credencial-2.jpg";
-import Credencial3 from "../../../../public/form-ipasionales/credencial-3.jpg";
-import Credencial4 from "../../../../public/form-ipasionales/credencial-4.jpg";
+import Credencial1 from "../../../../public/form-ipasionales/credencial-1.png";
+import Credencial2 from "../../../../public/form-ipasionales/credencial-2.png";
+import Credencial3 from "../../../../public/form-ipasionales/credencial-3.png";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -270,11 +267,10 @@ export default function Page() {
                     SCROLLEA Y PARTICIPÁ
                   </Link>
                 </div>
-                <div className="grid grid-cols-4 lg:pb-24 gap-x-1.5">
-                  <Image src={Credencial1} className="w-28 mx-auto" />
-                  <Image src={Credencial2} className="w-28 mx-auto" />
-                  <Image src={Credencial3} className="w-28 mx-auto" />
-                  <Image src={Credencial4} className="w-28 mx-auto" />
+                <div className="grid grid-cols-3 lg:pb-24 gap-x-5 ">
+                  <Image src={Credencial1} className="w-full" />
+                  <Image src={Credencial2} className="w-full" />
+                  <Image src={Credencial3} className="w-full" />
                 </div>
                 <div className="static lg:absolute -right-8 -bottom-5 pt-6">
                   <Image src={Ipasionales} className="w-24 mx-auto" />
