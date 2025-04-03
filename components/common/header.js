@@ -104,7 +104,7 @@ export default function Header({ dictonary }) {
             {firstSegment == "es" && (
               <Link
                 href={createLocalePath("/ipasionales")}
-                className="nav__item text-white border-b-2 border-transparent hidden hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"
+                className="nav__item text-white border-b-2 border-transparent hover:border-[#D51668] hover:border-b-2 py-1 transition duration-300 ease-in-out"
               >
                 {dictonary.nav.ipasionales}
               </Link>
