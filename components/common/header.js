@@ -239,13 +239,13 @@ export default function Header({ dictonary }) {
             <div className="flex flex-col ">
               <Link
                 href={createLocalePath("/")}
-                className="text-[9vw] uppercase nav__item text-white transition duration-300 ease-in-out"
+                className="text-[8vw] uppercase nav__item text-white transition duration-300 ease-in-out"
               >
                 {dictonary.nav.home}
               </Link>
               <Link
                 href={createLocalePath("/birras")}
-                className="text-[9vw] uppercase nav__item text-white transition duration-300 ease-in-out"
+                className="text-[8.5vw] uppercase nav__item text-white transition duration-300 ease-in-out"
               >
                 {dictonary.nav.birras}
               </Link>
@@ -259,28 +259,45 @@ export default function Header({ dictonary }) {
                     ? createLocalePath("/bares")
                     : "es"
                 }
-                className="text-[9vw] uppercase nav__item text-white transition duration-300 ease-in-out"
+                className="text-[8vw] uppercase nav__item text-white transition duration-300 ease-in-out"
               >
                 {dictonary.nav.bares}
               </Link>
               <Link
                 href={createLocalePath("/encuentro")}
-                className="text-[9vw] uppercase nav__item text-white transition duration-300 ease-in-out"
+                className="text-[8.5vw] uppercase nav__item text-white transition duration-300 ease-in-out"
               >
                 {dictonary.nav.encuentro}
               </Link>
               <Link
                 href={createLocalePath("/musica")}
-                className="text-[9vw] uppercase nav__item text-white transition duration-300 ease-in-out"
+                className="text-[8vw] uppercase nav__item text-white transition duration-300 ease-in-out"
               >
                 {dictonary.nav.musica}
               </Link>
               {firstSegment == "es" && (
                 <Link
                   href={createLocalePath("/ipasionales")}
-                  className="text-[9vw] uppercase nav__item text-white transition duration-300 ease-in-out hidden"
+                  className="text-[8vw] uppercase nav__item text-white transition duration-300 ease-in-out"
                 >
                   {dictonary.nav.ipasionales}
+                </Link>
+              )}
+              {firstSegment == "es" && (
+                <Link
+                  href="https://templeacademy.notion.site/templeacademy/0f69945dbb6247a1b08f8eae47bb2442?v=bdfe9a6a777c4281adda7ea36cf7d43c"
+                  target="_blank"
+                  className="text-[8vw] leading-7 my-2 uppercase nav__item text-white transition duration-300 ease-in-out"
+                >
+                  Temple Academy
+                </Link>
+              )}
+              {firstSegment == "es" && (
+                <Link
+                  href={createLocalePath("/franquicias")}
+                  className="text-[8vw] uppercase nav__item text-white transition duration-300 ease-in-out"
+                >
+                  Franquicias
                 </Link>
               )}
             </div>
@@ -307,14 +324,16 @@ export default function Header({ dictonary }) {
                 )}
                 <div className="lang__nav">
                   <LocaleSwitcher />
-                  <Image
-                    src="/bandera-es.svg"
-                    alt="Tik-Tok"
-                    width={24}
-                    height={17}
-                    data-tooltip-id="tooltip-lang"
-                    data-tooltip-content="Próximamente"
-                  />
+                  <a href="/mapa">
+                    <Image
+                      src="/bandera-esp.png"
+                      alt="España"
+                      className="cursor-pointer"
+                      width={26}
+                      height={17}
+                      data-tooltip-id="tooltip-lang"
+                    />
+                  </a>
                   <Image
                     src="/uy.svg"
                     alt="Uruguay"
