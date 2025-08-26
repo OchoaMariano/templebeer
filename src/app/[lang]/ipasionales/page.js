@@ -640,8 +640,10 @@ export default function Page() {
               <p className="text-[10px] text-center text-black pt-10">
                 Promoción sin obligación de compra. Consultar vigencia de las
                 promociones en la web oficial, válido en el territorio de la
-                República Argentina. Para más información y condiciones o
-                limitaciones aplicables consulte en: https://templebeer.com/es.
+                República Argentina, excepto en local Club TEMPLE - Paseo La
+                Plaza - Av. Corrientes 1660 Local 8, C1042 Cdad. Autónoma de
+                Buenos Aires. Para más información y condiciones o limitaciones
+                aplicables consulte en: https://templebeer.com/es.
                 <br />
                 <br />
                 BEBER CON MODERACIÓN. PROHIBIDA SU VENTA A MENORES DE 18 AÑOS
